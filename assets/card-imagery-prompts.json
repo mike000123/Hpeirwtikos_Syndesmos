@@ -1,0 +1,26 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-26",
+  "assets": [
+    {
+      "path": "assets/card-benefactors-ai.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape website article card header, wide 3:2 composition. An elegant old Greek school library, antique books and an open ledger on a wooden table, sunlight on warm stone, subtle ink pen, no people. Theme: education and philanthropy. Harmonious muted forest green, ivory, walnut, silver and warm golden light, natural photographic texture, restrained editorial cultural heritage aesthetic, clear primary subject in center with generous framing for responsive crops. No lettering, no numbers, no logo, no watermark. This is an AI-generated illustrative scene, not a historical archival document or a real association event."
+    },
+    {
+      "path": "assets/card-silver-ai.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape website article card header, wide 3:2 composition. Close-up of a silversmith's workbench, delicate silver filigree jewelry and a traditional hand tool, real tactile metal details, warm workshop light. Theme: silversmithing of Ioannina. Harmonious muted forest green, ivory, walnut, silver and warm golden light, natural photographic texture, restrained editorial cultural heritage aesthetic, clear primary subject in center with generous framing for responsive crops. No lettering, no numbers, no logo, no watermark. This is an AI-generated illustrative scene, not a historical archival document or a real association event."
+    },
+    {
+      "path": "assets/card-distillation-ai.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape website article card header, wide 3:2 composition. Traditional copper distillation still in a rustic stone courtyard, grape baskets and copper pipes, autumn colors and soft morning light, no people. Theme: communal autumn grape distillation in Epirus. Harmonious muted forest green, ivory, walnut, silver and warm golden light, natural photographic texture, restrained editorial cultural heritage aesthetic, clear primary subject in center with generous framing for responsive crops. No lettering, no numbers, no logo, no watermark. This is an AI-generated illustrative scene, not a historical archival document or a real association event."
+    },
+    {
+      "path": "assets/card-wedding-ai.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape website article card header, wide 3:2 composition. An intimate still life of an embroidered ivory bridal textile, a wooden dowry chest, small silver ornaments and woven cloth in a rustic Epirus stone interior. No people. Theme: traditional wedding and family rituals. Harmonious muted forest green, ivory, walnut, silver and warm golden light, natural photographic texture, restrained editorial cultural heritage aesthetic, clear primary subject in center with generous framing for responsive crops. No lettering, no numbers, no logo, no watermark. This is an AI-generated illustrative scene, not a historical archival document or a real association event."
+    },
+    {
+      "path": "assets/card-women-ai.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape website article card header, wide 3:2 composition. Dignified documentary-style illustrative scene of an adult woman weaving at a wooden loom in a warm stone house in Epirus, natural pose, hands and textile in focus, understated everyday clothing. Theme: women's craft and daily work, no military imagery. Harmonious muted forest green, ivory, walnut, silver and warm golden light, natural photographic texture, restrained editorial cultural heritage aesthetic, clear primary subject in center with generous framing for responsive crops. No lettering, no numbers, no logo, no watermark. This is an AI-generated illustrative scene, not a historical archival document or a real association event."
+    }
+  ]
+}

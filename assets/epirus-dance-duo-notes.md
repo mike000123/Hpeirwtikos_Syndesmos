@@ -1,0 +1,7 @@
+# Approved homepage dance artwork
+
+Built-in image_gen edit/extraction of mockups/home-dance-section-proposal-v5.png. Saved as assets/epirus-dance-duo.webp. Implemented with editable HTML text in index.html in place of its former history section. Full association history remains on syndesmos.html. Button links to melos.html#xoros.
+
+## Final asset prompt
+
+Edit the supplied approved website mockup. Extract ONLY the two-dancer pale orange outline illustration on the right into a standalone transparent-background artwork asset. Remove ALL text, button, gold divider lines belonging to the text column and the entire ivory page background. Preserve the EXACT approved dancer composition, pose, proportions, faces, costumes and linework: foreground man in deep low backbend, knees bent close to ground, left arm extended, raised hand holding a SHORT HANDKERCHIEF; supporting man CLOSE BEHIND him bent forward looking down, support arm reaching downward, opposite arm extended back. Keep supporting man's head cropped at the top as in the original if necessary. Do not redraw into another pose or change relative positioning. Preserve pale orange/ochre line color and fine hatching, no dark burgundy, no additional person. Retain only subtle nearby motion curves if they fit. On true alpha transparency, with no cream rectangle or baked background, no text or watermark. Frame both dancers closely with enough transparent padding that the foreground outstretched hand and both feet are fully included. This is a faithful extraction of the approved illustration, not a redesign.

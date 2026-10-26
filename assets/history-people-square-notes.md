@@ -1,0 +1,8 @@
+# History and people card image
+
+Saved asset: `assets/history-people-square.webp`.
+Generated with the built-in image_gen tool, then exported to WebP for the website. Fictional illustrative scene, not a documented association event or real membership photograph. Applied only to the card in `ipeiros.html`; `istoria.html` remains unchanged.
+
+## Final prompt
+
+Use case: photorealistic-natural. Asset type: landscape website card photograph for the Greek cultural article 'Ιστορία & άνθρωποι'. A warm candid scene of five elderly Greek men, around 70–85 years old, gathered around a small wooden cafe table in a traditional Epirus village square. They are smiling naturally and raising small clear glasses of red wine together in a joyful toast. Genuine companionship, expressive weathered faces, understated everyday shirts, light cardigans and jackets, no costume stereotypes. Epirus stone-paved square, stone-built houses with slate roofs softly visible behind them, shade of an old plane tree, gentle late-afternoon daylight. Camera at table height in a welcoming medium-wide group shot. Faces and raised wine glasses clearly readable in the central band, enough space around the group for responsive landscape card cropping. Natural colors and skin tones, restrained documentary-style photography, real texture, balanced exposure, no dark burgundy tint. Landscape 3:2 composition. Anonymous fictional people, not actual association members or a documented event. Avoid posed stock-photo smiles, exaggerated drinking, bottles as focal point, overfilled glasses, extra fingers, fused hands, duplicated faces, readable text, logos, watermarks, frames or lettering.

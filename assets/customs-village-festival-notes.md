@@ -1,0 +1,7 @@
+# Customs card image
+
+Generated using built-in image_gen. Asset: assets/customs-village-festival.webp. Imagined illustrative village celebration, not a documented event of the association. Applied only to the Ήθη & έθιμα card in ipeiros.html; ethima.html header unchanged.
+
+## Final prompt
+
+Use case: photorealistic-natural. Asset type: landscape website card photograph for 'Ήθη & έθιμα' (customs and traditions) of Epirus, Greece. A warm authentic-looking fictional village festival in a traditional Epirus stone-paved square beneath an old plane tree. A small mixed-age group of adult villagers, men and women, dancing together in an open circle holding hands, relaxed smiles, everyday modest festive shirts, dresses and trousers rather than identical stage costumes. Traditional grey stone houses and slate roofs behind, a few cafe tables and warm evening light. Focus on community ritual and shared celebration, not tourism or a concert stage. Eye-level medium-wide documentary composition, faces and linked hands visible around the middle band, enough room for a responsive landscape crop. Natural greens, warm stone and soft amber light, crisp realistic textures, believable anatomy and hands, restrained photographic color, no burgundy tint. Anonymous imagined people and celebration, not an actual association event. No readable banners, lettering, logos, dates, watermarks, roads, desert scenery, fireworks or excessive drinking. Landscape 3:2.

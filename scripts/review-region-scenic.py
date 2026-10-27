@@ -11,7 +11,10 @@ def get(url):
         except Exception:
             if attempt==2: raise
             time.sleep(3)
-groups=[("mosque","Aslan Pasha Mosque"),("preveza","Port of Preveza"),("syvota","Syvota islands")]
+im=Image.open(out/"mosque-selection.jpg")
+im.thumbnail((900,5000))
+im.save(out/"mosque-selection-small.jpg",quality=65)
+groups=[("preveza-town","Views of Preveza"),("syvota-town","Syvota (Thesprotia)")]
 for group,category in groups:
     params=dict(action="query",format="json",generator="categorymembers",gcmtitle="Category:"+category,gcmtype="file",gcmlimit="100",prop="imageinfo",iiprop="url|extmetadata",iiurlwidth="600")
     data=json.loads(get("https://commons.wikimedia.org/w/api.php?"+urllib.parse.urlencode(params)))
@@ -28,5 +31,5 @@ for group,category in groups:
             sheet.paste(ImageOps.fit(im,(390,219)),(x+5,y))
         except Exception as e: print(p["title"],str(e))
         draw.text((x+8,y+224),p["selection_id"]+" "+p["title"][5:37],fill="#401d22")
-    sheet.save(out/(group+"-selection.jpg"),quality=83)
+    sheet.save(out/(group+"-selection.jpg"),quality=65)
     (out/(group+"-selection.json")).write_text(json.dumps(items,ensure_ascii=False,indent=2)+"\n")

@@ -1,7 +1,5 @@
 name: Import scenic region photographs
 on:
-  push:
-    paths: ['.github/workflows/import-region-scenic.yml']
   workflow_dispatch:
 permissions:
   contents: write

@@ -1,15 +1,15 @@
 [
   {
     "key": "ioannina",
-    "file": "assets/region-cards/ioannina.webp",
-    "source": "https://commons.wikimedia.org/wiki/File:%CE%A4%CE%B1_%CE%93%CE%B9%CE%AC%CE%BD%CE%BD%CE%B5%CE%BD%CE%B1_%CE%B1%CF%80%CF%8C_%CF%84%CE%BF_%CE%9C%CE%B9%CF%84%CF%83%CE%B9%CE%BA%CE%AD%CE%BB%CE%B9-cropped.jpg",
-    "original": "https://upload.wikimedia.org/wikipedia/commons/1/18/%CE%A4%CE%B1_%CE%93%CE%B9%CE%AC%CE%BD%CE%BD%CE%B5%CE%BD%CE%B1_%CE%B1%CF%80%CF%8C_%CF%84%CE%BF_%CE%9C%CE%B9%CF%84%CF%83%CE%B9%CE%BA%CE%AD%CE%BB%CE%B9-cropped.jpg",
-    "author": "Ale30307 · περικοπή: SilentResident",
-    "licence": "CC BY-SA 4.0",
-    "licenceURL": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "width": 1440,
-    "height": 605,
-    "changes": "Size/format conversion. Responsive display crops image to card aspect ratio."
+    "file": "assets/region-scenic/ioannina-mosque-lake.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:GR-ioannina-alipascha-see.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/8/86/GR-ioannina-alipascha-see.jpg",
+    "author": "Bgabel / Wikivoyage shared",
+    "licence": "CC BY-SA 3.0",
+    "licenceURL": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "width": 1215,
+    "height": 807,
+    "changes": "Resize and WebP conversion. Responsive centered crop to 16:9."
   },
   {
     "key": "arta",
@@ -25,26 +25,26 @@
   },
   {
     "key": "preveza",
-    "file": "assets/region-cards/preveza.webp",
-    "source": "https://commons.wikimedia.org/wiki/File:Port_of_Preveza_2013.jpg",
-    "original": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Port_of_Preveza_2013.jpg",
-    "author": "Γιάννης Χουβαρδάς / john houv",
-    "licence": "CC BY-SA 2.0",
-    "licenceURL": "https://creativecommons.org/licenses/by-sa/2.0/",
-    "width": 1440,
-    "height": 786,
-    "changes": "Size/format conversion. Responsive display crops image to card aspect ratio."
-  },
-  {
-    "key": "thesprotia",
-    "file": "assets/region-cards/thesprotia.webp",
-    "source": "https://commons.wikimedia.org/wiki/File:Igoumenitsa_city.jpg",
-    "original": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Igoumenitsa_city.jpg",
-    "author": "Evmeos",
+    "file": "assets/region-scenic/preveza-sunrise.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Sunrise_in_Preveza_Port,_Greece.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Sunrise_in_Preveza_Port%2C_Greece.jpg",
+    "author": "Χαράλαμπος Γκούβας / Harrygouvas (English Wikipedia)",
     "licence": "CC BY-SA 3.0",
     "licenceURL": "https://creativecommons.org/licenses/by-sa/3.0/",
     "width": 1440,
-    "height": 808,
-    "changes": "Size/format conversion. Responsive display crops image to card aspect ratio."
+    "height": 1080,
+    "changes": "Resize and WebP conversion. Responsive centered crop to 16:9."
+  },
+  {
+    "key": "thesprotia",
+    "file": "assets/region-scenic/thesprotia-agia-paraskevi.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:%CE%97_%CF%80%CE%B1%CF%81%CE%B1%CE%BB%CE%AF%CE%B1_%CF%84%CE%B7%CF%82_%CE%91%CE%B3%CE%AF%CE%B1%CF%82_%CE%A0%CE%B1%CF%81%CE%B1%CF%83%CE%BA%CE%B5%CF%85%CE%AE%CF%82_(2710173462).jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/a/af/%CE%97_%CF%80%CE%B1%CF%81%CE%B1%CE%BB%CE%AF%CE%B1_%CF%84%CE%B7%CF%82_%CE%91%CE%B3%CE%AF%CE%B1%CF%82_%CE%A0%CE%B1%CF%81%CE%B1%CF%83%CE%BA%CE%B5%CF%85%CE%AE%CF%82_%282710173462%29.jpg",
+    "author": "Αλέξανδρος",
+    "licence": "CC BY-SA 2.0",
+    "licenceURL": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "width": 1440,
+    "height": 1080,
+    "changes": "Resize and WebP conversion. Responsive centered crop to 16:9."
   }
 ]

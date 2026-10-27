@@ -1,0 +1,21 @@
+# Remaining Epirus features — 28 October 2026
+
+Enriched nine pages: topoi, mousiki, istoria, ethima, texnes, kazania, gynaika, gefyria, foresies. The eight short features now have complete introductory narratives with four thematic chapters, numbered source links, documentary illustrations and contextual links to related articles. Foresies retains its six regional cards and their existing interactions, adding four narrative chapters and a documentary buckle photograph. Existing substantive regional material in topoi, music discussion in mousiki, calendar-custom recordings in ethima, and the costume glossary and references were retained. Superseded one-paragraph placeholders were removed.
+
+## Editorial choices
+
+Information first; references at passage ends. Reflective passages are original editorial writing, not claimed oral testimony. No fabricated quotes or interviews. National inventory entries and UNESCO international inscriptions are distinguished. Syrrako is discussed as a specific community; no custom is generalized to every Epirote village. The Vitsa festival description is attributed to the 2021 dossier, with the separate national catalogue linked. Music listening links point to two actual recordings with named performers and dates; no lyrics reproduced. The history overview includes the destruction of Ioannina's Jewish community without repeating inconsistent casualty counts from different publications. Women are discussed through differing lives, work, training and agency, without presenting suffering or self-sacrifice as an innate identity.
+
+The kazania story is social history, not a distillation manual or a statement of present-day licensing. The Epirusgate reminiscence is identified as a local account. Its inaccurate blanket assertion that Epirus has no mass production was not used. The 2017 technical file supports the general category of grape-marc spirit only; no claim is made that historic regulation remains current. Plaka's 2015 collapse and December 2019 arch-closing stages are distinguished; the 2024 photo is explicitly after reconstruction.
+
+## Sources and images
+
+Three to five numbered references per page, plus retained references supporting earlier local material. Sources include UNESCO, Ministry of Culture, NTUA, the Domna Samiou archive, the Rizarios institution, Society for Epirotic Studies, KIS and EOT. Selected reporting supplies a named contemporary weaver's account and local kazania recollections. Source links appear in each published page.
+
+Four newly imported images under assets/epirus-features/: Plakidas bridge (Aneza Palaiou), reconstructed Plaka bridge (Mboesch), a tsipouro still (Nikoskpa), and the 2007 Dervitsani festival (photographer described as cousin of Alexikoua). All were visually inspected in a contact sheet. The still's location is not established, and the published caption explicitly avoids claiming it is in Epirus. Dervitsani is correctly identified as southern Albania. Three images are CC BY-SA 4.0; the festival image is released to the public domain. All are locally served and credited with source and licence links. Dimensions and conversion details are in image-credits.json. No crop or retouching.
+
+Reused documentary photographs are the licensed Mikro Papigko landscape and three existing asimi museum images. Public captions retain attribution, licence and source. Existing generated decorative card/header images and the costume reconstructions remain unchanged; the latter's documentary limitations remain visible in the existing gallery. No generated image is newly presented as a historical photograph.
+
+## Validation
+
+Nine-page static checks passed: unique IDs, all fragment links resolve, at least three new source entries per page, local documentary images with alt text/dimensions/lazy loading, credited captions, no unfilled source placeholders. Original header, top navigation, social links and footer compared and retained exactly. All six existing costume gallery image paths preserved. Shared editorial CSS is scoped to epirus-feature and switches to one column at 1000px; compact spacing at 600px. All illustrated local asset paths checked in the repository tree. Browser rendering was not available in the restricted executor. Import workflow is manual-only after initial import.

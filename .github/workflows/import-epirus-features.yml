@@ -1,7 +1,5 @@
 name: Import licensed Epirus feature photographs
 on:
-  push:
-    paths: ['.github/workflows/import-epirus-features.yml']
   workflow_dispatch:
 permissions:
   contents: write

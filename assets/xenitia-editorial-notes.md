@@ -26,3 +26,7 @@ The feature contains an original Greek narrative and clearly attributed summarie
 ## Verification
 
 Static HTML parsing, one main/h1, unique IDs, local anchors, source/story counts, image alt attributes and repository-relative links checked. CSS is page-scoped and includes mobile and print layouts. No browser tool was available for rendered desktop/mobile QA. Shell network requests failed at the configured proxy; remote source reads and repository operations used the available connectors. No deployment URL is inferred from the repository name.
+
+## Header consistency — 27 October 2026
+
+Restored the established article-hero / article-hero-photo / article-hero-third header after the owner's screenshot feedback: full-width image, overlaid title/subtitle and 24px corners. The verified Mikro Papigko photograph is retained, with visible attribution immediately below the hero. The dedication moves into the article opening; the researched article body and sources are preserved. All other 14 tribute pages were inspected and already use the same photo-header classes. Their headers and shared CSS remain unchanged.

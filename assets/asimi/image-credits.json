@@ -1,0 +1,46 @@
+[
+  {
+    "file": "assets/asimi/museum.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Ioannina%2C_castle%2C_Silversmithing_museum.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Ioannina%2C_castle%2C_Silversmithing_museum.jpg",
+    "author": "Vassiliki Feidopoulou",
+    "license": "CC BY-SA 4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "changes": "Resized and converted to WebP; no cropping or retouching.",
+    "width": 1440,
+    "height": 810
+  },
+  {
+    "file": "assets/asimi/exhibit-04.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:%CE%91%CF%81%CE%B3%CF%85%CF%81%CE%BF%CF%84%CE%B5%CF%87%CE%BD%CE%AF%CE%B1_%CE%9C%CE%BF%CF%85%CF%83%CE%B5%CE%AF%CE%BF_%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%B9%CE%BD%CE%B1_14062024_04.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/f/f3/%CE%91%CF%81%CE%B3%CF%85%CF%81%CE%BF%CF%84%CE%B5%CF%87%CE%BD%CE%AF%CE%B1_%CE%9C%CE%BF%CF%85%CF%83%CE%B5%CE%AF%CE%BF_%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%B9%CE%BD%CE%B1_14062024_04.jpg",
+    "author": "Deiadameian",
+    "license": "CC BY-SA 4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "changes": "Resized and converted to WebP; no cropping or retouching.",
+    "width": 1440,
+    "height": 1080
+  },
+  {
+    "file": "assets/asimi/exhibit-16.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:%CE%91%CF%81%CE%B3%CF%85%CF%81%CE%BF%CF%84%CE%B5%CF%87%CE%BD%CE%AF%CE%B1_%CE%9C%CE%BF%CF%85%CF%83%CE%B5%CE%AF%CE%BF_%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%B9%CE%BD%CE%B1_14062024_16.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/0/06/%CE%91%CF%81%CE%B3%CF%85%CF%81%CE%BF%CF%84%CE%B5%CF%87%CE%BD%CE%AF%CE%B1_%CE%9C%CE%BF%CF%85%CF%83%CE%B5%CE%AF%CE%BF_%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%B9%CE%BD%CE%B1_14062024_16.jpg",
+    "author": "Deiadameian",
+    "license": "CC BY-SA 4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "changes": "Resized and converted to WebP; no cropping or retouching.",
+    "width": 1440,
+    "height": 1080
+  },
+  {
+    "file": "assets/asimi/exhibit-92.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:%CE%91%CF%81%CE%B3%CF%85%CF%81%CE%BF%CF%84%CE%B5%CF%87%CE%BD%CE%AF%CE%B1_%CE%9C%CE%BF%CF%85%CF%83%CE%B5%CE%AF%CE%BF_%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%B9%CE%BD%CE%B1_14062024_92.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/5/55/%CE%91%CF%81%CE%B3%CF%85%CF%81%CE%BF%CF%84%CE%B5%CF%87%CE%BD%CE%AF%CE%B1_%CE%9C%CE%BF%CF%85%CF%83%CE%B5%CE%AF%CE%BF_%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%B9%CE%BD%CE%B1_14062024_92.jpg",
+    "author": "Deiadameian",
+    "license": "CC BY-SA 4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "changes": "Resized and converted to WebP; no cropping or retouching.",
+    "width": 1440,
+    "height": 1080
+  }
+]

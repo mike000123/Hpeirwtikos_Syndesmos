@@ -15,9 +15,10 @@ groups=[("mosque","Aslan Pasha Mosque"),("preveza","Port of Preveza"),("syvota",
 for group,category in groups:
     params=dict(action="query",format="json",generator="categorymembers",gcmtitle="Category:"+category,gcmtype="file",gcmlimit="100",prop="imageinfo",iiprop="url|extmetadata",iiurlwidth="600")
     data=json.loads(get("https://commons.wikimedia.org/w/api.php?"+urllib.parse.urlencode(params)))
-    items=list(data["query"]["pages"].values())
+    items=[p for p in data["query"]["pages"].values() if p.get("imageinfo")]
     sheet=Image.new("RGB",(1200,((len(items)+2)//3)*246),"#f5efe3")
     draw=ImageDraw.Draw(sheet)
+    print(group, len(items), flush=True)
     for i,p in enumerate(items):
         info=p["imageinfo"][0]
         p["selection_id"]=group+"-"+str(i)

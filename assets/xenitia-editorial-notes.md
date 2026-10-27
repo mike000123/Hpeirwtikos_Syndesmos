@@ -34,3 +34,7 @@ Restored the established article-hero / article-hero-photo / article-hero-third 
 ## Existing imagery preference — 27 October 2026
 
 The owner explicitly requested that existing header and tribute-card imagery be preserved throughout the site. New imagery may be added inside articles. Restored the exact pre-edit Unsplash image URL, https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=700 , in both the xenitia header and portal card. The original URL was verified in both files at commit 76ca6d7b7a865049e04cb85709185b7d107e71f0. This landscape is decorative and is not identified as a location in Epirus or as archival evidence. This supersedes the photograph choice in the preceding header-consistency note. Preserve header/card images in future content edits unless the owner asks to change them.
+
+## Narrative voice — 27 October 2026
+
+The owner requested flowing, accessible storytelling rather than academic exposition. Historical information should lead each passage; sources should be cited at the end of the relevant sentence/passage and named in the bibliography, or briefly at the end only when narratively necessary. Revised 15 narrative paragraphs to integrate the existing verified facts directly into the story. Preserved every numbered citation, the complete bibliography, all images, and the header/card identity. Apply this editorial preference in future article work.

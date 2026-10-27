@@ -19,7 +19,7 @@ The feature contains an original Greek narrative and clearly attributed summarie
 
 ## Image provenance
 
-1. Existing local assets/zagori-mikro-papigko.jpg = MikroPapigko1.jpg, Ozcraft99, 6 February 2016. https://commons.wikimedia.org/wiki/File:MikroPapigko1.jpg , CC BY-SA 4.0. Original 1776 × 1000. Visible credit, license link and display-crop indication. It illustrates place, not a departure event.
+1. Existing local assets/zagori-mikro-papigko.jpg = MikroPapigko1.jpg, Ozcraft99, 6 February 2016. https://commons.wikimedia.org/wiki/File:MikroPapigko1.jpg , CC BY-SA 4.0. Original 1776 × 1000. Originally used in the prepared feature; removed from the feature when the owner requested restoration of the existing header/card image. The asset remains in the repository.
 2. https://upload.wikimedia.org/wikipedia/commons/b/bb/Greeks-immigrating-to-USA-1910.jpeg , 578 × 640. Patras, 1910, Keystone View Company; Library of Congress 2003680488, LC-USZ62-66116 (right half of stereograph). https://www.loc.gov/item/2003680488/ . LOC rights advisory: No known restrictions on publication. Commons describes US public-domain status. The caption does not assert Epirote ancestry. This is an external image dependency; the catalogue remains linked independently.
 3. Existing local assets/leschi-facade.png: pre-existing site photograph of the association building. Reused on the feature and its portal card; no new ownership or license claim.
 
@@ -30,3 +30,7 @@ Static HTML parsing, one main/h1, unique IDs, local anchors, source/story counts
 ## Header consistency — 27 October 2026
 
 Restored the established article-hero / article-hero-photo / article-hero-third header after the owner's screenshot feedback: full-width image, overlaid title/subtitle and 24px corners. The verified Mikro Papigko photograph is retained, with visible attribution immediately below the hero. The dedication moves into the article opening; the researched article body and sources are preserved. All other 14 tribute pages were inspected and already use the same photo-header classes. Their headers and shared CSS remain unchanged.
+
+## Existing imagery preference — 27 October 2026
+
+The owner explicitly requested that existing header and tribute-card imagery be preserved throughout the site. New imagery may be added inside articles. Restored the exact pre-edit Unsplash image URL, https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=700 , in both the xenitia header and portal card. The original URL was verified in both files at commit 76ca6d7b7a865049e04cb85709185b7d107e71f0. This landscape is decorative and is not identified as a location in Epirus or as archival evidence. This supersedes the photograph choice in the preceding header-consistency note. Preserve header/card images in future content edits unless the owner asks to change them.

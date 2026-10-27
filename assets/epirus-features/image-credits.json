@@ -1,0 +1,46 @@
+[
+  {
+    "file": "assets/epirus-features/plakidas.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Plakidas_Kalogeriko_stone_bridge_Kipi_Zagori.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/d/da/Plakidas_Kalogeriko_stone_bridge_Kipi_Zagori.jpg",
+    "author": "Aneza Palaiou",
+    "license": "CC BY-SA 4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "width": 1440,
+    "height": 960,
+    "changes": "Resized and converted to WebP; no cropping or retouching."
+  },
+  {
+    "file": "assets/epirus-features/plaka.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Plaka-bridge-from-above.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Plaka-bridge-from-above.jpg",
+    "author": "Mboesch",
+    "license": "CC BY-SA 4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "width": 1440,
+    "height": 960,
+    "changes": "Resized and converted to WebP; no cropping or retouching."
+  },
+  {
+    "file": "assets/epirus-features/kazani.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:%CE%9A%CE%B1%CE%B6%CE%AC%CE%BD%CE%B9_%CF%84%CF%83%CE%AF%CF%80%CE%BF%CF%85%CF%81%CE%BF%CF%85.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/c/c5/%CE%9A%CE%B1%CE%B6%CE%AC%CE%BD%CE%B9_%CF%84%CF%83%CE%AF%CF%80%CE%BF%CF%85%CF%81%CE%BF%CF%85.jpg",
+    "author": "Nikoskpa",
+    "license": "CC BY-SA 4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "width": 1086,
+    "height": 1440,
+    "changes": "Resized and converted to WebP; no cropping or retouching."
+  },
+  {
+    "file": "assets/epirus-features/festival.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Pol_festival_2007.JPG",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Pol_festival_2007.JPG",
+    "author": "Εξάδελφος του χρήστη Alexikoua",
+    "license": "Public Domain",
+    "licenseURL": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "width": 544,
+    "height": 268,
+    "changes": "Resized and converted to WebP; no cropping or retouching."
+  }
+]

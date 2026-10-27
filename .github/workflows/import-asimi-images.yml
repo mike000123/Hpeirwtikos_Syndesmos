@@ -1,7 +1,5 @@
 name: Import licensed silversmithing photographs
 on:
-  push:
-    paths: ['.github/workflows/import-asimi-images.yml']
   workflow_dispatch:
 permissions:
   contents: write

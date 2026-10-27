@@ -1,0 +1,46 @@
+/* Scoped food tribute styles. The established clear photo hero stays unchanged. */
+.food-page .article-grid{display:grid!important;grid-template-columns:minmax(0,1fr) 225px;gap:36px}
+.food-page .article-body{min-width:0;font-size:1.06rem;line-height:1.95}
+.food-page .article-body section{margin-top:48px;scroll-margin-top:100px}
+.food-page .article-body h2{font-size:clamp(1.7rem,2.7vw,2.2rem);line-height:1.3;margin:12px 0 25px;text-wrap:balance}
+.food-page .f-lede{font-size:1.18rem;line-height:1.95}
+.food-page .f-dedication{font:italic 1.05rem/1.8 Georgia,serif;color:var(--forest)}
+.food-page .f-chapter,.food-page .f-recipe-number{font-size:.73rem;letter-spacing:.07em;font-weight:700;color:#795b30}
+.food-page .f-ref{display:inline-block;vertical-align:super;font-size:.72rem;line-height:1.2;padding:2px 3px;color:var(--forest);font-weight:700}
+.food-page .f-recipe-jump{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0}
+.food-page .f-recipe-jump>span{flex-basis:100%;font-size:.8rem;font-weight:700;color:var(--forest)}
+.food-page .f-recipe-jump>a{padding:9px 13px;border:1px solid #b28c58;border-radius:6px;font-size:.83rem;font-weight:700;color:var(--forest)}
+.food-page .f-recipe-jump>a:hover{background:#eee2d0}
+.food-page .f-photo{margin:30px 0;background:#eee2d0;border:1px solid #dccbb7;border-radius:10px;overflow:hidden}
+.food-page .f-photo img{display:block;width:100%;height:auto;max-height:490px;object-fit:contain;background:#e9dfcf}
+.food-page .f-photo figcaption{padding:16px 20px;font-size:.76rem;line-height:1.8;color:#594b40}
+.food-page figcaption a,.food-page .f-recipe-credit a,.food-page .f-sources a{text-decoration:underline;text-underline-offset:3px;color:var(--forest)}
+.food-page .f-pie-guide{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:28px 0 15px}
+.food-page .f-pie-guide article{padding:18px 15px;background:#eee2d0;border-top:2px solid #ac874f;border-radius:6px}
+.food-page .f-pie-guide h3{font:500 1.2rem/1.4 Georgia,serif;color:var(--forest);margin:0 0 12px}
+.food-page .f-pie-guide p{font-size:.84rem;line-height:1.7;margin:0}
+.food-page .f-small{font-size:.81rem;line-height:1.8}
+.food-page .f-recipe{margin-top:30px;padding:28px;background:#fffaf2;border:1px solid #d8c8b1;border-top:3px solid #a67e45;border-radius:12px;scroll-margin-top:100px}
+.food-page .f-recipe h3{font:500 clamp(1.5rem,2.5vw,1.9rem)/1.3 Georgia,serif;color:var(--forest);margin:10px 0 14px;text-wrap:balance}
+.food-page .f-recipe-meta{font-size:.8rem;line-height:1.75;color:#685241;padding-bottom:18px;border-bottom:1px solid #dfd2c1}
+.food-page .f-recipe-intro{font-size:.95rem}
+.food-page .f-recipe-columns{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:25px}
+.food-page .f-recipe-columns>div{min-width:0}
+.food-page .f-recipe h4{font-size:.9rem;margin:10px 0 13px;color:var(--forest)}
+.food-page .f-recipe ul,.food-page .f-recipe ol{padding-left:21px;margin:0 0 20px;font-size:.92rem;line-height:1.8}
+.food-page .f-recipe li{padding:0 0 10px}
+.food-page .f-recipe .f-recipe-credit{font-size:.76rem;line-height:1.8;padding-top:18px;border-top:1px solid #dfd2c1;margin:5px 0 0}
+.food-page .f-contents{padding:22px;position:static}
+.food-page .f-contents h2{font:500 1.3rem Georgia,serif;margin:0 0 18px;color:var(--forest)}
+.food-page .f-contents ol{padding-left:20px;margin:0;font-size:.87rem;line-height:1.75}
+.food-page .f-contents li{padding:6px 0}
+.food-page .f-contents a:hover{text-decoration:underline;text-underline-offset:4px}
+.food-page .f-companion{display:block;padding-top:18px;margin-top:20px;border-top:1px solid #d4c1aa;font-size:.8rem;line-height:1.8}
+.food-page .f-closing{border-top:1px solid #d7c6b0;padding-top:30px}
+.food-page .f-sources{border-top:1px solid #d7c6b0;padding-top:25px;font-size:.86rem;line-height:1.8}
+.food-page .f-sources ol{padding-left:23px}
+.food-page .f-sources li{margin-bottom:15px;scroll-margin-top:100px;overflow-wrap:anywhere}
+.food-page a:focus-visible{outline:3px solid #9b7131;outline-offset:4px}
+@media(max-width:1000px){.food-page .article-grid{grid-template-columns:minmax(0,1fr)}.food-page .f-contents{order:-1}.food-page .f-contents ol{columns:2;column-gap:28px}.food-page .f-contents li{break-inside:avoid}}
+@media(max-width:650px){.food-page .article-grid{gap:30px;margin-top:35px}.food-page .f-lede{font-size:1.1rem}.food-page .f-contents ol{columns:1}.food-page .f-pie-guide,.food-page .f-recipe-columns{grid-template-columns:minmax(0,1fr)}.food-page .f-recipe{padding:24px 19px}.food-page .f-recipe-columns{gap:0}.food-page .f-photo figcaption{padding:14px 17px}}
+@media print{.food-page .site-top,.food-page .site-nav,.food-page .site-foot,.food-page .f-contents,.food-page .related,.food-page .f-recipe-jump{display:none}.food-page .article-grid{display:block!important}.food-page .f-recipe{background:white;border:1px solid #bbb}.food-page .f-recipe h3{break-after:avoid}.food-page .f-recipe li{break-inside:avoid}}

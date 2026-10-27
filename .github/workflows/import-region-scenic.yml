@@ -8,14 +8,15 @@ permissions:
 jobs:
   import:
     runs-on: ubuntu-latest
-    timeout-minutes: 7
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - run: pip install Pillow==11.3.0
-      - run: python -u scripts/review-region-scenic.py
+      - run: python scripts/import-region-scenic.py
+      # Selected originals, source links and licences recorded in credits.json
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

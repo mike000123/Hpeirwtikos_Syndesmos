@@ -1,4 +1,4 @@
-// DOM-adapter behaviour tests; browser PDF viewer support is tested separately when available.
+// Reader behaviour tests: local page images, finite loading, and focus restoration.
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
@@ -36,25 +36,28 @@ function setup({ supported = true } = {}) {
   const galleryCard=new Element('a');
   document.querySelector=selector=>selector==='.event-press-body'?readerBody:selector.startsWith('[data-event-gallery=')?galleryCard:nodes[selector.slice(1)];
   document.createElement=tag=>new Element(tag);
-  const context={window:{},document,URL};
+  const timers = new Map(); let timerId=0;
+  const context={window:{},document,URL,setTimeout(fn){timers.set(++timerId,fn);return timerId;},clearTimeout(id){timers.delete(id);}};
   vm.runInNewContext(fs.readFileSync(path.join(root,'assets/events-data.js'),'utf8'),context);
   const data=context.window.epirusEvents;
   data.events.push({id:'invalid',title:'Bad document',dateLabel:'',press:{src:'https://example.org/not-a-report.html',format:'pdf'}});
   vm.runInNewContext(fs.readFileSync(path.join(root,'assets/events-press.js'),'utf8'),context);
   function click(id,extra={}) { const trigger=new Element('a');trigger.dataset.eventPress=id;return{trigger,event:document.emit('click',{target:trigger,...extra})}; }
-  return{nodes,body,dialog,readerBody,gallery,galleryCard,click,focused:()=>focused};
+  return{nodes,body,dialog,readerBody,gallery,galleryCard,click,focused:()=>focused,timers};
 }
 
-test('a press-only event opens its original PDF, not the legacy WordPress page',()=>{
+test('a press-only event renders local page images without a PDF iframe',()=>{
   const s=setup();const {event}=s.click('event-2019-12-08');
   assert.equal(event.defaultPrevented,true);
   assert.equal(s.dialog.open,true);
   assert.equal(s.nodes['event-press-date'].textContent,'08.12.2019');
   const frame=s.nodes['event-press-content'].firstElementChild;
-  assert.equal(frame.tagName,'IFRAME');
-  assert.match(frame.src,/^https:\/\/ipirotikos\.gr\/wp-content\/uploads\/.*\.pdf#view=FitH/);
+  assert.equal(frame.tagName,'IMG');
+  assert.equal(s.nodes['event-press-content'].children.length,2);
+  assert.match(s.nodes['event-press-file'].href,/^assets\/event-press\/event-2019-12-08\.pdf$/);
+  assert.equal(frame.src,'assets/event-press/event-2019-12-08-page-1.jpg');
   assert.ok(!frame.src.includes('/deltia-typoy/'));
-  assert.ok(frame.title.includes('Παραδοσιακό γλέντι'));
+  assert.ok(frame.alt.includes('Παραδοσιακό γλέντι'));
   assert.equal(s.readerBody.scrollTop,0);
   assert.equal(s.focused(),s.nodes['event-press-close']);
   frame.emit('load');assert.equal(s.nodes['event-press-status'].hidden,true);
@@ -67,11 +70,11 @@ test('image announcements retain the source image and correct date',()=>{
   assert.equal(s.nodes['event-press-kind'].textContent,'Ανακοίνωση');
   assert.equal(s.nodes['event-press-date'].textContent,'25.01.2025');
   assert.ok(img.alt.includes('Κοπή πίτας'));
-  assert.match(img.src,/uploads\/2025\/02\//);
+  assert.equal(img.src,'assets/event-press/event-2025-01-25.jpg');
   assert.equal(s.nodes['event-press-file'].href,img.src);
 });
 
-test('closing releases the PDF and restores scroll and trigger focus',()=>{
+test('closing releases the document pages and restores scroll and trigger focus',()=>{
   const s=setup();const {trigger}=s.click('event-2019-11-09');
   assert.equal(s.body.style.overflow,'hidden');
   s.nodes['event-press-close'].emit('click');
@@ -94,9 +97,9 @@ test('load errors preserve a usable original-file link and stale errors do not r
   const s=setup();s.click('event-2025-01-25');
   const first=s.nodes['event-press-content'].firstElementChild;
   first.emit('error');
-  assert.equal(s.nodes['event-press-content'].children.length,0);
+  assert.equal(s.nodes['event-press-content'].children.length,1);
   assert.equal(s.nodes['event-press-status'].hidden,false);
-  assert.match(s.nodes['event-press-file'].href,/^https:\/\/ipirotikos\.gr\/wp-content\/uploads\//);
+  assert.match(s.nodes['event-press-file'].href,/^assets\/event-press\//);
   s.dialog.close();s.click('event-2019-12-08');
   const second=s.nodes['event-press-content'].firstElementChild;
   first.emit('load');
@@ -111,4 +114,22 @@ test('outside clicks dismiss, while modified clicks, bad URLs and unsupported di
   s.dialog.emit('click',{clientX:100,clientY:100});assert.equal(s.dialog.open,true);
   s.dialog.emit('click',{clientX:1,clientY:1});assert.equal(s.dialog.open,false);
   assert.equal(setup({supported:false}).click('event-2019-12-08').event.defaultPrevented,false);
+});
+
+test('slow loading shows a finite fallback and close cancels pending timers',()=>{
+  const s=setup();s.click('event-2019-12-08');
+  for(const fn of s.timers.values()) fn();
+  assert.match(s.nodes['event-press-status'].textContent,/καθυστερεί/);
+  s.dialog.close(); assert.equal(s.timers.size,0);
+});
+test('all press documents and page previews use local files',()=>{
+  const context={window:{}};
+  vm.runInNewContext(fs.readFileSync(path.join(root,'assets/events-data.js'),'utf8'),context);
+  const events=context.window.epirusEvents.events.filter(e=>e.press);
+  assert.equal(events.length,15);
+  for(const e of events){
+    assert.match(e.press.src,/^assets\/event-press\//);
+    assert.ok(e.press.pages.length);
+    for(const page of e.press.pages) assert.match(page,/^assets\/event-press\/.*\.jpg$/);
+  }
 });

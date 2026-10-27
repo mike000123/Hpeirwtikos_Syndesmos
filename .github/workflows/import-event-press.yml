@@ -1,7 +1,5 @@
 name: Import original event press documents
 on:
-  push:
-    paths: ['.github/workflows/import-event-press.yml']
   workflow_dispatch:
 permissions:
   contents: write
@@ -29,7 +27,7 @@ jobs:
               press = event.get('press')
               if not press:
                   continue
-              original = press['src']
+              original = press.get('originalSrc', press['src'])
               assert original.startswith('https://ipirotikos.gr/wp-content/uploads/')
               payload = None
               for attempt in range(3):

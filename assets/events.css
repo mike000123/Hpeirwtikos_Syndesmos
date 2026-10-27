@@ -61,9 +61,12 @@
 .events-page .event-press-body{padding:18px;overflow:auto;min-height:0;overscroll-behavior:contain;background:#e8dfd1}
 .events-page .event-press-status{font-size:14px;line-height:1.7;margin:0 0 14px;color:#594638}
 .events-page .event-press-content{min-width:0;text-align:center}
-.events-page .event-press-pdf{display:block;width:100%;height:65vh;height:65dvh;min-height:280px;border:0;background:#fff}
+
 .events-page .event-press-image{display:block;width:auto;max-width:100%;height:auto;margin:auto;background:white}
 .events-page .event-press-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px 22px;padding:15px 25px;font-size:12px;line-height:1.6;border-top:1px solid #d8c7af;flex:0 0 auto}
 .events-page .event-press-footer a{color:#721f2d;font-weight:700;text-decoration:underline;text-underline-offset:4px}
-@media(max-width:600px){.events-page .event-press-dialog{width:calc(100% - 12px);max-height:96vh;max-height:96dvh}.events-page .event-press-header{padding:16px;gap:12px}.events-page .event-press-header h2{font-size:23px}.events-page .event-press-body{padding:10px}.events-page .event-press-pdf{height:62vh;height:62dvh;min-height:250px}.events-page .event-press-footer{padding:13px 16px}}
+@media(max-width:600px){.events-page .event-press-dialog{width:calc(100% - 12px);max-height:96vh;max-height:96dvh}.events-page .event-press-header{padding:16px;gap:12px}.events-page .event-press-header h2{font-size:23px}.events-page .event-press-body{padding:10px}.events-page .event-press-footer{padding:13px 16px}}
 
+
+/* PDF pages are local images, avoiding embedded/mobile PDF viewers. */
+.events-page .event-press-page{width:100%;margin:0 auto 18px;box-shadow:0 1px 6px #0002}

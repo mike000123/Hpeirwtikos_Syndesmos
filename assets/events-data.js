@@ -1,6 +1,6 @@
-// Media and original press documents published by the association.
+// Association media and locally archived original press documents.
 window.epirusEvents = {
-  "updated": "2026-10-27",
+  "updated": "2026-10-28",
   "photoSource": "https://ipirotikos.gr/polymesa/fotografies/",
   "videoSource": "https://ipirotikos.gr/polymesa/video/",
   "events": [
@@ -12,9 +12,13 @@ window.epirusEvents = {
       "source": "https://ipirotikos.gr/deltia-typoy/25-1-2025-deltio-typoy-kopi-pitas/",
       "media": [],
       "press": {
-        "src": "https://ipirotikos.gr/wp-content/uploads/2025/02/%CE%9A%CE%9F%CE%A0%CE%97-%CE%92%CE%91%CE%A3%CE%99%CE%9B%CE%9F%CE%A0%CE%99%CE%A4%CE%91%CE%A3-2025-300x251.jpg",
+        "src": "assets/event-press/event-2025-01-25.jpg",
         "format": "image",
-        "label": "Ανακοίνωση"
+        "label": "Ανακοίνωση",
+        "originalSrc": "https://ipirotikos.gr/wp-content/uploads/2025/02/%CE%9A%CE%9F%CE%A0%CE%97-%CE%92%CE%91%CE%A3%CE%99%CE%9B%CE%9F%CE%A0%CE%99%CE%A4%CE%91%CE%A3-2025-300x251.jpg",
+        "pages": [
+          "assets/event-press/event-2025-01-25.jpg"
+        ]
       }
     },
     {
@@ -25,9 +29,13 @@ window.epirusEvents = {
       "source": "https://ipirotikos.gr/deltia-typoy/15-12-2024-choroesperida-ipeirotikoy-syndesmoy-peiraios/",
       "media": [],
       "press": {
-        "src": "https://ipirotikos.gr/wp-content/uploads/2024/11/0-02-05-9c515082155da793f2c5dfffed2ab540f120b4ec86b8ae03818fbf8a0ec30848_b53abb88cf30946f-300x169.jpg",
+        "src": "assets/event-press/event-2024-12-15.jpg",
         "format": "image",
-        "label": "Ανακοίνωση"
+        "label": "Ανακοίνωση",
+        "originalSrc": "https://ipirotikos.gr/wp-content/uploads/2024/11/0-02-05-9c515082155da793f2c5dfffed2ab540f120b4ec86b8ae03818fbf8a0ec30848_b53abb88cf30946f-300x169.jpg",
+        "pages": [
+          "assets/event-press/event-2024-12-15.jpg"
+        ]
       }
     },
     {
@@ -38,10 +46,14 @@ window.epirusEvents = {
       "source": "https://ipirotikos.gr/deltia-typoy/8-12-2019-paradosiako-glenti/",
       "media": [],
       "press": {
-        "src": "https://ipirotikos.gr/wp-content/uploads/2020/11/8-12-2019-%CF%80%CE%B1%CF%81%CE%B1%CE%B4%CE%BF%CF%83%CE%B9%CE%B1%CE%BA%CF%8C-%CE%B3%CE%BB%CE%AD%CE%BD%CF%84%CE%B9.pdf",
+        "src": "assets/event-press/event-2019-12-08.pdf",
         "format": "pdf",
         "label": "Δελτίο τύπου",
-        "pages": 2
+        "pages": [
+          "assets/event-press/event-2019-12-08-page-1.jpg",
+          "assets/event-press/event-2019-12-08-page-2.jpg"
+        ],
+        "originalSrc": "https://ipirotikos.gr/wp-content/uploads/2020/11/8-12-2019-%CF%80%CE%B1%CF%81%CE%B1%CE%B4%CE%BF%CF%83%CE%B9%CE%B1%CE%BA%CF%8C-%CE%B3%CE%BB%CE%AD%CE%BD%CF%84%CE%B9.pdf"
       }
     },
     {
@@ -52,10 +64,13 @@ window.epirusEvents = {
       "source": "https://ipirotikos.gr/deltia-typoy/9-11-2019-apo-tin-ipeiro-sti-thraki/",
       "media": [],
       "press": {
-        "src": "https://ipirotikos.gr/wp-content/uploads/2020/11/9-11-2019-%CE%B1%CF%80%CE%BF-%CF%84%CE%B7%CE%BD-%CE%97%CF%80%CE%B5%CE%B9%CF%81%CE%BF-%CF%83%CF%84%CE%B7-%CE%98%CF%81%CE%AC%CE%BA%CE%B7.pdf",
+        "src": "assets/event-press/event-2019-11-09.pdf",
         "format": "pdf",
         "label": "Δελτίο τύπου",
-        "pages": 1
+        "pages": [
+          "assets/event-press/event-2019-11-09-page-1.jpg"
+        ],
+        "originalSrc": "https://ipirotikos.gr/wp-content/uploads/2020/11/9-11-2019-%CE%B1%CF%80%CE%BF-%CF%84%CE%B7%CE%BD-%CE%97%CF%80%CE%B5%CE%B9%CF%81%CE%BF-%CF%83%CF%84%CE%B7-%CE%98%CF%81%CE%AC%CE%BA%CE%B7.pdf"
       }
     },
     {
@@ -127,10 +142,14 @@ window.epirusEvents = {
       "source": "https://ipirotikos.gr/deltia-typoy/9-12-2018-deltio-typoy-etisios-choros/",
       "media": [],
       "press": {
-        "src": "https://ipirotikos.gr/wp-content/uploads/2020/11/9-12-2018-%CE%94%CE%95%CE%9B%CE%A4%CE%99%CE%9F-%CE%A4%CE%A5%CE%A0%CE%9F%CE%A5-%CE%95%CE%A4%CE%97%CE%A3%CE%99%CE%9F%CE%A3-%CE%A7%CE%9F%CE%A1%CE%9F%CE%A3.pdf",
+        "src": "assets/event-press/event-2018-12-09.pdf",
         "format": "pdf",
         "label": "Δελτίο τύπου",
-        "pages": 2
+        "pages": [
+          "assets/event-press/event-2018-12-09-page-1.jpg",
+          "assets/event-press/event-2018-12-09-page-2.jpg"
+        ],
+        "originalSrc": "https://ipirotikos.gr/wp-content/uploads/2020/11/9-12-2018-%CE%94%CE%95%CE%9B%CE%A4%CE%99%CE%9F-%CE%A4%CE%A5%CE%A0%CE%9F%CE%A5-%CE%95%CE%A4%CE%97%CE%A3%CE%99%CE%9F%CE%A3-%CE%A7%CE%9F%CE%A1%CE%9F%CE%A3.pdf"
       }
     },
     {
@@ -141,10 +160,13 @@ window.epirusEvents = {
       "source": "https://ipirotikos.gr/deltia-typoy/18-11-2018-ipeiros-tis-agapis/",
       "media": [],
       "press": {
-        "src": "https://ipirotikos.gr/wp-content/uploads/2020/11/18-11-2018-%CE%89%CF%80%CE%B5%CE%B9%CF%81%CE%BF%CF%82-%CF%84%CE%B7%CF%82-%CE%91%CE%B3%CE%AC%CF%80%CE%B7%CF%82.pdf",
+        "src": "assets/event-press/event-2018-11-18.pdf",
         "format": "pdf",
         "label": "Δελτίο τύπου",
-        "pages": 1
+        "pages": [
+          "assets/event-press/event-2018-11-18-page-1.jpg"
+        ],
+        "originalSrc": "https://ipirotikos.gr/wp-content/uploads/2020/11/18-11-2018-%CE%89%CF%80%CE%B5%CE%B9%CF%81%CE%BF%CF%82-%CF%84%CE%B7%CF%82-%CE%91%CE%B3%CE%AC%CF%80%CE%B7%CF%82.pdf"
       }
     },
     {
@@ -155,10 +177,14 @@ window.epirusEvents = {
       "source": "https://ipirotikos.gr/deltia-typoy/18-10-2018-diagonismos-fagitoy/",
       "media": [],
       "press": {
-        "src": "https://ipirotikos.gr/wp-content/uploads/2020/11/18-10-2018-%CE%B4%CE%B9%CE%B1%CE%B3%CF%89%CE%BD%CE%B9%CF%83%CE%BC%CF%8C%CF%82-%CF%86%CE%B1%CE%B3%CE%B7%CF%84%CE%BF%CF%8D.pdf",
+        "src": "assets/event-press/event-2018-10-18.pdf",
         "format": "pdf",
         "label": "Δελτίο τύπου",
-        "pages": 2
+        "pages": [
+          "assets/event-press/event-2018-10-18-page-1.jpg",
+          "assets/event-press/event-2018-10-18-page-2.jpg"
+        ],
+        "originalSrc": "https://ipirotikos.gr/wp-content/uploads/2020/11/18-10-2018-%CE%B4%CE%B9%CE%B1%CE%B3%CF%89%CE%BD%CE%B9%CF%83%CE%BC%CF%8C%CF%82-%CF%86%CE%B1%CE%B3%CE%B7%CF%84%CE%BF%CF%8D.pdf"
       }
     },
     {
@@ -169,10 +195,13 @@ window.epirusEvents = {
       "source": "https://ipirotikos.gr/deltia-typoy/13-12-2015-deltio-typoy-artoklasia-gia-to-zalo/",
       "media": [],
       "press": {
-        "src": "https://ipirotikos.gr/wp-content/uploads/2020/11/13-12-2015-%CE%94%CE%B5%CE%BB%CF%84%CE%AF%CE%BF-%CF%84%CF%8D%CF%80%CE%BF%CF%85-%CE%B1%CF%81%CF%84%CE%BF%CE%BA%CE%BB%CE%B1%CF%83%CE%AF%CE%B1-%CE%B3%CE%B9%CE%B1-%CF%84%CE%BF-%CE%96%CE%AC%CE%BB%CE%BF%CE%B3%CE%B3%CE%BF.pdf",
+        "src": "assets/event-press/event-2015-12-13.pdf",
         "format": "pdf",
         "label": "Δελτίο τύπου",
-        "pages": 1
+        "pages": [
+          "assets/event-press/event-2015-12-13-page-1.jpg"
+        ],
+        "originalSrc": "https://ipirotikos.gr/wp-content/uploads/2020/11/13-12-2015-%CE%94%CE%B5%CE%BB%CF%84%CE%AF%CE%BF-%CF%84%CF%8D%CF%80%CE%BF%CF%85-%CE%B1%CF%81%CF%84%CE%BF%CE%BA%CE%BB%CE%B1%CF%83%CE%AF%CE%B1-%CE%B3%CE%B9%CE%B1-%CF%84%CE%BF-%CE%96%CE%AC%CE%BB%CE%BF%CE%B3%CE%B3%CE%BF.pdf"
       }
     },
     {
@@ -183,10 +212,13 @@ window.epirusEvents = {
       "source": "https://ipirotikos.gr/deltia-typoy/2-11-2014-deltio-typoy-ekdilosi-gia-tin-epete/",
       "media": [],
       "press": {
-        "src": "https://ipirotikos.gr/wp-content/uploads/2020/11/2-11-2014-%CE%B4%CE%B5%CE%BB%CF%84%CE%B9%CE%BF-%CF%84%CF%85%CF%80%CE%BF%CF%85-%CE%95%CE%9A%CE%94%CE%97%CE%9B%CE%A9%CE%A3%CE%97-%CE%93%CE%99%CE%91-%CE%A4%CE%97%CE%9D-%CE%95%CE%A0%CE%95%CE%A4%CE%95%CE%99%CE%9F-%CE%A4%CE%9F%CE%A5-%CE%9F%CE%A7%CE%99.pdf",
+        "src": "assets/event-press/event-2014-11-02.pdf",
         "format": "pdf",
         "label": "Δελτίο τύπου",
-        "pages": 1
+        "pages": [
+          "assets/event-press/event-2014-11-02-page-1.jpg"
+        ],
+        "originalSrc": "https://ipirotikos.gr/wp-content/uploads/2020/11/2-11-2014-%CE%B4%CE%B5%CE%BB%CF%84%CE%B9%CE%BF-%CF%84%CF%85%CF%80%CE%BF%CF%85-%CE%95%CE%9A%CE%94%CE%97%CE%9B%CE%A9%CE%A3%CE%97-%CE%93%CE%99%CE%91-%CE%A4%CE%97%CE%9D-%CE%95%CE%A0%CE%95%CE%A4%CE%95%CE%99%CE%9F-%CE%A4%CE%9F%CE%A5-%CE%9F%CE%A7%CE%99.pdf"
       }
     },
     {
@@ -197,10 +229,16 @@ window.epirusEvents = {
       "source": "https://ipirotikos.gr/deltia-typoy/23-2-14-eortasmos-apeleytherosis-ioanninon/",
       "media": [],
       "press": {
-        "src": "https://ipirotikos.gr/wp-content/uploads/2020/11/23-2-14-%CE%95%CE%9F%CE%A1%CE%A4%CE%91%CE%A3%CE%9C%CE%9F%CE%A3-%CE%91%CE%A0%CE%95%CE%9B%CE%95%CE%A5%CE%98%CE%95%CE%A1%CE%A9%CE%A3%CE%97%CE%A3-%CE%99%CE%A9%CE%91%CE%9D%CE%9D%CE%99%CE%9D%CE%A9%CE%9D-%CE%95%CE%A5%CE%91%CE%93%CE%93%CE%95%CE%9B%CE%99%CE%A3%CE%A4%CE%A1%CE%99%CE%91.pdf",
+        "src": "assets/event-press/event-2014-02-23.pdf",
         "format": "pdf",
         "label": "Δελτίο τύπου",
-        "pages": 4
+        "pages": [
+          "assets/event-press/event-2014-02-23-page-1.jpg",
+          "assets/event-press/event-2014-02-23-page-2.jpg",
+          "assets/event-press/event-2014-02-23-page-3.jpg",
+          "assets/event-press/event-2014-02-23-page-4.jpg"
+        ],
+        "originalSrc": "https://ipirotikos.gr/wp-content/uploads/2020/11/23-2-14-%CE%95%CE%9F%CE%A1%CE%A4%CE%91%CE%A3%CE%9C%CE%9F%CE%A3-%CE%91%CE%A0%CE%95%CE%9B%CE%95%CE%A5%CE%98%CE%95%CE%A1%CE%A9%CE%A3%CE%97%CE%A3-%CE%99%CE%A9%CE%91%CE%9D%CE%9D%CE%99%CE%9D%CE%A9%CE%9D-%CE%95%CE%A5%CE%91%CE%93%CE%93%CE%95%CE%9B%CE%99%CE%A3%CE%A4%CE%A1%CE%99%CE%91.pdf"
       }
     },
     {
@@ -211,10 +249,14 @@ window.epirusEvents = {
       "source": "https://ipirotikos.gr/deltia-typoy/24-2-13-100-chronia-apo-tin-apeleytherosi-ton-ioa/",
       "media": [],
       "press": {
-        "src": "https://ipirotikos.gr/wp-content/uploads/2020/11/24-2-13-100-%CF%87%CF%81%CF%8C%CE%BD%CE%B9%CE%B1-%CE%B1%CF%80%CE%BF-%CF%84%CE%B7%CE%BD-%CE%B1%CF%80%CE%B5%CE%BB%CE%B5%CF%85%CE%B8%CE%AD%CF%81%CF%89%CF%83%CE%B7-%CF%84%CF%89%CE%BD-%CE%99%CF%89%CE%B1%CE%BD%CE%BD%CE%AF%CE%BD%CF%89%CE%BD.pdf",
+        "src": "assets/event-press/event-2013-02-24.pdf",
         "format": "pdf",
         "label": "Δελτίο τύπου",
-        "pages": 2
+        "pages": [
+          "assets/event-press/event-2013-02-24-page-1.jpg",
+          "assets/event-press/event-2013-02-24-page-2.jpg"
+        ],
+        "originalSrc": "https://ipirotikos.gr/wp-content/uploads/2020/11/24-2-13-100-%CF%87%CF%81%CF%8C%CE%BD%CE%B9%CE%B1-%CE%B1%CF%80%CE%BF-%CF%84%CE%B7%CE%BD-%CE%B1%CF%80%CE%B5%CE%BB%CE%B5%CF%85%CE%B8%CE%AD%CF%81%CF%89%CF%83%CE%B7-%CF%84%CF%89%CE%BD-%CE%99%CF%89%CE%B1%CE%BD%CE%BD%CE%AF%CE%BD%CF%89%CE%BD.pdf"
       }
     },
     {
@@ -268,10 +310,14 @@ window.epirusEvents = {
         }
       ],
       "press": {
-        "src": "https://ipirotikos.gr/wp-content/uploads/2020/11/9-1-2010-%CE%B4%CE%B5%CE%BB%CF%84%CE%B9%CE%BF-%CF%84%CF%85%CF%80%CE%BF%CF%85-%CE%BA%CE%BF%CF%80%CE%B7-%CF%80%CE%B9%CF%84%CE%B1%CF%82.doc.pdf",
+        "src": "assets/event-press/event-2011-05-04.pdf",
         "format": "pdf",
         "label": "Δελτίο τύπου",
-        "pages": 2
+        "pages": [
+          "assets/event-press/event-2011-05-04-page-1.jpg",
+          "assets/event-press/event-2011-05-04-page-2.jpg"
+        ],
+        "originalSrc": "https://ipirotikos.gr/wp-content/uploads/2020/11/9-1-2010-%CE%B4%CE%B5%CE%BB%CF%84%CE%B9%CE%BF-%CF%84%CF%85%CF%80%CE%BF%CF%85-%CE%BA%CE%BF%CF%80%CE%B7-%CF%80%CE%B9%CF%84%CE%B1%CF%82.doc.pdf"
       }
     },
     {
@@ -333,10 +379,13 @@ window.epirusEvents = {
         }
       ],
       "press": {
-        "src": "https://ipirotikos.gr/wp-content/uploads/2020/11/15-1-2011-%CF%80%CF%81%CF%89%CF%84%CE%BF%CF%87%CF%81%CE%BF%CE%BD%CE%B9%CE%AC%CF%84%CE%B9%CE%BA%CE%B7-%CE%B5%CE%BA%CE%B4%CE%AE%CE%BB%CF%89%CF%83%CE%B7.pdf",
+        "src": "assets/event-press/event-2011-01-15.pdf",
         "format": "pdf",
         "label": "Δελτίο τύπου",
-        "pages": 1
+        "pages": [
+          "assets/event-press/event-2011-01-15-page-1.jpg"
+        ],
+        "originalSrc": "https://ipirotikos.gr/wp-content/uploads/2020/11/15-1-2011-%CF%80%CF%81%CF%89%CF%84%CE%BF%CF%87%CF%81%CE%BF%CE%BD%CE%B9%CE%AC%CF%84%CE%B9%CE%BA%CE%B7-%CE%B5%CE%BA%CE%B4%CE%AE%CE%BB%CF%89%CF%83%CE%B7.pdf"
       }
     },
     {
@@ -364,10 +413,15 @@ window.epirusEvents = {
         }
       ],
       "press": {
-        "src": "https://ipirotikos.gr/wp-content/uploads/2020/11/17-10-10-%CE%93%CF%85%CE%BD%CE%B1%CE%AF%CE%BA%CE%B1-%CF%84%CE%B7%CF%82-%CE%97%CF%80%CE%B5%CE%AF%CF%81%CE%BF%CF%85.pdf",
+        "src": "assets/event-press/event-2010-10-17.pdf",
         "format": "pdf",
         "label": "Δελτίο τύπου",
-        "pages": 3
+        "pages": [
+          "assets/event-press/event-2010-10-17-page-1.jpg",
+          "assets/event-press/event-2010-10-17-page-2.jpg",
+          "assets/event-press/event-2010-10-17-page-3.jpg"
+        ],
+        "originalSrc": "https://ipirotikos.gr/wp-content/uploads/2020/11/17-10-10-%CE%93%CF%85%CE%BD%CE%B1%CE%AF%CE%BA%CE%B1-%CF%84%CE%B7%CF%82-%CE%97%CF%80%CE%B5%CE%AF%CF%81%CE%BF%CF%85.pdf"
       }
     },
     {
@@ -444,10 +498,16 @@ window.epirusEvents = {
         }
       ],
       "press": {
-        "src": "https://ipirotikos.gr/wp-content/uploads/2020/11/21-2-10-%CE%94%CE%95%CE%9B%CE%A4%CE%99%CE%9F-%CE%A4%CE%A5%CE%A0%CE%9F%CE%A5-%CE%95%CE%9F%CE%A1%CE%A4%CE%91%CE%A3%CE%9C%CE%9F%CE%A3-%CE%91%CE%A0%CE%95%CE%9B%CE%95%CE%A5%CE%98%CE%95%CE%A1%CE%A9%CE%A3%CE%97%CE%A3.pdf",
+        "src": "assets/event-press/event-2010-02-21.pdf",
         "format": "pdf",
         "label": "Δελτίο τύπου",
-        "pages": 4
+        "pages": [
+          "assets/event-press/event-2010-02-21-page-1.jpg",
+          "assets/event-press/event-2010-02-21-page-2.jpg",
+          "assets/event-press/event-2010-02-21-page-3.jpg",
+          "assets/event-press/event-2010-02-21-page-4.jpg"
+        ],
+        "originalSrc": "https://ipirotikos.gr/wp-content/uploads/2020/11/21-2-10-%CE%94%CE%95%CE%9B%CE%A4%CE%99%CE%9F-%CE%A4%CE%A5%CE%A0%CE%9F%CE%A5-%CE%95%CE%9F%CE%A1%CE%A4%CE%91%CE%A3%CE%9C%CE%9F%CE%A3-%CE%91%CE%A0%CE%95%CE%9B%CE%95%CE%A5%CE%98%CE%95%CE%A1%CE%A9%CE%A3%CE%97%CE%A3.pdf"
       }
     },
     {

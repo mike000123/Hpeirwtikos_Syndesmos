@@ -1,4 +1,4 @@
-/* Open original press documents inside the new site's own reader. */
+/* Read locally archived document pages without a browser PDF plug-in. */
 (() => {
   'use strict';
   const dialog = document.querySelector('#event-press-dialog');
@@ -16,14 +16,15 @@
   let opener = null;
   let savedOverflow = '';
 
+  let loadTimer;
+  let session = 0;
+  function localFile(value, preview = false) {
+    return typeof value === 'string' && /^assets\/event-press\/event-\d{4}-\d{2}-\d{2}(?:-page-\d+)?\.(?:pdf|jpg)$/.test(value) &&
+      (!preview || value.endsWith('.jpg')) ? value : null;
+  }
   function documentURL(press) {
-    try {
-      const url = new URL(press?.src);
-      if (url.origin !== 'https://ipirotikos.gr' || !url.pathname.startsWith('/wp-content/uploads/')) return null;
-      const extension = url.pathname.toLowerCase();
-      return (press.format === 'pdf' && extension.endsWith('.pdf')) ||
-        (press.format === 'image' && /\.(jpe?g|png|webp)$/.test(extension)) ? url.href : null;
-    } catch { return null; }
+    return localFile(press?.src) && Array.isArray(press.pages) && press.pages.length &&
+      press.pages.every(page => localFile(page, true)) ? press.src : null;
   }
 
   function open(event, trigger) {
@@ -44,29 +45,40 @@
     content.replaceChildren();
     status.hidden = false;
     status.textContent = 'Φόρτωση αρχείου…';
-    const documentNode = document.createElement(event.press.format === 'pdf' ? 'iframe' : 'img');
-    if (event.press.format === 'pdf') {
-      documentNode.className = 'event-press-pdf';
-      documentNode.title = `Δελτίο τύπου: ${event.title}, ${event.dateLabel}`;
-      documentNode.referrerPolicy = 'strict-origin-when-cross-origin';
-      documentNode.src = `${src}#view=FitH&toolbar=1&navpanes=0`;
-    } else {
-      documentNode.className = 'event-press-image';
-      documentNode.alt = `${event.press.label}: ${event.title}, ${event.dateLabel}`;
-      documentNode.decoding = 'async';
-      documentNode.src = src;
-    }
-    documentNode.addEventListener('load', () => {
-      if (content.firstElementChild === documentNode) status.hidden = true;
-    }, { once: true });
-    documentNode.addEventListener('error', () => {
-      if (content.firstElementChild !== documentNode) return;
-      content.replaceChildren();
-      status.hidden = false;
-      status.textContent = 'Το αρχείο δεν φορτώθηκε. Μπορείτε να το ανοίξετε από τον σύνδεσμο παρακάτω.';
-    }, { once: true });
-    content.append(documentNode);
+    const current = ++session;
+    let errors = 0;
+    loadTimer = setTimeout(() => {
+      if (current === session && dialog.open) {
+        status.hidden = false;
+        status.textContent = 'Η φόρτωση καθυστερεί. Μπορείτε να ανοίξετε το αρχείο από τον σύνδεσμο παρακάτω.';
+      }
+    }, 12000);
+    event.press.pages.forEach((page, index) => {
+      const image = document.createElement('img');
+      image.className = event.press.format === 'pdf' ? 'event-press-image event-press-page' : 'event-press-image';
+      image.alt = `${event.press.label}: ${event.title}, ${event.dateLabel} — Σελίδα ${index + 1} από ${event.press.pages.length}`;
+      image.decoding = 'async';
+      image.loading = index === 0 ? 'eager' : 'lazy';
+      image.addEventListener('load', () => {
+        if (current !== session) return;
+        if (index === 0) {
+          clearTimeout(loadTimer);
+          if (!errors) status.hidden = true;
+        }
+      }, { once: true });
+      image.addEventListener('error', () => {
+        if (current !== session) return;
+        errors++;
+        clearTimeout(loadTimer);
+        status.hidden = false;
+        status.textContent = 'Μια σελίδα δεν φορτώθηκε. Μπορείτε να ανοίξετε το αρχείο από τον σύνδεσμο παρακάτω.';
+      }, { once: true });
+      image.src = page;
+      content.append(image);
+    });
     try { dialog.showModal(); } catch {
+      clearTimeout(loadTimer);
+      session++;
       content.replaceChildren();
       opener = null;
       return false;
@@ -90,6 +102,8 @@
     if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close();
   });
   dialog.addEventListener('close', () => {
+    clearTimeout(loadTimer);
+    session++;
     content.replaceChildren();
     status.textContent = '';
     status.hidden = true;

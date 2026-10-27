@@ -1,0 +1,49 @@
+/* Article-only layout; the existing photo header and portal card are preserved. */
+.polyphony-page .article-grid{display:grid!important;grid-template-columns:minmax(0,1fr) 225px;gap:36px}
+.polyphony-page .article-body{min-width:0;font-size:1.06rem;line-height:1.95}
+.polyphony-page .article-body section{margin-top:48px;scroll-margin-top:100px}
+.polyphony-page .article-body h2{font-size:clamp(1.7rem,2.7vw,2.2rem);line-height:1.3;margin:12px 0 25px;text-wrap:balance}
+.polyphony-page .p-lede{font-size:1.18rem;line-height:1.9}
+.polyphony-page .p-dedication{font:italic 1.05rem/1.8 Georgia,serif;color:var(--forest)}
+.polyphony-page .p-chapter{font-size:.73rem;letter-spacing:.08em;font-weight:700;color:#795b30}
+.polyphony-page .p-ref{display:inline-block;vertical-align:super;font-size:.72rem;line-height:1.2;padding:2px 3px;color:var(--forest);font-weight:700}
+.polyphony-page .p-listen-jump{display:inline-block;padding:12px 18px;border:1px solid #a67e45;border-radius:6px;color:var(--forest);font-size:.9rem;font-weight:700;margin:4px 0}
+.polyphony-page .p-text-link,.polyphony-page figcaption a,.polyphony-page .p-sources a{text-decoration:underline;text-underline-offset:3px;color:var(--forest)}
+.polyphony-page a:focus-visible{outline:3px solid #9b7131;outline-offset:4px}
+.polyphony-page .p-photo{max-width:544px;margin:30px auto;background:#eee2d0;border:1px solid #dccbb7;border-radius:10px;overflow:hidden}
+.polyphony-page .p-photo img{display:block;width:100%;height:auto}
+.polyphony-page figcaption{font-size:.77rem;line-height:1.8;color:#594b40}
+.polyphony-page .p-photo figcaption{padding:16px 20px}
+.polyphony-page .p-voices{margin:28px 0;padding:26px;background:#eee2d0;border-radius:12px;border:1px solid #dccbb7}
+.polyphony-page .p-voices-centre{text-align:center;font:italic 1.5rem/1.4 Georgia,serif;color:var(--forest);padding:5px 0 24px}
+.polyphony-page .p-voices dl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 20px}
+.polyphony-page .p-voices dl>div{background:#fffaf2;padding:16px 12px;border-top:3px solid #a48048;border-radius:6px;text-align:center}
+.polyphony-page .p-voices dt{font:500 1.15rem/1.4 Georgia,serif;color:var(--forest);margin-bottom:8px}
+.polyphony-page .p-voices dd{font-size:.82rem;line-height:1.65;margin:0}
+.polyphony-page .p-quote,.polyphony-page .p-verse{margin:28px 0;padding:22px 25px;border-left:3px solid #a48048;background:#eee2d0}
+.polyphony-page blockquote{font:italic clamp(1.25rem,2.5vw,1.6rem)/1.7 Georgia,serif;color:var(--forest);margin:0 0 15px}
+.polyphony-page .p-verse{background:transparent;padding-left:25px}
+.polyphony-page .p-video{margin:30px 0}
+.polyphony-page .p-video-frame{aspect-ratio:16/9;background:#47151d;border-radius:10px;overflow:hidden}
+.polyphony-page .p-video iframe{display:block;width:100%;height:100%;border:0}
+.polyphony-page .p-video figcaption{padding-top:14px}
+.polyphony-page .p-contents{padding:22px;position:static}
+.polyphony-page .p-contents h2{font:500 1.3rem Georgia,serif;margin:0 0 18px;color:var(--forest)}
+.polyphony-page .p-contents ol{padding-left:20px;margin:0;font-size:.87rem;line-height:1.75}
+.polyphony-page .p-contents li{padding:6px 0}
+.polyphony-page .p-contents a:hover{text-decoration:underline;text-underline-offset:4px}
+.polyphony-page .p-companion{display:block;padding-top:18px;margin-top:20px;border-top:1px solid #d4c1aa;font-size:.8rem;line-height:1.8}
+.polyphony-page .p-listen-cards{display:grid;gap:16px}
+.polyphony-page .p-listen-cards article{padding:25px;background:#eee2d0;border:1px solid #dccbb7;border-radius:10px}
+.polyphony-page .p-record-year{font-size:.74rem;color:#795b30;font-weight:700}
+.polyphony-page .p-listen-cards h3{font:500 1.45rem/1.4 Georgia,serif;color:var(--forest);margin:9px 0 14px}
+.polyphony-page .p-listen-cards p{font-size:.96rem;margin-bottom:17px}
+.polyphony-page .p-listen-cards a{font-size:.85rem;font-weight:700;color:var(--forest);text-decoration:underline;text-underline-offset:4px}
+.polyphony-page .p-card-ref{margin-left:7px;white-space:nowrap}
+.polyphony-page .p-closing{border-top:1px solid #d7c6b0;padding-top:30px}
+.polyphony-page .p-sources{border-top:1px solid #d7c6b0;padding-top:25px;font-size:.86rem;line-height:1.8}
+.polyphony-page .p-sources ol{padding-left:23px}
+.polyphony-page .p-sources li{margin-bottom:15px;scroll-margin-top:100px;overflow-wrap:anywhere}
+@media(max-width:1000px){.polyphony-page .article-grid{grid-template-columns:minmax(0,1fr)}.polyphony-page .p-contents{order:-1}.polyphony-page .p-contents ol{columns:2;column-gap:28px}.polyphony-page .p-contents li{break-inside:avoid}}
+@media(max-width:600px){.polyphony-page .article-grid{gap:30px;margin-top:35px}.polyphony-page .p-lede{font-size:1.1rem}.polyphony-page .p-contents ol{columns:1}.polyphony-page .p-voices{padding:22px 18px}.polyphony-page .p-voices dl{grid-template-columns:minmax(0,1fr)}.polyphony-page .p-voices dl>div{text-align:left}.polyphony-page .p-quote{padding:20px}.polyphony-page .p-listen-cards article{padding:22px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

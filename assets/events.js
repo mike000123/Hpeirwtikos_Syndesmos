@@ -125,7 +125,18 @@
     date.textContent = event.dateLabel;
     note.textContent = event.note || '';
     note.hidden = !event.note;
-    source.href = event.source;
+    source.href = event.press?.src || event.source;
+    if (event.press?.src) {
+      source.dataset.eventPress = event.id;
+      source.textContent = 'Διαβάστε το δελτίο τύπου →';
+      source.setAttribute('aria-haspopup', 'dialog');
+      source.setAttribute('aria-controls', 'event-press-dialog');
+    } else {
+      delete source.dataset.eventPress;
+      source.textContent = 'Η καταγραφή στην αρχική ιστοσελίδα ↗';
+      source.removeAttribute('aria-haspopup');
+      source.removeAttribute('aria-controls');
+    }
     previous.hidden = next.hidden = media.length < 2;
     buildThumbnails();
     savedOverflow = document.body.style.overflow;
@@ -176,3 +187,4 @@
     trigger?.focus({ preventScroll: true });
   });
 })();
+

@@ -12,6 +12,7 @@ function setup({ supported = true } = {}) {
     constructor(tag = 'div') { this.tagName = tag.toUpperCase(); this.children = []; this.listeners = {}; this.attrs = {}; this.style = {}; this.dataset = {}; this.hidden = false; }
     setAttribute(k, v) { this.attrs[k] = String(v); }
     getAttribute(k) { return this.attrs[k]; }
+    removeAttribute(k) { delete this.attrs[k]; }
     addEventListener(type, fn, options = {}) { (this.listeners[type] ||= []).push({ fn, once: options.once }); }
     emit(type, detail = {}) {
       const event = { target: this, button: 0, defaultPrevented: false, preventDefault() { this.defaultPrevented = true; }, ...detail };

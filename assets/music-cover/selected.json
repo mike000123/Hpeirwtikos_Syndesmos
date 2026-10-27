@@ -1,0 +1,17 @@
+{
+  "file": "assets/music-cover/association-2019-2.webp",
+  "width": 1200,
+  "height": 901,
+  "original": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/7-4-2019_%CE%97%CE%A0%CE%95%CE%99%CE%A1%CE%9F_%CE%A4%CE%97%CE%A3_%CE%91%CE%93%CE%91%CE%A0%CE%97%CE%A3_2862_%281%29.jpg?bwg=1604513930",
+  "originalFilename": "7-4-2019_ΗΠΕΙΡΟ_ΤΗΣ_ΑΓΑΠΗΣ_2862_(1).jpg",
+  "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
+  "event": "Ήπειρος της αγάπης",
+  "eventDate": "2019-04-07",
+  "credit": "Φωτογραφικό αρχείο Ηπειρωτικού Συνδέσμου Πειραιώς",
+  "changes": "Resize and format conversion only; no cropping, generative edits or retouching.",
+  "usage": [
+    "ipeiros.html — Μουσική & χορός card",
+    "mousiki.html — matching photo header"
+  ],
+  "notes": "Replaces unrelated stock concert image. Existing clean-header styling is retained. Actual association event photograph; no performer identities or particular dance are inferred. Source event/date derived from existing association gallery catalogue. Candidate 2 was visually reviewed."
+}

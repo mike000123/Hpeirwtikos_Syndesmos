@@ -1,7 +1,5 @@
 name: Import association dance cover candidates
 on:
-  push:
-    paths: ['.github/workflows/import-music-cover.yml']
   workflow_dispatch:
 permissions:
   contents: write

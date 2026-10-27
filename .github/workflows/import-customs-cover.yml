@@ -1,7 +1,5 @@
 name: Import customs cover photograph
 on:
-  push:
-    paths: ['.github/workflows/import-customs-cover.yml']
   workflow_dispatch:
 permissions:
   contents: write

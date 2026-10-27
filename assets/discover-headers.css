@@ -1,0 +1,8 @@
+/* Six Discover Epirus articles: preserve the card photograph's original colours. */
+.article-hero.article-hero-photo.article-hero-clear{background:#302824}
+.article-hero.article-hero-photo.article-hero-clear::before,
+.article-hero.article-hero-photo.article-hero-clear::after{content:none;display:none;background:none}
+.article-hero-clear .article-hero-image{filter:none;opacity:1;mix-blend-mode:normal}
+.article-hero.article-hero-clear h1,
+.article-hero.article-hero-clear>span,
+.article-hero.article-hero-clear p{color:#fff;text-shadow:0 2px 5px rgba(0,0,0,.95),0 0 14px rgba(0,0,0,.7)}

@@ -1,7 +1,5 @@
 name: Import regional route card photographs
 on:
-  push:
-    paths: ['.github/workflows/import-region-cards.yml']
   workflow_dispatch:
 permissions:
   contents: write

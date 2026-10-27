@@ -1,7 +1,5 @@
 name: Import Woman of Pindus photograph
 on:
-  push:
-    paths: ['.github/workflows/import-pindus-woman.yml']
   workflow_dispatch:
 permissions:
   contents: write

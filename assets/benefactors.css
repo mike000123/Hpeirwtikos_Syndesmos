@@ -1,0 +1,39 @@
+/* Editorial styles scoped to this tribute; preserve existing hero and card imagery. */
+.benefactors-page .article-grid{display:grid!important;grid-template-columns:minmax(0,1fr) 225px;gap:36px}
+.benefactors-page .article-body{min-width:0;font-size:1.06rem;line-height:1.95}
+.benefactors-page .article-body section{scroll-margin-top:110px;margin-top:48px}
+.benefactors-page .article-body h2{font-size:clamp(1.65rem,2.5vw,2.15rem);line-height:1.3;margin:12px 0 25px;text-wrap:balance}
+.benefactors-page .article-body h3{font:500 1.35rem/1.4 Georgia,serif;color:var(--forest);margin:0 0 15px}
+.benefactors-page .b-lede{font-size:1.18rem;line-height:1.95}
+.benefactors-page .b-dedication{font-family:Georgia,serif;font-style:italic;color:var(--forest);line-height:1.7}
+.benefactors-page .b-chapter{font-size:.73rem;letter-spacing:.09em;font-weight:700;color:#795b30}
+.benefactors-page .b-profile{display:grid;grid-template-columns:minmax(150px,190px) minmax(0,1fr);gap:25px;align-items:start}
+.benefactors-page .b-profile>div{min-width:0}
+.benefactors-page .b-portrait{margin:0;min-width:0;background:#eee2d0;border:1px solid #dccbb7;border-radius:8px;overflow:hidden}
+.benefactors-page .b-portrait>a{display:block;padding:12px;background:#e7d9c4}
+.benefactors-page .b-portrait img{display:block;width:100%;height:auto;max-height:310px;object-fit:contain}
+.benefactors-page .b-portrait figcaption{padding:12px 14px;font-size:.74rem;line-height:1.65;color:#594b40}
+.benefactors-page .b-portrait figcaption strong{display:block;font-size:.84rem;margin-bottom:5px;color:var(--deep)}
+.benefactors-page .b-portrait figcaption a,.benefactors-page .b-sources a{text-decoration:underline;text-underline-offset:3px;color:#721f2d}
+.benefactors-page .b-portrait-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-bottom:25px}
+.benefactors-page .b-portrait-pair .b-portrait img{height:270px}
+.benefactors-page .b-ref{display:inline-block;vertical-align:super;font-size:.72rem;line-height:1.2;padding:2px 3px;color:var(--forest);font-weight:700}
+.benefactors-page a:focus-visible{outline:3px solid #9b7131;outline-offset:4px;border-radius:2px}
+.benefactors-page .b-quotation{margin:22px 0;padding:20px 0 20px 18px;border-left:3px solid #b48a50}
+.benefactors-page .b-quotation blockquote{margin:0 0 12px;font:italic 1.2rem/1.7 Georgia,serif;color:var(--forest)}
+.benefactors-page .b-quotation figcaption{font-size:.78rem;line-height:1.7}
+.benefactors-page .b-highlight{background:#eee2d0;border-radius:12px;padding:25px}
+.benefactors-page .b-closing{border-top:1px solid #d7c6b0;padding-top:30px}
+.benefactors-page .b-contents{padding:22px;position:static}
+.benefactors-page .b-contents h2{font:500 1.3rem Georgia,serif;margin:0 0 20px;color:var(--forest)}
+.benefactors-page .b-contents ol{padding-left:20px;margin:0;font-size:.88rem;line-height:1.75}
+.benefactors-page .b-contents li{padding:5px 0}
+.benefactors-page .b-contents a:hover{text-decoration:underline;text-underline-offset:4px}
+.benefactors-page .b-side-note{font-size:.82rem;line-height:1.8;margin:22px 0}
+.benefactors-page .b-companion{display:block;padding-top:18px;border-top:1px solid #d4c1aa;font-size:.8rem;line-height:1.8}
+.benefactors-page .b-sources{border-top:1px solid #d7c6b0;padding-top:25px;font-size:.86rem;line-height:1.8}
+.benefactors-page .b-sources ol{padding-left:23px}
+.benefactors-page .b-sources li{margin-bottom:15px;scroll-margin-top:110px;overflow-wrap:anywhere}
+@media(max-width:1000px){.benefactors-page .article-grid{grid-template-columns:minmax(0,1fr)}.benefactors-page .b-contents{order:-1}.benefactors-page .b-contents ol{columns:2;column-gap:30px}.benefactors-page .b-contents li{break-inside:avoid}.benefactors-page .b-side-note{display:none}}
+@media(max-width:600px){.benefactors-page .article-grid{gap:30px;margin-top:35px}.benefactors-page .b-profile{grid-template-columns:minmax(0,1fr);gap:23px}.benefactors-page .b-profile .b-portrait{width:min(100%,300px);justify-self:center}.benefactors-page .b-portrait img{max-height:300px}.benefactors-page .b-portrait-pair{gap:12px}.benefactors-page .b-portrait-pair .b-portrait img{height:190px}.benefactors-page .b-portrait figcaption{padding:11px;font-size:.72rem}.benefactors-page .b-contents ol{columns:1}.benefactors-page .b-highlight{padding:22px 19px}.benefactors-page .b-lede{font-size:1.1rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

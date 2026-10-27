@@ -1,7 +1,5 @@
 name: Import Metsovo vineyard media
 on:
-  push:
-    paths: ['.github/workflows/import-vineyard.yml']
   workflow_dispatch:
 permissions:
   contents: write

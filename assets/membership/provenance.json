@@ -8,5 +8,21 @@
     1024
   ],
   "visibleCredit": "Ενδεικτική εικονογράφηση με τεχνητή νοημοσύνη",
-  "placement": "melos.html hero only"
+  "placement": "melos.html hero only",
+  "danceIllustration": {
+    "asset": "approved-mockup.webp",
+    "type": "AI-generated illustrative artwork from the approved design mockup",
+    "description": "Το ακριβές ζευγάρι χορευτών του εγκεκριμένου mockup, στην κάτω αριστερή εικονογράφηση. Το SVG viewport προβάλλει μόνο αυτή την περιοχή του αρχικού σχεδίου.",
+    "sourceDimensions": [
+      1024,
+      1536
+    ],
+    "viewBox": [
+      42,
+      1212,
+      315,
+      220
+    ],
+    "placement": "melos.html#xoros decorative illustration only"
+  }
 }

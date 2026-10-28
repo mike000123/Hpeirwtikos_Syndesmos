@@ -5,7 +5,7 @@
  const dialog=document.querySelector('#album-reader');
  if(!trigger||!dialog)return;
  const $=selector=>dialog.querySelector(selector);
- const viewport=$('.album-viewport'),book=$('.album-book'),status=$('[data-album-status]');
+ const viewport=$('.album-viewport'),canvas=$('.album-canvas'),book=$('.album-book'),status=$('[data-album-status]');
  const prev=$('[data-album-prev]'),next=$('[data-album-next]'),indicator=$('[data-album-indicator]');
  const range=$('[data-album-range]'),goTo=$('[data-album-goto]');
  const zoomOut=$('[data-album-zoom-out]'),zoomIn=$('[data-album-zoom-in]'),zoomValue=$('[data-album-zoom-value]');
@@ -29,6 +29,14 @@
   document.body.style.overflow=locked.body;
   locked=null;
  };
+ const pageSize=pages=>{
+  const ratio=catalog.pages[pages[0]].width/catalog.pages[pages[0]].height;
+  const style=getComputedStyle(canvas);
+  const horizontal=parseFloat(style.paddingLeft)+parseFloat(style.paddingRight);
+  const vertical=parseFloat(style.paddingTop)+parseFloat(style.paddingBottom);
+  const width=Math.max(45,Math.min((viewport.clientWidth-horizontal)/(wide.matches?2:1),(viewport.clientHeight-vertical)*ratio));
+  return{width,height:width/ratio};
+ };
  const sizePages=()=>{
   if(!active()||!catalog)return;
   if(turn){
@@ -38,13 +46,11 @@
   const pages=shown.length?shown:visible();
   const count=pages.length;
   if(!count)return;
-  const ratio=catalog.pages[pages[0]].width/catalog.pages[pages[0]].height;
-  const padding=wide.matches?80:32;
   // The closed cover has the same physical page size as an open spread.
-  const fitted=Math.max(45,Math.min((viewport.clientWidth-padding)/(wide.matches?2:1),(viewport.clientHeight-(wide.matches?40:28))*ratio));
+  const fitted=pageSize(pages);
   book.querySelectorAll('.album-page').forEach(page=>{
-   page.style.width=Math.floor(fitted*zoom)+'px';
-   page.style.height=Math.floor(fitted*zoom/ratio)+'px';
+   page.style.width=Math.floor(fitted.width*zoom)+'px';
+   page.style.height=Math.floor(fitted.height*zoom)+'px';
   });
   viewport.classList.toggle('is-zoomed',zoom>1);
  };
@@ -52,7 +58,9 @@
   const pages=visible();
   const first=pages[0],last=pages[pages.length-1];
   prev.disabled=first===0;next.disabled=last===catalog.pages.length-1;
-  indicator.textContent=pages.length===2?`Σελίδες ${first+1}–${last+1} / ${catalog.pages.length}`:`Σελίδα ${first+1} / ${catalog.pages.length}`;
+  const prefix=document.createElement('span');prefix.className='album-indicator-prefix';prefix.textContent=pages.length===2?'Σελίδες ':'Σελίδα ';
+  indicator.replaceChildren(prefix,document.createTextNode(`${first+1}${pages.length===2?'–'+(last+1):''} / ${catalog.pages.length}`));
+  indicator.setAttribute('aria-label',indicator.textContent);
   range.value=String(index+1);goTo.value=String(index+1);
   range.setAttribute('aria-valuetext',indicator.textContent);
   zoomValue.textContent=Math.round(zoom*100)+'%';
@@ -82,10 +90,8 @@
  const turnPages=(nodes,pages,direction,token)=>new Promise(resolve=>{
   const previous=[...book.children];
   const desktop=wide.matches,forward=direction==='next';
-  const ratio=catalog.pages[pages[0]].width/catalog.pages[pages[0]].height;
-  const padding=desktop?80:32;
-  const pageWidth=Math.floor(Math.max(45,Math.min((viewport.clientWidth-padding)/(desktop?2:1),(viewport.clientHeight-(desktop?40:28))*ratio)));
-  const pageHeight=Math.floor(pageWidth/ratio);
+  const fitted=pageSize(pages);
+  const pageWidth=Math.floor(fitted.width),pageHeight=Math.floor(fitted.height);
   const split=(indices,items)=>indices.length===2?{left:items[0],right:items[1]}:indices[0]===0?{left:null,right:items[0]}:{left:items[0],right:null};
   const old=split(shown,previous),nextPages=split(pages,nodes);
   const base=desktop?(forward?[old.left,nextPages.right]:[nextPages.left,old.right]):[forward?nodes[0]:previous[0]];
@@ -203,6 +209,7 @@
   dialog.querySelectorAll('[data-album-panel]').forEach(other=>{other.hidden=true});
   dialog.querySelectorAll('[data-album-toggle]').forEach(other=>{other.setAttribute('aria-expanded','false')});
   panel.hidden=!open;button.setAttribute('aria-expanded',String(open));
+  if(!open&&panel.contains(document.activeElement))button.focus({preventScroll:true});
   requestAnimationFrame(sizePages);
  };
  const validate=data=>{
@@ -250,6 +257,8 @@
   ++version;controller?.abort();controller=null;
   if(document.fullscreenElement===dialog)document.exitFullscreen().catch(()=>{});
   dialog.classList.remove('album-maximized');fullscreen.setAttribute('aria-pressed','false');fullscreen.setAttribute('aria-label','Πλήρης οθόνη');
+  dialog.querySelectorAll('[data-album-panel]').forEach(panel=>{panel.hidden=true});
+  dialog.querySelectorAll('[data-album-toggle]').forEach(button=>{button.setAttribute('aria-expanded','false')});
   restoreScroll();opener?.focus({preventScroll:true});
  };
  const close=()=>{dialog.close();cleanup()};
@@ -260,6 +269,11 @@
  let backdropDown=false;
  dialog.addEventListener('pointerdown',event=>{backdropDown=event.target===dialog});
  dialog.addEventListener('click',event=>{if(backdropDown&&event.target===dialog)close();backdropDown=false});
+ dialog.addEventListener('pointerdown',event=>{
+  if(event.target.closest('.album-reader-footer'))return;
+  const panel=dialog.querySelector('[data-album-panel]:not([hidden])');
+  if(panel)togglePanel(panel.dataset.albumPanel,false);
+ });
  prev.addEventListener('click',()=>move(-1));next.addEventListener('click',()=>move(1));
  const setZoom=value=>{
   if(!catalog)return;turn?.finish();zoom=Math.max(1,Math.min(3,value));updateControls();sizePages();

@@ -32,3 +32,11 @@ Page-turn validation: `python tests/album-page-turn.browser.py`. It checks a ful
 180-degree two-sided sheet rotation, correct front/back and underlying pages,
 cover transitions, actual mobile touch input, rapid navigation and interruptions.
 When the operating system requests reduced motion, pages change immediately.
+
+## Compact reader controls
+
+The reader uses one footer toolbar. Zoom, page selection, thumbnails and contents
+open as anchored popovers, without reducing the viewport height. Page sizing and
+turn animations share the canvas padding measurement, so fit-to-screen remains
+consistent after resizing or fullscreen changes. The surrounding archive page
+and its hero are unchanged.

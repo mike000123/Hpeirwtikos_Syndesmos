@@ -77,6 +77,7 @@ try:
   print('PASS: rapid turns, back cover and close during a turn leave no stale animation',flush=True)
 
   page.locator('[data-album-prev]').click();expect(page.locator('.album-turn-leaf')).to_be_visible()
+  page.locator('[data-album-toggle="zoom"]').click()
   page.locator('[data-album-zoom-in]').click();expect(page.locator('.album-turn-leaf')).to_have_count(0)
   expect(page.locator('[data-album-zoom-value]')).to_have_text('125%');page.locator('[data-album-fit]').click()
   page.locator('[data-album-next]').click();expect(page.locator('.album-turn-leaf')).to_be_visible()

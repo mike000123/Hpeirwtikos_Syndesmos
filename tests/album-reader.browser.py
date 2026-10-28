@@ -28,6 +28,9 @@ def ok(label):
 def ready(page):
     expect(page.locator('.album-viewport')).to_have_attribute('aria-busy','false')
     expect(page.locator('.album-page img')).not_to_have_count(0)
+def tool(page,name):
+    toggle=page.locator(f'[data-album-toggle="{name}"]')
+    if toggle.get_attribute('aria-expanded')!='true':toggle.click()
 def shot(page,name):
     if args.screenshots:
         if name.startswith('archive-album'):
@@ -64,7 +67,7 @@ try:
     ok('desktop spread boundaries, next/previous and reduced-motion behavior')
 
     before=page.locator('.album-page').first.bounding_box()['height']
-    page.locator('[data-album-zoom-in]').click()
+    tool(page,'zoom');page.locator('[data-album-zoom-in]').click()
     expect(page.locator('[data-album-zoom-value]')).to_have_text('125%')
     assert page.locator('.album-page').first.bounding_box()['height']>before
     assert page.locator('.album-viewport').evaluate('e=>e.scrollHeight>e.clientHeight')
@@ -83,7 +86,7 @@ try:
     page.locator('[data-album-toggle="contents"]').click()
     expect(page.locator('#album-thumbnails-panel')).not_to_be_visible()
     page.locator('[data-album-toggle="contents"]').click()
-    page.locator('[data-album-goto]').fill('2');page.locator('[data-album-goto]').press('Enter');ready(page)
+    tool(page,'seek');page.locator('[data-album-goto]').fill('2');page.locator('[data-album-goto]').press('Enter');ready(page)
     expect(page.locator('[data-album-range]')).to_have_value('2')
     page.locator('[data-album-range]').evaluate("e=>{e.value='5';e.dispatchEvent(new Event('input',{bubbles:true}))}")
     ready(page);expect(page.locator('[data-album-goto]')).to_have_value('5')

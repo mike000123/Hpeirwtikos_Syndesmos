@@ -1,0 +1,54 @@
+[
+  {
+    "asset": "assets/costumes-museum/sarakatsana-model.webp",
+    "type": "AI-generated contemporary interpretive reconstruction",
+    "referenceAsset": "assets/costumes-museum/sarakatsana.webp",
+    "referenceSource": "https://museumalipasha.gr/costumes/",
+    "dateCreated": "2026-10-28",
+    "dimensions": [
+      1024,
+      1536
+    ],
+    "visibleDisclosure": "Σύγχρονη αναπαράσταση με AI, βασισμένη στο τεκμήριο αναφοράς. Δεν αποτελεί ιστορική φωτογραφία ή πιστοποιημένη αναπαραγωγή.",
+    "note": "Model reconstruction is displayed on the article card and in costume-model; the unchanged museum photograph is shown separately in costume-reference."
+  },
+  {
+    "asset": "assets/costumes-museum/epirus-villager-model.webp",
+    "type": "AI-generated contemporary interpretive reconstruction",
+    "referenceAsset": "assets/costumes-museum/epirus-villager.webp",
+    "referenceSource": "https://museumalipasha.gr/costumes/",
+    "dateCreated": "2026-10-28",
+    "dimensions": [
+      1024,
+      1536
+    ],
+    "visibleDisclosure": "Σύγχρονη αναπαράσταση με AI, βασισμένη στο τεκμήριο αναφοράς. Δεν αποτελεί ιστορική φωτογραφία ή πιστοποιημένη αναπαραγωγή.",
+    "note": "Model reconstruction is displayed on the article card and in costume-model; the unchanged museum photograph is shown separately in costume-reference."
+  },
+  {
+    "asset": "assets/costumes-museum/ioannina-gold-pirpiri-model.webp",
+    "type": "AI-generated contemporary interpretive reconstruction",
+    "referenceAsset": "assets/costumes-museum/ioannina-gold-pirpiri.webp",
+    "referenceSource": "https://museumalipasha.gr/costumes/",
+    "dateCreated": "2026-10-28",
+    "dimensions": [
+      1024,
+      1536
+    ],
+    "visibleDisclosure": "Σύγχρονη αναπαράσταση με AI, βασισμένη στο τεκμήριο αναφοράς. Δεν αποτελεί ιστορική φωτογραφία ή πιστοποιημένη αναπαραγωγή.",
+    "note": "Model reconstruction is displayed on the article card and in costume-model; the unchanged museum photograph is shown separately in costume-reference."
+  },
+  {
+    "asset": "assets/costumes-museum/ioannina-pirpiri-model.webp",
+    "type": "AI-generated contemporary interpretive reconstruction",
+    "referenceAsset": "assets/costumes-museum/ioannina-pirpiri.webp",
+    "referenceSource": "https://museumalipasha.gr/costumes/",
+    "dateCreated": "2026-10-28",
+    "dimensions": [
+      1024,
+      1536
+    ],
+    "visibleDisclosure": "Σύγχρονη αναπαράσταση με AI, βασισμένη στο τεκμήριο αναφοράς. Δεν αποτελεί ιστορική φωτογραφία ή πιστοποιημένη αναπαραγωγή. Το ουδέτερο φόρεμα και τα παπούτσια είναι εικονογραφικές επιλογές· η πηγή τεκμηριώνει μόνο το πιρπιρί.",
+    "note": "Model reconstruction is displayed on the article card and in costume-model; the unchanged museum photograph is shown separately in costume-reference."
+  }
+]

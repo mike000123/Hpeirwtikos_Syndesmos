@@ -1,0 +1,8 @@
+/* Accessibility overrides: AA contrast for small gold text on light backgrounds, tap targets, link affordance */
+.eyebrow,.kicker,.timeline article>.eyebrow,.wedding-reading-meta span,.card .number{color:#7a5a28!important}
+.v2hero .eyebrow,.hero .eyebrow,.article-hero>span,.association-photo-hero .eyebrow,.archive-hero .eyebrow,.gateway .eyebrow,.archive .kicker,#heritage .eyebrow,.dark .eyebrow,.site-foot .eyebrow{color:#e8cf9f!important}
+.archive-chapter[aria-hidden]{color:#8a6d3f!important}
+.culture-bottom button,.culture-bottom a{min-height:44px;display:inline-flex;align-items:center;padding:0 4px}
+.f-sources a,.sources a,[id^="source-"] a,[id$="-source"] a,.article-body p a,.article-body li a{text-decoration:underline;text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid #a44b35;outline-offset:2px}
+@media (max-width:760px){.v2hero{background:linear-gradient(180deg,rgba(65,14,23,.55) 0%,rgba(65,14,23,.8) 55%,rgba(65,14,23,.88) 100%),url('epirus-dancers-piraeus.webp') 62% 20%/cover!important}}

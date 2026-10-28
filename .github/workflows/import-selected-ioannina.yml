@@ -1,7 +1,5 @@
 name: Import user-selected Ioannina photograph
 on:
-  push:
-    paths: ['.github/workflows/import-selected-ioannina.yml']
   workflow_dispatch:
 permissions:
   contents: write

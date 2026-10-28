@@ -1,15 +1,16 @@
 [
   {
     "key": "ioannina",
-    "file": "assets/region-scenic/ioannina-mosque-lake.webp",
-    "source": "https://commons.wikimedia.org/wiki/File:GR-ioannina-alipascha-see.jpg",
-    "original": "https://upload.wikimedia.org/wikipedia/commons/8/86/GR-ioannina-alipascha-see.jpg",
-    "author": "Bgabel / Wikivoyage shared",
-    "licence": "CC BY-SA 3.0",
-    "licenceURL": "https://creativecommons.org/licenses/by-sa/3.0/",
-    "width": 1215,
-    "height": 807,
-    "changes": "Resize and WebP conversion. Responsive centered crop to 16:9."
+    "file": "assets/region-scenic/ioannina-lake-sunset-selected.webp",
+    "width": 800,
+    "height": 630,
+    "source": "http://www.arttravel.gr/arttravel-best_best-stories/article/17491/ioannina-city-break",
+    "original": "http://arttravel_images.sfw.gr/fotos/637353701381710447.jpg",
+    "userSelectedVia": "https://share.google/BV3cgae9Z3a9drpIA",
+    "changes": "Format conversion; responsive crop in card. User-selected image; no Creative Commons licence asserted.",
+    "author": null,
+    "licence": null,
+    "notes": "Exact image selected by the user; source attribution retained. No photographer identity or free licence is inferred."
   },
   {
     "key": "arta",

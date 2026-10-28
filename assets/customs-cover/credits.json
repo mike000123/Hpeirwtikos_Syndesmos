@@ -1,12 +1,14 @@
 {
-  "file": "assets/customs-cover/tzamala-ioannina.webp",
-  "width": 1440,
-  "height": 958,
-  "source": "https://commons.wikimedia.org/wiki/File:Tzamala_Kastro_Ioanninon_2013.jpg",
-  "original": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Tzamala_Kastro_Ioanninon_2013.jpg",
-  "author": "Jkravv",
-  "licence": "CC BY-SA 4.0",
-  "licenceURL": "https://creativecommons.org/licenses/by-sa/4.0/",
-  "changes": "Resize and format conversion; responsive cropping in card/header.",
-  "notes": "The source title/description identify a tzamala at Ioannina Castle. The page date differs from the filename; no exact year is asserted in the visible caption."
+  "file": "assets/customs-cover/tzamala-illustration.webp",
+  "width": 1536,
+  "height": 1024,
+  "type": "AI-generated illustration",
+  "created": "2026-10-28",
+  "description": "Artistic reconstruction inspired by the Tzamala carnival bonfire custom of Epirus; not documentation of a named location or real event.",
+  "usage": [
+    "ipeiros.html — Ήθη & έθιμα card",
+    "ethima.html — matching article header"
+  ],
+  "changes": "Original generated image converted from PNG to WebP; responsive framing.",
+  "originalWorkspaceFile": "/workspace/generated_images/exec-f365faff-a759-408a-8137-25393bc9a79f.png"
 }

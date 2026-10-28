@@ -1,0 +1,51 @@
+[
+  {
+    "key": "tzamala-ioannina",
+    "asset": "assets/customs-cover/tzamala-ioannina.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Tzamala_Kastro_Ioanninon_2013.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Tzamala_Kastro_Ioanninon_2013.jpg",
+    "credit": "Jkravv",
+    "licence": "CC BY-SA 4.0",
+    "licenceURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "width": 1440,
+    "height": 958,
+    "processing": "Existing WebP reused without changes.",
+    "notes": "The source title/description identify a tzamala at Ioannina Castle. The page date differs from the filename; no exact year is asserted in the visible caption."
+  },
+  {
+    "key": "vitsa-1958",
+    "url": "https://ayla.culture.gr/wp-content/uploads/2024/12/Άυλη_Πολιτιστική_Κληρονομιά_Παραδοσιακό_Πανηγύρι_Βίτσας_Ζαγορίου_5.jpg",
+    "source": "https://ayla.culture.gr/catalogue/paradosiako-panigyri-dekapentavgoustou-tis-vitsas-zagoriou/",
+    "credit": "Φωτογραφία αρχείου Ευστάθιου Βασδέκη · Εθνικό Ευρετήριο Άυλης Πολιτιστικής Κληρονομιάς",
+    "caption": "Χορευτική ομάδα γυναικών στη Βίτσα, 1958.",
+    "rights": "No open licence asserted; named archival attribution retained.",
+    "width": 1440,
+    "height": 922,
+    "asset": "assets/customs-story/vitsa-1958.webp",
+    "processing": "Resize and WebP encoding only. No generative reconstruction."
+  },
+  {
+    "key": "syrrako-dance-2016",
+    "url": "https://ayla.culture.gr/wp-content/uploads/2016/11/Άυλη_Πολιτιστική_Κληρονομιά_Πανηγύρι_στο_Συρράκο2.jpg",
+    "source": "https://ayla.culture.gr/catalogue/paradosiako-panigyri-syrrakou/",
+    "credit": "Φωτογραφικό αρχείο ΔΙΝΕΠΟΚ · Υπουργείο Πολιτισμού",
+    "caption": "Τριπλός κύκλος χορού στο πανηγύρι της Μεταμορφώσεως του Σωτήρος στο Συρράκο, 6 Αυγούστου 2016.",
+    "rights": "No open licence asserted; Ministry photographic archive credit retained.",
+    "width": 1440,
+    "height": 922,
+    "asset": "assets/customs-story/syrrako-dance-2016.webp",
+    "processing": "Resize and WebP encoding only. No generative reconstruction."
+  },
+  {
+    "key": "giromeri-easter-2023",
+    "url": "https://www.ertnews.gr/wp-content/uploads/2023/04/338908832_240145348525342_2546099578094509894_n-1024x576.jpg",
+    "source": "https://www.ertnews.gr/perifereiakoi-stathmoi/ioanina/giromeri-filiaton-timoun-tin-mnimi-ton-nekron-me-klarina-kai-violia/",
+    "credit": "ΕΡΤ · Ρεπορτάζ Βασίλης Σιώμος, 17 Απριλίου 2023",
+    "caption": "Μουσικοί και συγγενείς στο πασχαλινό έθιμο του Γηρομερίου Φιλιατών, 2023.",
+    "rights": "ERT photograph; no open licence asserted.",
+    "width": 1024,
+    "height": 576,
+    "asset": "assets/customs-story/giromeri-easter-2023.webp",
+    "processing": "Resize and WebP encoding only. No generative reconstruction."
+  }
+]

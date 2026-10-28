@@ -27,3 +27,8 @@ Browser validation: `python tests/album-reader.browser.py`. The script serves th
 repository locally and needs Python Playwright plus Chromium. It covers desktop
 spreads, mobile pages and actual touch input, zoom, contents, thumbnails, page
 selection, keyboard/focus handling, fullscreen, failed images and catalog timeout.
+
+Page-turn validation: `python tests/album-page-turn.browser.py`. It checks a full
+180-degree two-sided sheet rotation, correct front/back and underlying pages,
+cover transitions, actual mobile touch input, rapid navigation and interruptions.
+When the operating system requests reduced motion, pages change immediately.

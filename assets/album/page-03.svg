@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1100" viewBox="0 0 800 1100" role="img" aria-label="Ενδεικτική σελίδα: Επιστολές">
+<defs><linearGradient id="paper" x2="1" y2="1"><stop stop-color="#fffaf0"/><stop offset="1" stop-color="#eee0c7"/></linearGradient></defs>
+<rect width="800" height="1100" fill="url(#paper)"/><rect x="28" y="28" width="744" height="1044" rx="2" fill="none" stroke="#c6ac7e"/>
+<text x="400" y="76" fill="#9a7843" text-anchor="middle" font-size="17" font-family="Arial, sans-serif">ΤΟ ΛΕΥΚΩΜΑ ΤΟΥ ΣΥΝΔΕΣΜΟΥ</text>
+<text x="400" y="144" fill="#721f2d" text-anchor="middle" font-size="42" font-family="Georgia, serif">Επιστολές</text>
+<path d="M255 174h290" stroke="#ba9555"/>
+<rect x="145" y="245" width="510" height="570" fill="#f7edd8" stroke="#cbb48d"/><path d="M195 310h350" stroke="#c2ae8b" stroke-width="3" stroke-linecap="round"/><path d="M195 350h315" stroke="#c2ae8b" stroke-width="3" stroke-linecap="round"/><path d="M195 390h365" stroke="#c2ae8b" stroke-width="3" stroke-linecap="round"/><path d="M195 430h340" stroke="#c2ae8b" stroke-width="3" stroke-linecap="round"/><path d="M195 470h305" stroke="#c2ae8b" stroke-width="3" stroke-linecap="round"/><path d="M195 510h360" stroke="#c2ae8b" stroke-width="3" stroke-linecap="round"/><path d="M195 550h325" stroke="#c2ae8b" stroke-width="3" stroke-linecap="round"/><path d="M195 590h355" stroke="#c2ae8b" stroke-width="3" stroke-linecap="round"/><path d="M195 630h290" stroke="#c2ae8b" stroke-width="3" stroke-linecap="round"/><path d="M195 670h350" stroke="#c2ae8b" stroke-width="3" stroke-linecap="round"/><rect x="110" y="655" width="355" height="205" rx="3" fill="#e9d8b7" stroke="#b69b72"/>
+<path d="M110 655l177 120 178-120M110 860l130-110m225 110L335 750" stroke="#b69b72" fill="none"/><text x="400" y="917" fill="#594d43" text-anchor="middle" font-size="25" font-family="Arial, sans-serif">Οι φωνές που σώθηκαν στο χαρτί.</text>
+<path d="M200 975h400" stroke="#c6ac7e"/>
+<text x="400" y="1012" fill="#594d43" text-anchor="middle" font-size="17" font-family="Arial, sans-serif">Ενδεικτική σελίδα · Δεν αποτελεί αρχειακό τεκμήριο.</text>
+<text x="400" y="1044" fill="#907044" text-anchor="middle" font-size="18" font-family="Arial, sans-serif">3</text>
+</svg>

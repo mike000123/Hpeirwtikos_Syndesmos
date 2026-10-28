@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1100" viewBox="0 0 800 1100" role="img" aria-label="Ενδεικτική σελίδα: Έγγραφα">
+<defs><linearGradient id="paper" x2="1" y2="1"><stop stop-color="#fffaf0"/><stop offset="1" stop-color="#eee0c7"/></linearGradient></defs>
+<rect width="800" height="1100" fill="url(#paper)"/><rect x="28" y="28" width="744" height="1044" rx="2" fill="none" stroke="#c6ac7e"/>
+<text x="400" y="76" fill="#9a7843" text-anchor="middle" font-size="17" font-family="Arial, sans-serif">ΤΟ ΛΕΥΚΩΜΑ ΤΟΥ ΣΥΝΔΕΣΜΟΥ</text>
+<text x="400" y="144" fill="#721f2d" text-anchor="middle" font-size="42" font-family="Georgia, serif">Έγγραφα</text>
+<path d="M255 174h290" stroke="#ba9555"/>
+<rect x="158" y="245" width="484" height="610" fill="#faf2e4" stroke="#b49a73"/><rect x="178" y="265" width="444" height="570" fill="none" stroke="#cbb48d"/><text x="400" y="345" fill="#907044" text-anchor="middle" font-size="25" font-family="Arial, sans-serif">ΕΝΔΕΙΚΤΙΚΟ</text><text x="400" y="385" fill="#907044" text-anchor="middle" font-size="25" font-family="Arial, sans-serif">ΕΓΓΡΑΦΟ</text><path d="M220 445h360" stroke="#ccb998" stroke-width="3"/><path d="M220 477h360" stroke="#ccb998" stroke-width="3"/><path d="M220 509h360" stroke="#ccb998" stroke-width="3"/><path d="M220 541h360" stroke="#ccb998" stroke-width="3"/><path d="M220 573h360" stroke="#ccb998" stroke-width="3"/><path d="M220 605h360" stroke="#ccb998" stroke-width="3"/><path d="M220 637h360" stroke="#ccb998" stroke-width="3"/><path d="M220 669h360" stroke="#ccb998" stroke-width="3"/><path d="M220 701h360" stroke="#ccb998" stroke-width="3"/><text x="400" y="917" fill="#594d43" text-anchor="middle" font-size="25" font-family="Arial, sans-serif">Τα ίχνη μιας κοινής προσπάθειας.</text>
+<path d="M200 975h400" stroke="#c6ac7e"/>
+<text x="400" y="1012" fill="#594d43" text-anchor="middle" font-size="17" font-family="Arial, sans-serif">Ενδεικτική σελίδα · Δεν αποτελεί αρχειακό τεκμήριο.</text>
+<text x="400" y="1044" fill="#907044" text-anchor="middle" font-size="18" font-family="Arial, sans-serif">4</text>
+</svg>

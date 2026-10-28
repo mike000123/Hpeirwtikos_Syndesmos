@@ -1,0 +1,58 @@
+[
+  {
+    "asset": "assets/costumes-museum/sarakatsana.webp",
+    "title": "Η σαρακατσάνικη γυναικεία φορεσιά",
+    "dateAsPublished": "Τέλη 19ου–αρχές 20ού αιώνα",
+    "sourcePage": "https://museumalipasha.gr/costumes/",
+    "sourceImage": "https://museumalipasha.gr/wp-content/uploads/2021/04/05-2-1024x1536.jpg",
+    "sourceCredit": "Μουσείο Αλή Πασά και Επαναστατικής Περιόδου",
+    "rights": "Museum website photograph; no open licence stated or asserted.",
+    "processing": "Resize and WebP encoding; no generative editing or reconstruction.",
+    "dimensions": [
+      960,
+      1440
+    ]
+  },
+  {
+    "asset": "assets/costumes-museum/epirus-villager.webp",
+    "title": "Η ανδρική φορεσιά ενός χωρικού",
+    "dateAsPublished": "20ός αιώνας",
+    "sourcePage": "https://museumalipasha.gr/costumes/",
+    "sourceImage": "https://museumalipasha.gr/wp-content/uploads/2021/04/03-2-1024x1536.jpg",
+    "sourceCredit": "Μουσείο Αλή Πασά και Επαναστατικής Περιόδου",
+    "rights": "Museum website photograph; no open licence stated or asserted.",
+    "processing": "Resize and WebP encoding; no generative editing or reconstruction.",
+    "dimensions": [
+      960,
+      1440
+    ]
+  },
+  {
+    "asset": "assets/costumes-museum/ioannina-gold-pirpiri.webp",
+    "title": "Το χρυσοκέντητο πιρπιρί",
+    "dateAsPublished": "19ος αιώνας",
+    "sourcePage": "https://museumalipasha.gr/costumes/",
+    "sourceImage": "https://museumalipasha.gr/wp-content/uploads/2021/04/02-2-1024x1536.jpg",
+    "sourceCredit": "Μουσείο Αλή Πασά και Επαναστατικής Περιόδου",
+    "rights": "Museum website photograph; no open licence stated or asserted.",
+    "processing": "Resize and WebP encoding; no generative editing or reconstruction.",
+    "dimensions": [
+      960,
+      1440
+    ]
+  },
+  {
+    "asset": "assets/costumes-museum/ioannina-pirpiri.webp",
+    "title": "Το γιαννιώτικο πιρπιρί",
+    "dateAsPublished": "19ος αιώνας",
+    "sourcePage": "https://museumalipasha.gr/costumes/",
+    "sourceImage": "https://museumalipasha.gr/wp-content/uploads/2021/04/06-2-1536x1078.jpg",
+    "sourceCredit": "Μουσείο Αλή Πασά και Επαναστατικής Περιόδου",
+    "rights": "Museum website photograph; no open licence stated or asserted.",
+    "processing": "Resize and WebP encoding; no generative editing or reconstruction.",
+    "dimensions": [
+      1440,
+      1011
+    ]
+  }
+]

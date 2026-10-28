@@ -5,4 +5,4 @@
 .culture-bottom button,.culture-bottom a{min-height:44px;display:inline-flex;align-items:center;padding:0 4px}
 .f-sources a,.sources a,[id^="source-"] a,[id$="-source"] a,.article-body p a,.article-body li a{text-decoration:underline;text-underline-offset:3px}
 a:focus-visible,button:focus-visible{outline:3px solid #a44b35;outline-offset:2px}
-@media (max-width:760px){.v2hero{align-items:flex-end!important;min-height:0!important;padding:300px 0 40px!important;background:linear-gradient(180deg,rgba(65,14,23,0) 0%,rgba(65,14,23,0) 30%,rgba(65,14,23,.82) 52%,rgba(65,14,23,.92) 100%),url('epirus-dancers-piraeus.webp') 60% 0/cover!important}}
+@media (max-width:760px){.v2hero{background:linear-gradient(90deg,rgba(65,14,23,.85) 0%,rgba(65,14,23,.55) 12%,rgba(65,14,23,0) 25%),url('epirus-dancers-piraeus.webp') 62% 20%/cover!important}.v2hero h1,.v2hero p,.v2hero .eyebrow{text-shadow:0 1px 6px rgba(30,6,10,.7)}}

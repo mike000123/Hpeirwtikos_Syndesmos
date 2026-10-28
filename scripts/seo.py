@@ -32,7 +32,7 @@ for slug, p in pages.items():
           '<meta name="twitter:card" content="summary_large_image">', f'<meta name="twitter:title" content="{e(p["title"])}">',
           f'<meta name="twitter:description" content="{e(p["desc"])}">', f'<meta name="twitter:image" content="{img}">']
         urls.append(canon)
-    L += ['<link rel="stylesheet" href="assets/a11y.css?v=2">', '<meta name="theme-color" content="#721f2d">', '<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">',
+    L += ['<link rel="stylesheet" href="assets/a11y.css?v=3">', '<meta name="theme-color" content="#721f2d">', '<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">',
           '<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">', '<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">']
     if slug == 'index':
         L.append('<script type="application/ld+json">' + json.dumps(ORG, ensure_ascii=False) + '</script>')

@@ -1,0 +1,24 @@
+name: Import user-selected Ioannina photograph
+on:
+  push:
+    paths: ['.github/workflows/import-selected-ioannina.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install Pillow==11.3.0
+      - run: python -u scripts/import-selected-ioannina.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/region-scenic/ioannina-lake-sunset-selected.webp assets/region-scenic/ioannina-selected.json
+          git diff --cached --quiet || git commit -m "Import exact user-selected Ioannina lake photograph"
+          git push

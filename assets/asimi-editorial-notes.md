@@ -1,4 +1,4 @@
-# Τα Γιάννενα, πόλη των ασημουργών
+# Τα Ιωάννινα, πόλη των ασημουργών
 
 Updated 28 October 2026. Enriched the existing asimi.html feature; portal cards and original photo header are unchanged. Shared social navigation and footer are identical to the fetched live version.
 

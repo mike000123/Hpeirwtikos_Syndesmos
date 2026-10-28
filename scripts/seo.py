@@ -21,7 +21,7 @@ for slug, p in pages.items():
     if p.get('noindex'):
         L += ['<meta name="robots" content="noindex,follow">', f'<link rel="canonical" href="{canon}">']
     else:
-        img = f'{SITE}/assets/og/{slug}.jpg'
+        img = f'{SITE}/assets/og/{slug}.jpg?v=2'
         L += [f'<meta name="description" content="{e(p["desc"])}">', f'<link rel="canonical" href="{canon}">',
           f'<meta property="og:type" content="{p["type"]}">', '<meta property="og:site_name" content="Ηπειρωτικός Σύνδεσμος Πειραιώς">',
           '<meta property="og:locale" content="el_GR">', f'<meta property="og:title" content="{e(p["title"])}">',

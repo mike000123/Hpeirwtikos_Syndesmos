@@ -41,25 +41,28 @@ def wrap(draw, text, font, maxw):
 
 def card(slug, eyebrow, title):
     im = base.copy(); dr = ImageDraw.Draw(im)
-    # frame and rule
-    dr.rectangle((28, 28, W - 29, H - 29), outline=(0xd9, 0xb7, 0x7c), width=2)
-    em = circle(emblem, 150); im.paste(em, (80, 76), em)
-    dr.text((258, 96), 'ΗΠΕΙΡΩΤΙΚΟΣ ΣΥΝΔΕΣΜΟΣ ΠΕΙΡΑΙΩΣ', font=ImageFont.truetype(SANSB, 26), fill=GOLD)
-    dr.text((258, 138), 'Από το 1886', font=ImageFont.truetype(SANS, 24), fill=CREAM)
-    f_eye = ImageFont.truetype(SANSB, 24)
-    dr.text((80, 300), eyebrow.upper(), font=f_eye, fill=GOLD)
-    size = 76
-    while True:
-        f = ImageFont.truetype(SERIF, size)
-        lines = wrap(dr, title, f, W - 160)
-        if len(lines) <= 3 and size >= 52 or size <= 52: break
+    dr.rectangle((28, 28, W - 29, H - 29), outline=GOLD, width=2)
+    D = 340
+    crop = emblem.crop((150 - 137, 146 - 137, 150 + 137, 146 + 137))  # disc only, no white rim
+    em = circle(crop, D)
+    ring = Image.new('RGBA', (D + 16, D + 16), (0, 0, 0, 0))
+    ImageDraw.Draw(ring).ellipse((0, 0, D + 15, D + 15), fill=GOLD + (255,))
+    cx, cy = 70 + D // 2 + 8, H // 2
+    im.paste(ring, (cx - D // 2 - 8, cy - D // 2 - 8), ring); im.paste(em, (cx - D // 2, cy - D // 2), em)
+    x0 = 70 + D + 16 + 50; maxw = W - x0 - 60
+    dr.text((x0, 120), 'ΗΠΕΙΡΩΤΙΚΟΣ ΣΥΝΔΕΣΜΟΣ ΠΕΙΡΑΙΩΣ', font=ImageFont.truetype(SANSB, 23), fill=GOLD)
+    dr.text((x0, 156), eyebrow.upper(), font=ImageFont.truetype(SANS, 21), fill=CREAM)
+    size = 64
+    while size > 40:
+        f = ImageFont.truetype(SERIF, size); lines = wrap(dr, title, f, maxw)
+        if len(lines) <= 3: break
         size -= 4
-        if len(lines) <= 2: break
-    y = 345
+    f = ImageFont.truetype(SERIF, size); lines = wrap(dr, title, f, maxw)
+    lh = int(size * 1.22); y = 235 + (3 - len(lines)) * lh // 2
     for ln in lines[:3]:
-        dr.text((80, y), ln, font=f, fill=CREAM); y += int(size * 1.22)
-    dr.line((80, H - 78, 220, H - 78), fill=GOLD, width=3)
-    dr.text((80, H - 64), 'Η Ήπειρος στον Πειραιά', font=ImageFont.truetype(SANS, 24), fill=CREAM)
+        dr.text((x0, y), ln, font=f, fill=CREAM); y += lh
+    dr.line((x0, H - 105, x0 + 130, H - 105), fill=GOLD, width=3)
+    dr.text((x0, H - 88), 'Από το 1886 · Η Ήπειρος στον Πειραιά', font=ImageFont.truetype(SANS, 23), fill=CREAM)
     out = root / 'assets' / 'og' / f'{slug}.jpg'
     im.save(out, 'JPEG', quality=82, optimize=True, progressive=True)
     return out.stat().st_size

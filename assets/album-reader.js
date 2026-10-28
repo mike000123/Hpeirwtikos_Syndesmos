@@ -87,6 +87,47 @@
   copy.querySelectorAll('img').forEach(img=>{img.alt='';img.draggable=false});
   return copy;
  };
+ // A paper sheet is a continuous cylindrical surface, sampled into narrow strips.
+ // Both printed sides share its geometry; the spine stays fixed throughout the bend.
+ const bendPaper=(leaf,front,back,width,height,originRight,from,to,timing)=>{
+  const animations=[],count=wide.matches?48:32,steps=48;
+  const bendSign=originRight?1:-1;
+  for(let i=0;i<count;i++){
+   // A one-pixel overlap hides subpixel raster seams between curved patches.
+   const start=i*width/count,stripWidth=Math.min(width-start,width/count+1);
+   const u=(start+stripWidth/2)/width;
+   const strip=document.createElement('div');strip.className='album-turn-strip';
+   strip.style.width=stripWidth+'px';strip.style.height=height+'px';
+   const shades=[];
+   [front,back].forEach((node,side)=>{
+    const face=document.createElement('div');face.className='album-turn-face '+(side?'album-turn-back':'album-turn-front');
+    const paper=clonePaper(node,'album-strip-paper');
+    paper.style.width=width+'px';paper.style.height=height+'px';
+    paper.style.left=-(side?width-start-stripWidth:start)+'px';
+    const shade=document.createElement('span');shade.className='album-strip-shading';
+    face.append(paper,shade);strip.append(face);shades.push(shade);
+   });
+   leaf.append(strip);
+   const geometry=[],lighting=[];
+   for(let step=0;step<=steps;step++){
+    const progress=step/steps;
+    const bend=bendSign*1.15*Math.sin(Math.PI*progress);
+    const phi=bend*(2*u-1);
+    let x=width*u,z=0;
+    if(Math.abs(bend)>.00001){
+     x=width*(Math.sin(phi)+Math.sin(bend))/(2*bend);
+     z=width*(Math.cos(phi)-Math.cos(bend))/(2*bend);
+     if(originRight)x+=width-width*Math.sin(bend)/bend;
+    }
+    geometry.push({offset:progress,transform:`translate3d(${x-stripWidth/2}px,0,${z}px) rotateY(${phi}rad)`});
+    const angle=(from+(to-from)*progress)*Math.PI/180+phi;
+    lighting.push({offset:progress,opacity:Math.sin(Math.PI*progress)*(.04+.24*Math.abs(Math.sin(angle)))});
+   }
+   animations.push(strip.animate(geometry,timing));
+   shades.forEach(shade=>animations.push(shade.animate(lighting,timing)));
+  }
+  return animations;
+ };
  const turnPages=(nodes,pages,direction,token)=>new Promise(resolve=>{
   const previous=[...book.children];
   const desktop=wide.matches,forward=direction==='next';
@@ -106,7 +147,10 @@
   leaf.style.width=pageWidth+'px';leaf.style.height=pageHeight+'px';
   leaf.style.left=desktop&&forward?pageWidth+'px':'0';
   leaf.style.transformOrigin=desktop&&!forward?'right center':'left center';
-  leaf.append(clonePaper(front,'album-turn-face album-turn-front'),clonePaper(back,'album-turn-face album-turn-back'));
+  const hardCover=[...shown,...pages].some(i=>i===0||i===catalog.pages.length-1);
+  leaf.dataset.paper=hardCover?'hard':'flexible';
+  if(hardCover)leaf.append(clonePaper(front,'album-turn-face album-turn-front'),clonePaper(back,'album-turn-face album-turn-back'));
+  else leaf.classList.add('is-flexible');
   const shadow=document.createElement('div');shadow.className='album-turn-shadow';shadow.setAttribute('aria-hidden','true');
   book.className='album-book is-turning'+(desktop?' has-spread':'');
   book.replaceChildren(...slots,shadow,leaf);viewport.classList.add('is-turning');
@@ -116,6 +160,7 @@
   const to=desktop?(forward?-180:180):forward?-180:0;
   const motion=leaf.animate([{transform:`rotateY(${from}deg)`},{transform:`rotateY(${to}deg)`}],timing);
   const animations=[motion];
+  if(!hardCover)animations.push(...bendPaper(leaf,front,back,pageWidth,pageHeight,desktop&&!forward,from,to,timing));
   // Opening and closing the cover shifts the book around its spine, without a jump.
   if(desktop){
    const oldOffset=shown.length===1?(shown[0]===0?-pageWidth/2:pageWidth/2):0;
@@ -128,7 +173,7 @@
    {opacity:.34,transform:'translateX(0) scaleX(.85)',offset:.5},
    {opacity:0,transform:`translateX(${-sign*25}%) scaleX(.1)`}
   ],timing));
-  leaf.querySelectorAll('.album-turn-face').forEach(face=>{
+  if(hardCover)leaf.querySelectorAll('.album-turn-face').forEach(face=>{
    const shade=document.createElement('span');shade.className='album-leaf-shading';face.append(shade);
    animations.push(shade.animate([{opacity:0},{opacity:.42,offset:.5},{opacity:0}],timing));
   });

@@ -42,7 +42,7 @@
 .album-book.has-spread .album-page:last-child{border-radius:0 4px 4px 0}
 .album-book.has-spread .album-page:after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,transparent 94%,#4a342322)}
 .album-book.has-spread .album-page:last-child:after{background:linear-gradient(90deg,#4a34231a,transparent 7%)}
-/* A whole two-sided sheet turns at the spine while the other pages stay still. */
+/* Hard covers rotate at the spine; interior paper bends as a two-sided surface. */
 .album-viewport.is-turning{overflow:hidden}
 .album-turn-slot{position:relative;flex:none;pointer-events:none}
 .album-turn-static,.album-turn-face{margin:0;position:absolute;inset:0;background:#fbf5e9;border:1px solid #d3c4aa;overflow:hidden;box-sizing:border-box}
@@ -53,6 +53,12 @@
 .album-turn-front{transform:rotateY(0deg) translateZ(.4px)}
 .album-turn-back{transform:rotateY(180deg) translateZ(.4px)}
 .album-leaf-shading{position:absolute;inset:0;background:linear-gradient(90deg,#38241890,transparent 45%,#fff7dc4d 82%,#7a5a3059);opacity:0;pointer-events:none}
+.album-turn-strip{position:absolute;top:0;left:0;transform-style:preserve-3d;transform-origin:center center;will-change:transform}
+.album-turn-strip .album-turn-face{border:0;box-shadow:none}
+.album-turn-strip .album-turn-front{transform:translateZ(.1px)}
+.album-turn-strip .album-turn-back{transform:rotateY(180deg) translateZ(.1px)}
+.album-strip-paper{position:absolute;top:0;margin:0;background:#fbf5e9;overflow:hidden}
+.album-strip-shading{position:absolute;inset:0;background:#302113;opacity:0;pointer-events:none}
 .album-turn-shadow{position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(90deg,transparent,#38241899 50%,transparent);opacity:0;transform-origin:center}
 .album-page-error{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:25px;text-align:center;font-size:13px;gap:15px}
 .album-reader-footer{position:relative;flex:none;background:#fffaf2;border-top:1px solid #d9cbb9}

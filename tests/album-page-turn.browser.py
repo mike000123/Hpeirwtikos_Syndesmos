@@ -1,4 +1,4 @@
-"""Verify full sheet turns, printed front/back faces, mobile and interruption."""
+"""Verify curved interior paper, rigid covers, printed sides and interruption."""
 import argparse,shutil,threading
 from functools import partial
 from http.server import SimpleHTTPRequestHandler,ThreadingHTTPServer
@@ -37,30 +37,45 @@ try:
   page=context.new_page();errors=[]
   page.on('pageerror',lambda e:errors.append(str(e)));opened(page)
   page.locator('[data-album-next]').click();expect(page.locator('.album-turn-leaf')).to_be_visible()
-  assert page.locator('.album-turn-front img').get_attribute('src').endswith('page-01.svg')
-  assert page.locator('.album-turn-back img').get_attribute('src').endswith('page-02.svg')
+  assert page.locator('.album-turn-front img').first.get_attribute('src').endswith('page-01.svg')
+  assert page.locator('.album-turn-back img').first.get_attribute('src').endswith('page-02.svg')
+  expect(page.locator('.album-turn-leaf')).to_have_attribute('data-paper','hard')
+  expect(page.locator('.album-turn-strip')).to_have_count(0)
   finish(page);expect(page.locator('[data-album-indicator]')).to_have_text('Σελίδες 2–3 / 6')
   print('PASS: cover physically opens to the first spread',flush=True)
 
   page.locator('[data-album-next]').click();expect(page.locator('.album-turn-leaf')).to_be_visible()
-  assert page.locator('.album-turn-front img').get_attribute('src').endswith('page-03.svg')
-  assert page.locator('.album-turn-back img').get_attribute('src').endswith('page-04.svg')
+  assert page.locator('.album-turn-front img').first.get_attribute('src').endswith('page-03.svg')
+  assert page.locator('.album-turn-back img').first.get_attribute('src').endswith('page-04.svg')
   assert page.locator('.album-turn-slot').first.locator('img').get_attribute('src').endswith('page-02.svg')
   assert page.locator('.album-turn-slot').last.locator('img').get_attribute('src').endswith('page-05.svg')
   frames=page.locator('.album-turn-leaf').evaluate('e=>e.getAnimations()[0].effect.getKeyframes().map(k=>k.transform)')
   assert frames==['rotateY(0deg)','rotateY(-180deg)'],frames
+  expect(page.locator('.album-turn-leaf')).to_have_attribute('data-paper','flexible')
+  expect(page.locator('.album-turn-strip')).to_have_count(48)
   freeze(page,.30)
+  matrices=page.locator('.album-turn-strip').evaluate_all('nodes=>nodes.map(n=>getComputedStyle(n).transform)')
+  assert len(set(matrices))==48
+  # Different strip normals and nonzero depths prove actual bending, rather than a rigid sheet.
+  values=page.locator('.album-turn-strip').evaluate_all('nodes=>nodes.map(n=>{const m=new DOMMatrix(getComputedStyle(n).transform);return {normal:m.m13,depth:m.m43}})')
+  assert max(v['normal'] for v in values)-min(v['normal'] for v in values)>.5,values
+  assert max(abs(v['depth']) for v in values)>30,values
+  # Crops meet in physical order; the reverse is mirrored as a printed sheet would be.
+  crops=page.locator('.album-turn-front .album-strip-paper').evaluate_all('nodes=>nodes.map(n=>parseFloat(n.style.left))')
+  reverse=page.locator('.album-turn-back .album-strip-paper').evaluate_all('nodes=>nodes.map(n=>parseFloat(n.style.left))')
+  assert crops[0]==0 and crops[-1]<-400 and reverse[0]<-400 and reverse[-1]==0
   assert page.locator('.album-turn-leaf').evaluate('e=>getComputedStyle(e).transform').startswith('matrix3d(')
-  assert page.locator('.album-turn-front').evaluate('e=>getComputedStyle(e).backfaceVisibility')=='hidden'
+  assert page.locator('.album-turn-front').first.evaluate('e=>getComputedStyle(e).backfaceVisibility')=='hidden'
   shot(page,'desktop-turn-front');freeze(page,.72);shot(page,'desktop-turn-back');finish(page)
   expect(page.locator('[data-album-indicator]')).to_have_text('Σελίδες 4–5 / 6')
-  print('PASS: old right page turns 180 degrees with the correct reverse and stationary pages beneath',flush=True)
+  print('PASS: interior paper visibly curves with continuous front/reverse crops and stationary pages beneath',flush=True)
 
   page.locator('[data-album-prev]').click();expect(page.locator('.album-turn-leaf')).to_be_visible()
-  assert page.locator('.album-turn-front img').get_attribute('src').endswith('page-04.svg')
-  assert page.locator('.album-turn-back img').get_attribute('src').endswith('page-03.svg')
+  assert page.locator('.album-turn-front img').first.get_attribute('src').endswith('page-04.svg')
+  assert page.locator('.album-turn-back img').first.get_attribute('src').endswith('page-03.svg')
   assert page.locator('.album-turn-leaf').evaluate('e=>e.getAnimations()[0].effect.getKeyframes().at(-1).transform')=='rotateY(180deg)'
-  finish(page)
+  expect(page.locator('.album-turn-leaf')).to_have_attribute('data-paper','flexible')
+  freeze(page,.4);shot(page,'desktop-backward-curl');finish(page)
   page.locator('[data-album-prev]').click();expect(page.locator('.album-turn-leaf')).to_be_visible();finish(page)
   expect(page.locator('.album-page')).to_have_count(1);expect(page.locator('[data-album-range]')).to_have_value('1')
   print('PASS: backward turning shows the reverse and closes the cover',flush=True)
@@ -68,7 +83,8 @@ try:
   page.locator('[data-album-next]').click();expect(page.locator('.album-turn-leaf')).to_be_visible()
   page.locator('[data-album-next]').click();ready(page)
   expect(page.locator('[data-album-indicator]')).to_have_text('Σελίδες 4–5 / 6')
-  page.locator('[data-album-next]').click();expect(page.locator('.album-turn-leaf')).to_be_visible();finish(page)
+  page.locator('[data-album-next]').click();expect(page.locator('.album-turn-leaf')).to_be_visible()
+  expect(page.locator('.album-turn-leaf')).to_have_attribute('data-paper','hard');finish(page)
   expect(page.locator('[data-album-next]')).to_be_disabled()
   page.locator('[data-album-prev]').click();expect(page.locator('.album-turn-leaf')).to_be_visible()
   page.locator('[data-album-close]').click();expect(page.locator('.album-turn-leaf')).to_have_count(0)
@@ -93,6 +109,12 @@ try:
   touch.send('Input.dispatchTouchEvent',{'type':'touchEnd','touchPoints':[]})
   expect(mp.locator('.album-turn-leaf')).to_be_visible()
   freeze(mp,.35);shot(mp,'mobile-turn');finish(mp);expect(mp.locator('.album-page')).to_have_count(1)
+  mp.locator('[data-album-next]').click();expect(mp.locator('.album-turn-leaf')).to_be_visible()
+  expect(mp.locator('.album-turn-leaf')).to_have_attribute('data-paper','flexible')
+  expect(mp.locator('.album-turn-strip')).to_have_count(32)
+  freeze(mp,.4);shot(mp,'mobile-paper-curl');finish(mp)
+  mp.locator('[data-album-prev]').click();expect(mp.locator('.album-turn-leaf')).to_be_visible()
+  expect(mp.locator('.album-turn-leaf')).to_have_attribute('data-paper','flexible');finish(mp)
   mp.locator('[data-album-prev]').click();expect(mp.locator('.album-turn-leaf')).to_be_visible();finish(mp)
   expect(mp.locator('[data-album-range]')).to_have_value('1')
   mp.locator('[data-album-next]').click();expect(mp.locator('.album-turn-leaf')).to_be_visible()

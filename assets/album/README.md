@@ -40,3 +40,11 @@ open as anchored popovers, without reducing the viewport height. Page sizing and
 turn animations share the canvas padding measurement, so fit-to-screen remains
 consistent after resizing or fullscreen changes. The surrounding archive page
 and its hero are unchanged.
+
+## Flexible interior paper
+
+Interior turns use a 48-strip (32 on mobile) cylindrical paper surface with
+matching cropped front/back images, synchronized curvature and changing light.
+The bend is zero at both ends and largest midway through the turn. The first
+and last catalog images are the hard covers and keep a rigid rotation. The
+existing cancellation, resizing and reduced-motion paths also apply to paper.

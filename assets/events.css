@@ -189,3 +189,10 @@
  .events-page .event-collection { gap:14px;padding:16px; }
  .events-page .event-collection>svg { flex-basis:40px;width:40px;height:40px; }
 }
+
+/* Προσεχείς εκδηλώσεις (δημιουργούνται από τον πίνακα ελέγχου) */
+.events-page .events-upcoming-list { list-style:none;margin:0;padding:0;display:grid;gap:10px; }
+.events-page .events-upcoming-list li { font-size:16px;line-height:1.5; }
+.events-page .events-upcoming-list time { display:inline-block;min-width:6.5em;font-weight:700;color:#8b302e; }
+.events-page .events-upcoming-list span { color:var(--muted); }
+.events-page .events-upcoming-list a { color:#8b302e;text-decoration:underline;text-underline-offset:3px; }

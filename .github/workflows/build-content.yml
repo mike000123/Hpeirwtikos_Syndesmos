@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths: ['content/**']
   workflow_dispatch:
+  schedule:
+    - cron: '15 1 * * *'   # καθημερινά: οι εκδηλώσεις που πέρασαν μετακινούνται από τις «Προσεχείς» στο αρχείο
 permissions:
   contents: write
 concurrency:

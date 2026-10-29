@@ -263,7 +263,7 @@ window.epirusEvents = {
       "id": "event-2011-10",
       "date": "2011-10",
       "dateLabel": "Οκτώβριος 2011",
-      "title": "Στιγμές του Συνδέσμου — Οκτώβριος 2011",
+      "title": "Στιγμές του Συνδέσμου",
       "source": "https://ipirotikos.gr/polymesa/fotografies/",
       "media": [
         {
@@ -514,7 +514,7 @@ window.epirusEvents = {
       "id": "event-2006-04-24",
       "date": "2006-04-24",
       "dateLabel": "24.04.2006",
-      "title": "Εκδήλωση με UNESCO στον ΟΛΠ",
+      "title": "Εκδήλωση με την UNESCO στον ΟΛΠ",
       "source": "https://ipirotikos.gr/polymesa/fotografies/",
       "media": [
         {

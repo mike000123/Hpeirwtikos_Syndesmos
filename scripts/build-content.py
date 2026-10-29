@@ -65,9 +65,59 @@ def build_events():
             note = o.pop('note'); o['note'] = note
         out.append(o)
     data = {'updated': meta['updated'], 'photoSource': meta['photoSource'], 'videoSource': meta['videoSource'], 'events': out}
+    TODAY = datetime.date.today().isoformat()
+    build_events_page(out, TODAY)
     wr(root / 'assets/events-data.js',
        '// Association media and locally archived original press documents.\nwindow.epirusEvents = ' +
        json.dumps(data, ensure_ascii=False, indent=2) + ';\n')
+
+
+def plural_media(media):
+    ph = sum(1 for m in media if m.get('type') != 'video'); vd = len(media) - ph; parts = []
+    if ph: parts.append(f"{ph} {'φωτογραφία' if ph == 1 else 'φωτογραφίες'}")
+    if vd: parts.append(f"{vd} {'βίντεο'}")
+    return ' · '.join(parts)
+
+def event_card(e):
+    d = e['date']; label = e['dateLabel']; title = e['title']; eid = e['id']
+    thumb = f'<img class="event-card-photo" src="assets/events-design/{eid}.webp" alt="" width="96" height="104" loading="lazy" decoding="async">' if (root / 'assets/events-design' / f'{eid}.webp').exists() else ''
+    acts = ''
+    if e.get('media'):
+        txt = plural_media(e['media'])
+        al = f'{txt}: {title}' + (f' — {label}' if len(d) != 10 else '')
+        acts += (f'<a class="event-open" href="{escq(e["source"])}" data-event-gallery="{escq(eid)}" aria-haspopup="dialog" aria-controls="event-gallery" '
+                 f'aria-label="{escq(al)}" target="_blank" rel="noopener noreferrer">{txt} →</a>')
+    pr = e.get('press')
+    if pr:
+        acts += (f'<a class="event-press-link" href="{escq(pr["src"])}" data-event-press="{escq(eid)}" aria-haspopup="dialog" aria-controls="event-press-dialog" '
+                 f'aria-label="{escq(pr["label"] + ": " + title)}" target="_blank" rel="noopener noreferrer">{esc(pr["label"])} →</a>')
+    if not acts and e.get('source') and e['source'] != 'https://ipirotikos.gr/':
+        acts = f'<a class="event-open" href="{escq(e["source"])}" target="_blank" rel="noopener noreferrer" aria-label="{escq("Περισσότερα: " + title)}">Περισσότερα →</a>'
+    note = ''
+    return (f'<article class="past-event" id="{escq(eid)}" data-event-year="{d[:4]}">{thumb}<div class="event-card-text"><time datetime="{d}">{esc(label)}</time>'
+            f'<h3>{esc(title)}</h3></div><div class="event-card-actions">{acts}</div></article>')
+
+def build_events_page(events, today):
+    p = root / 'ekdiloseis.html'; s = rd(p)
+    s = wrap_marker(s, 'events-list', r'<div class="past-events" id="events-list">', r'</div>(?=<button class="events-show-all")')
+    s = wrap_marker(s, 'events-years', r'<option value="all">Όλες οι χρονιές</option>', r'(?=</select>)')
+    s = wrap_marker(s, 'upcoming', r'<p>Οι νέες ημερομηνίες θα ανακοινώνονται εδώ\.</p>', r'(?<=</p>)')
+    past = [e for e in events if e.get('date') and e['date'] <= today]
+    future = sorted([e for e in events if e.get('date') and e['date'] > today], key=lambda e: e['date'])
+    s = between(s, 'events-list', '<div class="past-events" id="events-list">' + ''.join(event_card(e) for e in past) + '</div>')
+    years = []
+    for e in past:
+        if e['date'][:4] not in years: years.append(e['date'][:4])
+    s = between(s, 'events-years', '<option value="all">Όλες οι χρονιές</option>' + ''.join(f'<option value="{y}">{y}</option>' for y in years))
+    if future:
+        items = ''.join(f'<li><time datetime="{e["date"]}">{esc(e["dateLabel"])}</time> <strong>{esc(e["title"])}</strong>' +
+                        (f' <span>{esc(e["note"])}</span>' if e.get('note') else '') +
+                        (f' <a href="{escq(e["press"]["src"])}" target="_blank" rel="noopener noreferrer">{esc(e["press"]["label"])} →</a>' if e.get('press') else '') + '</li>' for e in future)
+        up = f'<ul class="events-upcoming-list">{items}</ul>'
+    else:
+        up = '<p>Οι νέες ημερομηνίες θα ανακοινώνονται εδώ.</p>'
+    s = between(s, 'upcoming', up)
+    wr(p, s)
 
 # ---------------------------------------------------------------- board
 def build_board():

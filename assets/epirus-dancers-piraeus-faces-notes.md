@@ -4,3 +4,5 @@ AI-assisted edit of the existing illustrative home hero. The five fictional adul
 
 Original retained: `assets/epirus-dancers-piraeus.webp`.
 New optimized display file: `assets/epirus-dancers-piraeus-faces.webp` (1600 × 684).
+
+Revision 2: user-requested differentiation of the first three fictional adult faces, counting from the left, using the previous hero as the reference. Display asset: `assets/epirus-dancers-piraeus-faces-v2.webp`, 1600 × 684. Earlier image versions are retained.

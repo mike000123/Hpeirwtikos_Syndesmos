@@ -14,3 +14,18 @@
 
 /* Approved architectural drawing replaces repeated facade photographs. */
 .association-club.association-club-sketch{padding:40px 0;background:#f5f0e6}.association-club-sketch .association-club-grid{grid-template-columns:1.15fr 1fr;gap:42px;align-items:center}.association-facade-sketch{margin:0;min-width:0;display:flex;justify-content:center}.association-facade-sketch img{display:block;width:100%;height:auto;object-fit:contain;mix-blend-mode:multiply}.association-club-sketch .association-club-copy h2{font-size:clamp(34px,3.6vw,49px);line-height:1.12;margin:16px 0 26px}.association-club-sketch .association-club-copy p{font-size:17px;line-height:1.8}.association-club-sketch .association-text-link{display:inline-block;margin-top:4px}@media(max-width:950px){.association-club-sketch .association-club-grid{gap:32px}.association-club-sketch .association-club-copy p{font-size:16px}}@media(max-width:650px){.association-club.association-club-sketch{padding:30px 0}.association-club-sketch .association-club-grid{grid-template-columns:1fr;gap:24px}.association-facade-sketch img{width:100%;max-width:none;max-height:none}.association-club-sketch .association-club-copy h2{font-size:34px;margin:14px 0 22px}.association-club-sketch .association-club-copy p{font-size:16px}}
+
+/* Keep the clubhouse band in proportion with the hero and the history section. */
+.association-club.association-club-sketch{padding:32px 0}
+.association-club-sketch .association-club-grid{grid-template-columns:.9fr 1.1fr;gap:48px}
+.association-facade-sketch img{width:auto;max-width:100%;max-height:420px}
+.association-club-sketch .association-club-copy h2{font-size:clamp(32px,3.2vw,44px);margin:12px 0 20px}
+.association-club-sketch .association-club-copy p{line-height:1.65;margin-bottom:16px}
+@media(max-width:950px){.association-club-sketch .association-club-grid{gap:30px}.association-facade-sketch img{max-height:370px}}
+@media(max-width:650px){
+ .association-club.association-club-sketch{padding:28px 0}
+ .association-club-sketch .association-club-grid{grid-template-columns:1fr;gap:18px}
+ .association-facade-sketch img{max-height:260px}
+ .association-club-sketch .association-club-copy h2{font-size:30px;margin:10px 0 18px}
+}
+

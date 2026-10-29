@@ -44,3 +44,7 @@
 .timeline,.compact-history .timeline{display:block;border-left:0;padding-left:0}.timeline article{display:grid;grid-template-columns:145px minmax(0,1fr);column-gap:28px;row-gap:6px;margin:0;padding:20px 0;border-top:1px solid #d2c9b8}.timeline article>.eyebrow{grid-column:1;grid-row:1 / span 2;font:400 30px/1.2 Georgia,serif;letter-spacing:0;text-transform:none;color:#946733;padding-top:2px}.timeline article>h3{grid-column:2;margin:0;font-size:23px;line-height:1.25}.timeline article>p{grid-column:2;margin:0;max-width:76ch;font-size:16px;line-height:1.65}.timeline article:last-child{border-bottom:1px solid #d2c9b8}@media(max-width:650px){.timeline article{grid-template-columns:100px minmax(0,1fr);column-gap:16px;padding:18px 0}.timeline article>.eyebrow{font-size:25px}.timeline article>h3{font-size:21px}.timeline article>p{font-size:15px;line-height:1.6}}@media(max-width:400px){.timeline article{grid-template-columns:1fr;row-gap:8px}.timeline article>.eyebrow{grid-column:1;grid-row:auto;font-size:27px;padding:0}.timeline article>h3,.timeline article>p{grid-column:1}}
 
 .contact-details{font-style:normal;line-height:1.8}.site-foot .contact-details{font-size:14px;margin:10px 0}.site-foot .wrap>div{min-width:0}.site-foot a{overflow-wrap:anywhere}
+
+/* Keep the association footer identical on pages with or without the editorial stylesheet. */
+.site-foot{font:16px/1.75 Arial,sans-serif}
+.site-foot a:not(.footer-brand):not(.social-link){text-decoration:underline;text-underline-offset:5px}

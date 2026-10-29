@@ -15,8 +15,41 @@ media_folder: assets/uploads
 public_folder: assets/uploads
 
 collections:
+  - name: board
+    label: 'Ο Σύνδεσμος · Διοικητικό Συμβούλιο και πρόεδροι'
+    description: 'Σελίδα «Ο Σύνδεσμος»: ονόματα του ΔΣ και πίνακας προέδρων.'
+    files:
+      - name: board
+        label: Διοικητικό Συμβούλιο και πρόεδροι
+        file: content/board.json
+        format: json
+        fields:
+          - name: members
+            label: Αξιωματούχοι του ΔΣ
+            label_singular: Μέλος
+            widget: list
+            summary: '{{fields.role}} · {{fields.name}}'
+            fields:
+              - {name: role, label: Ιδιότητα (π.χ. Πρόεδρος), widget: string}
+              - {name: name, label: Ονοματεπώνυμο, widget: string}
+          - {name: councillors, label: Σύμβουλοι (χωρισμένοι με κόμμα), widget: text}
+          - {name: substitutes, label: Αναπληρωματικοί (χωρισμένοι με κόμμα), widget: text, required: false}
+          - {name: representatives, label: Εκπρόσωποι στην Πανηπειρωτική Συνομοσπονδία (χωρισμένοι με κόμμα), widget: text, required: false}
+          - name: presidents
+            label: Πρόεδροι από το 1906 (με χρονολογική σειρά)
+            label_singular: Πρόεδρος
+            widget: list
+            summary: '{{fields.name}} · {{fields.period}}'
+            fields:
+              - {name: name, label: Ονοματεπώνυμο, widget: string}
+              - {name: period, label: 'Περίοδος (π.χ. 2009–2023)', widget: string}
+              - {name: portrait, label: Πορτρέτο προέδρου, widget: image, required: false, hint: 'Πραγματική φωτογραφία του συγκεκριμένου προέδρου. Αν μείνει κενό, εμφανίζονται τα αρχικά του.'}
+              - {name: portrait_source, label: Σύνδεσμος πηγής φωτογραφίας, widget: string, required: false}
+              - {name: portrait_credit, label: Προέλευση φωτογραφίας, widget: string, required: false, hint: 'Σύντομη αναφορά, π.χ. Αρχείο Συνδέσμου.'}
+
   - name: events
-    label: Εκδηλώσεις και ανακοινώσεις
+    label: 'Εκδηλώσεις · ανακοινώσεις και αρχείο'
+    description: 'Σελίδα «Εκδηλώσεις»: προσθέστε νέα εκδήλωση (μελλοντική ημερομηνία = «επόμενες συναντήσεις») ή διορθώστε παλιά.'
     label_singular: Εκδήλωση
     folder: content/events
     extension: json
@@ -59,53 +92,9 @@ collections:
           - {name: sourcePage, widget: hidden}
           - {name: retrieval, widget: hidden}
 
-  - name: settings
-    label: Στοιχεία επικοινωνίας και ωράριο
-    files:
-      - name: settings
-        label: Στοιχεία επικοινωνίας και ωράριο
-        file: content/settings.json
-        format: json
-        fields:
-          - {name: phone, label: Τηλέφωνο / Fax, widget: string, pattern: ['^[0-9 ]{10,14}$', 'Μόνο ψηφία και κενά, π.χ. 210 4177378']}
-          - {name: email, label: Email, widget: string}
-          - {name: street, label: Οδός και αριθμός, widget: string}
-          - {name: postcode, label: Τ.Κ., widget: string, pattern: ['^[0-9]{5}$', '5 ψηφία']}
-          - {name: hours, label: Ώρες λειτουργίας της Λέσχης, widget: text, required: false, hint: 'Μία γραμμή για κάθε μέρα, π.χ. «Τρίτη & Πέμπτη 18:00–21:00». Αν μείνει κενό, η σελίδα Επικοινωνία λέει να τηλεφωνήσουν.'}
-
-  - name: board
-    label: Διοικητικό Συμβούλιο και πρόεδροι
-    files:
-      - name: board
-        label: Διοικητικό Συμβούλιο και πρόεδροι
-        file: content/board.json
-        format: json
-        fields:
-          - name: members
-            label: Αξιωματούχοι του ΔΣ
-            label_singular: Μέλος
-            widget: list
-            summary: '{{fields.role}} · {{fields.name}}'
-            fields:
-              - {name: role, label: Ιδιότητα (π.χ. Πρόεδρος), widget: string}
-              - {name: name, label: Ονοματεπώνυμο, widget: string}
-          - {name: councillors, label: Σύμβουλοι (χωρισμένοι με κόμμα), widget: text}
-          - {name: substitutes, label: Αναπληρωματικοί (χωρισμένοι με κόμμα), widget: text, required: false}
-          - {name: representatives, label: Εκπρόσωποι στην Πανηπειρωτική Συνομοσπονδία (χωρισμένοι με κόμμα), widget: text, required: false}
-          - name: presidents
-            label: Πρόεδροι από το 1906 (με χρονολογική σειρά)
-            label_singular: Πρόεδρος
-            widget: list
-            summary: '{{fields.name}} · {{fields.period}}'
-            fields:
-              - {name: name, label: Ονοματεπώνυμο, widget: string}
-              - {name: period, label: 'Περίοδος (π.χ. 2009–2023)', widget: string}
-              - {name: portrait, label: Πορτρέτο προέδρου, widget: image, required: false, hint: 'Πραγματική φωτογραφία του συγκεκριμένου προέδρου. Αν μείνει κενό, εμφανίζονται τα αρχικά του.'}
-              - {name: portrait_source, label: Σύνδεσμος πηγής φωτογραφίας, widget: string, required: false}
-              - {name: portrait_credit, label: Προέλευση φωτογραφίας, widget: string, required: false, hint: 'Σύντομη αναφορά, π.χ. Αρχείο Συνδέσμου.'}
-
   - name: articles
-    label: Άρθρα «Γνωρίστε την Ήπειρο»
+    label: 'Γνωρίστε την Ήπειρο · άρθρα'
+    description: 'Σελίδα «Γνωρίστε την Ήπειρο»: κείμενα και φωτογραφίες των αφιερωμάτων, ή νέο άρθρο.'
     label_singular: Άρθρο
     folder: content/articles
     extension: json
@@ -165,4 +154,19 @@ collections:
       - {name: card_image_alt, label: Περιγραφή εικόνας κάρτας, widget: string, required: false}
       - {name: kicker, label: 'Λέξεις-κλειδιά κάρτας (π.χ. Χωριά · Φθινόπωρο)', widget: string, required: false}
       - {name: description, label: Σύντομη περιγραφή (κάρτα και Google/Facebook), widget: text, required: false}
+
+  - name: settings
+    label: 'Επικοινωνία · τηλέφωνο, email, ωράριο'
+    description: 'Σελίδα «Επικοινωνία» και υποσέλιδο όλων των σελίδων.'
+    files:
+      - name: settings
+        label: Στοιχεία επικοινωνίας και ωράριο
+        file: content/settings.json
+        format: json
+        fields:
+          - {name: phone, label: Τηλέφωνο / Fax, widget: string, pattern: ['^[0-9 ]{10,14}$', 'Μόνο ψηφία και κενά, π.χ. 210 4177378']}
+          - {name: email, label: Email, widget: string}
+          - {name: street, label: Οδός και αριθμός, widget: string}
+          - {name: postcode, label: Τ.Κ., widget: string, pattern: ['^[0-9]{5}$', '5 ψηφία']}
+          - {name: hours, label: Ώρες λειτουργίας της Λέσχης, widget: text, required: false, hint: 'Μία γραμμή για κάθε μέρα, π.χ. «Τρίτη & Πέμπτη 18:00–21:00». Αν μείνει κενό, η σελίδα Επικοινωνία λέει να τηλεφωνήσουν.'}
 

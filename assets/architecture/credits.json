@@ -1,16 +1,16 @@
 {
   "dilofo": {
-    "file": "dilofo.webp",
-    "title": "File:Dilofo, Ioannina.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Dilofo,_Ioannina.jpg",
-    "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Dilofo%2C_Ioannina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-    "author": "Juggertrout",
-    "license": "CC BY 4.0",
-    "license_url": "https://creativecommons.org/licenses/by/4.0",
-    "description": "village of Dilofo in Zagori",
+    "file": "dilofo-rooftops.webp",
+    "title": "File:Dilofo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Dilofo.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Dilofo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "author": "Ziegler175",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "description": "Dilofo/Epirus",
     "changes": "Resize and conversion to WebP; no content edits.",
-    "width": 1200,
-    "height": 900
+    "width": 900,
+    "height": 1200
   },
   "tositsa": {
     "file": "tositsa.webp",
@@ -26,17 +26,16 @@
     "height": 900
   },
   "misiou": {
-    "file": "misiou.webp",
-    "title": "File:Αρχοντικό Μίσιου Ιωάννινα 01.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:%CE%91%CF%81%CF%87%CE%BF%CE%BD%CF%84%CE%B9%CE%BA%CF%8C_%CE%9C%CE%AF%CF%83%CE%B9%CE%BF%CF%85_%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%B9%CE%BD%CE%B1_01.jpg",
-    "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/de/%CE%91%CF%81%CF%87%CE%BF%CE%BD%CF%84%CE%B9%CE%BA%CF%8C_%CE%9C%CE%AF%CF%83%CE%B9%CE%BF%CF%85_%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%B9%CE%BD%CE%B1_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-    "author": "Mixalis08",
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-    "description": "Αρχοντικό Μίσιου Ιωάννινα",
-    "changes": "Resize and conversion to WebP; no content edits.",
-    "width": 750,
-    "height": 1000
+    "file": "misiou-courtyard.webp",
+    "source": "https://maxmag.gr/agnosti-ellada/gianniotiko-archontiko-misiou-afstiro-ke-lito-krama-ipirotikis-architektonikis/",
+    "original_url": "https://2.bp.blogspot.com/-nMSvhWCr4Qk/UwUciSBRf7I/AAAAAAAAWYM/o18NBvq565Q/s1600/DSC_8259-2+@=1.jpg",
+    "author": "Michael Vakaros",
+    "license": "Not specified on the linked article; copyright signature retained in the photograph.",
+    "description": "Η αυλή και η κύρια όψη της οικίας Μίσιου στα Ιωάννινα, με την τοξοστοιχία και την εξωτερική κλίμακα.",
+    "changes": "Conversion to WebP; no cropping, no removal of copyright signature.",
+    "width": 1105,
+    "height": 768,
+    "selection": "Exact photograph selected by the user."
   },
   "syrrako": {
     "file": "syrrako.webp",

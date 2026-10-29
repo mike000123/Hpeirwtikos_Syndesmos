@@ -47,13 +47,32 @@
     var a = '<!--cms:' + name + '-->', b = '<!--/cms:' + name + '-->', i = s.indexOf(a), j = s.indexOf(b);
     return i < 0 || j < 0 ? s : s.slice(0, i + a.length) + inner + s.slice(j);
   }
+  function presidentsHtml(presidents) {
+    function arrow(direction, label, path) {
+      return '<button class="presidents-arrow presidents-' + direction + '" type="button" aria-label="' + label + '" aria-controls="presidents-track" hidden><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="' + path + '"/></svg></button>';
+    }
+    var cards = presidents.map(function (x, i) {
+      var name = escq(x.name), period = escq(x.period);
+      var path = String(x.portrait || '').replace(/^\/+/, '');
+      var valid = path.indexOf('assets/') === 0 && !/[:\\?#\x00-\x1f]/.test(path) && path.split('/').indexOf('..') < 0;
+      var initials = escq(String(x.name || '').split(/\s+/).filter(Boolean).slice(0, 2).map(function (w) { return w[0]; }).join(''));
+      var visual = valid ? '<div class="president-portrait"><img class="president-photo" src="' + escq(path) + '" alt="' + name + '" width="347" height="533" loading="lazy" decoding="async"></div>' :
+        '<div class="president-no-portrait"><span class="president-initials" aria-hidden="true">' + initials + '</span><span>Χωρίς διαθέσιμο πορτρέτο</span></div>';
+      var credit = valid && /^https?:\/\//.test(x.portrait_source || '') ? '<a class="president-credit" href="' + escq(x.portrait_source) + '" target="_blank" rel="noopener noreferrer" aria-label="Πηγή φωτογραφίας: ' + name + '">Φωτογραφία · ' + escq(x.portrait_credit || 'Αρχείο') + '</a>' : '';
+      return '<li class="president-card" data-president-index="' + i + '">' + visual + '<span class="president-node" aria-hidden="true"></span><p class="president-period">' + period + '</p><h3 class="president-name">' + name + '</h3>' + credit + '</li>';
+    }).join('');
+    var first = presidents.length ? escq(String(presidents[0].period || '').split('–')[0]) : '';
+    var last = presidents.length ? escq(String(presidents[presidents.length - 1].period || '').split('–').pop()) : '';
+    return '<div class="presidents-carousel"><div class="presidents-stage">' + arrow('previous', 'Προηγούμενες θητείες', 'm14 5-7 7 7 7') +
+      '<ol class="presidents-track" id="presidents-track" tabindex="0" aria-label="Πρόεδροι και θητείες, με χρονολογική σειρά">' + cards + '</ol>' + arrow('next', 'Επόμενες θητείες', 'm10 5 7 7-7 7') +
+      '</div><p class="presidents-hint">Σύρετε τη χρονογραμμή για να ταξιδέψετε στις θητείες</p><div class="presidents-overview" hidden><span>' + first + '</span><input class="presidents-range" type="range" min="0" max="' + Math.max(0, presidents.length - 1) + '" value="0" step="1" aria-label="Μετάβαση σε θητεία"><span>' + last + '</span></div><p class="association-sr-only presidents-status" aria-live="polite" aria-atomic="true"></p></div>';
+  }
   function boardHtml(page, b) {
     var dl = (b.members || []).map(function (m) { return '<div><dt>' + esc(m.role) + '</dt><dd>' + esc(m.name) + '</dd></div>'; }).join('');
     var sup = '<p><strong>Σύμβουλοι:</strong> ' + esc(b.councillors) + '.' + (b.substitutes ? ' <strong>Αναπληρωματική:</strong> ' + esc(b.substitutes) + '.' : '') + '</p>';
     var rep = b.representatives ? '<p><strong>Εκπρόσωποι στην Πανηπειρωτική Συνομοσπονδία:</strong> ' + esc(b.representatives) + '.</p>' : '';
     var s = marker(page, 'board', '<dl class="board-members">' + dl + '</dl><div class="association-board-support">' + sup + rep + '</div>');
-    var rows = (b.presidents || []).map(function (x, i) { return '<tr><td>' + (i + 1) + '</td><th scope="row">' + esc(x.name) + '</th><td>' + esc(x.period) + '</td></tr>'; }).join('');
-    return marker(s, 'presidents', '<table><caption class="association-sr-only">Οι πρόεδροι του Συνδέσμου και οι περίοδοι της θητείας τους</caption><thead><tr><th scope="col">Α/Α</th><th scope="col">Ονοματεπώνυμο</th><th scope="col">Περίοδος</th></tr></thead><tbody>' + rows + '</tbody></table>');
+    return marker(s, 'presidents', presidentsHtml(b.presidents || []));
   }
   function settingsHtml(page, n, old) {
     var tel = function (v) { return '+30' + String(v || '').replace(/\D/g, ''); };
@@ -147,3 +166,4 @@
   }
   if (window.CMS) register(); else window.addEventListener('load', register);
 })();
+

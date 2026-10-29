@@ -1,0 +1,21 @@
+{
+  "frame": {
+    "file": "ornate-frame.webp",
+    "provenance": "Generated decorative frame based on the user-approved mockup. Empty transparent center; contains no generated human portraits."
+  },
+  "portraits": [
+    {
+      "person": "Δημήτριος Λένης",
+      "file": "dimitrios-lenis.webp",
+      "source": "https://www.panepirotiki.com/images/Efimerida/PANHPEIROTIKH_F_28.pdf#page=4",
+      "identification": "Printed caption explicitly identifies the single portrait on page 4. Native embedded image 347x533; PDF orientation respected; converted to WebP. No facial reconstruction."
+    },
+    {
+      "person": "Βασίλειος Βενέτης",
+      "file": "vasileios-venetis.webp",
+      "source": "https://s3-eu-west-1.amazonaws.com/marechron/issues/issues_1542.pdf#page=31",
+      "identification": "Name and title printed under the photograph, printed page 29 / PDF page 31. Photograph region extracted from the PDF; surrounding article and caption omitted. Converted to WebP. No facial reconstruction."
+    }
+  ],
+  "rights": "Photographic rights remain with the original rights holders. These photographs are not represented as Creative Commons or AI-generated. The source publications are linked beside each portrait."
+}

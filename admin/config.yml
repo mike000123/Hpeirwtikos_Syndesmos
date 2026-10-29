@@ -100,6 +100,9 @@ collections:
             fields:
               - {name: name, label: Ονοματεπώνυμο, widget: string}
               - {name: period, label: 'Περίοδος (π.χ. 2009–2023)', widget: string}
+              - {name: portrait, label: Πορτρέτο προέδρου, widget: image, required: false, hint: 'Πραγματική φωτογραφία του συγκεκριμένου προέδρου. Αν μείνει κενό, εμφανίζονται τα αρχικά του.'}
+              - {name: portrait_source, label: Σύνδεσμος πηγής φωτογραφίας, widget: string, required: false}
+              - {name: portrait_credit, label: Προέλευση φωτογραφίας, widget: string, required: false, hint: 'Σύντομη αναφορά, π.χ. Αρχείο Συνδέσμου.'}
 
   - name: articles
     label: Άρθρα «Γνωρίστε την Ήπειρο»
@@ -162,3 +165,4 @@ collections:
       - {name: card_image_alt, label: Περιγραφή εικόνας κάρτας, widget: string, required: false}
       - {name: kicker, label: 'Λέξεις-κλειδιά κάρτας (π.χ. Χωριά · Φθινόπωρο)', widget: string, required: false}
       - {name: description, label: Σύντομη περιγραφή (κάρτα και Google/Facebook), widget: text, required: false}
+

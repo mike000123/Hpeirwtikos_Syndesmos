@@ -3,6 +3,7 @@ Idempotent: running it twice changes nothing.  Run: python scripts/build-content
 import json, re, html, sys, datetime
 from pathlib import Path
 import markdown
+from president_timeline import presidents_html
 try:
     from PIL import Image
 except ImportError:
@@ -129,10 +130,7 @@ def build_board():
            (f' <strong>Αναπληρωματική:</strong> {esc(b["substitutes"])}.' if b.get('substitutes') else '') + '</p>')
     rep = f'<p><strong>Εκπρόσωποι στην Πανηπειρωτική Συνομοσπονδία:</strong> {esc(b["representatives"])}.</p>' if b.get('representatives') else ''
     s = between(s, 'board', f'<dl class="board-members">{dl}</dl><div class="association-board-support">{sup}{rep}</div>')
-    rows = ''.join(f'<tr><td>{i}</td><th scope="row">{esc(x["name"])}</th><td>{esc(x["period"])}</td></tr>' for i, x in enumerate(b['presidents'], 1))
-    s = between(s, 'presidents', '<table><caption class="association-sr-only">Οι πρόεδροι του Συνδέσμου και οι περίοδοι της θητείας τους</caption>'
-                '<thead><tr><th scope="col">Α/Α</th><th scope="col">Ονοματεπώνυμο</th><th scope="col">Περίοδος</th></tr></thead>'
-                f'<tbody>{rows}</tbody></table>')
+    s = between(s, 'presidents', presidents_html(b['presidents']))
     wr(p, s)
 
 # ---------------------------------------------------------------- settings
@@ -240,3 +238,4 @@ def build_articles():
 
 if __name__ == '__main__':
     build_events(); build_board(); build_settings(); build_articles()
+

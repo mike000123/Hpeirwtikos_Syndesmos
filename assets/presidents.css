@@ -4,7 +4,7 @@
 .presidents-heading .eyebrow{color:#94713d;font-size:12px;letter-spacing:.17em}
 .association-presidents .presidents-heading h2{margin:10px 0 12px;font-size:clamp(34px,4.2vw,56px);line-height:1.12}
 .presidents-heading p{margin:0;color:#686259;line-height:1.7}
-.presidents-carousel{--portrait-width:224px;--portrait-height:280px;--timeline-gold:#ae8952;--carousel-gap:30px;min-width:0}
+.presidents-carousel{--portrait-width:176px;--portrait-height:220px;--timeline-gold:#ae8952;--carousel-gap:30px;min-width:0}
 .presidents-stage{position:relative;display:grid;grid-template-columns:52px minmax(0,1fr) 52px;column-gap:10px;align-items:start}
 .presidents-track{grid-column:2;display:flex;gap:var(--carousel-gap);margin:0;padding:8px 0 18px;list-style:none;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:0;touch-action:pan-x pan-y pinch-zoom;-webkit-overflow-scrolling:touch}
 .presidents-carousel[data-ready] .presidents-track{scrollbar-width:none}
@@ -37,6 +37,16 @@
 .presidents-range::-moz-range-thumb{width:11px;height:11px;border:0;border-radius:50%;background:#701e2b}
 .presidents-carousel[data-dragging] .presidents-track{scroll-snap-type:none;cursor:grabbing;user-select:none}
 @media(min-width:1100px){.presidents-track{cursor:grab}}
-@media(max-width:700px){.association-presidents{padding:40px 0 48px}.presidents-heading{margin-bottom:24px}.presidents-heading .eyebrow{font-size:10px;letter-spacing:.1em}.presidents-carousel{--portrait-width:194px;--portrait-height:242.5px;--carousel-gap:24px}.presidents-stage{grid-template-columns:36px minmax(0,1fr) 36px;column-gap:7px}.presidents-arrow{width:34px;height:34px;top:calc(var(--portrait-height) / 2 - 9px)}.association-presidents .president-period{font-size:23px}.association-presidents .president-name{font-size:18px;min-height:49px}.presidents-overview{margin:0 43px;gap:10px}.presidents-hint{font-size:12px;max-width:260px;margin:16px auto}}
+@media(max-width:700px){.association-presidents{padding:40px 0 48px}.presidents-heading{margin-bottom:24px}.presidents-heading .eyebrow{font-size:10px;letter-spacing:.1em}.presidents-carousel{--portrait-width:176px;--portrait-height:220px;--carousel-gap:24px}.presidents-stage{grid-template-columns:36px minmax(0,1fr) 36px;column-gap:7px}.presidents-arrow{width:34px;height:34px;top:calc(var(--portrait-height) / 2 - 9px)}.association-presidents .president-period{font-size:23px}.association-presidents .president-name{font-size:18px;min-height:49px}.presidents-overview{margin:0 43px;gap:10px}.presidents-hint{font-size:12px;max-width:260px;margin:16px auto}}
 @media(max-width:360px){.presidents-carousel{--portrait-width:164px;--portrait-height:205px}.presidents-stage{grid-template-columns:30px minmax(0,1fr) 30px;column-gap:5px}.presidents-arrow{width:29px;height:29px}.presidents-arrow svg{width:19px;height:19px}.presidents-overview{margin:0 35px;font-size:12px}.association-presidents .president-name{font-size:17px}}
 @media(prefers-reduced-motion:reduce){.presidents-arrow{transition:none}}
+
+/* Five complete terms on desktop; the portrait stays smaller than its text column. */
+@media(min-width:960px){
+ .presidents-stage{container-type:inline-size}
+ .presidents-carousel{--carousel-gap:24px;--portrait-width:min(164px,calc((100cqw - 220px)/5));--portrait-height:calc(var(--portrait-width)*1.25)}
+ .president-card{flex-basis:calc((100% - 96px)/5)}
+ .president-portrait,.president-no-portrait{margin-inline:auto}
+ .association-presidents .president-period{font-size:23px}
+ .association-presidents .president-name{font-size:18px;min-height:49px}
+}

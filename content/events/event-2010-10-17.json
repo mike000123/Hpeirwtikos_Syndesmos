@@ -1,0 +1,35 @@
+{
+  "id": "event-2010-10-17",
+  "date": "2010-10-17",
+  "title": "Γυναίκα της Ηπείρου",
+  "source": "https://ipirotikos.gr/deltia-typoy/17-10-10-gynaika-tis-ipeiroy/",
+  "media": [
+    {
+      "type": "photo",
+      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%97.%CE%A3.%CE%A0_17-10-10_%28150%29_%281%29.jpg?bwg=1604513930",
+      "caption": "Γυναίκα της Ηπείρου — φωτογραφία 1",
+      "originalFile": "Η.Σ.Π_17-10-10_(150)_(1).jpg",
+      "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
+      "retrieval": "opened"
+    },
+    {
+      "type": "photo",
+      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/17-10-10_%CE%92%CE%A1%CE%91%CE%92%CE%95%CE%A5%CE%A3%CE%97_%CE%A3%CE%9F%CE%A5%CE%9C%CE%91%CE%9A%CE%97__%CE%95%CE%9A%CE%94%CE%97%CE%9B%CE%9F%CE%A3%CE%97_%CE%97%CE%A3%CE%A0_%CE%9C%CE%95_UNESCO_%281%29.jpg?bwg=1604513930",
+      "caption": "Γυναίκα της Ηπείρου — φωτογραφία 2",
+      "originalFile": "17-10-10_ΒΡΑΒΕΥΣΗ_ΣΟΥΜΑΚΗ__ΕΚΔΗΛΟΣΗ_ΗΣΠ_ΜΕ_UNESCO_(1).jpg",
+      "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
+      "retrieval": "opened"
+    }
+  ],
+  "press": {
+    "src": "assets/event-press/event-2010-10-17.pdf",
+    "format": "pdf",
+    "label": "Δελτίο τύπου",
+    "pages": [
+      "assets/event-press/event-2010-10-17-page-1.jpg",
+      "assets/event-press/event-2010-10-17-page-2.jpg",
+      "assets/event-press/event-2010-10-17-page-3.jpg"
+    ],
+    "originalSrc": "https://ipirotikos.gr/wp-content/uploads/2020/11/17-10-10-%CE%93%CF%85%CE%BD%CE%B1%CE%AF%CE%BA%CE%B1-%CF%84%CE%B7%CF%82-%CE%97%CF%80%CE%B5%CE%AF%CF%81%CE%BF%CF%85.pdf"
+  }
+}

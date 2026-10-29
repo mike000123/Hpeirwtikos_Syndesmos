@@ -19,8 +19,8 @@
   let loadTimer;
   let session = 0;
   function localFile(value, preview = false) {
-    return typeof value === 'string' && /^assets\/event-press\/event-\d{4}-\d{2}-\d{2}(?:-page-\d+)?\.(?:pdf|jpg)$/.test(value) &&
-      (!preview || value.endsWith('.jpg')) ? value : null;
+    return typeof value === 'string' && /^assets\/event-press\/[A-Za-z0-9][A-Za-z0-9._-]*\.(?:pdf|jpe?g|png|webp)$/.test(value) &&
+      (!preview || !value.endsWith('.pdf')) ? value : null;
   }
   function documentURL(press) {
     return localFile(press?.src) && Array.isArray(press.pages) && press.pages.length &&

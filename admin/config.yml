@@ -1,0 +1,164 @@
+# Πίνακας ελέγχου του site (Sveltia CMS). Οδηγίες: admin/odigos.html
+backend:
+  name: github
+  repo: mike000123/Hpeirwtikos_Syndesmos
+  branch: main
+  commit_messages:
+    create: 'Νέο: {{collection}} «{{slug}}»'
+    update: 'Ενημέρωση: {{collection}} «{{slug}}»'
+    delete: 'Διαγραφή: {{collection}} «{{slug}}»'
+    uploadMedia: 'Αρχείο: {{path}}'
+    deleteMedia: 'Διαγραφή αρχείου: {{path}}'
+site_url: https://mike000123.github.io/Hpeirwtikos_Syndesmos/
+display_url: https://mike000123.github.io/Hpeirwtikos_Syndesmos/
+media_folder: assets/uploads
+public_folder: assets/uploads
+
+collections:
+  - name: events
+    label: Εκδηλώσεις και ανακοινώσεις
+    label_singular: Εκδήλωση
+    folder: content/events
+    extension: json
+    format: json
+    create: true
+    delete: true
+    slug: '{{year}}-{{month}}-{{day}}-{{hour}}{{minute}}'
+    summary: '{{date}} · {{title}}'
+    sortable_fields: [date, title]
+    fields:
+      - {name: id, widget: hidden}
+      - {name: title, label: Τίτλος εκδήλωσης, widget: string}
+      - {name: date, label: Ημερομηνία, widget: datetime, date_format: 'YYYY-MM-DD', time_format: false, picker_utc: true, required: false, hint: 'Η ημερομηνία που έγινε η εκδήλωση.'}
+      - {name: dateLabel, label: Ειδική εμφάνιση ημερομηνίας (προαιρετικό), widget: string, required: false, hint: 'Αφήστε κενό. Συμπληρώστε μόνο αν θέλετε π.χ. «Οκτώβριος 2011».'}
+      - {name: source, label: Σύνδεσμος σε σελίδα με περισσότερα (προαιρετικό), widget: string, required: false}
+      - {name: note, label: Σημείωση (προαιρετικό), widget: text, required: false}
+      - name: press
+        label: Ανακοίνωση / αφίσα
+        widget: object
+        required: false
+        collapsed: false
+        fields:
+          - {name: src, label: Αρχείο ανακοίνωσης (εικόνα JPG ή PDF), widget: file, media_folder: assets/event-press, public_folder: assets/event-press, required: false}
+          - {name: label, label: Τίτλος αρχείου, widget: string, default: Ανακοίνωση, required: false}
+          - {name: format, widget: hidden}
+          - {name: originalSrc, widget: hidden}
+          - {name: pages, widget: hidden}
+      - name: media
+        label: Φωτογραφίες και βίντεο
+        label_singular: Φωτογραφία / βίντεο
+        widget: list
+        required: false
+        summary: '{{fields.type}} · {{fields.caption}}'
+        fields:
+          - {name: type, label: Είδος, widget: select, options: [{label: Φωτογραφία, value: photo}, {label: Βίντεο YouTube, value: video}], default: photo}
+          - {name: src, label: Φωτογραφία, widget: image, media_folder: assets/event-media, public_folder: assets/event-media, required: false}
+          - {name: videoId, label: 'Κωδικός βίντεο YouTube (το τμήμα μετά το v= στη διεύθυνση)', widget: string, required: false}
+          - {name: caption, label: Λεζάντα, widget: string}
+          - {name: originalFile, widget: hidden}
+          - {name: sourcePage, widget: hidden}
+          - {name: retrieval, widget: hidden}
+
+  - name: settings
+    label: Στοιχεία επικοινωνίας και ωράριο
+    files:
+      - name: settings
+        label: Στοιχεία επικοινωνίας και ωράριο
+        file: content/settings.json
+        format: json
+        fields:
+          - {name: phone, label: Τηλέφωνο / Fax, widget: string, pattern: ['^[0-9 ]{10,14}$', 'Μόνο ψηφία και κενά, π.χ. 210 4177378']}
+          - {name: email, label: Email, widget: string}
+          - {name: street, label: Οδός και αριθμός, widget: string}
+          - {name: postcode, label: Τ.Κ., widget: string, pattern: ['^[0-9]{5}$', '5 ψηφία']}
+          - {name: hours, label: Ώρες λειτουργίας της Λέσχης, widget: text, required: false, hint: 'Μία γραμμή για κάθε μέρα, π.χ. «Τρίτη & Πέμπτη 18:00–21:00». Αν μείνει κενό, η σελίδα Επικοινωνία λέει να τηλεφωνήσουν.'}
+
+  - name: board
+    label: Διοικητικό Συμβούλιο και πρόεδροι
+    files:
+      - name: board
+        label: Διοικητικό Συμβούλιο και πρόεδροι
+        file: content/board.json
+        format: json
+        fields:
+          - name: members
+            label: Αξιωματούχοι του ΔΣ
+            label_singular: Μέλος
+            widget: list
+            summary: '{{fields.role}} · {{fields.name}}'
+            fields:
+              - {name: role, label: Ιδιότητα (π.χ. Πρόεδρος), widget: string}
+              - {name: name, label: Ονοματεπώνυμο, widget: string}
+          - {name: councillors, label: Σύμβουλοι (χωρισμένοι με κόμμα), widget: text}
+          - {name: substitutes, label: Αναπληρωματικοί (χωρισμένοι με κόμμα), widget: text, required: false}
+          - {name: representatives, label: Εκπρόσωποι στην Πανηπειρωτική Συνομοσπονδία (χωρισμένοι με κόμμα), widget: text, required: false}
+          - name: presidents
+            label: Πρόεδροι από το 1906 (με χρονολογική σειρά)
+            label_singular: Πρόεδρος
+            widget: list
+            summary: '{{fields.name}} · {{fields.period}}'
+            fields:
+              - {name: name, label: Ονοματεπώνυμο, widget: string}
+              - {name: period, label: 'Περίοδος (π.χ. 2009–2023)', widget: string}
+
+  - name: articles
+    label: Άρθρα «Γνωρίστε την Ήπειρο»
+    label_singular: Άρθρο
+    folder: content/articles
+    extension: json
+    format: json
+    create: true
+    delete: false
+    identifier_field: slug
+    slug: '{{fields.slug}}'
+    summary: '{{title}}'
+    fields:
+      - {name: slug, label: 'Όνομα σελίδας (λατινικά, μικρά, χωρίς κενά, π.χ. kreatopita)', widget: string, pattern: ['^[a-z0-9-]+$', 'Μόνο λατινικά μικρά γράμματα, αριθμοί και παύλες']}
+      - {name: title, label: Τίτλος, widget: string}
+      - {name: subtitle, label: Υπότιτλος, widget: string}
+      - {name: eyebrow, label: 'Κατηγορία πάνω από τον τίτλο (π.χ. Εποχικά έθιμα)', widget: string}
+      - {name: hero, label: Εικόνα κεφαλίδας, widget: image, required: false}
+      - {name: hero_alt, label: Περιγραφή εικόνας κεφαλίδας (για άτομα με πρόβλημα όρασης), widget: string, required: false}
+      - {name: lede, label: Εισαγωγική παράγραφος, widget: text}
+      - {name: chapter_label, label: Σύντομος τίτλος που εμφανίζεται πάνω από κάθε ενότητα, widget: string}
+      - name: chapters
+        label: Ενότητες
+        label_singular: Ενότητα
+        widget: list
+        summary: '{{fields.title}}'
+        fields:
+          - {name: title, label: Τίτλος ενότητας, widget: string}
+          - {name: body, label: Κείμενο, widget: text, hint: 'Κενή γραμμή = νέα παράγραφος. Υπότιτλος: ### Τίτλος. Σύνδεσμος: [κείμενο](https://…). Παραπομπή σε πηγή: [[1]]. Φωτογραφία: [[φωτο 1]] (βλ. παρακάτω).'}
+          - name: photos
+            label: Φωτογραφίες της ενότητας (εμφανίζονται εκεί όπου γράψετε [[φωτο 1]], [[φωτο 2]]…)
+            label_singular: Φωτογραφία
+            widget: list
+            required: false
+            summary: '{{fields.caption}}'
+            fields:
+              - {name: image, label: Φωτογραφία, widget: image}
+              - {name: alt, label: Περιγραφή (για άτομα με πρόβλημα όρασης), widget: string}
+              - {name: caption, label: Λεζάντα, widget: string}
+              - {name: credit, label: 'Πηγή / δικαιώματα (π.χ. Φωτογραφία: © Όνομα)', widget: string}
+      - name: sources
+        label: Πηγές (αριθμούνται 1, 2, 3… με τη σειρά)
+        label_singular: Πηγή
+        widget: list
+        required: false
+        summary: '{{fields.title}}'
+        fields:
+          - {name: title, label: Τίτλος πηγής, widget: string}
+          - {name: url, label: Διεύθυνση (https://…), widget: string}
+      - name: related
+        label: Σχετικά αφιερώματα
+        label_singular: Σύνδεσμος
+        widget: list
+        required: false
+        fields:
+          - {name: title, label: Τίτλος, widget: string}
+          - {name: url, label: 'Σελίδα (π.χ. geuseis.html)', widget: string}
+      - {name: show_on_ipeiros, label: Να εμφανιστεί κάρτα στη σελίδα «Γνωρίστε την Ήπειρο» (μόνο για νέα άρθρα), widget: boolean, default: false, required: false}
+      - {name: card_image, label: Εικόνα κάρτας (μόνο για νέα άρθρα), widget: image, required: false}
+      - {name: card_image_alt, label: Περιγραφή εικόνας κάρτας, widget: string, required: false}
+      - {name: kicker, label: 'Λέξεις-κλειδιά κάρτας (π.χ. Χωριά · Φθινόπωρο)', widget: string, required: false}
+      - {name: description, label: Σύντομη περιγραφή (κάρτα και Google/Facebook), widget: text, required: false}

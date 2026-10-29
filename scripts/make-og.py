@@ -1,6 +1,6 @@
 """Generate 1200x630 social preview cards (assets/og/*.jpg) and favicons.
 Run: python scripts/make-og.py   (needs Pillow + DejaVu fonts)"""
-import json, textwrap
+import json, sys, textwrap
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 root = Path(__file__).resolve().parents[1]
@@ -67,11 +67,13 @@ def card(slug, eyebrow, title):
     im.save(out, 'JPEG', quality=82, optimize=True, progressive=True)
     return out.stat().st_size
 
+only = set(sys.argv[1:])  # optional: only (re)build these slugs
 for slug, p in pages.items():
-    if p.get('noindex'): continue
+    if p.get('noindex') or (only and slug not in only): continue
     print(slug, card(slug, p['eyebrow'], p['card']))
 
 # favicons
+if only: raise SystemExit
 em = circle(emblem, 512)
 for name, s in (('favicon-32.png', 32), ('favicon-192.png', 192), ('apple-touch-icon.png', 180)):
     im = em.resize((s, s), Image.LANCZOS)

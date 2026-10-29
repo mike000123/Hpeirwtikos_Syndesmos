@@ -1,0 +1,25 @@
+{
+  "id": "event-2011-03-02",
+  "date": "2011-03-02",
+  "title": "Παρέλαση",
+  "source": "https://ipirotikos.gr/polymesa/fotografies/",
+  "media": [
+    {
+      "type": "photo",
+      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%A0%CE%91%CE%A1%CE%95%CE%9B%CE%91%CE%A3%CE%97_2-3-2011_2_%281%29.jpg?bwg=1604513930",
+      "caption": "Παρέλαση — φωτογραφία 1",
+      "originalFile": "ΠΑΡΕΛΑΣΗ_2-3-2011_2_(1).jpg",
+      "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
+      "retrieval": "opened"
+    },
+    {
+      "type": "photo",
+      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%A0%CE%91%CE%A1%CE%95%CE%9B%CE%91%CE%A3%CE%97_2-3-2011_1_%281%29.jpg?bwg=1604513930",
+      "caption": "Παρέλαση — φωτογραφία 2",
+      "originalFile": "ΠΑΡΕΛΑΣΗ_2-3-2011_1_(1).jpg",
+      "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
+      "retrieval": "opened"
+    }
+  ],
+  "note": "Η ημερομηνία 2.3.2011 ακολουθεί την ονομασία των αρχείων της αρχικής συλλογής."
+}

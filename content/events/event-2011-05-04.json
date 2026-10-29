@@ -1,0 +1,34 @@
+{
+  "id": "event-2011-05-04",
+  "date": "2011-05-04",
+  "title": "Επιστημονική ημερίδα: Διαβήτης και καρδιά",
+  "source": "https://ipirotikos.gr/deltia-typoy/4-5-2011-deltio-typoy-imerida-diavitis-kai-ka/",
+  "media": [
+    {
+      "type": "photo",
+      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/4-5-11_%CE%95%CE%A0%CE%99%CE%A3%CE%A4%CE%97%CE%9C%CE%9F%CE%9D%CE%99%CE%9A%CE%97_%CE%97%CE%9C%CE%95%CE%A1%CE%99%CE%94%CE%91_%CE%94%CE%99%CE%91%CE%92%CE%97%CE%A4%CE%97%CE%A3_%CE%9A%CE%91%CE%99_%CE%9A%CE%91%CE%A1%CE%94%CE%99%CE%911735_%281%29.jpg?bwg=1604513930",
+      "caption": "Επιστημονική ημερίδα: Διαβήτης και καρδιά — φωτογραφία 1",
+      "originalFile": "4-5-11_ΕΠΙΣΤΗΜΟΝΙΚΗ_ΗΜΕΡΙΔΑ_ΔΙΑΒΗΤΗΣ_ΚΑΙ_ΚΑΡΔΙΑ1735_(1).jpg",
+      "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
+      "retrieval": "opened"
+    },
+    {
+      "type": "photo",
+      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/4-5-11_%CE%95%CE%A0%CE%99%CE%A3%CE%A4%CE%97%CE%9C%CE%9F%CE%9D%CE%99%CE%9A%CE%97_%CE%97%CE%9C%CE%95%CE%A1%CE%99%CE%94%CE%91_%CE%94%CE%99%CE%91%CE%92%CE%97%CE%A4%CE%97%CE%A3_%CE%9A%CE%91%CE%99_%CE%9A%CE%91%CE%A1%CE%94%CE%99%CE%911732_%281%29.jpg?bwg=1604513930",
+      "caption": "Επιστημονική ημερίδα: Διαβήτης και καρδιά — φωτογραφία 2",
+      "originalFile": "4-5-11_ΕΠΙΣΤΗΜΟΝΙΚΗ_ΗΜΕΡΙΔΑ_ΔΙΑΒΗΤΗΣ_ΚΑΙ_ΚΑΡΔΙΑ1732_(1).jpg",
+      "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
+      "retrieval": "opened"
+    }
+  ],
+  "press": {
+    "src": "assets/event-press/event-2011-05-04.pdf",
+    "format": "pdf",
+    "label": "Δελτίο τύπου",
+    "pages": [
+      "assets/event-press/event-2011-05-04-page-1.jpg",
+      "assets/event-press/event-2011-05-04-page-2.jpg"
+    ],
+    "originalSrc": "https://ipirotikos.gr/wp-content/uploads/2020/11/9-1-2010-%CE%B4%CE%B5%CE%BB%CF%84%CE%B9%CE%BF-%CF%84%CF%85%CF%80%CE%BF%CF%85-%CE%BA%CE%BF%CF%80%CE%B7-%CF%80%CE%B9%CF%84%CE%B1%CF%82.doc.pdf"
+  }
+}

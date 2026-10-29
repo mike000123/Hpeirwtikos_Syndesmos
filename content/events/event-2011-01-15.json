@@ -1,0 +1,41 @@
+{
+  "id": "event-2011-01-15",
+  "date": "2011-01-15",
+  "title": "Κοπή πίτας",
+  "source": "https://ipirotikos.gr/deltia-typoy/15-1-2011-protochroniatiki-ekdilosi/",
+  "media": [
+    {
+      "type": "photo",
+      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%9A%CE%9F%CE%A0%CE%97_%CE%A0%CE%99%CE%A4%CE%91%CE%A3_15-1-2011_1_%281%29.jpg?bwg=1604513930",
+      "caption": "Κοπή πίτας — φωτογραφία 1",
+      "originalFile": "ΚΟΠΗ_ΠΙΤΑΣ_15-1-2011_1_(1).jpg",
+      "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
+      "retrieval": "opened"
+    },
+    {
+      "type": "photo",
+      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%9A%CE%9F%CE%A0%CE%97_%CE%A0%CE%99%CE%A4%CE%91%CE%A3_15-1-2011_%281%29.jpg?bwg=1604513930",
+      "caption": "Κοπή πίτας — φωτογραφία 2",
+      "originalFile": "ΚΟΠΗ_ΠΙΤΑΣ_15-1-2011_(1).jpg",
+      "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
+      "retrieval": "opened"
+    },
+    {
+      "type": "photo",
+      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%9A%CE%9F%CE%A0%CE%97_%CE%A0%CE%99%CE%A4%CE%91%CE%A3_15-1-11_%281%29.jpg?bwg=1604513930",
+      "caption": "Κοπή πίτας — φωτογραφία 3",
+      "originalFile": "ΚΟΠΗ_ΠΙΤΑΣ_15-1-11_(1).jpg",
+      "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
+      "retrieval": "opened"
+    }
+  ],
+  "press": {
+    "src": "assets/event-press/event-2011-01-15.pdf",
+    "format": "pdf",
+    "label": "Δελτίο τύπου",
+    "pages": [
+      "assets/event-press/event-2011-01-15-page-1.jpg"
+    ],
+    "originalSrc": "https://ipirotikos.gr/wp-content/uploads/2020/11/15-1-2011-%CF%80%CF%81%CF%89%CF%84%CE%BF%CF%87%CF%81%CE%BF%CE%BD%CE%B9%CE%AC%CF%84%CE%B9%CE%BA%CE%B7-%CE%B5%CE%BA%CE%B4%CE%AE%CE%BB%CF%89%CF%83%CE%B7.pdf"
+  }
+}

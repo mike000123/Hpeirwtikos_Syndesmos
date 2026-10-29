@@ -1,0 +1,3 @@
+# Python build caches are not site content.
+__pycache__/
+*.py[cod]

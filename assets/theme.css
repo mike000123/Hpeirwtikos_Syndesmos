@@ -61,3 +61,20 @@ body{background:var(--cream);color:var(--ink)}h1,h2,h3{color:var(--forest)}.site
 .social-links-compact .social-link{width:36px;min-height:36px;height:36px;padding:7px;border-color:#b59568;color:#f0d3a7}
 @media(max-width:650px){.site-top>.wrap{gap:12px}.site-top-title{font-size:10px;letter-spacing:.04em}.social-links-compact .social-link{width:36px;height:36px;min-height:36px}}
 @media(prefers-reduced-motion:reduce){.social-links .social-link{transition:none}}
+
+/* Compact homepage clubhouse band; the image follows the text row instead of sizing it. */
+.home-club-section .leschi-layout{grid-template-columns:1fr 1.05fr;min-height:420px}
+.home-club-section .leschi-building{position:relative;min-height:0}
+.home-club-section .leschi-building img{position:absolute;inset:0;width:100%;height:100%;min-height:0;max-height:none;object-fit:cover;object-position:center 22%}
+.home-club-section .home-club-copy{padding:28px 0 28px 36px}
+.home-club-section .home-club-copy h2{font-size:clamp(32px,3.3vw,44px);margin:10px 0 16px}
+.home-club-section .home-club-copy h2:after{margin-top:14px}
+.home-club-section .home-club-copy p{margin-bottom:18px}
+@media(max-width:950px){.home-club-section .home-club-copy{padding:24px 0 24px 26px}}
+@media(max-width:650px){
+ .home-club-section .leschi-layout{grid-template-columns:1fr;min-height:0}
+ .home-club-section .leschi-building{height:220px}
+ .home-club-section .home-club-copy{padding:24px 0}
+ .home-club-section .home-club-copy h2{font-size:32px}
+}
+

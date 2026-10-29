@@ -1,0 +1,13 @@
+/* Typographic hierarchy, tighter rhythm and calmer photo sizes for article pages. */
+.article-body h2{margin-bottom:16px!important}
+.article-body section,.epirus-feature .article-body section{margin-top:34px!important}
+.article-body section>p,.article-body section>div>p{margin-bottom:16px}
+.article-body h3:not(.route-card-copy h3):not(.x-invitation h3):not(.wedding-document h3):not(.s-look h3){font:700 1.04rem/1.4 Manrope,Arial,sans-serif;letter-spacing:.01em;color:#8a4a35;margin:26px 0 8px;padding-left:12px;border-left:3px solid #ba9555}
+.epirus-feature .f-photo,.f-photo{margin:22px auto!important;max-width:620px!important}
+.epirus-feature .f-photo.f-portrait,.f-photo.f-portrait{max-width:340px!important}
+.epirus-feature .f-photo img,.f-photo img{max-height:460px;object-fit:cover}
+.epirus-feature .f-photo.f-portrait img,.f-photo.f-portrait img{max-height:none}
+@media(max-width:700px){.f-photo,.epirus-feature .f-photo{margin:18px auto!important}.epirus-feature .f-photo.f-portrait,.f-photo.f-portrait{max-width:300px!important}.article-body section,.epirus-feature .article-body section{margin-top:28px!important}}
+/* Glossary terms read as sub-headings, clearly below section titles */
+.heritage-glossary dt{font:700 1.04rem/1.4 Manrope,Arial,sans-serif!important;letter-spacing:.01em;color:#8a4a35!important;margin:22px 0 6px!important;padding-left:12px;border-left:3px solid #ba9555}
+.heritage-glossary dd{margin:0 0 0 15px!important}

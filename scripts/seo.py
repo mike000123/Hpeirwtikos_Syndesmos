@@ -32,7 +32,7 @@ for slug, p in pages.items():
           '<meta name="twitter:card" content="summary_large_image">', f'<meta name="twitter:title" content="{e(p["title"])}">',
           f'<meta name="twitter:description" content="{e(p["desc"])}">', f'<meta name="twitter:image" content="{img}">']
         urls.append(canon)
-    L += ['<link rel="stylesheet" href="assets/a11y.css?v=3">', '<meta name="theme-color" content="#721f2d">', '<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">',
+    L += ['<link rel="stylesheet" href="assets/a11y.css?v=3">', '<link rel="stylesheet" href="assets/article-polish.css?v=3">', '<meta name="theme-color" content="#721f2d">', '<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">',
           '<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">', '<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">']
     if slug == 'index':
         L.append('<script type="application/ld+json">' + json.dumps(ORG, ensure_ascii=False) + '</script>')
@@ -44,3 +44,12 @@ for slug, p in pages.items():
 (root / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'<url><loc>{u}</loc></url>\n' for u in urls) + '</urlset>\n', encoding='utf-8')
 (root / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n')
 print(len(urls), 'pages;', SITE)
+
+# Pages maintained outside seo-pages.json (e.g. photo stories) still get the shared stylesheets.
+for f in root.glob('*.html'):
+    if f.stem in pages: continue
+    s = f.read_text(encoding='utf-8')
+    if START not in s: continue
+    add = ''.join(f'<link rel="stylesheet" href="assets/{n}">' for n in ('a11y.css?v=3', 'article-polish.css?v=3') if n.split('?')[0] not in s)
+    if add:
+        f.write_text(s.replace(START, START + '\n' + add, 1), encoding='utf-8'); print('styles added to', f.name)

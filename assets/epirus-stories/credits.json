@@ -1,0 +1,74 @@
+{
+  "vikos": {
+    "file": "assets/epirus-stories/vikos.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:View_of_vikos_gorge_from_vikos_village.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/a/ab/View_of_vikos_gorge_from_vikos_village.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "author": "Juggertrout",
+    "license": "CC BY 4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by/4.0",
+    "description": "view of vikos gorge from vikos village",
+    "width": 1280,
+    "height": 960,
+    "changes": "Resize and conversion to WebP only; no content changes."
+  },
+  "valia-kalda": {
+    "file": "assets/epirus-stories/valia-kalda.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:%CE%92%CE%AC%CE%BB%CE%B9%CE%B1_%CE%9A%CE%AC%CE%BB%CE%BD%CF%84%CE%B1.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/6/67/%CE%92%CE%AC%CE%BB%CE%B9%CE%B1_%CE%9A%CE%AC%CE%BB%CE%BD%CF%84%CE%B1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "author": "Agis Kothalis",
+    "license": "CC BY-SA 4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0",
+    "description": "This is a photograph of a Natura 2000 protected area with ID",
+    "width": 658,
+    "height": 1000,
+    "changes": "Resize and conversion to WebP only; no content changes."
+  },
+  "drakolimni": {
+    "file": "assets/epirus-stories/drakolimni.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Drakolimni_,Tymfi_mountains.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Drakolimni_%2CTymfi_mountains.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "author": "Andloukakis",
+    "license": "CC BY-SA 4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0",
+    "description": "This is a photograph of a Natura 2000 protected area with ID",
+    "width": 1280,
+    "height": 421,
+    "changes": "Resize and conversion to WebP only; no content changes."
+  },
+  "voidomatis": {
+    "file": "assets/epirus-stories/voidomatis.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Voidomatis_river.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Voidomatis_river.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "author": "NikGlyk",
+    "license": "CC BY-SA 4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0",
+    "description": "This is a photograph of a Natura 2000 protected area with ID",
+    "width": 1280,
+    "height": 828,
+    "changes": "Resize and conversion to WebP only; no content changes."
+  },
+  "vradeto": {
+    "file": "assets/epirus-stories/vradeto.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Skala_Vradetou_1.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/7/73/Skala_Vradetou_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "author": "candiru",
+    "license": "CC BY 2.0",
+    "licenseURL": "https://creativecommons.org/licenses/by/2.0",
+    "description": "Από τα πιο εντυπωσιακά μονοπάτια της Ελλάδας.Ζαγοροχώρια",
+    "width": 500,
+    "height": 343,
+    "changes": "Resize and conversion to WebP only; no content changes."
+  },
+  "ioannina-synagogue": {
+    "file": "assets/epirus-stories/ioannina-synagogue.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Ioannina_Synagogue_1.JPG",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/3/37/Ioannina_Synagogue_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "author": "רדיומן",
+    "license": "CC0",
+    "licenseURL": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "description": "Ioannina Old Synagogue",
+    "width": 750,
+    "height": 1000,
+    "changes": "Resize and conversion to WebP only; no content changes."
+  }
+}

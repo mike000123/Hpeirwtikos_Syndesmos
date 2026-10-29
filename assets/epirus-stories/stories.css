@@ -1,0 +1,4 @@
+/* Additions scoped to the three photographic features and their existing mosaic. */
+.photo-story .story-cover-note{font-size:12px;line-height:1.7;color:#6b5e56;margin:12px 0 0;max-width:80ch}
+#stories a.image{display:flex;text-decoration:none;color:inherit}
+#stories a.image:focus-visible{outline:3px solid #9b7131;outline-offset:5px}

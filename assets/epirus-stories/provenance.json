@@ -1,0 +1,34 @@
+{
+  "covers": {
+    "zagori.html": {
+      "src": "assets/epirus-stories/zagori-cover.webp",
+      "usage": "Existing card image retained for matching article header; illustrative.",
+      "original_url": "https://www.civitatis.com/f/grecia/zagori/galeria/puente-piedra-vikos.jpg",
+      "processing": "Same existing photograph, downloaded and converted to local WebP; no compositional edits.",
+      "rights": "No open licence asserted for the existing cover photograph."
+    },
+    "pindos.html": {
+      "src": "assets/epirus-stories/pindos-cover.webp",
+      "usage": "Existing stock forest card image retained. Visible caption does not attribute location to Pindus.",
+      "original_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1000",
+      "processing": "Same existing photograph, downloaded and converted to local WebP; no compositional edits.",
+      "rights": "No open licence asserted for the existing cover photograph."
+    },
+    "anthropoi.html": {
+      "src": "assets/people-epirus-square.webp",
+      "type": "AI illustration with fictional people",
+      "usage": "Existing card retained; header explicitly labels AI illustration."
+    }
+  },
+  "new_documentary_photographs": "credits.json",
+  "reused_documentary_assets": [
+    "assets/architecture/dilofo-rooftops.webp",
+    "assets/zagori-mikro-papigko.webp",
+    "assets/epirus-features/plakidas.webp",
+    "assets/asimi/exhibit-04.webp",
+    "assets/customs-story/vitsa-1958.webp",
+    "assets/customs-story/syrrako-dance-2016.webp",
+    "assets/music-cover/association-2019-2.webp"
+  ],
+  "reuse": "Existing assets unchanged. Named archive and licence credits are retained alongside each image."
+}

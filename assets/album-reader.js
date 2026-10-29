@@ -13,7 +13,7 @@
  const fullscreen=$('[data-album-fullscreen]');
  const wide=matchMedia('(min-width:801px)');
  const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
- let catalog=null,index=0,zoom=1,version=0,opener=null,controller=null,locked=null,pointer=null;
+ let catalog=null,index=0,zoom=1,version=0,opener=null,controller=null,locked=null;
  let shown=[],turn=null;
  const active=()=>dialog.open;
  const visible=()=>{
@@ -75,10 +75,16 @@
   const timer=setTimeout(()=>done(new Error('image timeout')),10000);
   img.onload=()=>done();img.onerror=()=>done(new Error('image failed'));img.src=src;
  });
+ const preloaded=new Set();
+ const preload=()=>{
+  if(!catalog)return;
+  const around=[];for(let d=-3;d<=3;d++)if(d)around.push(index+d);
+  around.filter(i=>i>=0&&i<catalog.pages.length&&!preloaded.has(i)).forEach(i=>{preloaded.add(i);const img=new Image();img.decoding='async';img.src=catalog.pages[i].src});
+ };
  const commitPages=(nodes,pages)=>{
   book.replaceChildren(...nodes);
   book.className='album-book'+(pages.length===2?' has-spread':'');
-  shown=[...pages];sizePages();
+  shown=[...pages];sizePages();preload();
  };
  const clonePaper=(node,className)=>{
   const copy=node?node.cloneNode(true):document.createElement('figure');
@@ -128,7 +134,8 @@
   }
   return animations;
  };
- const turnPages=(nodes,pages,direction,token)=>new Promise(resolve=>{
+ const turnPages=(nodes,pages,direction,token,drag=false)=>new Promise(resolve=>{
+  viewport.classList.add('is-turning');
   const previous=[...book.children];
   const desktop=wide.matches,forward=direction==='next';
   const fitted=pageSize(pages);
@@ -155,7 +162,7 @@
   book.className='album-book is-turning'+(desktop?' has-spread':'');
   book.replaceChildren(...slots,shadow,leaf);viewport.classList.add('is-turning');
   const duration=desktop?900:950;
-  const timing={duration,easing:desktop?'cubic-bezier(.35,.08,.3,1)':'cubic-bezier(.45,0,.55,1)',fill:'both'};
+  const timing={duration,easing:drag?'linear':desktop?'cubic-bezier(.35,.08,.3,1)':'cubic-bezier(.45,0,.55,1)',fill:'both'};
   const from=desktop?0:forward?0:-180;
   const to=desktop?(forward?-180:180):forward?-180:0;
   const motion=leaf.animate([{transform:`rotateY(${from}deg)`},{transform:`rotateY(${to}deg)`}],timing);
@@ -177,26 +184,34 @@
    const shade=document.createElement('span');shade.className='album-leaf-shading';face.append(shade);
    animations.push(shade.animate([{opacity:0},{opacity:.42,offset:.5},{opacity:0}],timing));
   });
-  let finished=false,timer;
-  const finish=()=>{
+  let finished=false,timer,outcome=null,progress=0;
+  const finish=commit=>{
    if(finished)return;finished=true;clearTimeout(timer);
+   const keep=typeof commit==='boolean'?commit:outcome?outcome==='commit':!drag;
    animations.forEach(animation=>animation.cancel());
    leaf.remove();shadow.remove();viewport.classList.remove('is-turning');turn=null;
-   if(token===version&&active())commitPages(nodes,pages);
+   if(token===version&&active()){
+    if(keep)commitPages(nodes,pages);else commitPages(previous,[...shown]);
+   }
    resolve();
   };
-  turn={finish,width:viewport.clientWidth,height:viewport.clientHeight};
-  motion.finished.then(finish,finish);
-  timer=setTimeout(finish,duration+250);
+  turn={finish,drag,width:viewport.clientWidth,height:viewport.clientHeight,
+   // Follow the finger: progress 0..1 maps linearly onto the whole page-turn.
+   setProgress(value){progress=Math.max(0,Math.min(1,value));animations.forEach(a=>{a.currentTime=progress*duration})},
+   get progress(){return progress},
+   // Let go: finish the turn or lay the page back down from where it is.
+   release(commit){
+    if(finished||outcome)return;outcome=commit?'commit':'restore';
+    const rate=commit?1.5:-1.5;
+    animations.forEach(a=>{a.playbackRate=rate;a.play()});
+    motion.onfinish=()=>finish();
+    timer=setTimeout(finish,(commit?1-progress:progress)*duration/1.5+250);
+   }};
+  if(drag){animations.forEach(a=>a.pause());turn.setProgress(0)}
+  else{motion.finished.then(()=>finish(),()=>finish());timer=setTimeout(()=>finish(),duration+250)}
  });
- const render=async(direction='')=>{
-  if(!active()||!catalog)return;
-  turn?.finish();
-  const token=++version;
-  const pages=visible(),nodes=[];
-  viewport.scrollLeft=0;viewport.scrollTop=0;
-  setStatus('Φόρτωση σελίδων…');viewport.setAttribute('aria-busy','true');
-  const results=pages.map(i=>{
+ const buildPages=(pages,token,nodes=[])=>{
+  return pages.map(i=>{
    const data=catalog.pages[i],figure=document.createElement('figure'),img=document.createElement('img');
    figure.className='album-page';figure.setAttribute('aria-label',`${i+1}. ${data.title}`);
    img.alt=data.alt;img.width=data.width;img.height=data.height;img.draggable=false;
@@ -210,8 +225,18 @@
     throw new Error('page unavailable');
    });
   });
+ };
+ const render=async(direction='')=>{
+  if(!active()||!catalog)return;
+  turn?.finish();
+  const token=++version;
+  const pages=visible(),nodes=[];
+  viewport.scrollLeft=0;viewport.scrollTop=0;
+  const slowStatus=setTimeout(()=>{if(token===version)setStatus('Φόρτωση σελίδων…')},450);viewport.setAttribute('aria-busy','true');
+  const results=buildPages(pages,token,nodes);
   updateControls();
   const outcome=await Promise.allSettled(results);
+  clearTimeout(slowStatus);
   if(token!==version||!active())return;
   const failed=outcome.some(r=>r.status==='rejected');
   setStatus(failed?'Κάποια σελίδα δεν φόρτωσε. Μπορείτε να δοκιμάσετε ξανά ή να συνεχίσετε.':'');
@@ -359,12 +384,74 @@
   if(event.key==='Home')navigate(0);if(event.key==='End'&&catalog)navigate(catalog.pages.length-1);
   if(event.key==='+'||event.key==='=')setZoom(zoom+.25);if(event.key==='-')setZoom(zoom-.25);
  });
- viewport.addEventListener('pointerdown',event=>{if(zoom===1&&event.isPrimary)pointer={x:event.clientX,y:event.clientY}});
- viewport.addEventListener('pointercancel',()=>{pointer=null});
- viewport.addEventListener('pointerup',event=>{
-  if(!pointer)return;
-  const dx=event.clientX-pointer.x,dy=event.clientY-pointer.y;pointer=null;
-  if(zoom===1&&Math.abs(dx)>65&&Math.abs(dy)<55)move(dx<0?1:-1);
+// Dragging turns the page under the finger; letting go finishes or cancels the turn.
+ let gesture=null;
+ const targetFor=dir=>{
+  const pages=visible();
+  if(dir==='next')return pages[pages.length-1]+1<catalog.pages.length?pages[pages.length-1]+1:null;
+  return pages[0]>0?Math.max(0,pages[0]-(wide.matches?2:1)):null;
+ };
+ const dragProgress=(g,x)=>{
+  const along=(g.dir==='next'?g.x0-x:x-g.x0);
+  return along/g.span;
+ };
+ const beginDrag=async g=>{
+  const target=g.target;
+  const prevIndex=index;index=target;const pages=visible();index=prevIndex;
+  const token=++version,nodes=[];
+  const results=buildPages(pages,token,nodes);
+  const outcome=await Promise.allSettled(results);
+  if(gesture!==g||token!==version||!active())return;
+  if(outcome.some(r=>r.status==='rejected')||reducedMotion.matches||typeof book.animate!=='function'){g.fallback=true;return}
+  g.span=Math.max(80,pageSize(pages).width*(wide.matches?1.15:.9));
+  g.pages=pages;
+  turnPages(nodes,pages,g.dir,token,true);
+  g.turn=turn;
+  if(!g.turn){g.fallback=true;return}
+  g.turn.setProgress(dragProgress(g,g.lastX));
+  if(g.released)endDrag(g);
+ };
+ const endDrag=g=>{
+  const t=g.turn;if(!t)return;
+  const dt=Math.max(1,g.lastT-g.prevT),vx=(g.lastX-g.prevX)/dt; // px per ms
+  const directed=g.dir==='next'?-vx:vx;
+  const commit=t.progress>.4||(directed>.45&&t.progress>.03);
+  if(commit){index=g.target;zoom=1;updateControls()}
+  t.release(commit);gesture=null;
+ };
+ viewport.addEventListener('pointerdown',event=>{
+  if(zoom!==1||!event.isPrimary||!catalog||turn||event.button>0){gesture=null;return}
+  gesture={id:event.pointerId,x:event.clientX,y:event.clientY,x0:0,dir:null,target:null,turn:null,lastX:event.clientX,prevX:event.clientX,lastT:event.timeStamp,prevT:event.timeStamp,released:false};
+  try{viewport.setPointerCapture(event.pointerId)}catch(error){}
+ });
+ viewport.addEventListener('pointermove',event=>{
+  const g=gesture;if(!g||event.pointerId!==g.id)return;
+  const dx=event.clientX-g.x,dy=event.clientY-g.y;
+  if(!g.dir){
+   if(Math.abs(dx)<8&&Math.abs(dy)<8)return;
+   if(Math.abs(dy)>Math.abs(dx)){gesture=null;return}
+   const dir=dx<0?'next':'prev',target=targetFor(dir);
+   if(target===null){gesture=null;return}
+   g.dir=dir;g.target=target;g.x0=event.clientX;g.lastX=g.prevX=event.clientX;g.lastT=g.prevT=event.timeStamp;
+   beginDrag(g);return;
+  }
+  if(event.timeStamp-g.lastT>16){g.prevX=g.lastX;g.prevT=g.lastT}
+  g.lastX=event.clientX;g.lastT=event.timeStamp;
+  g.turn?.setProgress(dragProgress(g,event.clientX));
+ });
+ const upGesture=event=>{
+  const g=gesture;if(!g||event.pointerId!==g.id)return;
+  g.released=true;
+  if(g.turn){endDrag(g);return}
+  if(g.fallback||g.dir){ // images were not ready for a live drag: do the normal animated turn
+   gesture=null;if(Math.abs(event.clientX-g.x)>55)move(g.dir==='next'?1:-1);return}
+  gesture=null;
+ };
+ viewport.addEventListener('pointerup',upGesture);
+ viewport.addEventListener('pointercancel',event=>{
+  const g=gesture;if(!g||event.pointerId!==g.id)return;
+  if(g.turn){g.turn.release(false)}
+  gesture=null;
  });
  wide.addEventListener('change',()=>{if(active()&&catalog){zoom=1;render()}});
  reducedMotion.addEventListener('change',()=>{if(reducedMotion.matches)turn?.finish()});

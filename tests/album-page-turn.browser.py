@@ -84,7 +84,7 @@ try:
   page.locator('[data-album-next]').click();ready(page)
   expect(page.locator('[data-album-indicator]')).to_have_text('Σελίδες 4–5 / 6')
   page.locator('[data-album-next]').click();expect(page.locator('.album-turn-leaf')).to_be_visible()
-  expect(page.locator('.album-turn-leaf')).to_have_attribute('data-paper','hard');finish(page)
+  expect(page.locator('.album-turn-leaf')).to_have_attribute('data-paper','flexible');finish(page)
   expect(page.locator('[data-album-next]')).to_be_disabled()
   page.locator('[data-album-prev]').click();expect(page.locator('.album-turn-leaf')).to_be_visible()
   page.locator('[data-album-close]').click();expect(page.locator('.album-turn-leaf')).to_have_count(0)

@@ -154,7 +154,13 @@
   leaf.style.width=pageWidth+'px';leaf.style.height=pageHeight+'px';
   leaf.style.left=desktop&&forward?pageWidth+'px':'0';
   leaf.style.transformOrigin=desktop&&!forward?'right center':'left center';
-  const hardCover=[...shown,...pages].some(i=>i===0||i===catalog.pages.length-1);
+  // Only the covers are rigid. Turning an interior sheet toward the back cover still bends.
+  const lastIndex=catalog.pages.length-1;
+  const ids=indices=>indices.length===2?{left:indices[0],right:indices[1]}:indices[0]===0?{left:null,right:0}:{left:indices[0],right:null};
+  const oldIds=ids(shown),newIds=ids(pages);
+  const frontIndex=desktop?(forward?oldIds.right:oldIds.left):(forward?shown[0]:pages[0]);
+  const backIndex=desktop?(forward?newIds.left:newIds.right):(forward?pages[0]:shown[0]);
+  const hardCover=frontIndex===0||backIndex===0||frontIndex===lastIndex;
   leaf.dataset.paper=hardCover?'hard':'flexible';
   if(hardCover)leaf.append(clonePaper(front,'album-turn-face album-turn-front'),clonePaper(back,'album-turn-face album-turn-back'));
   else leaf.classList.add('is-flexible');

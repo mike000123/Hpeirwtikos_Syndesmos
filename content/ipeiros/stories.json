@@ -4,7 +4,7 @@
   "intro": "Φωτογραφικά αφιερώματα, πολιτιστικές διαδρομές και θεματικές ιστορίες με τεκμηριωμένο περιεχόμενο.",
   "cards": [
     {
-      "link": "zagori.html?v=baklava-photo-1",
+      "link": "zagori.html?v=essay-titles-1",
       "image": "assets/photo-essays/z-bridge-1000.webp",
       "alt": "Το Καλογερικό, ή γεφύρι του Πλακίδα, κοντά στους Κήπους. Τα τρία τόξα ακολουθούν τον ρυθμό του νερού.",
       "width": 1000,
@@ -14,7 +14,7 @@
       "credit": "Φωτ. Aneza Palaiou"
     },
     {
-      "link": "pindos.html?v=baklava-photo-1",
+      "link": "pindos.html?v=essay-titles-1",
       "image": "assets/photo-essays/p-storm-1000.webp",
       "alt": "Σύννεφα και αντανακλάσεις στη Δρακόλιμνη της Τύμφης. Το ίδιο τοπίο αλλάζει πρόσωπο μαζί με το φως.",
       "width": 1000,
@@ -24,7 +24,7 @@
       "credit": "Φωτ. Nick Giatrakis"
     },
     {
-      "link": "anthropoi.html?v=baklava-photo-1",
+      "link": "anthropoi.html?v=essay-titles-1",
       "image": "assets/photo-essays/a-square-illustration-1000.webp",
       "alt": "Η παλιά εικόνα της παρέας επιστρέφει. Εικονογράφηση με τεχνητή νοημοσύνη· τα πρόσωπα και η σκηνή είναι φανταστικά.",
       "width": 1000,
@@ -35,3 +35,4 @@
     }
   ]
 }
+

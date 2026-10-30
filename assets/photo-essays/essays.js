@@ -1,61 +1,26 @@
-/* Native image links remain usable if the photographic viewer is unavailable. */
+/* Native local image links also work without JavaScript. */
 (() => {
-  const dialog=document.querySelector('.pe-viewer');
-  if(!dialog || typeof dialog.showModal!=='function') return;
-  const links=[...document.querySelectorAll('[data-pe-photo]')];
-  const photos=JSON.parse(document.querySelector('#pe-photo-data').textContent);
-  const image=dialog.querySelector('.pe-viewer-image');
-  const caption=dialog.querySelector('.pe-viewer-description');
-  const credit=dialog.querySelector('.pe-viewer-credit');
-  const count=dialog.querySelector('.pe-viewer-count');
-  const status=dialog.querySelector('.pe-viewer-status');
-  let current=0,origin,previousOverflow='',serial=0;
-  const safeLink=(label,url) => {
-    const a=document.createElement('a');a.textContent=label;
-    if(/^(https?:\/\/|[a-z0-9-]+\.html(?:#|$))/i.test(url||'')){a.href=url;a.target='_blank';a.rel='noopener noreferrer';}
-    return a;
-  };
-  const show=index => {
-    current=(index+photos.length)%photos.length;
-    const p=photos[current],id=++serial;
-    caption.textContent=p.caption;count.textContent=`${current+1} / ${photos.length}`;
-    credit.replaceChildren(safeLink(p.author,p.source));
-    if(p.license){credit.append(' · ',safeLink(p.license,p.licenseURL||p.source));}
-    image.alt=p.caption;image.src=p.file;status.hidden=false;status.textContent='Φόρτωση εικόνας…';
-    image.decode().then(()=>{if(id===serial)status.hidden=true;}).catch(()=>{
-      if(id!==serial)return;
-      status.textContent='Η εικόνα δεν φορτώθηκε. Δοκιμάστε την επόμενη φωτογραφία.';
-    });
-    for(const n of [-1,1]){const preload=new Image();preload.src=photos[(current+n+photos.length)%photos.length].file;}
-  };
-  links.forEach(link=>link.addEventListener('click',event=>{
-    if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
-    event.preventDefault();origin=link;previousOverflow=document.body.style.overflow;
-    document.body.style.overflow='hidden';show(Number(link.dataset.pePhoto));dialog.showModal();
-    dialog.querySelector('.pe-viewer-close').focus();
-  }));
-  dialog.querySelector('.pe-viewer-close').addEventListener('click',()=>dialog.close());
-  dialog.querySelector('.pe-viewer-prev').addEventListener('click',()=>show(current-1));
-  dialog.querySelector('.pe-viewer-next').addEventListener('click',()=>show(current+1));
-  dialog.addEventListener('keydown',event=>{
-    if(['ArrowLeft','ArrowRight','Home','End'].includes(event.key)){
-      event.preventDefault();
-      show(event.key==='Home'?0:event.key==='End'?photos.length-1:current+(event.key==='ArrowRight'?1:-1));
-    }
-  });
-  dialog.addEventListener('close',()=>{
-    document.body.style.overflow=previousOverflow;
-    if(origin&&document.contains(origin))origin.focus({preventScroll:true});
-  });
-  let touch;
-  image.addEventListener('touchstart',event=>{
-    touch=event.touches.length===1?{x:event.touches[0].clientX,y:event.touches[0].clientY}:null;
-  },{passive:true});
-  image.addEventListener('touchend',event=>{
-    if(!touch||!event.changedTouches.length)return;
-    const t=event.changedTouches[0],dx=t.clientX-touch.x,dy=t.clientY-touch.y;
-    if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.4)show(current+(dx<0?1:-1));
-    touch=null;
-  },{passive:true});
-  image.addEventListener('touchcancel',()=>{touch=null;},{passive:true});
+ const dialog=document.querySelector('.pe-viewer');if(!dialog||typeof dialog.showModal!=='function')return;
+ document.documentElement.classList.add('pe-js');
+ const links=[...document.querySelectorAll('[data-pe-photo]')],photos=JSON.parse(document.querySelector('#pe-photo-data').textContent);
+ const img=dialog.querySelector('.pe-viewer-image'),caption=dialog.querySelector('.pe-viewer-description'),credit=dialog.querySelector('.pe-viewer-credit'),count=dialog.querySelector('.pe-viewer-count'),status=dialog.querySelector('.pe-viewer-status'),title=dialog.querySelector('#pe-viewer-title'),all=dialog.querySelector('.pe-viewer-all');
+ let selection=[],current=0,origin,overflow='',serial=0;
+ const safeLink=(label,url)=>{const a=document.createElement('a');a.textContent=label;if(/^(https?:\/\/|[a-z0-9-]+\.html(?:#|$))/i.test(url||'')){a.href=url;a.target='_blank';a.rel='noopener noreferrer';}return a;};
+ function choose(key,index){selection=photos.map((p,i)=>i).filter(i=>key==='all'||photos[i].group===key);if(!selection.length)return;current=Math.max(0,selection.indexOf(index));title.textContent=key==='all'?'Όλες οι φωτογραφίες':photos[selection[0]].groupTitle;all.hidden=key==='all';show(current);}
+ function show(index){
+  current=(index+selection.length)%selection.length;const p=photos[selection[current]],id=++serial;
+  caption.textContent=p.caption;count.textContent=`${current+1} / ${selection.length}`;credit.replaceChildren(safeLink(p.author,p.source));if(p.license)credit.append(' · ',safeLink(p.license,p.licenseURL||p.source));
+  img.alt=p.caption;img.src=p.file;status.hidden=false;status.textContent='Φόρτωση εικόνας…';
+  img.decode().then(()=>{if(id===serial)status.hidden=true;}).catch(()=>{if(id===serial)status.textContent='Η εικόνα δεν φορτώθηκε. Δοκιμάστε την επόμενη.';});
+  for(const n of [-1,1]){const next=new Image();next.src=photos[selection[(current+n+selection.length)%selection.length]].file;}
+ }
+ function open(key,index,element){origin=element;overflow=document.body.style.overflow;document.body.style.overflow='hidden';choose(key,index);dialog.showModal();dialog.querySelector('.pe-viewer-close').focus();}
+ links.forEach(link=>link.addEventListener('click',e=>{if(e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;e.preventDefault();open(link.dataset.peGroup||'all',Number(link.dataset.pePhoto),link);}));
+ document.querySelectorAll('[data-pe-open]').forEach(button=>button.addEventListener('click',()=>{const key=button.dataset.peOpen,first=key==='all'?0:photos.findIndex(p=>p.group===key);if(first>=0)open(key,first,button);}));
+ all.addEventListener('click',()=>choose('all',selection[current]));dialog.querySelector('.pe-viewer-close').addEventListener('click',()=>dialog.close());
+ dialog.querySelector('.pe-viewer-prev').addEventListener('click',()=>show(current-1));dialog.querySelector('.pe-viewer-next').addEventListener('click',()=>show(current+1));
+ dialog.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();show(e.key==='Home'?0:e.key==='End'?selection.length-1:current+(e.key==='ArrowRight'?1:-1));}});
+ dialog.addEventListener('close',()=>{document.body.style.overflow=overflow;if(origin&&document.contains(origin))origin.focus({preventScroll:true});});
+ let touch;img.addEventListener('touchstart',e=>{touch=e.touches.length===1?{x:e.touches[0].clientX,y:e.touches[0].clientY}:null;},{passive:true});
+ img.addEventListener('touchend',e=>{if(!touch||!e.changedTouches.length)return;const t=e.changedTouches[0],dx=t.clientX-touch.x,dy=t.clientY-touch.y;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.4)show(current+(dx<0?1:-1));touch=null;},{passive:true});img.addEventListener('touchcancel',()=>{touch=null;},{passive:true});
 })();

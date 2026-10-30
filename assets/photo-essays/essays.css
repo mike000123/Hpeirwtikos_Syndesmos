@@ -94,3 +94,47 @@
 .photo-essay-zagori .pe-hero .pe-image-link img{object-position:center 80%}
 .photo-essay-anthropoi .pe-hero .pe-image-link img{object-position:center top}
 @media(max-width:700px){.pe-hero .pe-image-link img{max-height:none;object-fit:initial}}
+
+/* Dense photographic collections: an opening frame, companions and a contact strip. */
+.photo-essay-pindos .pe-page{--pe-bg:#101715;--pe-rule:#46554b}
+.pe-masthead{padding-top:34px;padding-bottom:32px}.pe-masthead h1{font-size:clamp(48px,6vw,82px)}
+.pe-intro{margin-top:48px;gap:64px}.pe-intro-text p{font-size:23px}.pe-section-title{margin-top:76px;margin-bottom:30px;gap:64px}.pe-section-title h2{font-size:clamp(32px,3.7vw,50px)}
+.pe-collection{max-width:1440px;margin:0 auto 62px;padding:0 32px}
+.pe-gallery-layout{display:grid;grid-template-columns:1.6fr 1fr;grid-template-rows:repeat(2,minmax(0,1fr));gap:14px;height:650px}
+.pe-gallery-layout>.pe-photo{position:relative;overflow:hidden;background:#17211e;min-height:0}.pe-gallery-layout>.pe-photo:first-child{grid-row:span 2}
+.pe-gallery-layout .pe-image-link{height:100%;width:100%}.pe-gallery-layout .pe-image-link img{width:100%;height:100%;object-fit:cover}
+.photo-essay-anthropoi .pe-gallery-layout .pe-image-link img{object-position:center 30%}
+.pe-gallery-layout .pe-caption{position:absolute;bottom:0;left:0;right:0;display:block;padding:48px 20px 16px;background:linear-gradient(transparent,rgba(5,12,8,.78));pointer-events:none;color:#fff}
+.pe-gallery-layout .pe-photo-number,.pe-gallery-layout .pe-caption p{display:none}.pe-gallery-layout .pe-location{color:#fff;font-size:11px;margin-bottom:3px}.pe-gallery-layout .pe-credit{color:#f1eee5;font-size:9px;line-height:1.5;margin:0}.pe-gallery-layout .pe-credit a{pointer-events:auto}
+.pe-gallery-layout .pe-image-link::after{top:14px;bottom:auto;z-index:2}
+.pe-collection-reverse .pe-gallery-layout{grid-template-columns:1fr 1.6fr}.pe-collection-reverse .pe-gallery-layout>.pe-photo:first-child{grid-column:2;grid-row:1 / span 2}.pe-collection-reverse .pe-gallery-layout>.pe-photo:nth-child(2){grid-column:1;grid-row:1}.pe-collection-reverse .pe-gallery-layout>.pe-photo:nth-child(3){grid-column:1;grid-row:2}
+.pe-collection-wide .pe-gallery-layout{height:700px;grid-template-columns:1fr 1fr;grid-template-rows:1.35fr 1fr}.pe-collection-wide .pe-gallery-layout>.pe-photo:first-child{grid-column:1 / -1;grid-row:1}.pe-collection-wide .pe-gallery-layout>.pe-photo:nth-child(2){grid-column:1;grid-row:2}.pe-collection-wide .pe-gallery-layout>.pe-photo:nth-child(3){grid-column:2;grid-row:2}
+.pe-collection-portraits .pe-gallery-layout{grid-template-columns:.85fr 1fr;height:760px}.pe-collection-portraits .pe-gallery-layout>.pe-photo:first-child img{object-position:center 35%}
+.pe-gallery-layout.pe-four{grid-template-rows:repeat(3,minmax(0,1fr))}.pe-gallery-layout.pe-four>.pe-photo:first-child{grid-row:1 / span 3}
+.pe-collection-wide .pe-gallery-layout.pe-four{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:1.35fr 1fr}.pe-collection-wide .pe-gallery-layout.pe-four>.pe-photo:first-child{grid-column:1 / -1;grid-row:1}.pe-collection-wide .pe-gallery-layout.pe-four>.pe-photo:nth-child(2){grid-column:1;grid-row:2}.pe-collection-wide .pe-gallery-layout.pe-four>.pe-photo:nth-child(3){grid-column:2;grid-row:2}.pe-collection-wide .pe-gallery-layout.pe-four>.pe-photo:nth-child(4){grid-column:3;grid-row:2}
+.pe-gallery-tail{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:14px}.pe-gallery-tail .pe-image-link{aspect-ratio:3 / 2}.pe-gallery-tail img{width:100%;height:100%;object-fit:cover}.pe-gallery-tail .pe-caption{padding:9px 0 0;display:block}.pe-gallery-tail .pe-location{font-size:9px;letter-spacing:.06em;margin:0}.pe-gallery-tail .pe-caption p,.pe-gallery-tail .pe-credit,.pe-gallery-tail .pe-photo-number{display:none}
+.pe-gallery-tail[data-count="2"]{grid-template-columns:repeat(2,minmax(0,1fr))}.pe-gallery-tail[data-count="3"],.pe-gallery-tail[data-count="6"]{grid-template-columns:repeat(3,minmax(0,1fr))}
+.pe-collection-bar{display:flex;justify-content:space-between;align-items:center;gap:20px;border-bottom:1px solid var(--pe-rule);padding:20px 0 16px;font:11px/1.6 Arial,sans-serif;color:var(--pe-muted)}
+.pe-open-gallery{display:none;border:0;background:none;padding:0;color:inherit;cursor:pointer;font:inherit}.pe-js .pe-open-gallery{display:inline-flex;align-items:center;gap:24px}.pe-collection-bar .pe-open-gallery{border:1px solid var(--pe-rule);padding:13px 18px;color:var(--pe-ink);font:700 11px/1.4 Arial,sans-serif;white-space:nowrap}.pe-open-gallery:hover{color:var(--pe-accent)}.pe-open-gallery:focus-visible{outline:2px solid var(--pe-accent);outline-offset:5px}.pe-open-all{text-decoration:underline;text-underline-offset:4px}
+.pe-collection-sources{font:11px/1.7 Arial,sans-serif;color:var(--pe-muted);margin-top:12px}.pe-collection-sources summary{cursor:pointer;display:list-item;width:fit-content}.pe-collection-sources ol{display:grid;grid-template-columns:1fr 1fr;gap:12px 32px;padding:12px 0 0 20px;margin:0}.pe-collection-sources p{margin:0;font:12px/1.65 Arial,sans-serif}
+.pe-hero .pe-image-link::after{content:'Δείτε όλες τις φωτογραφίες →';width:auto;height:auto;padding:12px 16px;font:700 11px/1.4 Arial,sans-serif;opacity:1}.photo-essay-anthropoi .pe-hero .pe-image-link img{object-position:center 40%}
+.pe-viewer-head{gap:12px}.pe-viewer-head>p{min-width:0;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}.pe-viewer-tools{display:flex;gap:16px;align-items:center;flex-shrink:0}.pe-viewer .pe-viewer-all{width:auto;height:auto;border:0;border-radius:0;font:11px/1.5 Arial,sans-serif;text-decoration:underline;text-underline-offset:4px;color:#e0d1b3}.pe-viewer .pe-viewer-all[hidden]{display:none}
+@media(min-width:1700px){.pe-collection{padding:0}}
+@media(max-width:1000px){.pe-gallery-layout{height:540px}.pe-collection-wide .pe-gallery-layout{height:650px}.pe-collection-portraits .pe-gallery-layout{height:630px}.pe-gallery-tail{grid-template-columns:repeat(3,minmax(0,1fr))}.pe-section-title{gap:32px}}
+@media(max-width:700px){
+ .pe-masthead{padding:28px 20px}.pe-masthead h1{font-size:clamp(44px,11vw,64px)}.pe-intro{margin-top:34px}.pe-intro-text p{font-size:21px}.pe-section-title{margin-top:50px;margin-bottom:24px}.pe-section-title h2{font-size:34px}.pe-collection{padding:0 14px;margin-bottom:38px}
+ .pe-gallery-layout,.pe-collection-reverse .pe-gallery-layout,.pe-collection-wide .pe-gallery-layout,.pe-collection-portraits .pe-gallery-layout{height:auto;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:8px}
+ .pe-gallery-layout>.pe-photo:first-child,.pe-collection-reverse .pe-gallery-layout>.pe-photo:first-child,.pe-collection-wide .pe-gallery-layout>.pe-photo:first-child{grid-row:1;grid-column:1 / -1;aspect-ratio:4/3}
+ .pe-gallery-layout>.pe-photo:nth-child(2),.pe-collection-reverse .pe-gallery-layout>.pe-photo:nth-child(2),.pe-collection-wide .pe-gallery-layout>.pe-photo:nth-child(2){grid-row:2;grid-column:1;aspect-ratio:3 / 4}
+ .pe-gallery-layout>.pe-photo:nth-child(3),.pe-collection-reverse .pe-gallery-layout>.pe-photo:nth-child(3),.pe-collection-wide .pe-gallery-layout>.pe-photo:nth-child(3){grid-row:2;grid-column:2;aspect-ratio:3 / 4}
+ .pe-collection-portraits .pe-gallery-layout>.pe-photo:first-child{aspect-ratio:3/4}
+ .pe-gallery-layout.pe-four,.pe-collection-wide .pe-gallery-layout.pe-four{grid-template-columns:1fr 1fr;grid-template-rows:auto auto}
+ .pe-gallery-layout.pe-four>.pe-photo:first-child,.pe-collection-wide .pe-gallery-layout.pe-four>.pe-photo:first-child{grid-column:1;grid-row:1;aspect-ratio:3/4}
+ .pe-gallery-layout.pe-four>.pe-photo:nth-child(2),.pe-collection-wide .pe-gallery-layout.pe-four>.pe-photo:nth-child(2){grid-column:2;grid-row:1;aspect-ratio:3/4}
+ .pe-gallery-layout.pe-four>.pe-photo:nth-child(3),.pe-collection-wide .pe-gallery-layout.pe-four>.pe-photo:nth-child(3){grid-column:1;grid-row:2;aspect-ratio:3/4}
+ .pe-gallery-layout.pe-four>.pe-photo:nth-child(4),.pe-collection-wide .pe-gallery-layout.pe-four>.pe-photo:nth-child(4){grid-column:2;grid-row:2;aspect-ratio:3/4}
+ .pe-gallery-layout .pe-caption{padding:36px 10px 10px}.pe-gallery-layout .pe-location{font-size:9px;letter-spacing:.04em}.pe-gallery-layout .pe-credit{font-size:8px}
+ .pe-gallery-tail{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:8px}.pe-gallery-tail .pe-location{font-size:8px;line-height:1.6}
+ .pe-collection-bar{gap:10px;padding:15px 0 13px}.pe-collection-bar>span{font-size:10px;max-width:48%}.pe-collection-bar .pe-open-gallery{font-size:10px;padding:12px;gap:12px}.pe-collection-sources{font-size:10px}.pe-collection-sources ol{grid-template-columns:1fr;gap:12px}
+ .pe-viewer-tools{gap:10px}.pe-viewer .pe-viewer-all{font-size:9px}.pe-viewer-head>p{font-size:10px}.pe-hero .pe-image-link::after{right:10px;bottom:10px;padding:10px 12px;font-size:9px}
+}

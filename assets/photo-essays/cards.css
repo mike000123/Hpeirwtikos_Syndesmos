@@ -1,1 +1,14 @@
-.mosaic .image{position:relative}.mosaic .image strong{padding-bottom:24px}.mosaic .pe-card-credit{position:absolute;bottom:11px;left:26px;right:18px;z-index:2;font:10px/1.5 Arial,sans-serif;color:#fff7e7;text-shadow:0 1px 3px #000;pointer-events:none}@media(max-width:650px){.mosaic .pe-card-credit{left:20px;font-size:9px}}
+/* One shared card for the index and the three photographic essays. */
+.pe-story-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.pe-story-card{position:relative;isolation:isolate;display:block;min-width:0;min-height:330px;overflow:hidden;background:#17211e;text-decoration:none!important;color:#fff!important}
+.pe-story-card>img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;transition:transform .4s ease}
+.pe-story-card::after{content:'';position:absolute;inset:30% 0 0;z-index:0;background:linear-gradient(transparent,rgba(7,14,11,.82))}
+.pe-story-card-copy{position:absolute;left:28px;right:28px;bottom:24px;z-index:1;display:block}
+.pe-story-card-kicker{display:block;font:700 10px/1.5 Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;margin-bottom:9px;color:#eee8d5}
+.pe-story-card strong{display:block;font:400 clamp(26px,2.6vw,38px)/1.15 Georgia,'Times New Roman',serif;max-width:460px;color:#fff}
+.pe-story-card-credit{display:block;font:10px/1.5 Arial,sans-serif;margin-top:13px;color:#f2eddf}
+.pe-story-card:hover>img{transform:scale(1.025)}.pe-story-card:focus-visible{outline:3px solid #b39456;outline-offset:5px}
+.pe-story-card[data-story="zagori"]>img{object-position:center 80%}.pe-story-card[data-story="anthropoi"]>img{object-position:center 40%}
+.pe-story-grid-main{grid-template-columns:1.1fr 1fr;grid-template-rows:270px 270px}.pe-story-grid-main .pe-story-card{min-height:0}.pe-story-grid-main .pe-story-card:first-child{grid-row:span 2}
+@media(max-width:700px){.pe-story-grid,.pe-story-grid-main{grid-template-columns:1fr;grid-template-rows:none;gap:18px}.pe-story-card,.pe-story-grid-main .pe-story-card{min-height:280px}.pe-story-grid-main .pe-story-card:first-child{grid-row:auto}.pe-story-card-copy{left:22px;right:22px;bottom:22px}.pe-story-card strong{font-size:30px}.pe-story-card-kicker,.pe-story-card-credit{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.pe-story-card>img{transition:none}}

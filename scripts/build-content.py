@@ -206,6 +206,62 @@ def build_ipeiros():
     s = between(s, 'ip-stories', heading(st) + '<div class="pe-story-grid pe-story-grid-main">' + ''.join(story_card(c) for c in st['cards']) + '</div>')
     wr(p, s)
 
+
+# ---------------------------------------------------------------- απλές σελίδες (index, melos, arxeio)
+sys.path.insert(0, str(root / 'scripts'))
+from pages_spec import PAGES
+BASE_CONTACT = {'phone': '210 4177378', 'email': 'isp@ipirotikos.gr', 'street': 'Φίλωνος 11Α', 'postcode': '18531'}
+def pg_decode(kind, raw):
+    if kind in ('image', 'attr'): return html.unescape(raw)
+    if kind == 'rich': raw = re.sub(r'<a href="([^"]*)"[^>]*>(.*?)</a>', r'[\2](\1)', raw, flags=re.S)
+    raw = re.sub(r'<br\s*/?>', '\n', raw)
+    return html.unescape(raw)
+def pg_encode(kind, v):
+    if kind in ('image', 'attr'): return escq(v)
+    h = esc(v)
+    if kind == 'rich':
+        h = re.sub(r'\[([^\]]+)\]\(([^)\s]+)\)', lambda m: f'<a href="{m.group(2)}"' + (' target="_blank" rel="noopener noreferrer"' if m.group(2).startswith('http') else '') + f'>{m.group(1)}</a>', h)
+    return h.replace('\n', '<br>')
+def pg_walk(s, fields):
+    pos = s.index('<main'); out = []
+    for k, label, kind, b, a in fields:
+        i = s.index(b, pos) + len(b); j = s.index(a, i); out.append((k, kind, i, j)); pos = j
+    return out
+def build_pages():
+    cfg = J(C / 'settings.json'); tel = lambda v: '+30' + re.sub(r'\D', '', v)
+    pairs = [(BASE_CONTACT['phone'], cfg['phone']), (tel(BASE_CONTACT['phone']), tel(cfg['phone'])), (BASE_CONTACT['email'], cfg['email']),
+             (BASE_CONTACT['street'], cfg['street']), (BASE_CONTACT['postcode'], cfg['postcode'])]
+    for slug, pg in PAGES.items():
+        p = root / pg['file']; s = rd(p); vf = C / 'pages' / f'{slug}.json'
+        walk = pg_walk(s, pg['fields'])
+        if not vf.exists():
+            vf.parent.mkdir(exist_ok=True)
+            vf.write_text(json.dumps({k: pg_decode(kind, s[i:j]) for k, kind, i, j in walk}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+        vals = J(vf); out = []; last = 0
+        for k, kind, i, j in walk:
+            enc = pg_encode(kind, vals.get(k, ''))
+            if kind != 'image':
+                for a, b in pairs:
+                    if a != b: enc = enc.replace(a, b)
+            out.append(s[last:i]); out.append(enc); last = j
+        out.append(s[last:]); wr(p, ''.join(out))
+    # admin config + preview spec are generated from the same field list
+    spec = {slug: [{'key': k, 'kind': kind, 'before': b, 'after': a} for k, l, kind, b, a in pg['fields']] for slug, pg in PAGES.items()}
+    wr(root / 'admin/pages-spec.json', json.dumps(spec, ensure_ascii=False) + '\n')
+    q = lambda t: "'" + t.replace("'", "''") + "'"
+    y = '# BEGIN pages (δημιουργείται αυτόματα από scripts/pages_spec.py)\n  - name: pages\n    label: Αρχική · Γίνετε μέλος · Αρχειακό υλικό\n    description: "Κείμενα των απλών σελίδων. Κάθε αρχείο είναι μία σελίδα του site."\n    files:\n'
+    for slug, pg in PAGES.items():
+        y += f'      - name: {slug}\n        label: {q(pg["label"])}\n        file: content/pages/{slug}.json\n        format: json\n        fields:\n'
+        vals = J(C / 'pages' / f'{slug}.json')
+        for k, label, kind, b, a in pg['fields']:
+            w = 'image' if kind == 'image' else ('text' if (len(vals.get(k, '')) > 70 or '\n' in vals.get(k, '')) else 'string')
+            y += f'          - {{name: {k}, label: {q(label)}, widget: {w}, required: false}}\n'
+    y += '# END pages\n'
+    cp = root / 'admin/config.yml'; c = rd(cp)
+    if '# BEGIN pages' in c: c = re.sub(r'# BEGIN pages.*?# END pages\n', lambda m: y, c, flags=re.S)
+    else: c = c.rstrip('\n') + '\n' + y
+    wr(cp, c)
+
 # ---------------------------------------------------------------- articles
 md = markdown.Markdown(extensions=[])
 def inline(t):
@@ -287,5 +343,5 @@ def build_articles():
     if need_og: (root / '.og-needed').write_text(' '.join(need_og))
 
 if __name__ == '__main__':
-    build_events(); build_board(); build_settings(); build_ipeiros(); build_articles()
+    build_events(); build_board(); build_pages(); build_settings(); build_ipeiros(); build_articles()
 

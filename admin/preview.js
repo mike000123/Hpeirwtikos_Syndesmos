@@ -154,6 +154,23 @@
     s = marker(s, 'ip-stories', ipHeading(st) + '<div class="pe-story-grid pe-story-grid-main">' + (st.cards || []).map(ipStory).join('') + '</div>');
     return s;
   }
+  /* ---- απλές σελίδες (αρχική, γίνετε μέλος, αρχειακό) ---- */
+  function pgEncode(kind, v) {
+    if (kind === 'image' || kind === 'attr') return escq(v);
+    var x = esc(v);
+    if (kind === 'rich') x = x.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, function (_, t, u) { return '<a href="' + u + '"' + (/^http/.test(u) ? ' target="_blank" rel="noopener noreferrer"' : '') + '>' + t + '</a>'; });
+    return x.replace(/\n/g, '<br>');
+  }
+  function pageHtml(page, fields, vals) {
+    var pos = page.indexOf('<main'), out = '', last = 0;
+    for (var n = 0; n < fields.length; n++) {
+      var f = fields[n], i = page.indexOf(f.before, pos);
+      if (i < 0) break; i += f.before.length;
+      var j = page.indexOf(f.after, i); if (j < 0) break;
+      out += page.slice(last, i) + pgEncode(f.kind, vals[f.key] == null ? '' : vals[f.key]); last = j; pos = j;
+    }
+    return out + page.slice(last);
+  }
   function frame(html, extra) {
     html = html.replace(/<head>/, '<head><base href="' + BASE + '">').replace(/<\/body>/, '<style>.site-top,.site-nav{pointer-events:none}</style></body>');
     // Η προεπισκόπηση δεν πρέπει να φεύγει από τη σελίδα: οι σύνδεσμοι ανοίγουν στο ίδιο παράθυρο μόνο μέσα στο πλαίσιο.
@@ -178,7 +195,7 @@
         doc == null ? h('p', { style: { padding: 20, font: '16px sans-serif' } }, 'Φόρτωση…') : h('iframe', { title: 'Προεπισκόπηση', srcDoc: doc, style: { width: '100%', height: 'calc(100% - 34px)', minHeight: '80vh', border: 0 } }));
     };
   }
-  window.__epirusPreview = { articleHtml: articleHtml, boardHtml: boardHtml, settingsHtml: settingsHtml, eventsHtml: eventsHtml, ipeirosHtml: ipeirosHtml, chapterHtml: chapterHtml };
+  window.__epirusPreview = { articleHtml: articleHtml, boardHtml: boardHtml, settingsHtml: settingsHtml, eventsHtml: eventsHtml, ipeirosHtml: ipeirosHtml, pageHtml: pageHtml, chapterHtml: chapterHtml };
   function register() {
     var CMS = window.CMS; if (!CMS || !CMS.registerPreviewTemplate) return;
     CMS.registerPreviewTemplate('articles', viewer(function (a) {
@@ -186,6 +203,13 @@
       return get(slug + '.html').catch(function () { return get('kazania.html'); }).then(function (p) { return articleHtml(p, a); });
     }));
     CMS.registerPreviewTemplate('ipeiros', viewer(function (d) { return get('ipeiros.html').then(function (p) { return ipeirosHtml(p, d); }); }));
+    var specP = null;
+    [['index', 'index.html'], ['melos', 'melos.html'], ['arxeio', 'arxeio.html']].forEach(function (pg) {
+      CMS.registerPreviewTemplate(pg[0], viewer(function (d) {
+        specP = specP || fetch('pages-spec.json', { cache: 'no-store' }).then(function (r) { return r.json(); });
+        return Promise.all([get(pg[1]), specP]).then(function (r) { return pageHtml(r[0], r[1][pg[0]], d); });
+      }));
+    });
     CMS.registerPreviewTemplate('board', viewer(function (b) { return get('syndesmos.html').then(function (p) { return boardHtml(p, b); }); }));
     CMS.registerPreviewTemplate('settings', viewer(function (n) {
       return Promise.all([get('epikoinonia.html'), get('content/.applied.json').then(JSON.parse)]).then(function (r) { return settingsHtml(r[0], n, r[1]); });

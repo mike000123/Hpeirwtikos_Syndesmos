@@ -152,6 +152,60 @@ def build_settings():
         if t != s: wr(p, t)
     wr(ap, json.dumps({k: new[k] for k in ('phone', 'email', 'street', 'postcode')}, ensure_ascii=False, indent=2) + '\n')
 
+
+# ---------------------------------------------------------------- Γνωρίστε την Ήπειρο (ipeiros.html)
+def img(tpl, src, alt):
+    tpl = tpl or '<img src="{src}" alt="{alt}" loading="lazy" decoding="async">'
+    return tpl.replace('{src}', escq(src)).replace('{alt}', escq(alt))
+def heading(d):
+    return f'<div class="heading"><div><span class="eyebrow">{esc(d["eyebrow"])}</span><h2>{esc(d["title"])}</h2></div><p>{esc(d["intro"])}</p></div>'
+def tile(t):
+    im = img(t.get('img_tpl'), t['image'], t['alt'])
+    if t.get('wrap_figure'): im = f'<figure class="tile-local-photo">{im}</figure>'
+    return (f'<article class="tile" onclick="window.location.href=\'{escq(t["link"])}\'">{im}<div class="tilebody"><span class="kicker">{esc(t["kicker"])}</span>'
+            f'<h3>{esc(t["title"])}</h3><p>{esc(t["text"])}</p><span class="arrow">{esc(t["arrow"])}</span></div></article>')
+def culture_card(c):
+    ext = f'<a href="{escq(c["ext_link"])}" rel="noopener" target="_blank">{esc(c["ext_label"])} ↗</a>' if c.get('ext_link') else ''
+    l = escq(c['link'])
+    return (f'<article class="culture-card" onclick="window.location.href=\'{l}\'"><div class="culture-banner">'
+            f'<img class="culture-cover-image" src="{escq(c["image"])}" alt="{escq(c.get("alt", ""))}" width="1536" height="1024" loading="lazy" decoding="async">'
+            f'<span class="chapter">{esc(c["chapter"])}</span></div><div class="culture-content"><span class="kicker">{esc(c.get("kicker", ""))}</span>'
+            f'<h3>{esc(c["title"])}</h3><p>{esc(c["text"])}</p><div class="culture-bottom"><button onclick="event.stopPropagation();window.location.href=\'{l}\'">Εξερευνήστε το αφιέρωμα ↗</button>{ext}</div></div></article>')
+def archive_card(a):
+    im = img(a.get('img_tpl'), a['image'], a['alt'])
+    if a.get('wrap_cover'): im = f'<div class="archive-cover-photo">{im}</div>'
+    return (f'<article data-category="{escq(a["category"])}" data-title="{escq(a["keywords"])}" onclick="window.location.href=\'{escq(a["link"])}\'">{im}'
+            f'<div><span class="kicker">{esc(a["kicker"])}</span><h3>{esc(a["title"])}</h3><p>{esc(a["text"])}</p></div></article>')
+def story_card(c):
+    slug = re.sub(r'\.html.*$', '', c['link'].split('/')[-1])
+    return (f'<a class="pe-story-card" href="{escq(c["link"])}" data-story="{escq(slug)}"><img src="{escq(c["image"])}" alt="{escq(c["alt"])}" width="{c["width"]}" height="{c["height"]}" loading="lazy">'
+            f'<span class="pe-story-card-copy"><span class="pe-story-card-kicker">{esc(c["kicker"])}</span><strong>{esc(c["title"])} <span aria-hidden="true">→</span></strong>'
+            f'<span class="pe-story-card-credit">{esc(c["credit"])}</span></span></a>')
+def build_ipeiros():
+    d = J(C / 'ipeiros.json'); p = root / 'ipeiros.html'; s = rd(p)
+    s = wrap_marker(s, 'ip-hero', r'<div class="wrap" style="width:100%">', r'</div></div>(?=</section>\s*<section class="section" id="discover")')
+    s = s.replace('<!--/cms:ip-hero--></div></section>', '<!--/cms:ip-hero--></section>') if False else s
+    s = wrap_marker(s, 'ip-discover', r'<div class="heading"><div><span class="eyebrow">Εξερευνήστε', r'<div class="tiles">.*?\n</div>(?=</div></section>)')
+    s = wrap_marker(s, 'ip-culture', r'\n<div class="heading"><div><span class="eyebrow">Η ζωντανή λαογραφία', r'<div class="culture-grid">.*?</article>\n(?=<!--cms:new-articles-->)')
+    s = wrap_marker(s, 'ip-feature', r'<strong>Ένα αρχείο που μεγαλώνει</strong>', r'</p>(?=</div><button class="solid")')
+    s = wrap_marker(s, 'ip-heritage-head', r'<div class="heading"><div><span class="eyebrow">Ψηφιακό λαογραφικό αρχείο', r'</p></div>(?=<label for="search")')
+    s = wrap_marker(s, 'ip-archive', r'<article data-category=', r'</article>\n</div><div class="note">.*?</div>(?=</div></section>)')
+    s = wrap_marker(s, 'ip-stories', r'<div class="heading"><div><span class="eyebrow">Ιστορίες, εικόνες', r'<div class="pe-story-grid pe-story-grid-main">.*?</a></div>(?=</div></section>)')
+    h = d['hero']
+    s = between(s, 'ip-hero', f'<div class="wrap" style="width:100%"><div class="eyebrow">{esc(h["eyebrow"])}</div><h1>{esc(h["line1"])}<br/>{esc(h["line2_pre"])} <em>{esc(h["line2_em"])}</em><br/>{esc(h["line3"])}</h1>'
+                f'<p>{esc(h["intro"])}</p><div class="heroactions"><a class="solid" href="{escq(h["button1_link"])}">{esc(h["button1_text"])}</a><a class="outline" href="{escq(h["button2_link"])}">{esc(h["button2_text"])}</a></div></div>')
+    di = d['discover']
+    s = between(s, 'ip-discover', heading(di) + '<div class="tiles">\n' + '\n'.join(tile(t) for t in di['tiles']) + '\n</div>')
+    cu = d['culture']
+    s = between(s, 'ip-culture', f'\n{heading(cu)}\n<p class="culture-lead">{esc(cu["lead"])}</p>\n<div class="culture-grid">\n' + '\n'.join(culture_card(c) for c in cu['cards']) + '\n')
+    s = between(s, 'ip-feature', f'<strong>{esc(cu["feature_title"])}</strong><p>{esc(cu["feature_text"])}</p>')
+    he = d['heritage']
+    s = between(s, 'ip-heritage-head', heading(he))
+    s = between(s, 'ip-archive', '\n'.join(archive_card(a) for a in he['items']) + f'\n</div><div class="note">{esc(he["note"])}</div>')
+    st = d['stories']
+    s = between(s, 'ip-stories', heading(st) + '<div class="pe-story-grid pe-story-grid-main">' + ''.join(story_card(c) for c in st['cards']) + '</div>')
+    wr(p, s)
+
 # ---------------------------------------------------------------- articles
 md = markdown.Markdown(extensions=[])
 def inline(t):
@@ -225,17 +279,13 @@ def build_articles():
     p = root / 'ipeiros.html'; s = rd(p)
     if '<!--cms:new-articles-->' not in s:
         s = s.replace('</div><div class="culture-feature">', '<!--cms:new-articles--><!--/cms:new-articles--></div><div class="culture-feature">', 1)
-    cards = ''
-    for n, a in enumerate(new_cards, 5):
-        slug = a['slug']
-        cards += (f'<article class="culture-card" onclick="window.location.href=\'{slug}.html\'"><div class="culture-banner">'
-                  f'<img class="culture-cover-image" src="{escq(a["card_image"])}" alt="{escq(a.get("card_image_alt", ""))}" width="1536" height="1024" loading="lazy" decoding="async">'
-                  f'<span class="chapter">{n:02d} / {esc(a["eyebrow"])}</span></div><div class="culture-content">'
-                  f'<span class="kicker">{esc(a.get("kicker", ""))}</span><h3>{esc(a["title"])}</h3><p>{esc(a.get("description") or a["lede"])}</p>'
-                  f'<div class="culture-bottom"><button onclick="event.stopPropagation();window.location.href=\'{slug}.html\'">Εξερευνήστε το αφιέρωμα ↗</button></div></div></article>')
+    base = len(J(C / 'ipeiros.json')['culture']['cards'])
+    cards = ''.join(culture_card({'link': a['slug'] + '.html', 'image': a['card_image'], 'alt': a.get('card_image_alt', ''),
+                                  'chapter': f'{n:02d} / {a["eyebrow"]}', 'kicker': a.get('kicker', ''), 'title': a['title'],
+                                  'text': a.get('description') or a['lede']}) for n, a in enumerate(new_cards, base + 1))
     wr(p, between(s, 'new-articles', cards))
     if need_og: (root / '.og-needed').write_text(' '.join(need_og))
 
 if __name__ == '__main__':
-    build_events(); build_board(); build_settings(); build_articles()
+    build_events(); build_board(); build_settings(); build_ipeiros(); build_articles()
 

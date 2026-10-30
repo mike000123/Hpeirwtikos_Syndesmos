@@ -123,6 +123,37 @@
     s = marker(s, 'upcoming', fut.length ? '<ul class="events-upcoming-list">' + fut.map(function (e) { return '<li><time datetime="' + e.date + '">' + esc(e.dateLabel) + '</time> <strong>' + esc(e.title) + '</strong>' + (e.note ? ' <span>' + esc(e.note) + '</span>' : '') + (e.press ? ' <a href="' + escq(e.press.src) + '" target="_blank" rel="noopener noreferrer">' + esc(e.press.label) + ' →</a>' : '') + '</li>'; }).join('') + '</ul>' : '<p>Οι νέες ημερομηνίες θα ανακοινώνονται εδώ.</p>');
     return s.replace(/<script[^>]*src="assets\/events-data\.js[^"]*"[^>]*><\/script>/, function () { return '<script>window.epirusEvents=' + JSON.stringify(cat).replace(/</g, '\\u003c') + ';</script>'; });
   }
+  /* ---- Γνωρίστε την Ήπειρο ---- */
+  function ipImg(tpl, src, alt) { tpl = tpl || '<img src="{src}" alt="{alt}" loading="lazy" decoding="async">'; return tpl.split('{src}').join(escq(src)).split('{alt}').join(escq(alt)); }
+  function ipHeading(d) { return '<div class="heading"><div><span class="eyebrow">' + esc(d.eyebrow) + '</span><h2>' + esc(d.title) + '</h2></div><p>' + esc(d.intro) + '</p></div>'; }
+  function ipTile(t) {
+    var im = ipImg(t.img_tpl, t.image, t.alt); if (t.wrap_figure) im = '<figure class="tile-local-photo">' + im + '</figure>';
+    return '<article class="tile" onclick="window.location.href=\'' + escq(t.link) + '\'">' + im + '<div class="tilebody"><span class="kicker">' + esc(t.kicker) + '</span><h3>' + esc(t.title) + '</h3><p>' + esc(t.text) + '</p><span class="arrow">' + esc(t.arrow) + '</span></div></article>';
+  }
+  function ipCulture(c) {
+    var l = escq(c.link), ext = c.ext_link ? '<a href="' + escq(c.ext_link) + '" rel="noopener" target="_blank">' + esc(c.ext_label) + ' ↗</a>' : '';
+    return '<article class="culture-card" onclick="window.location.href=\'' + l + '\'"><div class="culture-banner"><img class="culture-cover-image" src="' + escq(c.image) + '" alt="' + escq(c.alt) + '" width="1536" height="1024" loading="lazy" decoding="async"><span class="chapter">' + esc(c.chapter) + '</span></div><div class="culture-content"><span class="kicker">' + esc(c.kicker) + '</span><h3>' + esc(c.title) + '</h3><p>' + esc(c.text) + '</p><div class="culture-bottom"><button onclick="event.stopPropagation();window.location.href=\'' + l + '\'">Εξερευνήστε το αφιέρωμα ↗</button>' + ext + '</div></div></article>';
+  }
+  function ipArchive(a) {
+    var im = ipImg(a.img_tpl, a.image, a.alt); if (a.wrap_cover) im = '<div class="archive-cover-photo">' + im + '</div>';
+    return '<article data-category="' + escq(a.category) + '" data-title="' + escq(a.keywords) + '" onclick="window.location.href=\'' + escq(a.link) + '\'">' + im + '<div><span class="kicker">' + esc(a.kicker) + '</span><h3>' + esc(a.title) + '</h3><p>' + esc(a.text) + '</p></div></article>';
+  }
+  function ipStory(c) {
+    var slug = String(c.link).split('/').pop().replace(/\.html.*$/, '');
+    return '<a class="pe-story-card" href="' + escq(c.link) + '" data-story="' + escq(slug) + '"><img src="' + escq(c.image) + '" alt="' + escq(c.alt) + '" width="' + c.width + '" height="' + c.height + '" loading="lazy"><span class="pe-story-card-copy"><span class="pe-story-card-kicker">' + esc(c.kicker) + '</span><strong>' + esc(c.title) + ' <span aria-hidden="true">→</span></strong><span class="pe-story-card-credit">' + esc(c.credit) + '</span></span></a>';
+  }
+  function ipeirosHtml(page, d) {
+    var h = d.hero || {}, s = page;
+    s = marker(s, 'ip-hero', '<div class="wrap" style="width:100%"><div class="eyebrow">' + esc(h.eyebrow) + '</div><h1>' + esc(h.line1) + '<br/>' + esc(h.line2_pre) + ' <em>' + esc(h.line2_em) + '</em><br/>' + esc(h.line3) + '</h1><p>' + esc(h.intro) + '</p><div class="heroactions"><a class="solid" href="' + escq(h.button1_link) + '">' + esc(h.button1_text) + '</a><a class="outline" href="' + escq(h.button2_link) + '">' + esc(h.button2_text) + '</a></div></div>');
+    var di = d.discover || {}, cu = d.culture || {}, he = d.heritage || {}, st = d.stories || {};
+    s = marker(s, 'ip-discover', ipHeading(di) + '<div class="tiles">\n' + (di.tiles || []).map(ipTile).join('\n') + '\n</div>');
+    s = marker(s, 'ip-culture', '\n' + ipHeading(cu) + '\n<p class="culture-lead">' + esc(cu.lead) + '</p>\n<div class="culture-grid">\n' + (cu.cards || []).map(ipCulture).join('\n') + '\n');
+    s = marker(s, 'ip-feature', '<strong>' + esc(cu.feature_title) + '</strong><p>' + esc(cu.feature_text) + '</p>');
+    s = marker(s, 'ip-heritage-head', ipHeading(he));
+    s = marker(s, 'ip-archive', (he.items || []).map(ipArchive).join('\n') + '\n</div><div class="note">' + esc(he.note) + '</div>');
+    s = marker(s, 'ip-stories', ipHeading(st) + '<div class="pe-story-grid pe-story-grid-main">' + (st.cards || []).map(ipStory).join('') + '</div>');
+    return s;
+  }
   function frame(html, extra) {
     html = html.replace(/<head>/, '<head><base href="' + BASE + '">').replace(/<\/body>/, '<style>.site-top,.site-nav{pointer-events:none}</style></body>');
     // Η προεπισκόπηση δεν πρέπει να φεύγει από τη σελίδα: οι σύνδεσμοι ανοίγουν στο ίδιο παράθυρο μόνο μέσα στο πλαίσιο.
@@ -147,13 +178,14 @@
         doc == null ? h('p', { style: { padding: 20, font: '16px sans-serif' } }, 'Φόρτωση…') : h('iframe', { title: 'Προεπισκόπηση', srcDoc: doc, style: { width: '100%', height: 'calc(100% - 34px)', minHeight: '80vh', border: 0 } }));
     };
   }
-  window.__epirusPreview = { articleHtml: articleHtml, boardHtml: boardHtml, settingsHtml: settingsHtml, eventsHtml: eventsHtml, chapterHtml: chapterHtml };
+  window.__epirusPreview = { articleHtml: articleHtml, boardHtml: boardHtml, settingsHtml: settingsHtml, eventsHtml: eventsHtml, ipeirosHtml: ipeirosHtml, chapterHtml: chapterHtml };
   function register() {
     var CMS = window.CMS; if (!CMS || !CMS.registerPreviewTemplate) return;
     CMS.registerPreviewTemplate('articles', viewer(function (a) {
       var slug = /^[a-z0-9-]+$/.test(a.slug || '') ? a.slug : '';
       return get(slug + '.html').catch(function () { return get('kazania.html'); }).then(function (p) { return articleHtml(p, a); });
     }));
+    CMS.registerPreviewTemplate('ipeiros', viewer(function (d) { return get('ipeiros.html').then(function (p) { return ipeirosHtml(p, d); }); }));
     CMS.registerPreviewTemplate('board', viewer(function (b) { return get('syndesmos.html').then(function (p) { return boardHtml(p, b); }); }));
     CMS.registerPreviewTemplate('settings', viewer(function (n) {
       return Promise.all([get('epikoinonia.html'), get('content/.applied.json').then(JSON.parse)]).then(function (r) { return settingsHtml(r[0], n, r[1]); });

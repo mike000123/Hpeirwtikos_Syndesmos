@@ -92,6 +92,127 @@ collections:
           - {name: sourcePage, widget: hidden}
           - {name: retrieval, widget: hidden}
 
+  - name: ipeiros
+    label: 'Γνωρίστε την Ήπειρο · κείμενα και κάρτες σελίδας'
+    description: 'Σελίδα «Γνωρίστε την Ήπειρο»: κεφαλίδα, κάρτες θεμάτων, λαογραφικά αφιερώματα, αρχείο και «Η Ήπειρος πέρα από τις λέξεις».'
+    files:
+      - name: ipeiros
+        label: Σελίδα «Γνωρίστε την Ήπειρο»
+        file: content/ipeiros.json
+        format: json
+        fields:
+          - name: hero
+            label: 1. Κεφαλίδα (πάνω μέρος)
+            widget: object
+            collapsed: true
+            fields:
+              - {name: eyebrow, label: Μικρός τίτλος πάνω από τον τίτλο, widget: string}
+              - {name: line1, label: Τίτλος · γραμμή 1, widget: string}
+              - {name: line2_pre, label: Τίτλος · γραμμή 2 (κανονικά γράμματα), widget: string}
+              - {name: line2_em, label: Τίτλος · γραμμή 2 (πλάγια γράμματα), widget: string}
+              - {name: line3, label: Τίτλος · γραμμή 3, widget: string}
+              - {name: intro, label: Εισαγωγικό κείμενο, widget: text}
+              - {name: button1_text, label: Κουμπί 1 · κείμενο, widget: string}
+              - {name: button1_link, label: 'Κουμπί 1 · σελίδα (π.χ. #discover)', widget: string}
+              - {name: button2_text, label: Κουμπί 2 · κείμενο, widget: string}
+              - {name: button2_link, label: Κουμπί 2 · σελίδα (π.χ. syndesmos.html), widget: string}
+          - name: discover
+            label: 2. Ενότητα «Μια πατρίδα, χίλιες ιστορίες» (κάρτες θεμάτων)
+            widget: object
+            collapsed: true
+            fields:
+              - {name: eyebrow, label: Μικρός τίτλος, widget: string}
+              - {name: title, label: Τίτλος, widget: string}
+              - {name: intro, label: Κείμενο, widget: text}
+              - name: tiles
+                label: Κάρτες
+                label_singular: Κάρτα
+                widget: list
+                summary: '{{fields.title}}'
+                fields:
+                  - {name: title, label: Τίτλος κάρτας, widget: string}
+                  - {name: kicker, label: 'Μικρός τίτλος (π.χ. 01 / Τόποι)', widget: string}
+                  - {name: text, label: Σύντομο κείμενο, widget: text}
+                  - {name: arrow, label: Κείμενο συνδέσμου (π.χ. Ανακαλύψτε →), widget: string}
+                  - {name: link, label: 'Σελίδα που ανοίγει (π.χ. topoi.html)', widget: string}
+                  - {name: image, label: Εικόνα, widget: image}
+                  - {name: alt, label: Περιγραφή εικόνας (για άτομα με πρόβλημα όρασης), widget: string}
+                  - {name: wrap_figure, widget: hidden}
+                  - {name: img_tpl, widget: hidden}
+          - name: culture
+            label: 3. Ενότητα «Τέχνες, τελετουργίες, άνθρωποι» (λαογραφικά αφιερώματα)
+            widget: object
+            collapsed: true
+            fields:
+              - {name: eyebrow, label: Μικρός τίτλος, widget: string}
+              - {name: title, label: Τίτλος, widget: string}
+              - {name: intro, label: Κείμενο δίπλα στον τίτλο, widget: text}
+              - {name: lead, label: Εισαγωγική παράγραφος, widget: text}
+              - name: cards
+                label: Κάρτες αφιερωμάτων (τα νέα άρθρα προστίθενται αυτόματα μετά από αυτές)
+                label_singular: Κάρτα
+                widget: list
+                summary: '{{fields.title}}'
+                fields:
+                  - {name: title, label: Τίτλος, widget: string}
+                  - {name: chapter, label: 'Αρίθμηση / κατηγορία (π.χ. 01 / Τέχνη & μαστοριά)', widget: string}
+                  - {name: kicker, label: Λέξεις-κλειδιά, widget: string}
+                  - {name: text, label: Κείμενο, widget: text}
+                  - {name: link, label: 'Σελίδα άρθρου (π.χ. asimi.html)', widget: string}
+                  - {name: image, label: Εικόνα, widget: image}
+                  - {name: alt, label: Περιγραφή εικόνας, widget: string}
+                  - {name: ext_link, label: Εξωτερικός σύνδεσμος (προαιρετικό), widget: string, required: false}
+                  - {name: ext_label, label: Κείμενο εξωτερικού συνδέσμου, widget: string, required: false}
+              - {name: feature_title, label: Πλαίσιο κάτω από τις κάρτες · τίτλος, widget: string}
+              - {name: feature_text, label: Πλαίσιο κάτω από τις κάρτες · κείμενο, widget: text}
+          - name: heritage
+            label: 4. Ενότητα «Η μνήμη χρειάζεται φωνή» (αρχείο)
+            widget: object
+            collapsed: true
+            fields:
+              - {name: eyebrow, label: Μικρός τίτλος, widget: string}
+              - {name: title, label: Τίτλος, widget: string}
+              - {name: intro, label: Κείμενο, widget: text}
+              - name: items
+                label: Θέματα του αρχείου
+                label_singular: Θέμα
+                widget: list
+                summary: '{{fields.title}}'
+                fields:
+                  - {name: title, label: Τίτλος, widget: string}
+                  - {name: kicker, label: Κατηγορία που εμφανίζεται, widget: string}
+                  - {name: category, label: Κατηγορία για τα φίλτρα, widget: select, options: [μουσική, λαογραφία, ιστορία, τέχνες]}
+                  - {name: text, label: Κείμενο, widget: text}
+                  - {name: link, label: Σελίδα (π.χ. polyfoniko.html), widget: string}
+                  - {name: keywords, label: Λέξεις για την αναζήτηση (πεζά, χωρισμένες με κενό), widget: string}
+                  - {name: image, label: Εικόνα, widget: image}
+                  - {name: alt, label: Περιγραφή εικόνας, widget: string}
+                  - {name: wrap_cover, widget: hidden}
+                  - {name: img_tpl, widget: hidden}
+              - {name: note, label: Σημείωση κάτω από το αρχείο, widget: text}
+          - name: stories
+            label: 5. Ενότητα «Η Ήπειρος πέρα από τις λέξεις» (φωτογραφικά αφιερώματα)
+            widget: object
+            collapsed: true
+            fields:
+              - {name: eyebrow, label: Μικρός τίτλος, widget: string}
+              - {name: title, label: Τίτλος, widget: string}
+              - {name: intro, label: Κείμενο, widget: text}
+              - name: cards
+                label: Κάρτες
+                label_singular: Κάρτα
+                widget: list
+                summary: '{{fields.title}}'
+                fields:
+                  - {name: title, label: Τίτλος, widget: string}
+                  - {name: kicker, label: Μικρός τίτλος (π.χ. Φωτογραφικό αφιέρωμα), widget: string}
+                  - {name: credit, label: Πηγή φωτογραφίας (π.χ. Φωτ. Όνομα), widget: string}
+                  - {name: link, label: Σελίδα (π.χ. zagori.html), widget: string}
+                  - {name: image, label: Εικόνα, widget: image}
+                  - {name: alt, label: Περιγραφή εικόνας, widget: string}
+                  - {name: width, label: Πλάτος εικόνας (px), widget: number, value_type: int, default: 1000}
+                  - {name: height, label: Ύψος εικόνας (px), widget: number, value_type: int, default: 667}
+
   - name: articles
     label: 'Γνωρίστε την Ήπειρο · άρθρα'
     description: 'Σελίδα «Γνωρίστε την Ήπειρο»: κείμενα και φωτογραφίες των αφιερωμάτων, ή νέο άρθρο.'

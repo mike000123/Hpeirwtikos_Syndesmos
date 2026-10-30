@@ -1387,8 +1387,8 @@
   },
   {
     "key": "a-street-night-ai",
-    "file": "assets/photo-essays/a-street-night-ai.webp",
-    "small": "assets/photo-essays/a-street-night-ai-1000.webp",
+    "file": "assets/photo-essays/a-street-night-ai-v2.webp",
+    "small": "assets/photo-essays/a-street-night-ai-v2-1000.webp",
     "width": 1536,
     "height": 1024,
     "smallWidth": 1000,
@@ -1398,10 +1398,10 @@
     "author": "Εικονογράφηση με τεχνητή νοημοσύνη",
     "license": "",
     "licenseURL": "",
-    "source": "assets/photo-essays/a-street-night-ai.webp",
+    "source": "assets/photo-essays/a-street-night-ai-v2.webp",
     "url": "",
     "date": "",
-    "changes": "AI-generated illustrative scene. Fictional people and setting, not a documentary photograph. WebP conversion and mechanical resizing only after generation.",
+    "changes": "AI-generated illustrative scene; the fictional group was replaced with distinct fictional people using AI editing. Not a documentary photograph. WebP conversion and mechanical resizing after generation.",
     "medium": "illustration",
     "originalFile": "",
     "processing": ""

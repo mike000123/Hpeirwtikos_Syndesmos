@@ -1,6 +1,9 @@
 /* A shared reading grid for the three photo essays. */
 .pe-page{--pe-width:1080px;--pe-gutter:32px;--pe-bg:#f5f0e6;--pe-ink:#292b25;--pe-muted:#716d62;--pe-rule:#c6b99e;--pe-accent:#8a663b;background:var(--pe-bg);color:var(--pe-ink);padding-bottom:48px;overflow:clip}
-.photo-essay-pindos .pe-page{--pe-bg:#101715;--pe-ink:#f5f1e6;--pe-muted:#c0c8bc;--pe-rule:#46554b;--pe-accent:#d7bc7a}
+/* Decorative AI pen illustration, inspired by the site's dancers drawing. */
+.photo-essay-pindos .pe-page{--pe-bg:#f5f0e6;--pe-ink:#292b25;--pe-muted:#625e57;--pe-rule:#c6b8a5;--pe-accent:#792432;position:relative;isolation:isolate}
+.photo-essay-pindos .pe-page::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:url('pindos-landscape-outlines.webp') center top / max(100%,1200px) auto repeat-y;opacity:.48}
+.photo-essay-pindos .pe-masthead h1,.photo-essay-pindos .pe-section-title h2,.photo-essay-pindos .pe-related h2{color:#792432}
 .photo-essay-anthropoi .pe-page{--pe-bg:#f5efe6;--pe-accent:#792432}
 .pe-page a{color:inherit}.pe-page button{font:inherit}
 .pe-crumb,.pe-masthead,.pe-hero,.pe-intro,.pe-jump,.pe-section-title,.pe-collection,.pe-baking-note,.pe-sources,.pe-related{box-sizing:border-box;width:min(var(--pe-width),calc(100% - var(--pe-gutter) - var(--pe-gutter)));margin-inline:auto;padding-inline:0}

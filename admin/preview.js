@@ -202,13 +202,27 @@
       var slug = /^[a-z0-9-]+$/.test(a.slug || '') ? a.slug : '';
       return get(slug + '.html').catch(function () { return get('kazania.html'); }).then(function (p) { return articleHtml(p, a); });
     }));
-    CMS.registerPreviewTemplate('ipeiros', viewer(function (d) { return get('ipeiros.html').then(function (p) { return ipeirosHtml(p, d); }); }));
+    var IPS = ['hero', 'discover', 'culture', 'heritage', 'stories'];
+    function reg(names, fn) { names.forEach(function (n) { CMS.registerPreviewTemplate(n, viewer(fn)); }); }
+    function liveJson(path) { return fetch(BASE + path, { cache: 'no-store' }).then(function (r) { return r.json(); }); }
+    IPS.forEach(function (sec) {
+      CMS.registerPreviewTemplate(sec, viewer(function (draft) {
+        return Promise.all([get('ipeiros.html')].concat(IPS.map(function (k) { return k === sec ? Promise.resolve(draft) : liveJson('content/ipeiros/' + k + '.json'); })))
+          .then(function (r) { var d = {}; IPS.forEach(function (k, i) { d[k] = r[i + 1]; }); return ipeirosHtml(r[0], d); });
+      }));
+    });
     var specP = null;
     [['index', 'index.html'], ['melos', 'melos.html'], ['arxeio', 'arxeio.html']].forEach(function (pg) {
-      CMS.registerPreviewTemplate(pg[0], viewer(function (d) {
-        specP = specP || fetch('pages-spec.json', { cache: 'no-store' }).then(function (r) { return r.json(); });
-        return Promise.all([get(pg[1]), specP]).then(function (r) { return pageHtml(r[0], r[1][pg[0]], d); });
-      }));
+      for (var n = 1; n <= 12; n++) (function (g) {
+        CMS.registerPreviewTemplate(pg[0] + '_' + g, viewer(function (draft) {
+          specP = specP || fetch('pages-spec.json', { cache: 'no-store' }).then(function (r) { return r.json(); });
+          return specP.then(function (spec) {
+            var sp = spec[pg[0]];
+            return Promise.all([get(pg[1])].concat(sp.groups.map(function (k) { return k === g ? Promise.resolve(draft) : liveJson('content/pages/' + pg[0] + '/' + k + '.json'); })))
+              .then(function (r) { var vals = {}; for (var i = 1; i < r.length; i++) Object.assign(vals, r[i]); return pageHtml(r[0], sp.fields, vals); });
+          });
+        }));
+      })('g' + String(n).padStart(2, '0'));
     });
     CMS.registerPreviewTemplate('board', viewer(function (b) { return get('syndesmos.html').then(function (p) { return boardHtml(p, b); }); }));
     CMS.registerPreviewTemplate('settings', viewer(function (n) {

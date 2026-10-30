@@ -4,7 +4,7 @@ kind: text (plain, newline = <br>), rich (plain + [link](url)), image (src), att
 T, R, I, A = 'text', 'rich', 'image', 'attr'
 def S(*a): return a
 PAGES = {
- 'index': {'label': 'Αρχική σελίδα', 'file': 'index.html', 'fields': [
+ 'index': {'label': 'Αρχική', 'description': 'Κείμενα και εικόνες της αρχικής σελίδας. Επιλέξτε ενότητα.', 'file': 'index.html', 'fields': [
   S('hero_eyebrow', 'Κεφαλίδα · μικρός τίτλος', T, '<section class="v2hero"><div class="wrap"><span class="eyebrow">', '</span>'),
   S('hero_title', 'Κεφαλίδα · τίτλος', T, '<h1>', '</h1>'),
   S('hero_text', 'Κεφαλίδα · κείμενο', T, '<p>', '</p>'),
@@ -48,7 +48,7 @@ PAGES = {
   S('contact_text', 'Επικοινωνία · κείμενο', T, '<p>', '</p>'),
   S('contact_btn', 'Επικοινωνία · κουμπί', T, '<a class="button" href="epikoinonia.html">', '</a>'),
  ]},
- 'melos': {'label': 'Γίνετε μέλος', 'file': 'melos.html', 'fields': [
+ 'melos': {'label': 'Γίνετε μέλος', 'description': 'Σελίδα «Γίνετε μέλος». Επιλέξτε ενότητα.', 'file': 'melos.html', 'fields': [
   S('hero_eyebrow', 'Κεφαλίδα · μικρός τίτλος', T, '<span class="eyebrow membership-eyebrow">', '</span>'),
   S('hero_title', 'Κεφαλίδα · τίτλος', T, '<h1 id="membership-title">', '</h1>'),
   S('hero_text', 'Κεφαλίδα · κείμενο', T, '<p>', '</p>'),
@@ -73,11 +73,11 @@ PAGES = {
   S('dance_text', 'Χορευτικά · κείμενο', T, '<p>', '</p>'),
   S('dance_link', 'Χορευτικά · σύνδεσμος', T, '<a class="membership-text-link" href="epikoinonia.html">', ' <span aria-hidden="true">'),
   S('faq1_q', 'Ερώτηση 1', T, '<details><summary>', '</summary>'),
-  S('faq1_a', 'Απάντηση 1 (σύνδεσμοι: [κείμενο](διεύθυνση))', R, '<p>', '</p>'),
+  S('faq1_a', 'Απάντηση 1', R, '<p>', '</p>'),
   S('faq2_q', 'Ερώτηση 2', T, '<details><summary>', '</summary>'),
   S('faq2_a', 'Απάντηση 2', R, '<p>', '</p>'),
  ]},
- 'arxeio': {'label': 'Αρχειακό / Λαογραφικό υλικό', 'file': 'arxeio.html', 'fields': [
+ 'arxeio': {'label': 'Αρχειακό / Λαογραφικό υλικό', 'description': 'Σελίδα «Αρχειακό/Λαογραφικό υλικό». Επιλέξτε ενότητα.', 'file': 'arxeio.html', 'fields': [
   S('hero_eyebrow', 'Κεφαλίδα · μικρός τίτλος', T, '<div class="wrap"><span class="eyebrow">', '</span>'),
   S('hero_title', 'Κεφαλίδα · τίτλος', T, '<h1>', '</h1>'),
   S('hero_text', 'Κεφαλίδα · κείμενο', T, '<p class="archive-lead">', '</p>'),
@@ -102,3 +102,20 @@ PAGES = {
   S('status_btn', 'Κάτω πλαίσιο · κουμπί', T, '<a class="button" href="epikoinonia.html">', '</a>'),
  ]},
 }
+
+
+import re as _re
+_GROUPS = [(r'^Αξία \d$', 'Αξίες'), (r'^Βήμα \d$', 'Βήματα'), (r'^Δραστηριότητα \d$', 'Δραστηριότητες'), (r'^(Ερώτηση|Απάντηση) \d$', 'Συχνές ερωτήσεις')]
+def group_of(label):
+    pre = label.split(' · ')[0]
+    for rx, name in _GROUPS:
+        if _re.match(rx, pre): return name
+    return pre
+def groups(page):
+    """Ordered [(group_name, [fields])] — consecutive fields with the same group."""
+    out = []
+    for f in PAGES[page]['fields']:
+        g = group_of(f[1])
+        if out and out[-1][0] == g: out[-1][1].append(f)
+        else: out.append((g, [f]))
+    return out

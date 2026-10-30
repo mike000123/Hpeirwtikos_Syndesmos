@@ -15,9 +15,97 @@ media_folder: assets/uploads
 public_folder: assets/uploads
 
 collections:
+# BEGIN page-index (δημιουργείται αυτόματα από scripts/pages_spec.py)
+  - name: page_index
+    label: 'Αρχική'
+    description: 'Κείμενα και εικόνες της αρχικής σελίδας. Επιλέξτε ενότητα.'
+    files:
+      - name: index_g01
+        label: 'Κεφαλίδα'
+        file: content/pages/index/g01.json
+        format: json
+        fields:
+          - {name: hero_eyebrow, label: 'Κεφαλίδα · μικρός τίτλος', widget: string, required: false}
+          - {name: hero_title, label: 'Κεφαλίδα · τίτλος', widget: text, required: false}
+          - {name: hero_text, label: 'Κεφαλίδα · κείμενο', widget: text, required: false}
+          - {name: hero_btn1, label: 'Κεφαλίδα · κουμπί 1', widget: string, required: false}
+          - {name: hero_btn2, label: 'Κεφαλίδα · κουμπί 2', widget: string, required: false}
+      - name: index_g02
+        label: 'Εισαγωγή'
+        file: content/pages/index/g02.json
+        format: json
+        fields:
+          - {name: intro_title, label: 'Εισαγωγή · τίτλος', widget: text, required: false}
+          - {name: intro_text, label: 'Εισαγωγή · κείμενο', widget: text, required: false}
+      - name: index_g03
+        label: 'Λέσχη'
+        file: content/pages/index/g03.json
+        format: json
+        fields:
+          - {name: club_image, label: 'Λέσχη · φωτογραφία', widget: image, required: false}
+          - {name: club_image_alt, label: 'Λέσχη · περιγραφή φωτογραφίας', widget: string, required: false}
+          - {name: club_eyebrow, label: 'Λέσχη · μικρός τίτλος', widget: string, required: false}
+          - {name: club_title, label: 'Λέσχη · τίτλος', widget: text, required: false}
+          - {name: club_text, label: 'Λέσχη · κείμενο', widget: text, required: false}
+          - {name: club_link, label: 'Λέσχη · κείμενο συνδέσμου', widget: string, required: false}
+      - name: index_g04
+        label: 'Χορευτικά'
+        file: content/pages/index/g04.json
+        format: json
+        fields:
+          - {name: dance_eyebrow, label: 'Χορευτικά · μικρός τίτλος', widget: string, required: false}
+          - {name: dance_title, label: 'Χορευτικά · τίτλος', widget: text, required: false}
+          - {name: dance_text, label: 'Χορευτικά · κείμενο', widget: text, required: false}
+          - {name: dance_btn, label: 'Χορευτικά · κουμπί', widget: string, required: false}
+          - {name: dance_tag, label: 'Χορευτικά · σλόγκαν', widget: string, required: false}
+      - name: index_g05
+        label: 'Άνθρωποι'
+        file: content/pages/index/g05.json
+        format: json
+        fields:
+          - {name: community_image, label: 'Άνθρωποι · φωτογραφία', widget: image, required: false}
+          - {name: community_eyebrow, label: 'Άνθρωποι · μικρός τίτλος', widget: string, required: false}
+          - {name: community_title, label: 'Άνθρωποι · τίτλος', widget: string, required: false}
+          - {name: community_text, label: 'Άνθρωποι · κείμενο', widget: text, required: false}
+          - {name: community_link, label: 'Άνθρωποι · κείμενο συνδέσμου', widget: string, required: false}
+      - name: index_g06
+        label: 'Δραστηριότητες'
+        file: content/pages/index/g06.json
+        format: json
+        fields:
+          - {name: act_eyebrow, label: 'Δραστηριότητες · μικρός τίτλος', widget: string, required: false}
+          - {name: act_title, label: 'Δραστηριότητες · τίτλος', widget: string, required: false}
+          - {name: act1_title, label: 'Δραστηριότητα 1 · τίτλος', widget: string, required: false}
+          - {name: act1_text, label: 'Δραστηριότητα 1 · κείμενο', widget: text, required: false}
+          - {name: act1_link, label: 'Δραστηριότητα 1 · σύνδεσμος', widget: string, required: false}
+          - {name: act2_title, label: 'Δραστηριότητα 2 · τίτλος', widget: string, required: false}
+          - {name: act2_text, label: 'Δραστηριότητα 2 · κείμενο', widget: text, required: false}
+          - {name: act2_link, label: 'Δραστηριότητα 2 · σύνδεσμος', widget: string, required: false}
+          - {name: act3_title, label: 'Δραστηριότητα 3 · τίτλος', widget: string, required: false}
+          - {name: act3_text, label: 'Δραστηριότητα 3 · κείμενο', widget: text, required: false}
+          - {name: act3_link, label: 'Δραστηριότητα 3 · σύνδεσμος', widget: string, required: false}
+      - name: index_g07
+        label: 'Γνωρίστε την Ήπειρο'
+        file: content/pages/index/g07.json
+        format: json
+        fields:
+          - {name: gate_eyebrow, label: 'Γνωρίστε την Ήπειρο · μικρός τίτλος', widget: string, required: false}
+          - {name: gate_title, label: 'Γνωρίστε την Ήπειρο · τίτλος', widget: string, required: false}
+          - {name: gate_text, label: 'Γνωρίστε την Ήπειρο · κείμενο', widget: text, required: false}
+          - {name: gate_btn, label: 'Γνωρίστε την Ήπειρο · κουμπί', widget: string, required: false}
+      - name: index_g08
+        label: 'Επικοινωνία'
+        file: content/pages/index/g08.json
+        format: json
+        fields:
+          - {name: contact_eyebrow, label: 'Επικοινωνία · μικρός τίτλος', widget: string, required: false}
+          - {name: contact_title, label: 'Επικοινωνία · τίτλος', widget: string, required: false}
+          - {name: contact_text, label: 'Επικοινωνία · κείμενο', widget: text, required: false}
+          - {name: contact_btn, label: 'Επικοινωνία · κουμπί', widget: string, required: false}
+# END page-index
   - name: board
-    label: 'Ο Σύνδεσμος · Διοικητικό Συμβούλιο και πρόεδροι'
-    description: 'Σελίδα «Ο Σύνδεσμος»: ονόματα του ΔΣ και πίνακας προέδρων.'
+    label: 'Ο Σύνδεσμος'
+    description: 'Σελίδα «Ο Σύνδεσμος»: Διοικητικό Συμβούλιο και πρόεδροι.'
     files:
       - name: board
         label: Διοικητικό Συμβούλιο και πρόεδροι
@@ -48,7 +136,7 @@ collections:
               - {name: portrait_credit, label: Προέλευση φωτογραφίας, widget: string, required: false, hint: 'Σύντομη αναφορά, π.χ. Αρχείο Συνδέσμου.'}
 
   - name: events
-    label: 'Εκδηλώσεις · ανακοινώσεις και αρχείο'
+    label: 'Εκδηλώσεις'
     description: 'Σελίδα «Εκδηλώσεις»: προσθέστε νέα εκδήλωση (μελλοντική ημερομηνία = «επόμενες συναντήσεις») ή διορθώστε παλιά.'
     label_singular: Εκδήλωση
     folder: content/events
@@ -93,128 +181,122 @@ collections:
           - {name: retrieval, widget: hidden}
 
   - name: ipeiros
-    label: 'Γνωρίστε την Ήπειρο · κείμενα και κάρτες σελίδας'
-    description: 'Σελίδα «Γνωρίστε την Ήπειρο»: κεφαλίδα, κάρτες θεμάτων, λαογραφικά αφιερώματα, αρχείο και «Η Ήπειρος πέρα από τις λέξεις».'
+    label: 'Γνωρίστε την Ήπειρο'
+    description: 'Σελίδα «Γνωρίστε την Ήπειρο». Επιλέξτε ενότητα. Τα άρθρα της βρίσκονται στην επόμενη καταχώρηση.'
     files:
-      - name: ipeiros
-        label: Σελίδα «Γνωρίστε την Ήπειρο»
-        file: content/ipeiros.json
+      - name: hero
+        label: '1. Κεφαλίδα'
+        file: content/ipeiros/hero.json
         format: json
         fields:
-          - name: hero
-            label: 1. Κεφαλίδα (πάνω μέρος)
-            widget: object
-            collapsed: true
+          - {name: eyebrow, label: Μικρός τίτλος πάνω από τον τίτλο, widget: string}
+          - {name: line1, label: Τίτλος · γραμμή 1, widget: string}
+          - {name: line2_pre, label: Τίτλος · γραμμή 2 (κανονικά γράμματα), widget: string}
+          - {name: line2_em, label: Τίτλος · γραμμή 2 (πλάγια γράμματα), widget: string}
+          - {name: line3, label: Τίτλος · γραμμή 3, widget: string}
+          - {name: intro, label: Εισαγωγικό κείμενο, widget: text}
+          - {name: button1_text, label: Κουμπί 1 · κείμενο, widget: string}
+          - {name: button1_link, label: 'Κουμπί 1 · σελίδα (π.χ. #discover)', widget: string}
+          - {name: button2_text, label: Κουμπί 2 · κείμενο, widget: string}
+          - {name: button2_link, label: Κουμπί 2 · σελίδα (π.χ. syndesmos.html), widget: string}
+      - name: discover
+        label: '2. «Μια πατρίδα, χίλιες ιστορίες» (κάρτες θεμάτων)'
+        file: content/ipeiros/discover.json
+        format: json
+        fields:
+          - {name: eyebrow, label: Μικρός τίτλος, widget: string}
+          - {name: title, label: Τίτλος, widget: string}
+          - {name: intro, label: Κείμενο, widget: text}
+          - name: tiles
+            label: Κάρτες
+            label_singular: Κάρτα
+            widget: list
+            summary: '{{fields.title}}'
             fields:
-              - {name: eyebrow, label: Μικρός τίτλος πάνω από τον τίτλο, widget: string}
-              - {name: line1, label: Τίτλος · γραμμή 1, widget: string}
-              - {name: line2_pre, label: Τίτλος · γραμμή 2 (κανονικά γράμματα), widget: string}
-              - {name: line2_em, label: Τίτλος · γραμμή 2 (πλάγια γράμματα), widget: string}
-              - {name: line3, label: Τίτλος · γραμμή 3, widget: string}
-              - {name: intro, label: Εισαγωγικό κείμενο, widget: text}
-              - {name: button1_text, label: Κουμπί 1 · κείμενο, widget: string}
-              - {name: button1_link, label: 'Κουμπί 1 · σελίδα (π.χ. #discover)', widget: string}
-              - {name: button2_text, label: Κουμπί 2 · κείμενο, widget: string}
-              - {name: button2_link, label: Κουμπί 2 · σελίδα (π.χ. syndesmos.html), widget: string}
-          - name: discover
-            label: 2. Ενότητα «Μια πατρίδα, χίλιες ιστορίες» (κάρτες θεμάτων)
-            widget: object
-            collapsed: true
+              - {name: title, label: Τίτλος κάρτας, widget: string}
+              - {name: kicker, label: 'Μικρός τίτλος (π.χ. 01 / Τόποι)', widget: string}
+              - {name: text, label: Σύντομο κείμενο, widget: text}
+              - {name: arrow, label: Κείμενο συνδέσμου (π.χ. Ανακαλύψτε →), widget: string}
+              - {name: link, label: 'Σελίδα που ανοίγει (π.χ. topoi.html)', widget: string}
+              - {name: image, label: Εικόνα, widget: image}
+              - {name: alt, label: Περιγραφή εικόνας (για άτομα με πρόβλημα όρασης), widget: string}
+              - {name: wrap_figure, widget: hidden}
+              - {name: img_tpl, widget: hidden}
+      - name: culture
+        label: '3. «Τέχνες, τελετουργίες, άνθρωποι» (λαογραφικά αφιερώματα)'
+        file: content/ipeiros/culture.json
+        format: json
+        fields:
+          - {name: eyebrow, label: Μικρός τίτλος, widget: string}
+          - {name: title, label: Τίτλος, widget: string}
+          - {name: intro, label: Κείμενο δίπλα στον τίτλο, widget: text}
+          - {name: lead, label: Εισαγωγική παράγραφος, widget: text}
+          - name: cards
+            label: Κάρτες αφιερωμάτων (τα νέα άρθρα προστίθενται αυτόματα μετά από αυτές)
+            label_singular: Κάρτα
+            widget: list
+            summary: '{{fields.title}}'
             fields:
-              - {name: eyebrow, label: Μικρός τίτλος, widget: string}
               - {name: title, label: Τίτλος, widget: string}
-              - {name: intro, label: Κείμενο, widget: text}
-              - name: tiles
-                label: Κάρτες
-                label_singular: Κάρτα
-                widget: list
-                summary: '{{fields.title}}'
-                fields:
-                  - {name: title, label: Τίτλος κάρτας, widget: string}
-                  - {name: kicker, label: 'Μικρός τίτλος (π.χ. 01 / Τόποι)', widget: string}
-                  - {name: text, label: Σύντομο κείμενο, widget: text}
-                  - {name: arrow, label: Κείμενο συνδέσμου (π.χ. Ανακαλύψτε →), widget: string}
-                  - {name: link, label: 'Σελίδα που ανοίγει (π.χ. topoi.html)', widget: string}
-                  - {name: image, label: Εικόνα, widget: image}
-                  - {name: alt, label: Περιγραφή εικόνας (για άτομα με πρόβλημα όρασης), widget: string}
-                  - {name: wrap_figure, widget: hidden}
-                  - {name: img_tpl, widget: hidden}
-          - name: culture
-            label: 3. Ενότητα «Τέχνες, τελετουργίες, άνθρωποι» (λαογραφικά αφιερώματα)
-            widget: object
-            collapsed: true
+              - {name: chapter, label: 'Αρίθμηση / κατηγορία (π.χ. 01 / Τέχνη & μαστοριά)', widget: string}
+              - {name: kicker, label: Λέξεις-κλειδιά, widget: string}
+              - {name: text, label: Κείμενο, widget: text}
+              - {name: link, label: 'Σελίδα άρθρου (π.χ. asimi.html)', widget: string}
+              - {name: image, label: Εικόνα, widget: image}
+              - {name: alt, label: Περιγραφή εικόνας, widget: string}
+              - {name: ext_link, label: Εξωτερικός σύνδεσμος (προαιρετικό), widget: string, required: false}
+              - {name: ext_label, label: Κείμενο εξωτερικού συνδέσμου, widget: string, required: false}
+          - {name: feature_title, label: Πλαίσιο κάτω από τις κάρτες · τίτλος, widget: string}
+          - {name: feature_text, label: Πλαίσιο κάτω από τις κάρτες · κείμενο, widget: text}
+      - name: heritage
+        label: '4. «Η μνήμη χρειάζεται φωνή» (αρχείο)'
+        file: content/ipeiros/heritage.json
+        format: json
+        fields:
+          - {name: eyebrow, label: Μικρός τίτλος, widget: string}
+          - {name: title, label: Τίτλος, widget: string}
+          - {name: intro, label: Κείμενο, widget: text}
+          - name: items
+            label: Θέματα του αρχείου
+            label_singular: Θέμα
+            widget: list
+            summary: '{{fields.title}}'
             fields:
-              - {name: eyebrow, label: Μικρός τίτλος, widget: string}
               - {name: title, label: Τίτλος, widget: string}
-              - {name: intro, label: Κείμενο δίπλα στον τίτλο, widget: text}
-              - {name: lead, label: Εισαγωγική παράγραφος, widget: text}
-              - name: cards
-                label: Κάρτες αφιερωμάτων (τα νέα άρθρα προστίθενται αυτόματα μετά από αυτές)
-                label_singular: Κάρτα
-                widget: list
-                summary: '{{fields.title}}'
-                fields:
-                  - {name: title, label: Τίτλος, widget: string}
-                  - {name: chapter, label: 'Αρίθμηση / κατηγορία (π.χ. 01 / Τέχνη & μαστοριά)', widget: string}
-                  - {name: kicker, label: Λέξεις-κλειδιά, widget: string}
-                  - {name: text, label: Κείμενο, widget: text}
-                  - {name: link, label: 'Σελίδα άρθρου (π.χ. asimi.html)', widget: string}
-                  - {name: image, label: Εικόνα, widget: image}
-                  - {name: alt, label: Περιγραφή εικόνας, widget: string}
-                  - {name: ext_link, label: Εξωτερικός σύνδεσμος (προαιρετικό), widget: string, required: false}
-                  - {name: ext_label, label: Κείμενο εξωτερικού συνδέσμου, widget: string, required: false}
-              - {name: feature_title, label: Πλαίσιο κάτω από τις κάρτες · τίτλος, widget: string}
-              - {name: feature_text, label: Πλαίσιο κάτω από τις κάρτες · κείμενο, widget: text}
-          - name: heritage
-            label: 4. Ενότητα «Η μνήμη χρειάζεται φωνή» (αρχείο)
-            widget: object
-            collapsed: true
+              - {name: kicker, label: Κατηγορία που εμφανίζεται, widget: string}
+              - {name: category, label: Κατηγορία για τα φίλτρα, widget: select, options: [μουσική, λαογραφία, ιστορία, τέχνες]}
+              - {name: text, label: Κείμενο, widget: text}
+              - {name: link, label: Σελίδα (π.χ. polyfoniko.html), widget: string}
+              - {name: keywords, label: Λέξεις για την αναζήτηση (πεζά, χωρισμένες με κενό), widget: string}
+              - {name: image, label: Εικόνα, widget: image}
+              - {name: alt, label: Περιγραφή εικόνας, widget: string}
+              - {name: wrap_cover, widget: hidden}
+              - {name: img_tpl, widget: hidden}
+          - {name: note, label: Σημείωση κάτω από το αρχείο, widget: text}
+      - name: stories
+        label: '5. «Η Ήπειρος πέρα από τις λέξεις» (φωτογραφικά αφιερώματα)'
+        file: content/ipeiros/stories.json
+        format: json
+        fields:
+          - {name: eyebrow, label: Μικρός τίτλος, widget: string}
+          - {name: title, label: Τίτλος, widget: string}
+          - {name: intro, label: Κείμενο, widget: text}
+          - name: cards
+            label: Κάρτες
+            label_singular: Κάρτα
+            widget: list
+            summary: '{{fields.title}}'
             fields:
-              - {name: eyebrow, label: Μικρός τίτλος, widget: string}
               - {name: title, label: Τίτλος, widget: string}
-              - {name: intro, label: Κείμενο, widget: text}
-              - name: items
-                label: Θέματα του αρχείου
-                label_singular: Θέμα
-                widget: list
-                summary: '{{fields.title}}'
-                fields:
-                  - {name: title, label: Τίτλος, widget: string}
-                  - {name: kicker, label: Κατηγορία που εμφανίζεται, widget: string}
-                  - {name: category, label: Κατηγορία για τα φίλτρα, widget: select, options: [μουσική, λαογραφία, ιστορία, τέχνες]}
-                  - {name: text, label: Κείμενο, widget: text}
-                  - {name: link, label: Σελίδα (π.χ. polyfoniko.html), widget: string}
-                  - {name: keywords, label: Λέξεις για την αναζήτηση (πεζά, χωρισμένες με κενό), widget: string}
-                  - {name: image, label: Εικόνα, widget: image}
-                  - {name: alt, label: Περιγραφή εικόνας, widget: string}
-                  - {name: wrap_cover, widget: hidden}
-                  - {name: img_tpl, widget: hidden}
-              - {name: note, label: Σημείωση κάτω από το αρχείο, widget: text}
-          - name: stories
-            label: 5. Ενότητα «Η Ήπειρος πέρα από τις λέξεις» (φωτογραφικά αφιερώματα)
-            widget: object
-            collapsed: true
-            fields:
-              - {name: eyebrow, label: Μικρός τίτλος, widget: string}
-              - {name: title, label: Τίτλος, widget: string}
-              - {name: intro, label: Κείμενο, widget: text}
-              - name: cards
-                label: Κάρτες
-                label_singular: Κάρτα
-                widget: list
-                summary: '{{fields.title}}'
-                fields:
-                  - {name: title, label: Τίτλος, widget: string}
-                  - {name: kicker, label: Μικρός τίτλος (π.χ. Φωτογραφικό αφιέρωμα), widget: string}
-                  - {name: credit, label: Πηγή φωτογραφίας (π.χ. Φωτ. Όνομα), widget: string}
-                  - {name: link, label: Σελίδα (π.χ. zagori.html), widget: string}
-                  - {name: image, label: Εικόνα, widget: image}
-                  - {name: alt, label: Περιγραφή εικόνας, widget: string}
-                  - {name: width, label: Πλάτος εικόνας (px), widget: number, value_type: int, default: 1000}
-                  - {name: height, label: Ύψος εικόνας (px), widget: number, value_type: int, default: 667}
-
+              - {name: kicker, label: Μικρός τίτλος (π.χ. Φωτογραφικό αφιέρωμα), widget: string}
+              - {name: credit, label: Πηγή φωτογραφίας (π.χ. Φωτ. Όνομα), widget: string}
+              - {name: link, label: Σελίδα (π.χ. zagori.html), widget: string}
+              - {name: image, label: Εικόνα, widget: image}
+              - {name: alt, label: Περιγραφή εικόνας, widget: string}
+              - {name: width, label: Πλάτος εικόνας (px), widget: number, value_type: int, default: 1000}
+              - {name: height, label: Ύψος εικόνας (px), widget: number, value_type: int, default: 667}
   - name: articles
-    label: 'Γνωρίστε την Ήπειρο · άρθρα'
+    label: 'Γνωρίστε την Ήπειρο · Άρθρα'
     description: 'Σελίδα «Γνωρίστε την Ήπειρο»: κείμενα και φωτογραφίες των αφιερωμάτων, ή νέο άρθρο.'
     label_singular: Άρθρο
     folder: content/articles
@@ -276,9 +358,144 @@ collections:
       - {name: kicker, label: 'Λέξεις-κλειδιά κάρτας (π.χ. Χωριά · Φθινόπωρο)', widget: string, required: false}
       - {name: description, label: Σύντομη περιγραφή (κάρτα και Google/Facebook), widget: text, required: false}
 
+# BEGIN page-melos (δημιουργείται αυτόματα από scripts/pages_spec.py)
+  - name: page_melos
+    label: 'Γίνετε μέλος'
+    description: 'Σελίδα «Γίνετε μέλος». Επιλέξτε ενότητα.'
+    files:
+      - name: melos_g01
+        label: 'Κεφαλίδα'
+        file: content/pages/melos/g01.json
+        format: json
+        fields:
+          - {name: hero_eyebrow, label: 'Κεφαλίδα · μικρός τίτλος', widget: string, required: false}
+          - {name: hero_title, label: 'Κεφαλίδα · τίτλος', widget: text, required: false}
+          - {name: hero_text, label: 'Κεφαλίδα · κείμενο', widget: text, required: false}
+          - {name: hero_btn1, label: 'Κεφαλίδα · κουμπί', widget: string, required: false}
+          - {name: hero_link2, label: 'Κεφαλίδα · δεύτερος σύνδεσμος', widget: string, required: false}
+          - {name: hero_image, label: 'Κεφαλίδα · εικόνα', widget: image, required: false}
+          - {name: hero_image_alt, label: 'Κεφαλίδα · περιγραφή εικόνας', widget: text, required: false}
+      - name: melos_g02
+        label: 'Αξίες'
+        file: content/pages/melos/g02.json
+        format: json
+        fields:
+          - {name: together_title, label: 'Αξίες · τίτλος', widget: string, required: false}
+          - {name: v1_title, label: 'Αξία 1 · τίτλος', widget: string, required: false}
+          - {name: v1_text, label: 'Αξία 1 · κείμενο', widget: string, required: false}
+          - {name: v2_title, label: 'Αξία 2 · τίτλος', widget: string, required: false}
+          - {name: v2_text, label: 'Αξία 2 · κείμενο', widget: text, required: false}
+          - {name: v3_title, label: 'Αξία 3 · τίτλος', widget: string, required: false}
+          - {name: v3_text, label: 'Αξία 3 · κείμενο', widget: text, required: false}
+      - name: melos_g03
+        label: 'Πρώτο βήμα'
+        file: content/pages/melos/g03.json
+        format: json
+        fields:
+          - {name: steps_eyebrow, label: 'Πρώτο βήμα · μικρός τίτλος', widget: string, required: false}
+          - {name: steps_title, label: 'Πρώτο βήμα · τίτλος', widget: text, required: false}
+      - name: melos_g04
+        label: 'Βήματα'
+        file: content/pages/melos/g04.json
+        format: json
+        fields:
+          - {name: s1_title, label: 'Βήμα 1 · τίτλος', widget: string, required: false}
+          - {name: s1_text, label: 'Βήμα 1 · κείμενο', widget: string, required: false}
+          - {name: s2_title, label: 'Βήμα 2 · τίτλος', widget: string, required: false}
+          - {name: s2_text, label: 'Βήμα 2 · κείμενο', widget: text, required: false}
+          - {name: s3_title, label: 'Βήμα 3 · τίτλος', widget: string, required: false}
+          - {name: s3_text, label: 'Βήμα 3 · κείμενο', widget: text, required: false}
+      - name: melos_g05
+        label: 'Πλαίσιο επικοινωνίας'
+        file: content/pages/melos/g05.json
+        format: json
+        fields:
+          - {name: contact_title, label: 'Πλαίσιο επικοινωνίας · τίτλος', widget: string, required: false}
+          - {name: contact_btn, label: 'Πλαίσιο επικοινωνίας · κουμπί', widget: string, required: false}
+          - {name: contact_note, label: 'Πλαίσιο επικοινωνίας · σημείωση', widget: string, required: false}
+      - name: melos_g06
+        label: 'Χορευτικά'
+        file: content/pages/melos/g06.json
+        format: json
+        fields:
+          - {name: dance_eyebrow, label: 'Χορευτικά · μικρός τίτλος', widget: string, required: false}
+          - {name: dance_title, label: 'Χορευτικά · τίτλος', widget: string, required: false}
+          - {name: dance_text, label: 'Χορευτικά · κείμενο', widget: text, required: false}
+          - {name: dance_link, label: 'Χορευτικά · σύνδεσμος', widget: string, required: false}
+      - name: melos_g07
+        label: 'Συχνές ερωτήσεις'
+        file: content/pages/melos/g07.json
+        format: json
+        fields:
+          - {name: faq1_q, label: 'Ερώτηση 1', widget: string, required: false}
+          - {name: faq1_a, label: 'Απάντηση 1', widget: text, required: false}
+          - {name: faq2_q, label: 'Ερώτηση 2', widget: string, required: false}
+          - {name: faq2_a, label: 'Απάντηση 2', widget: text, required: false}
+# END page-melos
+# BEGIN page-arxeio (δημιουργείται αυτόματα από scripts/pages_spec.py)
+  - name: page_arxeio
+    label: 'Αρχειακό / Λαογραφικό υλικό'
+    description: 'Σελίδα «Αρχειακό/Λαογραφικό υλικό». Επιλέξτε ενότητα.'
+    files:
+      - name: arxeio_g01
+        label: 'Κεφαλίδα'
+        file: content/pages/arxeio/g01.json
+        format: json
+        fields:
+          - {name: hero_eyebrow, label: 'Κεφαλίδα · μικρός τίτλος', widget: string, required: false}
+          - {name: hero_title, label: 'Κεφαλίδα · τίτλος', widget: string, required: false}
+          - {name: hero_text, label: 'Κεφαλίδα · κείμενο', widget: text, required: false}
+      - name: arxeio_g02
+        label: 'Λεύκωμα'
+        file: content/pages/arxeio/g02.json
+        format: json
+        fields:
+          - {name: album_eyebrow, label: 'Λεύκωμα · μικρός τίτλος', widget: string, required: false}
+          - {name: album_title, label: 'Λεύκωμα · τίτλος', widget: text, required: false}
+          - {name: album_text, label: 'Λεύκωμα · κείμενο', widget: text, required: false}
+          - {name: album_note, label: 'Λεύκωμα · σημείωση', widget: text, required: false}
+      - name: arxeio_g03
+        label: 'Στολές'
+        file: content/pages/arxeio/g03.json
+        format: json
+        fields:
+          - {name: c1_eyebrow, label: 'Στολές · μικρός τίτλος', widget: string, required: false}
+          - {name: c1_title, label: 'Στολές · τίτλος', widget: string, required: false}
+          - {name: c1_p1, label: 'Στολές · παράγραφος 1', widget: text, required: false}
+          - {name: c1_p2, label: 'Στολές · παράγραφος 2', widget: text, required: false}
+          - {name: c1_link, label: 'Στολές · κείμενο συνδέσμου', widget: string, required: false}
+      - name: arxeio_g04
+        label: 'Αλληλογραφία'
+        file: content/pages/arxeio/g04.json
+        format: json
+        fields:
+          - {name: c2_eyebrow, label: 'Αλληλογραφία · μικρός τίτλος', widget: string, required: false}
+          - {name: c2_title, label: 'Αλληλογραφία · τίτλος', widget: string, required: false}
+          - {name: c2_p1, label: 'Αλληλογραφία · παράγραφος 1', widget: text, required: false}
+          - {name: c2_p2, label: 'Αλληλογραφία · παράγραφος 2', widget: text, required: false}
+          - {name: c2_link, label: 'Αλληλογραφία · κείμενο συνδέσμου', widget: string, required: false}
+      - name: arxeio_g05
+        label: 'Φωτογραφίες'
+        file: content/pages/arxeio/g05.json
+        format: json
+        fields:
+          - {name: c3_eyebrow, label: 'Φωτογραφίες · μικρός τίτλος', widget: string, required: false}
+          - {name: c3_title, label: 'Φωτογραφίες · τίτλος', widget: string, required: false}
+          - {name: c3_p1, label: 'Φωτογραφίες · παράγραφος 1', widget: text, required: false}
+          - {name: c3_p2, label: 'Φωτογραφίες · παράγραφος 2', widget: text, required: false}
+          - {name: c3_link, label: 'Φωτογραφίες · κείμενο συνδέσμου', widget: string, required: false}
+      - name: arxeio_g06
+        label: 'Κάτω πλαίσιο'
+        file: content/pages/arxeio/g06.json
+        format: json
+        fields:
+          - {name: status_title, label: 'Κάτω πλαίσιο · τίτλος', widget: string, required: false}
+          - {name: status_text, label: 'Κάτω πλαίσιο · κείμενο', widget: text, required: false}
+          - {name: status_btn, label: 'Κάτω πλαίσιο · κουμπί', widget: string, required: false}
+# END page-arxeio
   - name: settings
-    label: 'Επικοινωνία · τηλέφωνο, email, ωράριο'
-    description: 'Σελίδα «Επικοινωνία» και υποσέλιδο όλων των σελίδων.'
+    label: 'Επικοινωνία'
+    description: 'Τηλέφωνο, email, διεύθυνση και ωράριο: σελίδα «Επικοινωνία» και υποσέλιδο όλων των σελίδων.'
     files:
       - name: settings
         label: Στοιχεία επικοινωνίας και ωράριο
@@ -290,124 +507,3 @@ collections:
           - {name: street, label: Οδός και αριθμός, widget: string}
           - {name: postcode, label: Τ.Κ., widget: string, pattern: ['^[0-9]{5}$', '5 ψηφία']}
           - {name: hours, label: Ώρες λειτουργίας της Λέσχης, widget: text, required: false, hint: 'Μία γραμμή για κάθε μέρα, π.χ. «Τρίτη & Πέμπτη 18:00–21:00». Αν μείνει κενό, η σελίδα Επικοινωνία λέει να τηλεφωνήσουν.'}
-# BEGIN pages (δημιουργείται αυτόματα από scripts/pages_spec.py)
-  - name: pages
-    label: Αρχική · Γίνετε μέλος · Αρχειακό υλικό
-    description: "Κείμενα των απλών σελίδων. Κάθε αρχείο είναι μία σελίδα του site."
-    files:
-      - name: index
-        label: 'Αρχική σελίδα'
-        file: content/pages/index.json
-        format: json
-        fields:
-          - {name: hero_eyebrow, label: 'Κεφαλίδα · μικρός τίτλος', widget: string, required: false}
-          - {name: hero_title, label: 'Κεφαλίδα · τίτλος', widget: text, required: false}
-          - {name: hero_text, label: 'Κεφαλίδα · κείμενο', widget: text, required: false}
-          - {name: hero_btn1, label: 'Κεφαλίδα · κουμπί 1', widget: string, required: false}
-          - {name: hero_btn2, label: 'Κεφαλίδα · κουμπί 2', widget: string, required: false}
-          - {name: intro_title, label: 'Εισαγωγή · τίτλος', widget: text, required: false}
-          - {name: intro_text, label: 'Εισαγωγή · κείμενο', widget: text, required: false}
-          - {name: club_image, label: 'Λέσχη · φωτογραφία', widget: image, required: false}
-          - {name: club_image_alt, label: 'Λέσχη · περιγραφή φωτογραφίας', widget: string, required: false}
-          - {name: club_eyebrow, label: 'Λέσχη · μικρός τίτλος', widget: string, required: false}
-          - {name: club_title, label: 'Λέσχη · τίτλος', widget: text, required: false}
-          - {name: club_text, label: 'Λέσχη · κείμενο', widget: text, required: false}
-          - {name: club_link, label: 'Λέσχη · κείμενο συνδέσμου', widget: string, required: false}
-          - {name: dance_eyebrow, label: 'Χορευτικά · μικρός τίτλος', widget: string, required: false}
-          - {name: dance_title, label: 'Χορευτικά · τίτλος', widget: text, required: false}
-          - {name: dance_text, label: 'Χορευτικά · κείμενο', widget: text, required: false}
-          - {name: dance_btn, label: 'Χορευτικά · κουμπί', widget: string, required: false}
-          - {name: dance_tag, label: 'Χορευτικά · σλόγκαν', widget: string, required: false}
-          - {name: community_image, label: 'Άνθρωποι · φωτογραφία', widget: image, required: false}
-          - {name: community_eyebrow, label: 'Άνθρωποι · μικρός τίτλος', widget: string, required: false}
-          - {name: community_title, label: 'Άνθρωποι · τίτλος', widget: string, required: false}
-          - {name: community_text, label: 'Άνθρωποι · κείμενο', widget: text, required: false}
-          - {name: community_link, label: 'Άνθρωποι · κείμενο συνδέσμου', widget: string, required: false}
-          - {name: act_eyebrow, label: 'Δραστηριότητες · μικρός τίτλος', widget: string, required: false}
-          - {name: act_title, label: 'Δραστηριότητες · τίτλος', widget: string, required: false}
-          - {name: act1_title, label: 'Δραστηριότητα 1 · τίτλος', widget: string, required: false}
-          - {name: act1_text, label: 'Δραστηριότητα 1 · κείμενο', widget: text, required: false}
-          - {name: act1_link, label: 'Δραστηριότητα 1 · σύνδεσμος', widget: string, required: false}
-          - {name: act2_title, label: 'Δραστηριότητα 2 · τίτλος', widget: string, required: false}
-          - {name: act2_text, label: 'Δραστηριότητα 2 · κείμενο', widget: text, required: false}
-          - {name: act2_link, label: 'Δραστηριότητα 2 · σύνδεσμος', widget: string, required: false}
-          - {name: act3_title, label: 'Δραστηριότητα 3 · τίτλος', widget: string, required: false}
-          - {name: act3_text, label: 'Δραστηριότητα 3 · κείμενο', widget: text, required: false}
-          - {name: act3_link, label: 'Δραστηριότητα 3 · σύνδεσμος', widget: string, required: false}
-          - {name: gate_eyebrow, label: 'Γνωρίστε την Ήπειρο · μικρός τίτλος', widget: string, required: false}
-          - {name: gate_title, label: 'Γνωρίστε την Ήπειρο · τίτλος', widget: string, required: false}
-          - {name: gate_text, label: 'Γνωρίστε την Ήπειρο · κείμενο', widget: text, required: false}
-          - {name: gate_btn, label: 'Γνωρίστε την Ήπειρο · κουμπί', widget: string, required: false}
-          - {name: contact_eyebrow, label: 'Επικοινωνία · μικρός τίτλος', widget: string, required: false}
-          - {name: contact_title, label: 'Επικοινωνία · τίτλος', widget: string, required: false}
-          - {name: contact_text, label: 'Επικοινωνία · κείμενο', widget: text, required: false}
-          - {name: contact_btn, label: 'Επικοινωνία · κουμπί', widget: string, required: false}
-      - name: melos
-        label: 'Γίνετε μέλος'
-        file: content/pages/melos.json
-        format: json
-        fields:
-          - {name: hero_eyebrow, label: 'Κεφαλίδα · μικρός τίτλος', widget: string, required: false}
-          - {name: hero_title, label: 'Κεφαλίδα · τίτλος', widget: text, required: false}
-          - {name: hero_text, label: 'Κεφαλίδα · κείμενο', widget: text, required: false}
-          - {name: hero_btn1, label: 'Κεφαλίδα · κουμπί', widget: string, required: false}
-          - {name: hero_link2, label: 'Κεφαλίδα · δεύτερος σύνδεσμος', widget: string, required: false}
-          - {name: hero_image, label: 'Κεφαλίδα · εικόνα', widget: image, required: false}
-          - {name: hero_image_alt, label: 'Κεφαλίδα · περιγραφή εικόνας', widget: text, required: false}
-          - {name: together_title, label: 'Αξίες · τίτλος', widget: string, required: false}
-          - {name: v1_title, label: 'Αξία 1 · τίτλος', widget: string, required: false}
-          - {name: v1_text, label: 'Αξία 1 · κείμενο', widget: string, required: false}
-          - {name: v2_title, label: 'Αξία 2 · τίτλος', widget: string, required: false}
-          - {name: v2_text, label: 'Αξία 2 · κείμενο', widget: text, required: false}
-          - {name: v3_title, label: 'Αξία 3 · τίτλος', widget: string, required: false}
-          - {name: v3_text, label: 'Αξία 3 · κείμενο', widget: text, required: false}
-          - {name: steps_eyebrow, label: 'Πρώτο βήμα · μικρός τίτλος', widget: string, required: false}
-          - {name: steps_title, label: 'Πρώτο βήμα · τίτλος', widget: text, required: false}
-          - {name: s1_title, label: 'Βήμα 1 · τίτλος', widget: string, required: false}
-          - {name: s1_text, label: 'Βήμα 1 · κείμενο', widget: string, required: false}
-          - {name: s2_title, label: 'Βήμα 2 · τίτλος', widget: string, required: false}
-          - {name: s2_text, label: 'Βήμα 2 · κείμενο', widget: text, required: false}
-          - {name: s3_title, label: 'Βήμα 3 · τίτλος', widget: string, required: false}
-          - {name: s3_text, label: 'Βήμα 3 · κείμενο', widget: text, required: false}
-          - {name: contact_title, label: 'Πλαίσιο επικοινωνίας · τίτλος', widget: string, required: false}
-          - {name: contact_btn, label: 'Πλαίσιο επικοινωνίας · κουμπί', widget: string, required: false}
-          - {name: contact_note, label: 'Πλαίσιο επικοινωνίας · σημείωση', widget: string, required: false}
-          - {name: dance_eyebrow, label: 'Χορευτικά · μικρός τίτλος', widget: string, required: false}
-          - {name: dance_title, label: 'Χορευτικά · τίτλος', widget: string, required: false}
-          - {name: dance_text, label: 'Χορευτικά · κείμενο', widget: text, required: false}
-          - {name: dance_link, label: 'Χορευτικά · σύνδεσμος', widget: string, required: false}
-          - {name: faq1_q, label: 'Ερώτηση 1', widget: string, required: false}
-          - {name: faq1_a, label: 'Απάντηση 1 (σύνδεσμοι: [κείμενο](διεύθυνση))', widget: text, required: false}
-          - {name: faq2_q, label: 'Ερώτηση 2', widget: string, required: false}
-          - {name: faq2_a, label: 'Απάντηση 2', widget: text, required: false}
-      - name: arxeio
-        label: 'Αρχειακό / Λαογραφικό υλικό'
-        file: content/pages/arxeio.json
-        format: json
-        fields:
-          - {name: hero_eyebrow, label: 'Κεφαλίδα · μικρός τίτλος', widget: string, required: false}
-          - {name: hero_title, label: 'Κεφαλίδα · τίτλος', widget: string, required: false}
-          - {name: hero_text, label: 'Κεφαλίδα · κείμενο', widget: text, required: false}
-          - {name: album_eyebrow, label: 'Λεύκωμα · μικρός τίτλος', widget: string, required: false}
-          - {name: album_title, label: 'Λεύκωμα · τίτλος', widget: text, required: false}
-          - {name: album_text, label: 'Λεύκωμα · κείμενο', widget: text, required: false}
-          - {name: album_note, label: 'Λεύκωμα · σημείωση', widget: text, required: false}
-          - {name: c1_eyebrow, label: 'Στολές · μικρός τίτλος', widget: string, required: false}
-          - {name: c1_title, label: 'Στολές · τίτλος', widget: string, required: false}
-          - {name: c1_p1, label: 'Στολές · παράγραφος 1', widget: text, required: false}
-          - {name: c1_p2, label: 'Στολές · παράγραφος 2', widget: text, required: false}
-          - {name: c1_link, label: 'Στολές · κείμενο συνδέσμου', widget: string, required: false}
-          - {name: c2_eyebrow, label: 'Αλληλογραφία · μικρός τίτλος', widget: string, required: false}
-          - {name: c2_title, label: 'Αλληλογραφία · τίτλος', widget: string, required: false}
-          - {name: c2_p1, label: 'Αλληλογραφία · παράγραφος 1', widget: text, required: false}
-          - {name: c2_p2, label: 'Αλληλογραφία · παράγραφος 2', widget: text, required: false}
-          - {name: c2_link, label: 'Αλληλογραφία · κείμενο συνδέσμου', widget: string, required: false}
-          - {name: c3_eyebrow, label: 'Φωτογραφίες · μικρός τίτλος', widget: string, required: false}
-          - {name: c3_title, label: 'Φωτογραφίες · τίτλος', widget: string, required: false}
-          - {name: c3_p1, label: 'Φωτογραφίες · παράγραφος 1', widget: text, required: false}
-          - {name: c3_p2, label: 'Φωτογραφίες · παράγραφος 2', widget: text, required: false}
-          - {name: c3_link, label: 'Φωτογραφίες · κείμενο συνδέσμου', widget: string, required: false}
-          - {name: status_title, label: 'Κάτω πλαίσιο · τίτλος', widget: string, required: false}
-          - {name: status_text, label: 'Κάτω πλαίσιο · κείμενο', widget: text, required: false}
-          - {name: status_btn, label: 'Κάτω πλαίσιο · κουμπί', widget: string, required: false}
-# END pages

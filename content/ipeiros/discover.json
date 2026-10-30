@@ -1,0 +1,73 @@
+{
+  "eyebrow": "Εξερευνήστε · Discover Epirus",
+  "title": "Μια πατρίδα, χίλιες ιστορίες.",
+  "intro": "Από τα βουνά της Πίνδου έως τις ακτές του Ιονίου. Η ιστορία, η τέχνη, η φύση και οι άνθρωποι μιας ξεχωριστής περιοχής.",
+  "tiles": [
+    {
+      "link": "topoi.html",
+      "kicker": "01 / Τόποι",
+      "title": "Ο τόπος & η φύση",
+      "text": "Τοπία, χωριά, βουνά, ποτάμια και αθέατες διαδρομές.",
+      "arrow": "Ανακαλύψτε →",
+      "image": "assets/photo-essays/z-bridge-1000.webp",
+      "alt": "Πέτρινο γεφύρι στο Ζαγόρι",
+      "wrap_figure": false,
+      "img_tpl": "<img alt=\"{alt}\" src=\"{src}\"/>"
+    },
+    {
+      "link": "mousiki.html",
+      "kicker": "02 / Άυλη κληρονομιά",
+      "title": "Μουσική & χορός",
+      "text": "Από το πολυφωνικό τραγούδι στις μουσικές της κάθε κοινότητας.",
+      "arrow": "Ακούστε τις ιστορίες →",
+      "image": "assets/customs-village-festival.webp",
+      "alt": "Κυκλικός χορός σε παραδοσιακή πέτρινη πλατεία της Ηπείρου",
+      "wrap_figure": false,
+      "img_tpl": "<img alt=\"{alt}\" src=\"{src}\" width=\"1536\" height=\"1024\" loading=\"lazy\" style=\"object-position:center 48%\">"
+    },
+    {
+      "link": "istoria.html",
+      "kicker": "03 / Ιστορία",
+      "title": "Ιστορία & άνθρωποι",
+      "text": "Από τις τοπικές κοινότητες στους ευεργέτες και τη διασπορά.",
+      "arrow": "Διαβάστε περισσότερα →",
+      "image": "assets/history-people-square.webp",
+      "alt": "Παρέα ηλικιωμένων τσουγκρίζουν τα κρασάκια τους σε πέτρινη πλατεία της Ηπείρου",
+      "wrap_figure": true,
+      "img_tpl": "<img alt=\"{alt}\" src=\"{src}\" width=\"1536\" height=\"1024\" loading=\"lazy\" style=\"object-position:center 43%\">"
+    },
+    {
+      "link": "ethima.html",
+      "kicker": "04 / Λαογραφία",
+      "title": "Ήθη & έθιμα",
+      "text": "Οι γιορτές, τα πανηγύρια και οι συνήθειες που μας ενώνουν.",
+      "arrow": "Δείτε τις παραδόσεις →",
+      "image": "assets/customs-cover/tzamala-illustration.webp",
+      "alt": "Εικονογραφική αναπαράσταση τζαμάλας, με ανθρώπους γύρω από την αποκριάτικη φωτιά σε ηπειρώτικη πλατεία",
+      "wrap_figure": false,
+      "img_tpl": "<img alt=\"{alt}\" src=\"{src}\" width=\"1536\" height=\"1024\" loading=\"lazy\" decoding=\"async\" style=\"object-position:center 65%\">"
+    },
+    {
+      "link": "texnes.html",
+      "kicker": "05 / Δημιουργία",
+      "title": "Τέχνες & αρχιτεκτονική",
+      "text": "Πέτρα, ασήμι, ξύλο, υφαντική και η τέχνη του τόπου.",
+      "arrow": "Εξερευνήστε →",
+      "image": "https://www.athensvoice.gr/images/1074x600/jpg/sites/default/files/article/2021/08/27/zagoroxwria-9.jpg",
+      "alt": "Πέτρινο γεφύρι στην Ήπειρο",
+      "wrap_figure": false,
+      "img_tpl": "<img alt=\"{alt}\" src=\"{src}\"/>"
+    },
+    {
+      "link": "geuseis.html",
+      "kicker": "06 / Γαστρονομία",
+      "title": "Γεύσεις & συνταγές",
+      "text": "Πατροπαράδοτες πίτες, τοπικά προϊόντα και μυστικά κουζίνας.",
+      "arrow": "Μπείτε στην κουζίνα →",
+      "image": "https://images.unsplash.com/photo-1547592180-85f173990554?w=1000",
+      "alt": "Παραδοσιακό φαγητό - ενδεικτική εικόνα",
+      "wrap_figure": false,
+      "img_tpl": "<img alt=\"{alt}\" src=\"{src}\"/>"
+    }
+  ]
+}

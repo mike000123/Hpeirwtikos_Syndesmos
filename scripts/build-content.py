@@ -182,7 +182,7 @@ def story_card(c):
             f'<span class="pe-story-card-copy"><span class="pe-story-card-kicker">{esc(c["kicker"])}</span><strong>{esc(c["title"])} <span aria-hidden="true">→</span></strong>'
             f'<span class="pe-story-card-credit">{esc(c["credit"])}</span></span></a>')
 def build_ipeiros():
-    d = J(C / 'ipeiros.json'); p = root / 'ipeiros.html'; s = rd(p)
+    d = {f.stem: J(f) for f in (C / 'ipeiros').glob('*.json')}; p = root / 'ipeiros.html'; s = rd(p)
     s = wrap_marker(s, 'ip-hero', r'<div class="wrap" style="width:100%">', r'</div></div>(?=</section>\s*<section class="section" id="discover")')
     s = s.replace('<!--/cms:ip-hero--></div></section>', '<!--/cms:ip-hero--></section>') if False else s
     s = wrap_marker(s, 'ip-discover', r'<div class="heading"><div><span class="eyebrow">Εξερευνήστε', r'<div class="tiles">.*?\n</div>(?=</div></section>)')
@@ -209,7 +209,7 @@ def build_ipeiros():
 
 # ---------------------------------------------------------------- απλές σελίδες (index, melos, arxeio)
 sys.path.insert(0, str(root / 'scripts'))
-from pages_spec import PAGES
+from pages_spec import PAGES, groups as pages_groups
 BASE_CONTACT = {'phone': '210 4177378', 'email': 'isp@ipirotikos.gr', 'street': 'Φίλωνος 11Α', 'postcode': '18531'}
 def pg_decode(kind, raw):
     if kind in ('image', 'attr'): return html.unescape(raw)
@@ -227,17 +227,24 @@ def pg_walk(s, fields):
     for k, label, kind, b, a in fields:
         i = s.index(b, pos) + len(b); j = s.index(a, i); out.append((k, kind, i, j)); pos = j
     return out
+def page_values(slug):
+    vals = {}
+    for f in sorted((C / 'pages' / slug).glob('g*.json')): vals.update(J(f))
+    return vals
 def build_pages():
     cfg = J(C / 'settings.json'); tel = lambda v: '+30' + re.sub(r'\D', '', v)
     pairs = [(BASE_CONTACT['phone'], cfg['phone']), (tel(BASE_CONTACT['phone']), tel(cfg['phone'])), (BASE_CONTACT['email'], cfg['email']),
              (BASE_CONTACT['street'], cfg['street']), (BASE_CONTACT['postcode'], cfg['postcode'])]
+    spec = {}
     for slug, pg in PAGES.items():
-        p = root / pg['file']; s = rd(p); vf = C / 'pages' / f'{slug}.json'
-        walk = pg_walk(s, pg['fields'])
-        if not vf.exists():
-            vf.parent.mkdir(exist_ok=True)
-            vf.write_text(json.dumps({k: pg_decode(kind, s[i:j]) for k, kind, i, j in walk}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-        vals = J(vf); out = []; last = 0
+        p = root / pg['file']; s = rd(p); walk = pg_walk(s, pg['fields'])
+        grp = pages_groups(slug)
+        if not (C / 'pages' / slug).exists():  # bootstrap from the HTML
+            cur = {k: pg_decode(kind, s[i:j]) for k, kind, i, j in walk}
+            (C / 'pages' / slug).mkdir(parents=True)
+            for n, (g, fl) in enumerate(grp, 1):
+                (C / 'pages' / slug / f'g{n:02d}.json').write_text(json.dumps({f[0]: cur[f[0]] for f in fl}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+        vals = page_values(slug); out = []; last = 0
         for k, kind, i, j in walk:
             enc = pg_encode(kind, vals.get(k, ''))
             if kind != 'image':
@@ -245,22 +252,21 @@ def build_pages():
                     if a != b: enc = enc.replace(a, b)
             out.append(s[last:i]); out.append(enc); last = j
         out.append(s[last:]); wr(p, ''.join(out))
-    # admin config + preview spec are generated from the same field list
-    spec = {slug: [{'key': k, 'kind': kind, 'before': b, 'after': a} for k, l, kind, b, a in pg['fields']] for slug, pg in PAGES.items()}
+        spec[slug] = {'fields': [{'key': k, 'kind': kind, 'before': b, 'after': a} for k, l, kind, b, a in pg['fields']],
+                      'groups': [f'g{n:02d}' for n in range(1, len(grp) + 1)]}
+        q = lambda t: "'" + t.replace("'", "''") + "'"
+        y = f'# BEGIN page-{slug} (δημιουργείται αυτόματα από scripts/pages_spec.py)\n  - name: page_{slug}\n    label: {q(pg["label"])}\n    description: {q(pg["description"])}\n    files:\n'
+        for n, (g, fl) in enumerate(grp, 1):
+            y += f'      - name: {slug}_g{n:02d}\n        label: {q(g)}\n        file: content/pages/{slug}/g{n:02d}.json\n        format: json\n        fields:\n'
+            for k, label, kind, bf, af in fl:
+                v = J(C / 'pages' / slug / f'g{n:02d}.json').get(k, '')
+                w = 'image' if kind == 'image' else ('text' if (len(v) > 70 or '\n' in v) else 'string')
+                y += f'          - {{name: {k}, label: {q(label)}, widget: {w}, required: false}}\n'
+        y += f'# END page-{slug}\n'
+        cp = root / 'admin/config.yml'; c = rd(cp)
+        c = re.sub(rf'# BEGIN page-{slug} .*?# END page-{slug}\n', lambda m: y, c, flags=re.S)
+        wr(cp, c)
     wr(root / 'admin/pages-spec.json', json.dumps(spec, ensure_ascii=False) + '\n')
-    q = lambda t: "'" + t.replace("'", "''") + "'"
-    y = '# BEGIN pages (δημιουργείται αυτόματα από scripts/pages_spec.py)\n  - name: pages\n    label: Αρχική · Γίνετε μέλος · Αρχειακό υλικό\n    description: "Κείμενα των απλών σελίδων. Κάθε αρχείο είναι μία σελίδα του site."\n    files:\n'
-    for slug, pg in PAGES.items():
-        y += f'      - name: {slug}\n        label: {q(pg["label"])}\n        file: content/pages/{slug}.json\n        format: json\n        fields:\n'
-        vals = J(C / 'pages' / f'{slug}.json')
-        for k, label, kind, b, a in pg['fields']:
-            w = 'image' if kind == 'image' else ('text' if (len(vals.get(k, '')) > 70 or '\n' in vals.get(k, '')) else 'string')
-            y += f'          - {{name: {k}, label: {q(label)}, widget: {w}, required: false}}\n'
-    y += '# END pages\n'
-    cp = root / 'admin/config.yml'; c = rd(cp)
-    if '# BEGIN pages' in c: c = re.sub(r'# BEGIN pages.*?# END pages\n', lambda m: y, c, flags=re.S)
-    else: c = c.rstrip('\n') + '\n' + y
-    wr(cp, c)
 
 # ---------------------------------------------------------------- articles
 md = markdown.Markdown(extensions=[])
@@ -335,7 +341,7 @@ def build_articles():
     p = root / 'ipeiros.html'; s = rd(p)
     if '<!--cms:new-articles-->' not in s:
         s = s.replace('</div><div class="culture-feature">', '<!--cms:new-articles--><!--/cms:new-articles--></div><div class="culture-feature">', 1)
-    base = len(J(C / 'ipeiros.json')['culture']['cards'])
+    base = len(J(C / 'ipeiros' / 'culture.json')['cards'])
     cards = ''.join(culture_card({'link': a['slug'] + '.html', 'image': a['card_image'], 'alt': a.get('card_image_alt', ''),
                                   'chapter': f'{n:02d} / {a["eyebrow"]}', 'kicker': a.get('kicker', ''), 'title': a['title'],
                                   'text': a.get('description') or a['lede']}) for n, a in enumerate(new_cards, base + 1))

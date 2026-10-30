@@ -6,11 +6,11 @@
  const img=dialog.querySelector('.pe-viewer-image'),caption=dialog.querySelector('.pe-viewer-description'),credit=dialog.querySelector('.pe-viewer-credit'),count=dialog.querySelector('.pe-viewer-count'),status=dialog.querySelector('.pe-viewer-status'),title=dialog.querySelector('#pe-viewer-title'),all=dialog.querySelector('.pe-viewer-all');
  const allLabel=document.body.classList.contains('photo-essay-anthropoi')?'Όλες οι εικόνες':'Όλες οι φωτογραφίες';all.textContent=allLabel;
  let selection=[],current=0,origin,overflow='',serial=0;
- const safeLink=(label,url)=>{const a=document.createElement('a');a.textContent=label;if(/^(https?:\/\/|[a-z0-9-]+\.html(?:#|$))/i.test(url||'')){a.href=url;a.target='_blank';a.rel='noopener noreferrer';}return a;};
+ const safeLink=(label,url)=>{const a=document.createElement('a');a.textContent=label;if(/^(https?:\/\/|[a-z0-9-]+\.html(?:#|$)|assets\/photo-essays\/[a-z0-9-]+\.webp$)/i.test(url||'')){a.href=url;a.target='_blank';a.rel='noopener noreferrer';}return a;};
  function choose(key,index){selection=photos.map((p,i)=>i).filter(i=>key==='all'||photos[i].group===key);if(!selection.length)return;current=Math.max(0,selection.indexOf(index));title.textContent=key==='all'?allLabel:photos[selection[0]].groupTitle;all.hidden=key==='all';show(current);}
  function show(index){
   current=(index+selection.length)%selection.length;const p=photos[selection[current]],id=++serial;
-  caption.textContent=p.caption;count.textContent=`${current+1} / ${selection.length}`;credit.replaceChildren(safeLink(p.author,p.source));if(p.license)credit.append(' · ',safeLink(p.license,p.licenseURL||p.source));
+  caption.textContent=p.caption;count.textContent=`${current+1} / ${selection.length}`;credit.replaceChildren(safeLink(p.author,p.source));if(p.license)credit.append(' · ',safeLink(p.license,p.licenseURL||p.source));if(p.originalFile)credit.append(' · ',safeLink('Αρχική φωτογραφία',p.originalFile));
   img.alt=p.caption;img.src=p.file;status.hidden=false;status.textContent='Φόρτωση εικόνας…';
   img.decode().then(()=>{if(id===serial)status.hidden=true;}).catch(()=>{if(id===serial)status.textContent='Η εικόνα δεν φορτώθηκε. Δοκιμάστε την επόμενη.';});
   for(const n of [-1,1]){const next=new Image();next.src=photos[selection[(current+n+selection.length)%selection.length]].file;}

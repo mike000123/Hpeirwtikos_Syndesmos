@@ -39,7 +39,9 @@
     },
     {
       "name": "Γιώργος Ματσόπουλος",
-      "period": "1918–1939"
+      "period": "1918–1939",
+      "portrait": "assets/presidents/giorgos-matsopoulos.webp",
+      "portrait_credit": "Αρχείο του Συνδέσμου"
     },
     {
       "name": "Βασίλειος Έξαρχος",

@@ -82,43 +82,48 @@ window.epirusEvents = {
       "media": [
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/7-4-2019_%CE%97%CE%A0%CE%95%CE%99%CE%A1%CE%9F_%CE%A4%CE%97%CE%A3_%CE%91%CE%93%CE%91%CE%A0%CE%97%CE%A3_2885_%281%29.jpg?bwg=1604513930",
+          "src": "assets/event-media/event-2019-04-07/01.webp",
           "caption": "Ήπειρος της αγάπης — φωτογραφία 2885",
           "originalFile": "7-4-2019_ΗΠΕΙΡΟ_ΤΗΣ_ΑΓΑΠΗΣ_2885_(1).jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/7-4-2019_%CE%97%CE%A0%CE%95%CE%99%CE%A1%CE%9F_%CE%A4%CE%97%CE%A3_%CE%91%CE%93%CE%91%CE%A0%CE%97%CE%A3_2885_%281%29.jpg?bwg=1604513930"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/7-4-2019_%CE%97%CE%A0%CE%95%CE%99%CE%A1%CE%9F_%CE%A4%CE%97%CE%A3_%CE%91%CE%93%CE%91%CE%A0%CE%97%CE%A3_2862_%281%29.jpg?bwg=1604513930",
+          "src": "assets/event-media/event-2019-04-07/02.webp",
           "caption": "Ήπειρος της αγάπης — φωτογραφία 2862",
           "originalFile": "7-4-2019_ΗΠΕΙΡΟ_ΤΗΣ_ΑΓΑΠΗΣ_2862_(1).jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/7-4-2019_%CE%97%CE%A0%CE%95%CE%99%CE%A1%CE%9F_%CE%A4%CE%97%CE%A3_%CE%91%CE%93%CE%91%CE%A0%CE%97%CE%A3_2862_%281%29.jpg?bwg=1604513930"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/7-4-2019_%CE%97%CE%A0%CE%95%CE%99%CE%A1%CE%9F_%CE%A4%CE%97%CE%A3_%CE%91%CE%93%CE%91%CE%A0%CE%97%CE%A3_2887_%281%29.jpg?bwg=1604513930",
+          "src": "assets/event-media/event-2019-04-07/03.webp",
           "caption": "Ήπειρος της αγάπης — φωτογραφία 2887",
           "originalFile": "7-4-2019_ΗΠΕΙΡΟ_ΤΗΣ_ΑΓΑΠΗΣ_2887_(1).jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/7-4-2019_%CE%97%CE%A0%CE%95%CE%99%CE%A1%CE%9F_%CE%A4%CE%97%CE%A3_%CE%91%CE%93%CE%91%CE%A0%CE%97%CE%A3_2887_%281%29.jpg?bwg=1604513930"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/7-4-2019_%CE%97%CE%A0%CE%95%CE%99%CE%A1%CE%9F_%CE%A4%CE%97%CE%A3_%CE%91%CE%93%CE%91%CE%A0%CE%97%CE%A3_2854_%281%29.jpg?bwg=1604513930",
+          "src": "assets/event-media/event-2019-04-07/04.webp",
           "caption": "Ήπειρος της αγάπης — φωτογραφία 2854",
           "originalFile": "7-4-2019_ΗΠΕΙΡΟ_ΤΗΣ_ΑΓΑΠΗΣ_2854_(1).jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/7-4-2019_%CE%97%CE%A0%CE%95%CE%99%CE%A1%CE%9F_%CE%A4%CE%97%CE%A3_%CE%91%CE%93%CE%91%CE%A0%CE%97%CE%A3_2854_%281%29.jpg?bwg=1604513930"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/7-4-2019_%CE%97%CE%A0%CE%95%CE%99%CE%A1%CE%9F_%CE%A4%CE%97%CE%A3_%CE%91%CE%93%CE%91%CE%A0%CE%97%CE%A3_2860_%281%29.jpg?bwg=1604513930",
+          "src": "assets/event-media/event-2019-04-07/05.webp",
           "caption": "Ήπειρος της αγάπης — φωτογραφία 2860",
           "originalFile": "7-4-2019_ΗΠΕΙΡΟ_ΤΗΣ_ΑΓΑΠΗΣ_2860_(1).jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/7-4-2019_%CE%97%CE%A0%CE%95%CE%99%CE%A1%CE%9F_%CE%A4%CE%97%CE%A3_%CE%91%CE%93%CE%91%CE%A0%CE%97%CE%A3_2860_%281%29.jpg?bwg=1604513930"
         },
         {
           "type": "video",
@@ -268,19 +273,21 @@ window.epirusEvents = {
       "media": [
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%9F%CE%9A%CE%A4%CE%A9%CE%92%CE%A1%CE%99%CE%9F%CE%A3_2011.jpg?bwg=1604512520",
+          "src": "assets/event-media/event-2011-10/01.webp",
           "caption": "Στιγμές του Συνδέσμου — Οκτώβριος 2011 — φωτογραφία 1",
           "originalFile": "ΟΚΤΩΒΡΙΟΣ_2011.jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%9F%CE%9A%CE%A4%CE%A9%CE%92%CE%A1%CE%99%CE%9F%CE%A3_2011.jpg?bwg=1604512520"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%9F%CE%9A%CE%A4%CE%A9%CE%92%CE%A1%CE%99%CE%9F%CE%A3_2011_2.jpg?bwg=1604512520",
+          "src": "assets/event-media/event-2011-10/02.webp",
           "caption": "Στιγμές του Συνδέσμου — Οκτώβριος 2011 — φωτογραφία 2",
           "originalFile": "ΟΚΤΩΒΡΙΟΣ_2011_2.jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%9F%CE%9A%CE%A4%CE%A9%CE%92%CE%A1%CE%99%CE%9F%CE%A3_2011_2.jpg?bwg=1604512520"
         }
       ],
       "note": "Η πηγή αναφέρει μόνο τον μήνα και το έτος· δεν προσδιορίζει συγκεκριμένη ημέρα."
@@ -294,19 +301,21 @@ window.epirusEvents = {
       "media": [
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/4-5-11_%CE%95%CE%A0%CE%99%CE%A3%CE%A4%CE%97%CE%9C%CE%9F%CE%9D%CE%99%CE%9A%CE%97_%CE%97%CE%9C%CE%95%CE%A1%CE%99%CE%94%CE%91_%CE%94%CE%99%CE%91%CE%92%CE%97%CE%A4%CE%97%CE%A3_%CE%9A%CE%91%CE%99_%CE%9A%CE%91%CE%A1%CE%94%CE%99%CE%911735_%281%29.jpg?bwg=1604513930",
+          "src": "assets/event-media/event-2011-05-04/01.webp",
           "caption": "Επιστημονική ημερίδα: Διαβήτης και καρδιά — φωτογραφία 1",
           "originalFile": "4-5-11_ΕΠΙΣΤΗΜΟΝΙΚΗ_ΗΜΕΡΙΔΑ_ΔΙΑΒΗΤΗΣ_ΚΑΙ_ΚΑΡΔΙΑ1735_(1).jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/4-5-11_%CE%95%CE%A0%CE%99%CE%A3%CE%A4%CE%97%CE%9C%CE%9F%CE%9D%CE%99%CE%9A%CE%97_%CE%97%CE%9C%CE%95%CE%A1%CE%99%CE%94%CE%91_%CE%94%CE%99%CE%91%CE%92%CE%97%CE%A4%CE%97%CE%A3_%CE%9A%CE%91%CE%99_%CE%9A%CE%91%CE%A1%CE%94%CE%99%CE%911735_%281%29.jpg?bwg=1604513930"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/4-5-11_%CE%95%CE%A0%CE%99%CE%A3%CE%A4%CE%97%CE%9C%CE%9F%CE%9D%CE%99%CE%9A%CE%97_%CE%97%CE%9C%CE%95%CE%A1%CE%99%CE%94%CE%91_%CE%94%CE%99%CE%91%CE%92%CE%97%CE%A4%CE%97%CE%A3_%CE%9A%CE%91%CE%99_%CE%9A%CE%91%CE%A1%CE%94%CE%99%CE%911732_%281%29.jpg?bwg=1604513930",
+          "src": "assets/event-media/event-2011-05-04/02.webp",
           "caption": "Επιστημονική ημερίδα: Διαβήτης και καρδιά — φωτογραφία 2",
           "originalFile": "4-5-11_ΕΠΙΣΤΗΜΟΝΙΚΗ_ΗΜΕΡΙΔΑ_ΔΙΑΒΗΤΗΣ_ΚΑΙ_ΚΑΡΔΙΑ1732_(1).jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/4-5-11_%CE%95%CE%A0%CE%99%CE%A3%CE%A4%CE%97%CE%9C%CE%9F%CE%9D%CE%99%CE%9A%CE%97_%CE%97%CE%9C%CE%95%CE%A1%CE%99%CE%94%CE%91_%CE%94%CE%99%CE%91%CE%92%CE%97%CE%A4%CE%97%CE%A3_%CE%9A%CE%91%CE%99_%CE%9A%CE%91%CE%A1%CE%94%CE%99%CE%911732_%281%29.jpg?bwg=1604513930"
         }
       ],
       "press": {
@@ -329,19 +338,21 @@ window.epirusEvents = {
       "media": [
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%A0%CE%91%CE%A1%CE%95%CE%9B%CE%91%CE%A3%CE%97_2-3-2011_2_%281%29.jpg?bwg=1604513930",
+          "src": "assets/event-media/event-2011-03-02/01.webp",
           "caption": "Παρέλαση — φωτογραφία 1",
           "originalFile": "ΠΑΡΕΛΑΣΗ_2-3-2011_2_(1).jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%A0%CE%91%CE%A1%CE%95%CE%9B%CE%91%CE%A3%CE%97_2-3-2011_2_%281%29.jpg?bwg=1604513930"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%A0%CE%91%CE%A1%CE%95%CE%9B%CE%91%CE%A3%CE%97_2-3-2011_1_%281%29.jpg?bwg=1604513930",
+          "src": "assets/event-media/event-2011-03-02/02.webp",
           "caption": "Παρέλαση — φωτογραφία 2",
           "originalFile": "ΠΑΡΕΛΑΣΗ_2-3-2011_1_(1).jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%A0%CE%91%CE%A1%CE%95%CE%9B%CE%91%CE%A3%CE%97_2-3-2011_1_%281%29.jpg?bwg=1604513930"
         }
       ],
       "note": "Η ημερομηνία 2.3.2011 ακολουθεί την ονομασία των αρχείων της αρχικής συλλογής."
@@ -355,27 +366,30 @@ window.epirusEvents = {
       "media": [
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%9A%CE%9F%CE%A0%CE%97_%CE%A0%CE%99%CE%A4%CE%91%CE%A3_15-1-2011_1_%281%29.jpg?bwg=1604513930",
+          "src": "assets/event-media/event-2011-01-15/01.webp",
           "caption": "Κοπή πίτας — φωτογραφία 1",
           "originalFile": "ΚΟΠΗ_ΠΙΤΑΣ_15-1-2011_1_(1).jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%9A%CE%9F%CE%A0%CE%97_%CE%A0%CE%99%CE%A4%CE%91%CE%A3_15-1-2011_1_%281%29.jpg?bwg=1604513930"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%9A%CE%9F%CE%A0%CE%97_%CE%A0%CE%99%CE%A4%CE%91%CE%A3_15-1-2011_%281%29.jpg?bwg=1604513930",
+          "src": "assets/event-media/event-2011-01-15/02.webp",
           "caption": "Κοπή πίτας — φωτογραφία 2",
           "originalFile": "ΚΟΠΗ_ΠΙΤΑΣ_15-1-2011_(1).jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%9A%CE%9F%CE%A0%CE%97_%CE%A0%CE%99%CE%A4%CE%91%CE%A3_15-1-2011_%281%29.jpg?bwg=1604513930"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%9A%CE%9F%CE%A0%CE%97_%CE%A0%CE%99%CE%A4%CE%91%CE%A3_15-1-11_%281%29.jpg?bwg=1604513930",
+          "src": "assets/event-media/event-2011-01-15/03.webp",
           "caption": "Κοπή πίτας — φωτογραφία 3",
           "originalFile": "ΚΟΠΗ_ΠΙΤΑΣ_15-1-11_(1).jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%9A%CE%9F%CE%A0%CE%97_%CE%A0%CE%99%CE%A4%CE%91%CE%A3_15-1-11_%281%29.jpg?bwg=1604513930"
         }
       ],
       "press": {
@@ -397,19 +411,21 @@ window.epirusEvents = {
       "media": [
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%97.%CE%A3.%CE%A0_17-10-10_%28150%29_%281%29.jpg?bwg=1604513930",
+          "src": "assets/event-media/event-2010-10-17/01.webp",
           "caption": "Γυναίκα της Ηπείρου — φωτογραφία 1",
           "originalFile": "Η.Σ.Π_17-10-10_(150)_(1).jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%97.%CE%A3.%CE%A0_17-10-10_%28150%29_%281%29.jpg?bwg=1604513930"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/17-10-10_%CE%92%CE%A1%CE%91%CE%92%CE%95%CE%A5%CE%A3%CE%97_%CE%A3%CE%9F%CE%A5%CE%9C%CE%91%CE%9A%CE%97__%CE%95%CE%9A%CE%94%CE%97%CE%9B%CE%9F%CE%A3%CE%97_%CE%97%CE%A3%CE%A0_%CE%9C%CE%95_UNESCO_%281%29.jpg?bwg=1604513930",
+          "src": "assets/event-media/event-2010-10-17/02.webp",
           "caption": "Γυναίκα της Ηπείρου — φωτογραφία 2",
           "originalFile": "17-10-10_ΒΡΑΒΕΥΣΗ_ΣΟΥΜΑΚΗ__ΕΚΔΗΛΟΣΗ_ΗΣΠ_ΜΕ_UNESCO_(1).jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/17-10-10_%CE%92%CE%A1%CE%91%CE%92%CE%95%CE%A5%CE%A3%CE%97_%CE%A3%CE%9F%CE%A5%CE%9C%CE%91%CE%9A%CE%97__%CE%95%CE%9A%CE%94%CE%97%CE%9B%CE%9F%CE%A3%CE%97_%CE%97%CE%A3%CE%A0_%CE%9C%CE%95_UNESCO_%281%29.jpg?bwg=1604513930"
         }
       ],
       "press": {
@@ -433,27 +449,30 @@ window.epirusEvents = {
       "media": [
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/25_%CE%BC%CE%B1%CF%81%CF%84%CE%B9%CE%BF%CF%85_2010_%CE%A0%CE%91%CE%A1%CE%95%CE%9B%CE%91%CE%A3%CE%97_%CE%9A%CE%91%CE%99_%CE%9A%CE%91%CE%A4%CE%91%CE%98%CE%95%CE%A3%CE%97_%CE%A3%CE%A4%CE%95%CE%A6%CE%91%CE%9D%CE%9F%CE%A5_0060_%281%29.jpg?bwg=1604513930",
+          "src": "assets/event-media/event-2010-03-25/01.webp",
           "caption": "Παρέλαση και κατάθεση στεφάνου — φωτογραφία 1",
           "originalFile": "25_μαρτιου_2010_ΠΑΡΕΛΑΣΗ_ΚΑΙ_ΚΑΤΑΘΕΣΗ_ΣΤΕΦΑΝΟΥ_0060_(1).jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/25_%CE%BC%CE%B1%CF%81%CF%84%CE%B9%CE%BF%CF%85_2010_%CE%A0%CE%91%CE%A1%CE%95%CE%9B%CE%91%CE%A3%CE%97_%CE%9A%CE%91%CE%99_%CE%9A%CE%91%CE%A4%CE%91%CE%98%CE%95%CE%A3%CE%97_%CE%A3%CE%A4%CE%95%CE%A6%CE%91%CE%9D%CE%9F%CE%A5_0060_%281%29.jpg?bwg=1604513930"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/25_%CE%BC%CE%B1%CF%81%CF%84%CE%B9%CE%BF%CF%85_2010_%CE%A0%CE%91%CE%A1%CE%95%CE%9B%CE%91%CE%A3%CE%97_%CE%9A%CE%91%CE%99_%CE%9A%CE%91%CE%A4%CE%91%CE%98%CE%95%CE%A3%CE%97_%CE%A3%CE%A4%CE%95%CE%A6%CE%91%CE%9D%CE%9F%CE%A5_0049_%281%29.jpg?bwg=1604513930",
+          "src": "assets/event-media/event-2010-03-25/02.webp",
           "caption": "Παρέλαση και κατάθεση στεφάνου — φωτογραφία 2",
           "originalFile": "25_μαρτιου_2010_ΠΑΡΕΛΑΣΗ_ΚΑΙ_ΚΑΤΑΘΕΣΗ_ΣΤΕΦΑΝΟΥ_0049_(1).jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/25_%CE%BC%CE%B1%CF%81%CF%84%CE%B9%CE%BF%CF%85_2010_%CE%A0%CE%91%CE%A1%CE%95%CE%9B%CE%91%CE%A3%CE%97_%CE%9A%CE%91%CE%99_%CE%9A%CE%91%CE%A4%CE%91%CE%98%CE%95%CE%A3%CE%97_%CE%A3%CE%A4%CE%95%CE%A6%CE%91%CE%9D%CE%9F%CE%A5_0049_%281%29.jpg?bwg=1604513930"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/25_%CE%BC%CE%B1%CF%81%CF%84%CE%B9%CE%BF%CF%85_2010_%CE%A0%CE%91%CE%A1%CE%95%CE%9B%CE%91%CE%A3%CE%97_%CE%9A%CE%91%CE%99_%CE%9A%CE%91%CE%A4%CE%91%CE%98%CE%95%CE%A3%CE%97_%CE%A3%CE%A4%CE%95%CE%A6%CE%91%CE%9D%CE%9F%CE%A5_0059_%281%29.jpg?bwg=1604513930",
+          "src": "assets/event-media/event-2010-03-25/03.webp",
           "caption": "Παρέλαση και κατάθεση στεφάνου — φωτογραφία 3",
           "originalFile": "25_μαρτιου_2010_ΠΑΡΕΛΑΣΗ_ΚΑΙ_ΚΑΤΑΘΕΣΗ_ΣΤΕΦΑΝΟΥ_0059_(1).jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/25_%CE%BC%CE%B1%CF%81%CF%84%CE%B9%CE%BF%CF%85_2010_%CE%A0%CE%91%CE%A1%CE%95%CE%9B%CE%91%CE%A3%CE%97_%CE%9A%CE%91%CE%99_%CE%9A%CE%91%CE%A4%CE%91%CE%98%CE%95%CE%A3%CE%97_%CE%A3%CE%A4%CE%95%CE%A6%CE%91%CE%9D%CE%9F%CE%A5_0059_%281%29.jpg?bwg=1604513930"
         }
       ]
     },
@@ -466,35 +485,39 @@ window.epirusEvents = {
       "media": [
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/21_%CF%86%CE%B5%CE%B2%CF%81%CE%BF%CF%85%CE%B1%CF%81%CE%B9%CE%BF%CF%85_2010_%CE%B5%CE%BF%CF%81%CF%84%CE%B1%CF%83%CE%BC%CE%BF%CF%82_%CE%B1%CF%80%CE%B5%CE%BB%CE%B5%CF%85%CE%B8%CE%B5%CF%81%CF%89%CF%83%CE%B7%CF%82_%CE%99%CF%89%CE%B1%CE%BD%CE%BD%CE%B9%CE%BD%CF%89_%CE%9F%CE%9B%CE%A0_9_%281%29.jpg?bwg=1604513930",
+          "src": "assets/event-media/event-2010-02-21/01.webp",
           "caption": "Εορτασμός απελευθέρωσης Ιωαννίνων — φωτογραφία 1",
           "originalFile": "21_φεβρουαριου_2010_εορτασμος_απελευθερωσης_Ιωαννινω_ΟΛΠ_9_(1).jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/21_%CF%86%CE%B5%CE%B2%CF%81%CE%BF%CF%85%CE%B1%CF%81%CE%B9%CE%BF%CF%85_2010_%CE%B5%CE%BF%CF%81%CF%84%CE%B1%CF%83%CE%BC%CE%BF%CF%82_%CE%B1%CF%80%CE%B5%CE%BB%CE%B5%CF%85%CE%B8%CE%B5%CF%81%CF%89%CF%83%CE%B7%CF%82_%CE%99%CF%89%CE%B1%CE%BD%CE%BD%CE%B9%CE%BD%CF%89_%CE%9F%CE%9B%CE%A0_9_%281%29.jpg?bwg=1604513930"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/21_%CF%86%CE%B5%CE%B2%CF%81%CE%BF%CF%85%CE%B1%CF%81%CE%B9%CE%BF%CF%85_2010_%CE%B5%CE%BF%CF%81%CF%84%CE%B1%CF%83%CE%BC%CE%BF%CF%82_%CE%B1%CF%80%CE%B5%CE%BB%CE%B5%CF%85%CE%B8%CE%B5%CF%81%CF%89%CF%83%CE%B7%CF%82_%CE%99%CF%89%CE%B1%CE%BD%CE%BD%CE%B9%CE%BD%CF%89_%CE%9F%CE%9B%CE%A0_929_%281%29.jpg?bwg=1604513930",
+          "src": "assets/event-media/event-2010-02-21/02.webp",
           "caption": "Εορτασμός απελευθέρωσης Ιωαννίνων — φωτογραφία 2",
           "originalFile": "21_φεβρουαριου_2010_εορτασμος_απελευθερωσης_Ιωαννινω_ΟΛΠ_929_(1).jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/21_%CF%86%CE%B5%CE%B2%CF%81%CE%BF%CF%85%CE%B1%CF%81%CE%B9%CE%BF%CF%85_2010_%CE%B5%CE%BF%CF%81%CF%84%CE%B1%CF%83%CE%BC%CE%BF%CF%82_%CE%B1%CF%80%CE%B5%CE%BB%CE%B5%CF%85%CE%B8%CE%B5%CF%81%CF%89%CF%83%CE%B7%CF%82_%CE%99%CF%89%CE%B1%CE%BD%CE%BD%CE%B9%CE%BD%CF%89_%CE%9F%CE%9B%CE%A0_929_%281%29.jpg?bwg=1604513930"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/21_%CF%86%CE%B5%CE%B2%CF%81%CE%BF%CF%85%CE%B1%CF%81%CE%B9%CE%BF%CF%85_2010_%CE%B5%CE%BF%CF%81%CF%84%CE%B1%CF%83%CE%BC%CE%BF%CF%82_%CE%B1%CF%80%CE%B5%CE%BB%CE%B5%CF%85%CE%B8%CE%B5%CF%81%CF%89%CF%83%CE%B7%CF%82_%CE%99%CF%89%CE%B1%CE%BD%CE%BD%CE%B9%CE%BD%CF%89_%CE%9F%CE%9B%CE%A0_843_%281%29.jpg?bwg=1604513930",
+          "src": "assets/event-media/event-2010-02-21/03.webp",
           "caption": "Εορτασμός απελευθέρωσης Ιωαννίνων — φωτογραφία 3",
           "originalFile": "21_φεβρουαριου_2010_εορτασμος_απελευθερωσης_Ιωαννινω_ΟΛΠ_843_(1).jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/21_%CF%86%CE%B5%CE%B2%CF%81%CE%BF%CF%85%CE%B1%CF%81%CE%B9%CE%BF%CF%85_2010_%CE%B5%CE%BF%CF%81%CF%84%CE%B1%CF%83%CE%BC%CE%BF%CF%82_%CE%B1%CF%80%CE%B5%CE%BB%CE%B5%CF%85%CE%B8%CE%B5%CF%81%CF%89%CF%83%CE%B7%CF%82_%CE%99%CF%89%CE%B1%CE%BD%CE%BD%CE%B9%CE%BD%CF%89_%CE%9F%CE%9B%CE%A0_843_%281%29.jpg?bwg=1604513930"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/21_%CF%86%CE%B5%CE%B2%CF%81%CE%BF%CF%85%CE%B1%CF%81%CE%B9%CE%BF%CF%85_2010_%CE%B5%CE%BF%CF%81%CF%84%CE%B1%CF%83%CE%BC%CE%BF%CF%82_%CE%B1%CF%80%CE%B5%CE%BB%CE%B5%CF%85%CE%B8%CE%B5%CF%81%CF%89%CF%83%CE%B7%CF%82_%CE%99%CF%89%CE%B1%CE%BD%CE%BD%CE%B9%CE%BD%CF%89_%CE%9F%CE%9B%CE%A0_805_%281%29.jpg?bwg=1604513930",
+          "src": "assets/event-media/event-2010-02-21/04.webp",
           "caption": "Εορτασμός απελευθέρωσης Ιωαννίνων — φωτογραφία 4",
           "originalFile": "21_φεβρουαριου_2010_εορτασμος_απελευθερωσης_Ιωαννινω_ΟΛΠ_805_(1).jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/21_%CF%86%CE%B5%CE%B2%CF%81%CE%BF%CF%85%CE%B1%CF%81%CE%B9%CE%BF%CF%85_2010_%CE%B5%CE%BF%CF%81%CF%84%CE%B1%CF%83%CE%BC%CE%BF%CF%82_%CE%B1%CF%80%CE%B5%CE%BB%CE%B5%CF%85%CE%B8%CE%B5%CF%81%CF%89%CF%83%CE%B7%CF%82_%CE%99%CF%89%CE%B1%CE%BD%CE%BD%CE%B9%CE%BD%CF%89_%CE%9F%CE%9B%CE%A0_805_%281%29.jpg?bwg=1604513930"
         }
       ],
       "press": {
@@ -519,11 +542,12 @@ window.epirusEvents = {
       "media": [
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/24_%CE%91%CE%A0%CE%A1%CE%99%CE%9B%CE%99%CE%9F%CE%A5_2006_%CE%95%CE%9A%CE%94%CE%97%CE%9B%CE%A9%CE%A3%CE%97_%CE%9C%CE%95_UNESCO_%CE%A3%CE%A4%CE%9F%CE%9D_%CE%9F%CE%9B%CE%A0_%281%29.jpg?bwg=1604513930",
+          "src": "assets/event-media/event-2006-04-24/01.webp",
           "caption": "Εκδήλωση με UNESCO στον ΟΛΠ — φωτογραφία 1",
           "originalFile": "24_ΑΠΡΙΛΙΟΥ_2006_ΕΚΔΗΛΩΣΗ_ΜΕ_UNESCO_ΣΤΟΝ_ΟΛΠ_(1).jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/24_%CE%91%CE%A0%CE%A1%CE%99%CE%9B%CE%99%CE%9F%CE%A5_2006_%CE%95%CE%9A%CE%94%CE%97%CE%9B%CE%A9%CE%A3%CE%97_%CE%9C%CE%95_UNESCO_%CE%A3%CE%A4%CE%9F%CE%9D_%CE%9F%CE%9B%CE%A0_%281%29.jpg?bwg=1604513930"
         }
       ]
     },
@@ -537,35 +561,39 @@ window.epirusEvents = {
       "media": [
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%92%CE%A1%CE%91%CE%92%CE%95%CE%A5%CE%A3%CE%97_%CE%A3%CE%99%CE%91%CE%A4%CE%A1%CE%91_%281%29.jpg?bwg=1604513930",
+          "src": "assets/event-media/archive-awards/01.webp",
           "caption": "ΒΡΑΒΕΥΣΗ ΣΙΑΤΡΑ",
           "originalFile": "ΒΡΑΒΕΥΣΗ_ΣΙΑΤΡΑ_(1).jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%92%CE%A1%CE%91%CE%92%CE%95%CE%A5%CE%A3%CE%97_%CE%A3%CE%99%CE%91%CE%A4%CE%A1%CE%91_%281%29.jpg?bwg=1604513930"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%92%CE%A1%CE%91%CE%92%CE%95%CE%A5%CE%A3%CE%97_%CE%98%CE%91%CE%9D%CE%9F%CE%A5_%281%29.jpg?bwg=1604513930",
+          "src": "assets/event-media/archive-awards/02.webp",
           "caption": "ΒΡΑΒΕΥΣΗ ΘΑΝΟΥ",
           "originalFile": "ΒΡΑΒΕΥΣΗ_ΘΑΝΟΥ_(1).jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%92%CE%A1%CE%91%CE%92%CE%95%CE%A5%CE%A3%CE%97_%CE%98%CE%91%CE%9D%CE%9F%CE%A5_%281%29.jpg?bwg=1604513930"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%92%CE%A1%CE%91%CE%92%CE%95%CE%A5%CE%A3%CE%97_%CE%9D%CE%99%CE%9A%CE%9F%CE%A0%CE%9F%CE%9B%CE%99%CE%94%CE%97_%281%29.jpg?bwg=1604513930",
+          "src": "assets/event-media/archive-awards/03.webp",
           "caption": "ΒΡΑΒΕΥΣΗ ΝΙΚΟΠΟΛΙΔΗ",
           "originalFile": "ΒΡΑΒΕΥΣΗ_ΝΙΚΟΠΟΛΙΔΗ_(1).jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%92%CE%A1%CE%91%CE%92%CE%95%CE%A5%CE%A3%CE%97_%CE%9D%CE%99%CE%9A%CE%9F%CE%A0%CE%9F%CE%9B%CE%99%CE%94%CE%97_%281%29.jpg?bwg=1604513930"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%92%CE%A1%CE%91%CE%92%CE%95%CE%A5%CE%A3%CE%97_%CE%91%CE%98%CE%91%CE%9D%CE%91%CE%A3%CE%99%CE%91%CE%A3_%CE%A4%CE%A3%CE%9F%CE%A5%CE%9C%CE%95%CE%9B%CE%95%CE%9A%CE%91_%281%29.jpg?bwg=1604513930",
+          "src": "assets/event-media/archive-awards/04.webp",
           "caption": "ΒΡΑΒΕΥΣΗ ΑΘΑΝΑΣΙΑΣ ΤΣΟΥΜΕΛΕΚΑ",
           "originalFile": "ΒΡΑΒΕΥΣΗ_ΑΘΑΝΑΣΙΑΣ_ΤΣΟΥΜΕΛΕΚΑ_(1).jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%92%CE%A1%CE%91%CE%92%CE%95%CE%A5%CE%A3%CE%97_%CE%91%CE%98%CE%91%CE%9D%CE%91%CE%A3%CE%99%CE%91%CE%A3_%CE%A4%CE%A3%CE%9F%CE%A5%CE%9C%CE%95%CE%9B%CE%95%CE%9A%CE%91_%281%29.jpg?bwg=1604513930"
         }
       ]
     },
@@ -579,139 +607,156 @@ window.epirusEvents = {
       "media": [
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/p1000373_copy.jpg?bwg=1587759061",
+          "src": "assets/event-media/archive-moments/01.webp",
           "caption": "Φωτογραφικό αρχείο — p1000373",
           "originalFile": "p1000373_copy.jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/p1000373_copy.jpg?bwg=1587759061"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0879_copy.jpg?bwg=1587759061",
+          "src": "assets/event-media/archive-moments/02.webp",
           "caption": "Φωτογραφικό αρχείο — cimg0879",
           "originalFile": "cimg0879_copy.jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0879_copy.jpg?bwg=1587759061"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0790_copy.jpg?bwg=1587759061",
+          "src": "assets/event-media/archive-moments/03.webp",
           "caption": "Φωτογραφικό αρχείο — cimg0790",
           "originalFile": "cimg0790_copy.jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0790_copy.jpg?bwg=1587759061"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0894_copy.jpg?bwg=1587759061",
+          "src": "assets/event-media/archive-moments/04.webp",
           "caption": "Φωτογραφικό αρχείο — cimg0894",
           "originalFile": "cimg0894_copy.jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-          "retrieval": "tool-error"
+          "retrieval": "tool-error",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0894_copy.jpg?bwg=1587759061"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0930_copy.jpg?bwg=1587759061",
+          "src": "assets/event-media/archive-moments/05.webp",
           "caption": "Φωτογραφικό αρχείο — cimg0930",
           "originalFile": "cimg0930_copy.jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0930_copy.jpg?bwg=1587759061"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/image_001_copy.jpg?bwg=1587759061",
+          "src": "assets/event-media/archive-moments/06.webp",
           "caption": "Φωτογραφικό αρχείο — image_001",
           "originalFile": "image_001_copy.jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/image_001_copy.jpg?bwg=1587759061"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/image_033_copy.jpg?bwg=1587759061",
+          "src": "assets/event-media/archive-moments/07.webp",
           "caption": "Φωτογραφικό αρχείο — image_033",
           "originalFile": "image_033_copy.jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/image_033_copy.jpg?bwg=1587759061"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0829_copy.jpg?bwg=1587759061",
+          "src": "assets/event-media/archive-moments/08.webp",
           "caption": "Φωτογραφικό αρχείο — cimg0829",
           "originalFile": "cimg0829_copy.jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0829_copy.jpg?bwg=1587759061"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0952_copy.jpg?bwg=1587759061",
+          "src": "assets/event-media/archive-moments/09.webp",
           "caption": "Φωτογραφικό αρχείο — cimg0952",
           "originalFile": "cimg0952_copy.jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0952_copy.jpg?bwg=1587759061"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0843_copy.jpg?bwg=1587759061",
+          "src": "assets/event-media/archive-moments/10.webp",
           "caption": "Φωτογραφικό αρχείο — cimg0843",
           "originalFile": "cimg0843_copy.jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0843_copy.jpg?bwg=1587759061"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0885_copy.jpg?bwg=1587759061",
+          "src": "assets/event-media/archive-moments/11.webp",
           "caption": "Φωτογραφικό αρχείο — cimg0885",
           "originalFile": "cimg0885_copy.jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-          "retrieval": "tool-error"
+          "retrieval": "tool-error",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0885_copy.jpg?bwg=1587759061"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0893_copy.jpg?bwg=1587759061",
+          "src": "assets/event-media/archive-moments/12.webp",
           "caption": "Φωτογραφικό αρχείο — cimg0893",
           "originalFile": "cimg0893_copy.jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-          "retrieval": "tool-error"
+          "retrieval": "tool-error",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0893_copy.jpg?bwg=1587759061"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0830_copy.jpg?bwg=1587759061",
+          "src": "assets/event-media/archive-moments/13.webp",
           "caption": "Φωτογραφικό αρχείο — cimg0830",
           "originalFile": "cimg0830_copy.jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0830_copy.jpg?bwg=1587759061"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0929_copy.jpg?bwg=1587759061",
+          "src": "assets/event-media/archive-moments/14.webp",
           "caption": "Φωτογραφικό αρχείο — cimg0929",
           "originalFile": "cimg0929_copy.jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0929_copy.jpg?bwg=1587759061"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/p1000378_copy.jpg?bwg=1587759061",
+          "src": "assets/event-media/archive-moments/15.webp",
           "caption": "Φωτογραφικό αρχείο — p1000378",
           "originalFile": "p1000378_copy.jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/p1000378_copy.jpg?bwg=1587759061"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/image_102_copy.jpg?bwg=1587759061",
+          "src": "assets/event-media/archive-moments/16.webp",
           "caption": "Φωτογραφικό αρχείο — image_102",
           "originalFile": "image_102_copy.jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/image_102_copy.jpg?bwg=1587759061"
         },
         {
           "type": "photo",
-          "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/p1000381_copy.jpg?bwg=1587759061",
+          "src": "assets/event-media/archive-moments/17.webp",
           "caption": "Φωτογραφικό αρχείο — p1000381",
           "originalFile": "p1000381_copy.jpg",
           "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-          "retrieval": "opened"
+          "retrieval": "opened",
+          "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/p1000381_copy.jpg?bwg=1587759061"
         }
       ]
     }

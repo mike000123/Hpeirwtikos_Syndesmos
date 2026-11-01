@@ -7,139 +7,156 @@
   "media": [
     {
       "type": "photo",
-      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/p1000373_copy.jpg?bwg=1587759061",
+      "src": "assets/event-media/archive-moments/01.webp",
       "caption": "Φωτογραφικό αρχείο — p1000373",
       "originalFile": "p1000373_copy.jpg",
       "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-      "retrieval": "opened"
+      "retrieval": "opened",
+      "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/p1000373_copy.jpg?bwg=1587759061"
     },
     {
       "type": "photo",
-      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0879_copy.jpg?bwg=1587759061",
+      "src": "assets/event-media/archive-moments/02.webp",
       "caption": "Φωτογραφικό αρχείο — cimg0879",
       "originalFile": "cimg0879_copy.jpg",
       "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-      "retrieval": "opened"
+      "retrieval": "opened",
+      "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0879_copy.jpg?bwg=1587759061"
     },
     {
       "type": "photo",
-      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0790_copy.jpg?bwg=1587759061",
+      "src": "assets/event-media/archive-moments/03.webp",
       "caption": "Φωτογραφικό αρχείο — cimg0790",
       "originalFile": "cimg0790_copy.jpg",
       "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-      "retrieval": "opened"
+      "retrieval": "opened",
+      "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0790_copy.jpg?bwg=1587759061"
     },
     {
       "type": "photo",
-      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0894_copy.jpg?bwg=1587759061",
+      "src": "assets/event-media/archive-moments/04.webp",
       "caption": "Φωτογραφικό αρχείο — cimg0894",
       "originalFile": "cimg0894_copy.jpg",
       "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-      "retrieval": "tool-error"
+      "retrieval": "tool-error",
+      "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0894_copy.jpg?bwg=1587759061"
     },
     {
       "type": "photo",
-      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0930_copy.jpg?bwg=1587759061",
+      "src": "assets/event-media/archive-moments/05.webp",
       "caption": "Φωτογραφικό αρχείο — cimg0930",
       "originalFile": "cimg0930_copy.jpg",
       "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-      "retrieval": "opened"
+      "retrieval": "opened",
+      "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0930_copy.jpg?bwg=1587759061"
     },
     {
       "type": "photo",
-      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/image_001_copy.jpg?bwg=1587759061",
+      "src": "assets/event-media/archive-moments/06.webp",
       "caption": "Φωτογραφικό αρχείο — image_001",
       "originalFile": "image_001_copy.jpg",
       "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-      "retrieval": "opened"
+      "retrieval": "opened",
+      "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/image_001_copy.jpg?bwg=1587759061"
     },
     {
       "type": "photo",
-      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/image_033_copy.jpg?bwg=1587759061",
+      "src": "assets/event-media/archive-moments/07.webp",
       "caption": "Φωτογραφικό αρχείο — image_033",
       "originalFile": "image_033_copy.jpg",
       "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-      "retrieval": "opened"
+      "retrieval": "opened",
+      "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/image_033_copy.jpg?bwg=1587759061"
     },
     {
       "type": "photo",
-      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0829_copy.jpg?bwg=1587759061",
+      "src": "assets/event-media/archive-moments/08.webp",
       "caption": "Φωτογραφικό αρχείο — cimg0829",
       "originalFile": "cimg0829_copy.jpg",
       "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-      "retrieval": "opened"
+      "retrieval": "opened",
+      "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0829_copy.jpg?bwg=1587759061"
     },
     {
       "type": "photo",
-      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0952_copy.jpg?bwg=1587759061",
+      "src": "assets/event-media/archive-moments/09.webp",
       "caption": "Φωτογραφικό αρχείο — cimg0952",
       "originalFile": "cimg0952_copy.jpg",
       "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-      "retrieval": "opened"
+      "retrieval": "opened",
+      "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0952_copy.jpg?bwg=1587759061"
     },
     {
       "type": "photo",
-      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0843_copy.jpg?bwg=1587759061",
+      "src": "assets/event-media/archive-moments/10.webp",
       "caption": "Φωτογραφικό αρχείο — cimg0843",
       "originalFile": "cimg0843_copy.jpg",
       "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-      "retrieval": "opened"
+      "retrieval": "opened",
+      "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0843_copy.jpg?bwg=1587759061"
     },
     {
       "type": "photo",
-      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0885_copy.jpg?bwg=1587759061",
+      "src": "assets/event-media/archive-moments/11.webp",
       "caption": "Φωτογραφικό αρχείο — cimg0885",
       "originalFile": "cimg0885_copy.jpg",
       "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-      "retrieval": "tool-error"
+      "retrieval": "tool-error",
+      "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0885_copy.jpg?bwg=1587759061"
     },
     {
       "type": "photo",
-      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0893_copy.jpg?bwg=1587759061",
+      "src": "assets/event-media/archive-moments/12.webp",
       "caption": "Φωτογραφικό αρχείο — cimg0893",
       "originalFile": "cimg0893_copy.jpg",
       "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-      "retrieval": "tool-error"
+      "retrieval": "tool-error",
+      "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0893_copy.jpg?bwg=1587759061"
     },
     {
       "type": "photo",
-      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0830_copy.jpg?bwg=1587759061",
+      "src": "assets/event-media/archive-moments/13.webp",
       "caption": "Φωτογραφικό αρχείο — cimg0830",
       "originalFile": "cimg0830_copy.jpg",
       "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-      "retrieval": "opened"
+      "retrieval": "opened",
+      "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0830_copy.jpg?bwg=1587759061"
     },
     {
       "type": "photo",
-      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0929_copy.jpg?bwg=1587759061",
+      "src": "assets/event-media/archive-moments/14.webp",
       "caption": "Φωτογραφικό αρχείο — cimg0929",
       "originalFile": "cimg0929_copy.jpg",
       "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-      "retrieval": "opened"
+      "retrieval": "opened",
+      "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/cimg0929_copy.jpg?bwg=1587759061"
     },
     {
       "type": "photo",
-      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/p1000378_copy.jpg?bwg=1587759061",
+      "src": "assets/event-media/archive-moments/15.webp",
       "caption": "Φωτογραφικό αρχείο — p1000378",
       "originalFile": "p1000378_copy.jpg",
       "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-      "retrieval": "opened"
+      "retrieval": "opened",
+      "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/p1000378_copy.jpg?bwg=1587759061"
     },
     {
       "type": "photo",
-      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/image_102_copy.jpg?bwg=1587759061",
+      "src": "assets/event-media/archive-moments/16.webp",
       "caption": "Φωτογραφικό αρχείο — image_102",
       "originalFile": "image_102_copy.jpg",
       "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-      "retrieval": "opened"
+      "retrieval": "opened",
+      "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/image_102_copy.jpg?bwg=1587759061"
     },
     {
       "type": "photo",
-      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/p1000381_copy.jpg?bwg=1587759061",
+      "src": "assets/event-media/archive-moments/17.webp",
       "caption": "Φωτογραφικό αρχείο — p1000381",
       "originalFile": "p1000381_copy.jpg",
       "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/?page_number_0=2",
-      "retrieval": "opened"
+      "retrieval": "opened",
+      "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/p1000381_copy.jpg?bwg=1587759061"
     }
   ]
 }

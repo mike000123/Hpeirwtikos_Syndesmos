@@ -6,27 +6,30 @@
   "media": [
     {
       "type": "photo",
-      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%9A%CE%9F%CE%A0%CE%97_%CE%A0%CE%99%CE%A4%CE%91%CE%A3_15-1-2011_1_%281%29.jpg?bwg=1604513930",
+      "src": "assets/event-media/event-2011-01-15/01.webp",
       "caption": "Κοπή πίτας — φωτογραφία 1",
       "originalFile": "ΚΟΠΗ_ΠΙΤΑΣ_15-1-2011_1_(1).jpg",
       "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-      "retrieval": "opened"
+      "retrieval": "opened",
+      "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%9A%CE%9F%CE%A0%CE%97_%CE%A0%CE%99%CE%A4%CE%91%CE%A3_15-1-2011_1_%281%29.jpg?bwg=1604513930"
     },
     {
       "type": "photo",
-      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%9A%CE%9F%CE%A0%CE%97_%CE%A0%CE%99%CE%A4%CE%91%CE%A3_15-1-2011_%281%29.jpg?bwg=1604513930",
+      "src": "assets/event-media/event-2011-01-15/02.webp",
       "caption": "Κοπή πίτας — φωτογραφία 2",
       "originalFile": "ΚΟΠΗ_ΠΙΤΑΣ_15-1-2011_(1).jpg",
       "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-      "retrieval": "opened"
+      "retrieval": "opened",
+      "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%9A%CE%9F%CE%A0%CE%97_%CE%A0%CE%99%CE%A4%CE%91%CE%A3_15-1-2011_%281%29.jpg?bwg=1604513930"
     },
     {
       "type": "photo",
-      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%9A%CE%9F%CE%A0%CE%97_%CE%A0%CE%99%CE%A4%CE%91%CE%A3_15-1-11_%281%29.jpg?bwg=1604513930",
+      "src": "assets/event-media/event-2011-01-15/03.webp",
       "caption": "Κοπή πίτας — φωτογραφία 3",
       "originalFile": "ΚΟΠΗ_ΠΙΤΑΣ_15-1-11_(1).jpg",
       "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-      "retrieval": "opened"
+      "retrieval": "opened",
+      "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%9A%CE%9F%CE%A0%CE%97_%CE%A0%CE%99%CE%A4%CE%91%CE%A3_15-1-11_%281%29.jpg?bwg=1604513930"
     }
   ],
   "press": {

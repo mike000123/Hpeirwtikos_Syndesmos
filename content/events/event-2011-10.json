@@ -7,19 +7,21 @@
   "media": [
     {
       "type": "photo",
-      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%9F%CE%9A%CE%A4%CE%A9%CE%92%CE%A1%CE%99%CE%9F%CE%A3_2011.jpg?bwg=1604512520",
+      "src": "assets/event-media/event-2011-10/01.webp",
       "caption": "Στιγμές του Συνδέσμου — Οκτώβριος 2011 — φωτογραφία 1",
       "originalFile": "ΟΚΤΩΒΡΙΟΣ_2011.jpg",
       "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-      "retrieval": "opened"
+      "retrieval": "opened",
+      "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%9F%CE%9A%CE%A4%CE%A9%CE%92%CE%A1%CE%99%CE%9F%CE%A3_2011.jpg?bwg=1604512520"
     },
     {
       "type": "photo",
-      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%9F%CE%9A%CE%A4%CE%A9%CE%92%CE%A1%CE%99%CE%9F%CE%A3_2011_2.jpg?bwg=1604512520",
+      "src": "assets/event-media/event-2011-10/02.webp",
       "caption": "Στιγμές του Συνδέσμου — Οκτώβριος 2011 — φωτογραφία 2",
       "originalFile": "ΟΚΤΩΒΡΙΟΣ_2011_2.jpg",
       "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-      "retrieval": "opened"
+      "retrieval": "opened",
+      "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%9F%CE%9A%CE%A4%CE%A9%CE%92%CE%A1%CE%99%CE%9F%CE%A3_2011_2.jpg?bwg=1604512520"
     }
   ],
   "note": "Η πηγή αναφέρει μόνο τον μήνα και το έτος· δεν προσδιορίζει συγκεκριμένη ημέρα."

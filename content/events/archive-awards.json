@@ -7,35 +7,39 @@
   "media": [
     {
       "type": "photo",
-      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%92%CE%A1%CE%91%CE%92%CE%95%CE%A5%CE%A3%CE%97_%CE%A3%CE%99%CE%91%CE%A4%CE%A1%CE%91_%281%29.jpg?bwg=1604513930",
+      "src": "assets/event-media/archive-awards/01.webp",
       "caption": "ΒΡΑΒΕΥΣΗ ΣΙΑΤΡΑ",
       "originalFile": "ΒΡΑΒΕΥΣΗ_ΣΙΑΤΡΑ_(1).jpg",
       "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-      "retrieval": "opened"
+      "retrieval": "opened",
+      "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%92%CE%A1%CE%91%CE%92%CE%95%CE%A5%CE%A3%CE%97_%CE%A3%CE%99%CE%91%CE%A4%CE%A1%CE%91_%281%29.jpg?bwg=1604513930"
     },
     {
       "type": "photo",
-      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%92%CE%A1%CE%91%CE%92%CE%95%CE%A5%CE%A3%CE%97_%CE%98%CE%91%CE%9D%CE%9F%CE%A5_%281%29.jpg?bwg=1604513930",
+      "src": "assets/event-media/archive-awards/02.webp",
       "caption": "ΒΡΑΒΕΥΣΗ ΘΑΝΟΥ",
       "originalFile": "ΒΡΑΒΕΥΣΗ_ΘΑΝΟΥ_(1).jpg",
       "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-      "retrieval": "opened"
+      "retrieval": "opened",
+      "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%92%CE%A1%CE%91%CE%92%CE%95%CE%A5%CE%A3%CE%97_%CE%98%CE%91%CE%9D%CE%9F%CE%A5_%281%29.jpg?bwg=1604513930"
     },
     {
       "type": "photo",
-      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%92%CE%A1%CE%91%CE%92%CE%95%CE%A5%CE%A3%CE%97_%CE%9D%CE%99%CE%9A%CE%9F%CE%A0%CE%9F%CE%9B%CE%99%CE%94%CE%97_%281%29.jpg?bwg=1604513930",
+      "src": "assets/event-media/archive-awards/03.webp",
       "caption": "ΒΡΑΒΕΥΣΗ ΝΙΚΟΠΟΛΙΔΗ",
       "originalFile": "ΒΡΑΒΕΥΣΗ_ΝΙΚΟΠΟΛΙΔΗ_(1).jpg",
       "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-      "retrieval": "opened"
+      "retrieval": "opened",
+      "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%92%CE%A1%CE%91%CE%92%CE%95%CE%A5%CE%A3%CE%97_%CE%9D%CE%99%CE%9A%CE%9F%CE%A0%CE%9F%CE%9B%CE%99%CE%94%CE%97_%281%29.jpg?bwg=1604513930"
     },
     {
       "type": "photo",
-      "src": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%92%CE%A1%CE%91%CE%92%CE%95%CE%A5%CE%A3%CE%97_%CE%91%CE%98%CE%91%CE%9D%CE%91%CE%A3%CE%99%CE%91%CE%A3_%CE%A4%CE%A3%CE%9F%CE%A5%CE%9C%CE%95%CE%9B%CE%95%CE%9A%CE%91_%281%29.jpg?bwg=1604513930",
+      "src": "assets/event-media/archive-awards/04.webp",
       "caption": "ΒΡΑΒΕΥΣΗ ΑΘΑΝΑΣΙΑΣ ΤΣΟΥΜΕΛΕΚΑ",
       "originalFile": "ΒΡΑΒΕΥΣΗ_ΑΘΑΝΑΣΙΑΣ_ΤΣΟΥΜΕΛΕΚΑ_(1).jpg",
       "sourcePage": "https://ipirotikos.gr/polymesa/fotografies/",
-      "retrieval": "opened"
+      "retrieval": "opened",
+      "remoteSrc": "https://ipirotikos.gr/wp-content/uploads/photo-gallery/main_photos01/%CE%92%CE%A1%CE%91%CE%92%CE%95%CE%A5%CE%A3%CE%97_%CE%91%CE%98%CE%91%CE%9D%CE%91%CE%A3%CE%99%CE%91%CE%A3_%CE%A4%CE%A3%CE%9F%CE%A5%CE%9C%CE%95%CE%9B%CE%95%CE%9A%CE%91_%281%29.jpg?bwg=1604513930"
     }
   ]
 }

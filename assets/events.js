@@ -23,6 +23,8 @@
   let savedOverflow = '';
 
   function photoURL(value) {
+    // Τοπικά αντίγραφα που ανεβάζονται στο ίδιο το site (assets/event-media/<εκδήλωση>/<αρχείο>.webp)
+    if (typeof value === 'string' && /^assets\/event-media\/[A-Za-z0-9][A-Za-z0-9._-]*\/[A-Za-z0-9][A-Za-z0-9._-]*\.(?:webp|jpe?g|png)$/.test(value)) return value;
     try {
       const url = new URL(value);
       return url.protocol === 'https:' && url.hostname === 'ipirotikos.gr' &&

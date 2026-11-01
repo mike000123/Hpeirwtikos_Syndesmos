@@ -1,5 +1,4 @@
 # Python build caches are not site content.
 __pycache__/
 *.py[cod]
-event-photos/
-event-photos.zip
+event-photos-ready.zip

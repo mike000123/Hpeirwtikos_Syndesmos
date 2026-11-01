@@ -110,7 +110,7 @@ test('broken images show a source fallback; late errors cannot replace the next 
   assert.equal(s.nodes['event-gallery-stage'].firstElementChild, currentImage);
   currentImage.emit('error');
   assert.equal(s.nodes['event-gallery-stage'].firstElementChild.getAttribute('role'), 'status');
-  assert.match(s.nodes['event-gallery-original'].href, /^https:\/\/ipirotikos\.gr\/wp-content\/uploads\//);
+  assert.equal(s.nodes['event-gallery-original'].href, s.catalogue.events.find(e => e.id === 'event-2019-04-07').media[1].src);
 });
 
 test('only outside backdrop clicks dismiss the dialog', () => {

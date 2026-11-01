@@ -137,7 +137,7 @@ collections:
 
   - name: events
     label: 'Εκδηλώσεις'
-    description: 'Σελίδα «Εκδηλώσεις»: προσθέστε νέα εκδήλωση (μελλοντική ημερομηνία = «επόμενες συναντήσεις») ή διορθώστε παλιά.'
+    description: 'Οι σημερινές και μελλοντικές εκδηλώσεις εμφανίζονται στις «επόμενες συναντήσεις» και στο αναδυόμενο ημερολόγιο. Οι επισκέπτες μπορούν να τις προσθέσουν στο προσωπικό τους ημερολόγιο.'
     label_singular: Εκδήλωση
     folder: content/events
     extension: json
@@ -150,7 +150,12 @@ collections:
     fields:
       - {name: id, widget: hidden}
       - {name: title, label: Τίτλος εκδήλωσης, widget: string}
-      - {name: date, label: Ημερομηνία, widget: datetime, date_format: 'YYYY-MM-DD', time_format: false, picker_utc: true, required: false, hint: 'Η ημερομηνία που έγινε η εκδήλωση.'}
+      - {name: date, label: Ημερομηνία έναρξης, widget: datetime, date_format: 'YYYY-MM-DD', time_format: false, picker_utc: true, required: false, hint: 'Ημερομηνία συνάντησης. Απαραίτητη για να εμφανιστεί στο ημερολόγιο.'}
+      - {name: time, label: Ώρα έναρξης (ώρα Ελλάδας), widget: string, required: false, pattern: ['^([01][0-9]|2[0-3]):[0-5][0-9]$', 'Γράψτε ΩΩ:ΛΛ, π.χ. 19:30.'], hint: 'Προαιρετική. Χωρίς ώρα η προσθήκη στο προσωπικό ημερολόγιο γίνεται ως ολοήμερη.'}
+      - {name: endDate, label: Ημερομηνία λήξης (για πολυήμερη συνάντηση), widget: datetime, date_format: 'YYYY-MM-DD', time_format: false, picker_utc: true, required: false, hint: 'Αφήστε κενό για την ίδια ημέρα. Χωρίς ώρα: η τελευταία ημέρα περιλαμβάνεται. Για λήξη μετά τα μεσάνυχτα επιλέξτε την επόμενη ημερομηνία.'}
+      - {name: endTime, label: Ώρα λήξης (ώρα Ελλάδας), widget: string, required: false, pattern: ['^([01][0-9]|2[0-3]):[0-5][0-9]$', 'Γράψτε ΩΩ:ΛΛ, π.χ. 21:30.'], hint: 'Προαιρετική. Απαιτεί ώρα έναρξης. Αν η λήξη είναι άλλη ημέρα, συμπληρώστε και ημερομηνία λήξης.'}
+      - {name: location, label: Χώρος και διεύθυνση, widget: string, required: false, hint: 'Π.χ. Ηπειρωτική Λέσχη, Φίλωνος 11Α, Πειραιάς. Μεταφέρεται και στο Google Calendar.'}
+      - {name: description, label: Πληροφορίες για τη συνάντηση, widget: text, required: false, hint: 'Πρόγραμμα, συμμετοχή ή άλλες χρήσιμες πληροφορίες. Εμφανίζονται στο ημερολόγιο και μεταφέρονται στο προσωπικό ημερολόγιο του επισκέπτη.'}
       - {name: dateLabel, label: Ειδική εμφάνιση ημερομηνίας (προαιρετικό), widget: string, required: false, hint: 'Αφήστε κενό. Συμπληρώστε μόνο αν θέλετε π.χ. «Οκτώβριος 2011».'}
       - {name: source, label: Σύνδεσμος σε σελίδα με περισσότερα (προαιρετικό), widget: string, required: false}
       - {name: note, label: Σημείωση (προαιρετικό), widget: text, required: false}

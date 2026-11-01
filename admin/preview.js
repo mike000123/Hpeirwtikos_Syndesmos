@@ -89,6 +89,7 @@
     var d = o.date;
     if (d && typeof d !== 'string') d = new Date(d).toISOString().slice(0, 10);
     o.date = d || null;
+    if (o.endDate && typeof o.endDate !== 'string') o.endDate = new Date(o.endDate).toISOString().slice(0, 10);
     o.dateLabel = o.dateLabel || (d && d.length === 10 ? d.slice(8, 10) + '.' + d.slice(5, 7) + '.' + d.slice(0, 4) : (d || 'Χωρίς ημερομηνία'));
     o.media = (o.media || []).filter(function (m) { return m && (m.src || m.videoId); });
     if (!o.source) o.source = 'https://ipirotikos.gr/';
@@ -111,16 +112,19 @@
   function eventsHtml(page, dataJs, draft, id, today) {
     var w = {}; new Function('window', dataJs)(w);
     var cat = w.epirusEvents, rec = eventRecord(draft, id);
-    today = today || new Date().toISOString().slice(0, 10);
+    var core = window.EpirusCalendarCore;
+    today = today || (core ? core.today() : new Date().toISOString().slice(0, 10));
     var thumbs = {}; cat.events.forEach(function (e) { thumbs[e.id] = /assets\/events-design\//.test(page) && page.indexOf('events-design/' + e.id + '.webp') >= 0; }); window.__epirusKnownThumbs = thumbs;
     cat.events = cat.events.filter(function (e) { return e.id !== rec.id; }).concat([rec]);
     var dated = cat.events.filter(function (e) { return e.date; }).sort(function (a, b) { return a.date < b.date ? 1 : -1; });
     cat.events = dated.concat(cat.events.filter(function (e) { return !e.date; }));
-    var past = dated.filter(function (e) { return e.date <= today; }), fut = dated.filter(function (e) { return e.date > today; }).reverse();
+    function isUpcoming(e) { try { var n = core && core.normalize(e); return n ? n.lastDay >= today : e.date >= today && e.date.length === 10; } catch (_) { return false; } }
+    var past = dated.filter(function (e) { return !isUpcoming(e); }), fut = dated.filter(isUpcoming).reverse();
     var s = marker(page, 'events-list', '<div class="past-events" id="events-list">' + past.map(eventCard).join('') + '</div>');
     var years = []; past.forEach(function (e) { if (years.indexOf(e.date.slice(0, 4)) < 0) years.push(e.date.slice(0, 4)); });
     s = marker(s, 'events-years', '<option value="all">Όλες οι χρονιές</option>' + years.map(function (y) { return '<option value="' + y + '">' + y + '</option>'; }).join(''));
-    s = marker(s, 'upcoming', fut.length ? '<ul class="events-upcoming-list">' + fut.map(function (e) { return '<li><time datetime="' + e.date + '">' + esc(e.dateLabel) + '</time> <strong>' + esc(e.title) + '</strong>' + (e.note ? ' <span>' + esc(e.note) + '</span>' : '') + (e.press ? ' <a href="' + escq(e.press.src) + '" target="_blank" rel="noopener noreferrer">' + esc(e.press.label) + ' →</a>' : '') + '</li>'; }).join('') + '</ul>' : '<p>Οι νέες ημερομηνίες θα ανακοινώνονται εδώ.</p>');
+    s = marker(s, 'upcoming', fut.length ? '<ul class="events-upcoming-list">' + fut.map(function (e) { return '<li><time datetime="' + escq(e.date) + '">' + esc(e.dateLabel) + (e.time ? ' · ' + esc(e.time) + (e.endTime ? '–' + esc(e.endTime) : '') : '') + '</time> <strong>' + esc(e.title) + '</strong>' + (e.location ? '<span>' + esc(e.location) + '</span>' : '') + (e.note ? '<span>' + esc(e.note) + '</span>' : '') + '<button type="button" class="meeting-upcoming-open" data-calendar-open data-calendar-event="' + escq(e.id) + '" aria-haspopup="dialog" aria-controls="meetings-calendar" hidden>Πληροφορίες &amp; ημερολόγιο →</button>' + (e.press ? '<a href="' + escq(e.press.src) + '" data-event-press="' + escq(e.id) + '" aria-haspopup="dialog" aria-controls="event-press-dialog" target="_blank" rel="noopener noreferrer">' + esc(e.press.label) + ' →</a>' : '') + '</li>'; }).join('') + '</ul>' : '<p>Οι νέες ημερομηνίες θα ανακοινώνονται εδώ.</p>');
+    if (core) { try { core.normalize(rec); } catch (error) { s = marker(s, 'upcoming', '<p role="alert">Ελέγξτε τις ημερομηνίες της συνάντησης: ' + esc(error.message) + '</p>'); } }
     return s.replace(/<script[^>]*src="assets\/events-data\.js[^"]*"[^>]*><\/script>/, function () { return '<script>window.epirusEvents=' + JSON.stringify(cat).replace(/</g, '\\u003c') + ';</script>'; });
   }
   /* ---- Γνωρίστε την Ήπειρο ---- */

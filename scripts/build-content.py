@@ -4,6 +4,7 @@ import json, re, html, sys, datetime
 from pathlib import Path
 import markdown
 from president_timeline import presidents_html
+from event_calendar import calendar_dates, today as calendar_today, upcoming_html
 try:
     from PIL import Image
 except ImportError:
@@ -64,9 +65,13 @@ def build_events():
         # press placement keeps original key order (press before note)
         if 'press' in o and 'note' in o:
             note = o.pop('note'); o['note'] = note
+        try:
+            calendar_dates(o)
+        except ValueError as error:
+            raise SystemExit(f'Μη έγκυρη συνάντηση {o["id"]}: {error}') from error
         out.append(o)
     data = {'updated': meta['updated'], 'photoSource': meta['photoSource'], 'videoSource': meta['videoSource'], 'events': out}
-    TODAY = datetime.date.today().isoformat()
+    TODAY = calendar_today()
     build_events_page(out, TODAY)
     wr(root / 'assets/events-data.js',
        '// Association media and locally archived original press documents.\nwindow.epirusEvents = ' +
@@ -103,21 +108,15 @@ def build_events_page(events, today):
     s = wrap_marker(s, 'events-list', r'<div class="past-events" id="events-list">', r'</div>(?=<button class="events-show-all")')
     s = wrap_marker(s, 'events-years', r'<option value="all">Όλες οι χρονιές</option>', r'(?=</select>)')
     s = wrap_marker(s, 'upcoming', r'<p>Οι νέες ημερομηνίες θα ανακοινώνονται εδώ\.</p>', r'(?<=</p>)')
-    past = [e for e in events if e.get('date') and e['date'] <= today]
-    future = sorted([e for e in events if e.get('date') and e['date'] > today], key=lambda e: e['date'])
+    future = sorted([e for e in events if calendar_dates(e) and calendar_dates(e)[1] >= today], key=lambda e: (e['date'], e.get('time') or ''))
+    future_ids = {e['id'] for e in future}
+    past = [e for e in events if e.get('date') and e['id'] not in future_ids]
     s = between(s, 'events-list', '<div class="past-events" id="events-list">' + ''.join(event_card(e) for e in past) + '</div>')
     years = []
     for e in past:
         if e['date'][:4] not in years: years.append(e['date'][:4])
     s = between(s, 'events-years', '<option value="all">Όλες οι χρονιές</option>' + ''.join(f'<option value="{y}">{y}</option>' for y in years))
-    if future:
-        items = ''.join(f'<li><time datetime="{e["date"]}">{esc(e["dateLabel"])}</time> <strong>{esc(e["title"])}</strong>' +
-                        (f' <span>{esc(e["note"])}</span>' if e.get('note') else '') +
-                        (f' <a href="{escq(e["press"]["src"])}" target="_blank" rel="noopener noreferrer">{esc(e["press"]["label"])} →</a>' if e.get('press') else '') + '</li>' for e in future)
-        up = f'<ul class="events-upcoming-list">{items}</ul>'
-    else:
-        up = '<p>Οι νέες ημερομηνίες θα ανακοινώνονται εδώ.</p>'
-    s = between(s, 'upcoming', up)
+    s = between(s, 'upcoming', upcoming_html(future))
     wr(p, s)
 
 # ---------------------------------------------------------------- board

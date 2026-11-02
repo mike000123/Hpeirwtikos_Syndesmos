@@ -17,7 +17,7 @@ PAGES = {
   S('club_eyebrow', 'Λέσχη · μικρός τίτλος', T, '<div class="home-club-copy"><span class="eyebrow">', '</span>'),
   S('club_title', 'Λέσχη · τίτλος', T, '<h2>', '</h2>'),
   S('club_text', 'Λέσχη · κείμενο', T, '<p>', '</p>'),
-  S('club_link', 'Λέσχη · κείμενο συνδέσμου', T, '<a href="syndesmos.html#leschi">', '</a>'),
+  S('club_link', 'Λέσχη · κείμενο συνδέσμου', T, '<a href="syndesmos.html">', '</a>'),
   S('dance_eyebrow', 'Χορευτικά · μικρός τίτλος', T, '<div class="home-dance-copy"><span class="eyebrow">', '</span>'),
   S('dance_title', 'Χορευτικά · τίτλος', T, '<h2 id="home-dance-title">', '</h2>'),
   S('dance_text', 'Χορευτικά · κείμενο', T, '<p>', '</p>'),
